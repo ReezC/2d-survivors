@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c0gikbxr2hvpe"]
+
+[ext_resource type="Shader" uid="uid://dj4nj8i7ghte" path="res://effects/受击闪白.gdshader" id="1_hksxl"]
+
+[resource]
+shader = ExtResource("1_hksxl")

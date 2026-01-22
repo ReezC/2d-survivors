@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://c073edguiprtm"]
+
+[ext_resource type="PackedScene" uid="uid://7na21mdhrf52" path="res://scenes/ability/ability_controller/big_shuriken_ability_controller.tscn" id="1_4kqbi"]
+[ext_resource type="Texture2D" uid="uid://cim1ccj0mmhmk" path="res://assets/Ninja Adventure - Asset Pack/FX/Projectile/BigShuriken.png" id="1_k8poh"]
+[ext_resource type="Script" uid="uid://cqmixmrfmoyue" path="res://resources/upgrades/ability.gd" id="2_k8poh"]
+
+[resource]
+script = ExtResource("2_k8poh")
+ability_controller_scene = ExtResource("1_4kqbi")
+id = "大手里剑"
+max_quantity = 5
+ability_name = "大手里剑"
+icon = ExtResource("1_k8poh")
+description = "发射旋转的巨大手里剑"

@@ -1,0 +1,12 @@
+[gd_scene load_steps=6 format=3 uid="uid://btaxpbar6nfon"]
+
+[ext_resource type="Script" uid="uid://biuyrnvis8mks" path="res://scenes/managers/upgrade_manager.gd" id="1_04hjb"]
+[ext_resource type="Script" uid="uid://b5mj35a4epkr0" path="res://resources/upgrades/ability_upgrade.gd" id="2_h5slu"]
+[ext_resource type="Resource" uid="uid://df11744rid17e" path="res://resources/upgrades/sword_rate.tres" id="3_y3w1s"]
+[ext_resource type="Resource" uid="uid://c073edguiprtm" path="res://resources/upgrades/big_shuriken.tres" id="4_ihw5y"]
+[ext_resource type="PackedScene" uid="uid://dm7e2cptq5gd7" path="res://scenes/ui/upgrade_screen.tscn" id="4_y3w1s"]
+
+[node name="UpgradeManager" type="Node"]
+script = ExtResource("1_04hjb")
+upgrade_pool = Array[ExtResource("2_h5slu")]([ExtResource("3_y3w1s"), ExtResource("4_ihw5y")])
+upgrade_screen_scene = ExtResource("4_y3w1s")

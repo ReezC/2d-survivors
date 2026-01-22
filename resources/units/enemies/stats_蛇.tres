@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UnitStats" load_steps=3 format=3 uid="uid://byo23rqfnl1mq"]
+
+[ext_resource type="Script" uid="uid://dimqhi4axfg2l" path="res://resources/units/unit_stats.gd" id="1_yd7cr"]
+[ext_resource type="Texture2D" uid="uid://inf23dp4pkvs" path="res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Snake2/Faceset.png" id="2_oj7oc"]
+
+[resource]
+script = ExtResource("1_yd7cr")
+"名称" = "绿史莱姆"
+"单位类型" = 1
+"图标" = ExtResource("2_oj7oc")
+"生命" = 6
+"移速" = 80.0
+"暴击率" = 0.0
+"闪避率" = 0.33
+metadata/_custom_type_script = "uid://dimqhi4axfg2l"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UnitStats" load_steps=3 format=3 uid="uid://dl012sytrsylv"]
+
+[ext_resource type="Script" uid="uid://dimqhi4axfg2l" path="res://resources/units/unit_stats.gd" id="1_vy8t4"]
+[ext_resource type="Texture2D" uid="uid://cy41q0guuw1bq" path="res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Slime/Faceset.png" id="2_vy8t4"]
+
+[resource]
+script = ExtResource("1_vy8t4")
+"名称" = "蓝史莱姆"
+"单位类型" = 1
+"图标" = ExtResource("2_vy8t4")
+"生命" = 6
+"移速" = 60.0
+"暴击率" = 0.0
+metadata/_custom_type_script = "uid://dimqhi4axfg2l"

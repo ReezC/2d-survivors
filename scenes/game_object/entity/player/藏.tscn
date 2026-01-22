@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://l45s6onwo77q"]
+
+[ext_resource type="PackedScene" uid="uid://dnmhmnx16opyw" path="res://scenes/game_object/entity/player/树.tscn" id="1_nbcxq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_81uua"]
+
+[node name="树" instance=ExtResource("1_nbcxq")]
+
+[node name="AnimatedSprite2D" parent="视觉" index="1"]
+sprite_frames = SubResource("SpriteFrames_81uua")
+animation = &"default"
+autoplay = ""

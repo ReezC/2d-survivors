@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://dlnqyiwpv4wmi"]
+
+[ext_resource type="Script" uid="uid://cj0j8k8xxgolq" path="res://scenes/ability/big_shuriken_ability/big_shuriken_ability.gd" id="1_rkrcl"]
+[ext_resource type="Texture2D" uid="uid://bkpx064ivxe2o" path="res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Axe/Sprite.png" id="2_th5yq"]
+[ext_resource type="PackedScene" uid="uid://cqkh2idk0bmgo" path="res://scenes/component/hitbox_component.tscn" id="3_skyp4"]
+
+[sub_resource type="Animation" id="Animation_m8265"]
+resource_name = "default"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.7941248096574199, 9.47713783832921]
+}
+
+[sub_resource type="Animation" id="Animation_r58rl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r58rl"]
+_data = {
+&"RESET": SubResource("Animation_r58rl"),
+&"default": SubResource("Animation_m8265")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m8265"]
+
+[node name="AxeAbility" type="Node2D"]
+script = ExtResource("1_rkrcl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_r58rl")
+}
+autoplay = "default"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_th5yq")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_skyp4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0, -6)
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_m8265")

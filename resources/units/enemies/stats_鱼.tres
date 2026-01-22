@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UnitStats" load_steps=3 format=3 uid="uid://cehtmsnf4ytch"]
+
+[ext_resource type="Script" uid="uid://dimqhi4axfg2l" path="res://resources/units/unit_stats.gd" id="1_vrnn6"]
+[ext_resource type="Texture2D" uid="uid://cxoueygsc4gv5" path="res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Fish/Faceset.png" id="2_vrnn6"]
+
+[resource]
+script = ExtResource("1_vrnn6")
+"名称" = "绿史莱姆"
+"单位类型" = 1
+"图标" = ExtResource("2_vrnn6")
+"生命" = 6
+"暴击率" = 0.0
+metadata/_custom_type_script = "uid://dimqhi4axfg2l"

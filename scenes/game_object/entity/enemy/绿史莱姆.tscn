@@ -1,0 +1,222 @@
+[gd_scene load_steps=29 format=3 uid="uid://chf4tnhlupl8e"]
+
+[ext_resource type="PackedScene" uid="uid://dcslmpa4nca4m" path="res://scenes/game_object/entity/单位.tscn" id="1_au3mk"]
+[ext_resource type="Script" uid="uid://ehv06eqk1cx7" path="res://scenes/game_object/entity/enemy/enemy.gd" id="2_2vcqf"]
+[ext_resource type="Texture2D" uid="uid://clwno477jjx8s" path="res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Slime2/Slime2.png" id="2_nqg02"]
+[ext_resource type="Resource" uid="uid://dfyamsf5pp2n6" path="res://resources/units/enemies/stats_绿史莱姆.tres" id="3_2vcqf"]
+[ext_resource type="PackedScene" uid="uid://cqkh2idk0bmgo" path="res://scenes/component/hitbox_component.tscn" id="5_s2a2t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vcqf"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2a2t"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_au3mk"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqg02"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wikua"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_peq1w"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlhfe"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4re02"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tabb3"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gudbt"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gl80"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r7x"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxwhy"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwx7t"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02cnh"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5cey"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp4id"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xax2p"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wikua"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_2vcqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2a2t")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_au3mk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqg02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wikua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_peq1w")
+}],
+"loop": true,
+"name": &"Run_Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlhfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4re02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tabb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gudbt")
+}],
+"loop": true,
+"name": &"Run_Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gl80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxwhy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwx7t")
+}],
+"loop": true,
+"name": &"Run_Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02cnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5cey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp4id")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xax2p")
+}],
+"loop": true,
+"name": &"Run_Up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_au3mk"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2vcqf"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s2a2t"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wikua"]
+radius = 7.0
+
+[node name="绿史莱姆" groups=["enemy"] instance=ExtResource("1_au3mk")]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_2vcqf")
+"群体运动推动力" = 5.0
+"单位属性" = ExtResource("3_2vcqf")
+
+[node name="AnimatedSprite2D" parent="视觉" index="0"]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_wikua")
+animation = &"Run_Down"
+autoplay = "Idle"
+frame_progress = 0.26071465
+
+[node name="移动碰撞" parent="." index="2"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_au3mk")
+debug_color = Color(0.7024835, 0.4852388, 0.16611946, 0.41960785)
+
+[node name="视野区域" type="Area2D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="视野区域" index="0"]
+shape = SubResource("CircleShape2D_2vcqf")
+debug_color = Color(0, 0.5764706, 0.6745098, 0.16862746)
+
+[node name="HurtboxComponent" parent="." index="4"]
+collision_layer = 64
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_s2a2t")
+debug_color = Color(0.8383469, 0.32866618, 0.52906746, 0.41960785)
+
+[node name="HitboxComponent" parent="." index="5" instance=ExtResource("5_s2a2t")]
+collision_layer = 128
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_wikua")
+debug_color = Color(0.7577971, 0.323612, 0.80577916, 0.41960785)
+
+[node name="HealthBar" parent="." index="7"]
+"背景颜色" = Color(0.27058825, 0.24705882, 0.18039216, 1)
+"填充颜色" = Color(0.33333334, 0.38431373, 0.3019608, 1)

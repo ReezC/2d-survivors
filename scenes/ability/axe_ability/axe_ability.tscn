@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://wiwq2k8ls4ks"]
+
+[ext_resource type="Script" uid="uid://cj0j8k8xxgolq" path="res://scenes/ability/big_shuriken_ability/big_shuriken_ability.gd" id="1_65u81"]
+[ext_resource type="PackedScene" uid="uid://cqkh2idk0bmgo" path="res://scenes/component/hitbox_component.tscn" id="3_m8265"]
+[ext_resource type="Texture2D" uid="uid://cim1ccj0mmhmk" path="res://assets/Ninja Adventure - Asset Pack/FX/Projectile/BigShuriken.png" id="3_r58rl"]
+
+[sub_resource type="Animation" id="Animation_r58rl"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_m8265"]
+resource_name = "default"
+length = 1.2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r58rl"]
+_data = {
+&"RESET": SubResource("Animation_r58rl"),
+&"default": SubResource("Animation_m8265")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twdap"]
+atlas = ExtResource("3_r58rl")
+region = Rect2(0, 0, 23, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5fe5"]
+atlas = ExtResource("3_r58rl")
+region = Rect2(23, 0, 23, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x06cu"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_twdap")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_f5fe5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m8265"]
+radius = 13.0
+
+[node name="AxeAbility" type="Node2D"]
+script = ExtResource("1_65u81")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_r58rl")
+}
+autoplay = "default"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x06cu")
+autoplay = "default"
+frame_progress = 0.5846647
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_m8265")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_m8265")

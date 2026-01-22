@@ -1,0 +1,77 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhjprm2ggsbp4"]
+
+[ext_resource type="Script" uid="uid://gohp2nvrdfan" path="res://scenes/game_object/basic_monster/basic_monster.gd" id="1_plwrp"]
+[ext_resource type="Texture2D" uid="uid://clwno477jjx8s" path="res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Slime2/Slime2.png" id="1_wgffe"]
+[ext_resource type="PackedScene" uid="uid://bwl6aqsov574v" path="res://scenes/component/health_component.tscn" id="2_hltvk"]
+[ext_resource type="PackedScene" uid="uid://bj4suq0f6yeu7" path="res://scenes/component/drop_component.tscn" id="3_u31wm"]
+[ext_resource type="PackedScene" uid="uid://dmsb646ibiws7" path="res://scenes/component/hurtbox_component.tscn" id="4_11p5o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0g43l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wgffe"]
+radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11p5o"]
+atlas = ExtResource("1_wgffe")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g43l"]
+atlas = ExtResource("1_wgffe")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42n8u"]
+atlas = ExtResource("1_wgffe")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjg4p"]
+atlas = ExtResource("1_wgffe")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fu2jj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11p5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0g43l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42n8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjg4p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BasicMonster" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 8
+collision_mask = 9
+motion_mode = 1
+script = ExtResource("1_plwrp")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_hltvk")]
+max_health = 8
+
+[node name="DropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_u31wm")]
+health_component = NodePath("../HealthComponent")
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_11p5o")]
+position = Vector2(0, -7)
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+shape = SubResource("CircleShape2D_0g43l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_wgffe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fu2jj")
+autoplay = "default"
+frame_progress = 0.56724036
+offset = Vector2(0, -7)
