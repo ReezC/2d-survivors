@@ -12,3 +12,11 @@ func emit_experience_vial_collected(exp_amount: int) -> void:
 
 func emit_ability_upgrade_added(upgrade:AbilityUpgrade, current_upgrades:Dictionary) -> void:
 	ability_upgrade_added.emit(upgrade, current_upgrades)
+
+
+## 获取随机结果，概率范围
+##
+## @param 概率: float 概率值，范围[0,1]
+func 获取随机结果(概率: float) -> bool:
+	var 随机值: float = randf()
+	return 随机值 <= 概率
