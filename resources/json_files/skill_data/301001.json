@@ -1,0 +1,494 @@
+{
+	"$type": "calculator.skill",
+	"CD": {
+		"$type": "calculator.FloatValue.Const",
+		"value": "0"
+	},
+	"blackBoard": {
+		"$type": "calculator.BlackBoard",
+		"addBbkeys": [
+			{
+				"$type": "calculator.BlackBoardKey",
+				"key": "talent301012_triggerCount",
+				"value": {
+					"$type": "calculator.FloatValue.Const",
+					"value": "3"
+				}
+			}
+		]
+	},
+	"buff": {
+		"$type": "calculator.OneBuff",
+		"buffLogic": {
+			"$type": "calculator.BuffLogic.ActionTimeline",
+			"actionOnTimeList": [
+				{
+					"$type": "calculator.ActionOnTime",
+					"action": {
+						"$type": "calculator.SkillAction.ActionList",
+						"actions": [
+							{
+								"$note": "note：基础回能",
+								"$type": "calculator.SkillAction.ModifyAttribute",
+								"attr": 6.0,
+								"value": {
+									"$type": "calculator.FloatValue.Const",
+									"value": "9"
+								}
+							},
+							{
+								"$note": "note：挥砍回血",
+								"$type": "calculator.SkillAction.ActionIfElse",
+								"actionTrue": [
+									{
+										"$note": "note：挥砍回血",
+										"$type": "calculator.SkillAction.ModifyAttribute",
+										"attr": 24.0,
+										"value": {
+											"$type": "calculator.FloatValue.Const",
+											"value": "0.08"
+										}
+									}
+								],
+								"condition": {
+									"$type": "calculator.Condition.expression",
+									"expr": "self.player_has_skill(301009)"
+								}
+							},
+							{
+								"$note": "note：电击恢复{2}已损失的生命",
+								"$type": "calculator.SkillAction.ActionIfElse",
+								"actionTrue": [
+									{
+										"$note": "note：电击恢复{2}已损失的生命",
+										"$type": "calculator.SkillAction.ModifyAttribute",
+										"attr": 24.0,
+										"value": {
+											"$type": "calculator.FloatValue.Divide",
+											"value1": {
+												"$type": "calculator.FloatValue.Multiply",
+												"values": [
+													{
+														"$type": "calculator.FloatValue.Const",
+														"value": "0.01"
+													},
+													{
+														"$type": "calculator.FloatValue.ByNumberArray",
+														"indexRef": {
+															"$type": "calculator.numberarrayRef.expression",
+															"value": "self.player_skill_lv(301012)"
+														},
+														"numberarray": 30101201.0
+													},
+													{
+														"$note": "note：恢复已损失的生命 期望系数",
+														"$type": "calculator.FloatValue.Const",
+														"value": "0.45"
+													}
+												]
+											},
+											"value2": {
+												"$type": "calculator.FloatValue.ByBlackBoard",
+												"key": "talent301012_triggerCount"
+											}
+										}
+									}
+								],
+								"condition": {
+									"$type": "calculator.Condition.expression",
+									"expr": "self.player_has_skill(301012)"
+								}
+							},
+							{
+								"$type": "calculator.SkillAction.ActionMulti",
+								"actions": [
+									{
+										"$note": "note：基础伤害",
+										"$type": "calculator.SkillAction.Damage",
+										"AddDmgEleTypeCases": [
+											{
+												"$type": "calculator.dmgEleTypeCase",
+												"condition": {
+													"$type": "calculator.Condition.expression",
+													"expr": "self.player_has_skill(301012)"
+												},
+												"dmgEleType": "LIGHTNING"
+											},
+											{
+												"$type": "calculator.dmgEleTypeCase",
+												"condition": {
+													"$type": "calculator.Condition.expression",
+													"expr": "self.player_has_skill(301014)"
+												},
+												"dmgEleType": "FIRE"
+											}
+										],
+										"AddSkillActionOnDmg": [
+											{
+												"$note": "note：talent301011破伤流血",
+												"$type": "calculator.SkillAction.ActionIfElse",
+												"actionTrue": [
+													{
+														"$type": "calculator.SkillAction.AddBuff",
+														"buff": {
+															"$type": "calculator.OneBuff",
+															"buffLogic": {
+																"$type": "calculator.BuffLogic.ActionOverTime",
+																"action": {
+																	"$note": "note：破伤流血",
+																	"$type": "calculator.SkillAction.Damage",
+																	"dmgBelong": 3.0,
+																	"dmgEleType": "PHYSICS",
+																	"dmgPersisType": "DOT",
+																	"dmgRange": {
+																		"$type": "calculator.FloatValue.Const",
+																		"value": "1"
+																	},
+																	"dmgRate": {
+																		"$type": "calculator.FloatValue.Multiply",
+																		"values": [
+																			{
+																				"$note": "note：总伤害倍率",
+																				"$type": "calculator.FloatValue.ByNumberArray",
+																				"indexRef": {
+																					"$type": "calculator.numberarrayRef.expression",
+																					"value": "self.player_skill_lv(301011)"
+																				},
+																				"numberarray": 30101101.0
+																			},
+																			{
+																				"$type": "calculator.FloatValue.Const",
+																				"value": "0.01"
+																			}
+																		]
+																	}
+																},
+																"interval": {
+																	"$type": "calculator.FloatValue.Const",
+																	"value": "499"
+																}
+															},
+															"duration": {
+																"$type": "calculator.FloatValue.Const",
+																"value": "5000"
+															},
+															"maxStack": {
+																"$type": "calculator.FloatValue.Const"
+															},
+															"name": "talent301011破伤流血",
+															"stackType": "none"
+														}
+													}
+												],
+												"condition": {
+													"$type": "calculator.Condition.expression",
+													"expr": "self.player_has_skill(301011)"
+												}
+											},
+											{
+												"$fold": true,
+												"$note": "note：talent301012电击伤害\n每{0}次猛击触发雷击，造成{1}攻击的闪电伤害并恢复{2}已损失的生命",
+												"$type": "calculator.SkillAction.ActionIfElse",
+												"actionTrue": [
+													{
+														"$note": "note：电击伤害",
+														"$type": "calculator.SkillAction.Damage",
+														"dmgBelong": 2.0,
+														"dmgEleType": "LIGHTNING",
+														"dmgPersisType": "DIRECT",
+														"dmgRange": {
+															"$type": "calculator.FloatValue.Const",
+															"value": "1"
+														},
+														"dmgRate": {
+															"$type": "calculator.FloatValue.Divide",
+															"value1": {
+																"$type": "calculator.FloatValue.Multiply",
+																"values": [
+																	{
+																		"$note": "note：总伤害倍率",
+																		"$type": "calculator.FloatValue.ByNumberArray",
+																		"indexRef": {
+																			"$type": "calculator.numberarrayRef.expression",
+																			"value": "self.player_skill_lv(301012)"
+																		},
+																		"numberarray": 30101202.0
+																	},
+																	{
+																		"$type": "calculator.FloatValue.Const",
+																		"value": "0.01"
+																	}
+																]
+															},
+															"value2": {
+																"$type": "calculator.FloatValue.ByBlackBoard",
+																"key": "talent301012_triggerCount"
+															}
+														}
+													}
+												],
+												"condition": {
+													"$type": "calculator.Condition.expression",
+													"expr": "self.player_has_skill(301012)"
+												}
+											},
+											{
+												"$note": "note：余晖回血",
+												"$type": "calculator.SkillAction.ActionIfElse",
+												"actionTrue": [
+													{
+														"$note": "note：余晖回血",
+														"$type": "calculator.SkillAction.ModifyAttribute",
+														"attr": 24.0,
+														"value": {
+															"$type": "calculator.FloatValue.Const",
+															"value": "0.005"
+														}
+													}
+												],
+												"condition": {
+													"$type": "calculator.Condition.expression",
+													"expr": "self.player_has_skill(301014)"
+												}
+											}
+										],
+										"dmgBelong": 1.0,
+										"dmgEleType": "PHYSICS",
+										"dmgPersisType": "DIRECT",
+										"dmgRange": {
+											"$type": "calculator.FloatValue.ValueSwitch",
+											"cases": [
+												{
+													"$type": "calculator.ValueCase",
+													"condition": {
+														"$type": "calculator.Condition.expression",
+														"expr": "self.player_has_skill(301014)"
+													},
+													"value": {
+														"$type": "calculator.FloatValue.Const",
+														"value": "7.639437268"
+													}
+												}
+											],
+											"def": {
+												"$type": "calculator.FloatValue.Const",
+												"value": "3.125"
+											}
+										},
+										"dmgRate": {
+											"$type": "calculator.FloatValue.Add",
+											"values": [
+												{
+													"$note": "note：基础值",
+													"$type": "calculator.FloatValue.Const",
+													"value": "1"
+												},
+												{
+													"$fold": true,
+													"$note": "note：talent301009挥砍",
+													"$type": "calculator.FloatValue.ValueIfElse",
+													"condition": {
+														"$type": "calculator.Condition.expression",
+														"expr": "self.player_has_skill(301009)"
+													},
+													"valueFalse": {
+														"$type": "calculator.FloatValue.Const",
+														"value": "0"
+													},
+													"valueTrue": {
+														"$type": "calculator.FloatValue.Multiply",
+														"values": [
+															{
+																"$type": "calculator.FloatValue.Const",
+																"value": "0.01"
+															},
+															{
+																"$type": "calculator.FloatValue.ByNumberArray",
+																"indexRef": {
+																	"$type": "calculator.numberarrayRef.expression",
+																	"value": "self.player_skill_lv(301009)"
+																},
+																"numberarray": 30100901.0
+															}
+														]
+													}
+												},
+												{
+													"$fold": true,
+													"$note": "note：talent301010痛割",
+													"$type": "calculator.FloatValue.ValueIfElse",
+													"condition": {
+														"$type": "calculator.Condition.expression",
+														"expr": "self.player_has_skill(301010)"
+													},
+													"valueFalse": {
+														"$type": "calculator.FloatValue.Const",
+														"value": "0"
+													},
+													"valueTrue": {
+														"$type": "calculator.FloatValue.Multiply",
+														"values": [
+															{
+																"$type": "calculator.FloatValue.Const",
+																"value": "0.01"
+															},
+															{
+																"$type": "calculator.FloatValue.ByNumberArray",
+																"indexRef": {
+																	"$type": "calculator.numberarrayRef.expression",
+																	"value": "self.player_skill_lv(301010)"
+																},
+																"numberarray": 30101001.0
+															}
+														]
+													}
+												},
+												{
+													"$fold": true,
+													"$note": "note：talent301014余晖\n猛击的伤害提高{0}并转变为发出冲击波，对路径上的所有敌人造成火焰伤害",
+													"$type": "calculator.FloatValue.ValueIfElse",
+													"condition": {
+														"$type": "calculator.Condition.expression",
+														"expr": "self.player_has_skill(301014)"
+													},
+													"valueFalse": {
+														"$type": "calculator.FloatValue.Const",
+														"value": "0"
+													},
+													"valueTrue": {
+														"$type": "calculator.FloatValue.Multiply",
+														"values": [
+															{
+																"$type": "calculator.FloatValue.Const",
+																"value": "0.01"
+															},
+															{
+																"$type": "calculator.FloatValue.ByNumberArray",
+																"indexRef": {
+																	"$type": "calculator.numberarrayRef.expression",
+																	"value": "self.player_skill_lv(301014)"
+																},
+																"numberarray": 30101401.0
+															}
+														]
+													}
+												},
+												{
+													"$fold": true,
+													"$note": "note：talent301015倾泻\n余晖的伤害提高{0}并同时发出{1}道冲击波",
+													"$type": "calculator.FloatValue.ValueIfElse",
+													"condition": {
+														"$type": "calculator.Condition.expression",
+														"expr": "self.player_has_skill(301015)"
+													},
+													"valueFalse": {
+														"$type": "calculator.FloatValue.Const",
+														"value": "0"
+													},
+													"valueTrue": {
+														"$type": "calculator.FloatValue.Multiply",
+														"values": [
+															{
+																"$type": "calculator.FloatValue.Const",
+																"value": "0.01"
+															},
+															{
+																"$type": "calculator.FloatValue.ByNumberArray",
+																"indexRef": {
+																	"$type": "calculator.numberarrayRef.expression",
+																	"value": "self.player_skill_lv(301015)"
+																},
+																"numberarray": 30101501.0
+															}
+														]
+													}
+												}
+											]
+										}
+									}
+								],
+								"times": {
+									"$type": "calculator.FloatValue.Add",
+									"values": [
+										{
+											"$type": "calculator.FloatValue.Const",
+											"value": "1"
+										},
+										{
+											"$fold": true,
+											"$note": "note：talent301015倾泻\n余晖的伤害提高{0}并同时发出3道冲击波",
+											"$type": "calculator.FloatValue.ValueIfElse",
+											"condition": {
+												"$type": "calculator.Condition.expression",
+												"expr": "self.player_has_skill(301015)"
+											},
+											"valueFalse": {
+												"$type": "calculator.FloatValue.Const",
+												"value": "0"
+											},
+											"valueTrue": {
+												"$type": "calculator.FloatValue.ByNumberArray",
+												"indexRef": {
+													"$type": "calculator.numberarrayRef.expression",
+													"value": "self.player_skill_lv(301015)"
+												},
+												"numberarray": 30101502.0
+											}
+										}
+									]
+								}
+							}
+						]
+					},
+					"time": {
+						"$type": "calculator.FloatValue.Const",
+						"value": "400"
+					}
+				}
+			],
+			"timeMultipliers": {
+				"$note": "note：攻速贡献",
+				"$type": "calculator.FloatValue.Divide",
+				"value1": {
+					"$type": "calculator.FloatValue.Const",
+					"value": "1"
+				},
+				"value2": {
+					"$type": "calculator.FloatValue.Const",
+					"value": "self.player_attr('attackSpeed')"
+				}
+			}
+		},
+		"duration": {
+			"$type": "calculator.FloatValue.Multiply",
+			"values": [
+				{
+					"$type": "calculator.FloatValue.Const",
+					"value": "1200"
+				},
+				{
+					"$note": "note：攻速贡献",
+					"$type": "calculator.FloatValue.Divide",
+					"value1": {
+						"$type": "calculator.FloatValue.Const",
+						"value": "1"
+					},
+					"value2": {
+						"$type": "calculator.FloatValue.Const",
+						"value": "self.player_attr('attackSpeed')"
+					}
+				}
+			]
+		},
+		"maxStack": {
+			"$type": "calculator.FloatValue.Const"
+		},
+		"name": "猛击_释放中",
+		"stackType": "none"
+	},
+	"id": 301001.0,
+	"name": "猛击_野蛮人_技能",
+	"tag": [
+		"BASIC"
+	]
+}

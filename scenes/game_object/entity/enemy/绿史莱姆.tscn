@@ -208,9 +208,10 @@ position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_s2a2t")
 debug_color = Color(0.8383469, 0.32866618, 0.52906746, 0.41960785)
 
-[node name="HitboxComponent" parent="." index="5" instance=ExtResource("5_s2a2t")]
+[node name="HitboxComponent" parent="." index="5" node_paths=PackedStringArray("source") instance=ExtResource("5_s2a2t")]
 collision_layer = 128
 collision_mask = 16
+source = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
 position = Vector2(0, -3)

@@ -20,12 +20,19 @@ func 设置受击闪白material(闪白material:ShaderMaterial) -> void:
 	
 
 ## 被击中事件处理
+## 
 ## 暴击、闪避等战斗事件的判定在此处进行
+## 采用归一圆桌算法：
+## 	分子 = 当前判定的战斗事件概率
+## 	分母 = min(各时间概率之和, 1.0)
+## 
 ## @param hitbox: HitboxComponent
 func _on_hurtbox_component_被击中(hitbox: HitboxComponent) -> void:
 	if hitbox.命中伤害 > 0:
 		# 判定伤害事件
 		var 格挡率 = 单位属性.格挡率
+		var 闪避率 = 单位属性.闪避率
+
 
 
 		health_component.受到伤害(hitbox.命中伤害)

@@ -47,15 +47,12 @@ y_sort_enabled = true
 
 [node name="绿史莱姆" parent="Entities" instance=ExtResource("11_th5th")]
 position = Vector2(79, 27)
-"群体运动推动力" = 5.0
 
 [node name="绿史莱姆2" parent="Entities" instance=ExtResource("11_th5th")]
 position = Vector2(-23, 81)
-"群体运动推动力" = 5.0
 
 [node name="绿史莱姆3" parent="Entities" instance=ExtResource("11_th5th")]
 position = Vector2(18, 31)
-"群体运动推动力" = 5.0
 
 [node name="树" parent="Entities" instance=ExtResource("11_blune")]
 
