@@ -6,12 +6,15 @@ var json_data = {}
 var current_file_path = ""
 var is_modified = false
 var schema_data = null
+var current_node_count = 0
 
 @onready var graph_edit = $GraphEdit
 @onready var file_dialog = $FileDialog
 @onready var schema_dialog = $SchemaDialog
 @onready var save_dialog = $SaveDialog
 
+## key = [TYPE_*]
+## value = [int]
 @export var json_node_types ={
 	TYPE_NIL: 0,
 	TYPE_BOOL: 1,
@@ -21,8 +24,9 @@ var schema_data = null
 	TYPE_ARRAY: 5,
 	TYPE_DICTIONARY: 6,
 }
-
-@export var port_type_colors ={
+## key = [int]
+## value = [Color]
+@export var json_type_colors ={
 	0: Color.GRAY,          # TYPE_NIL
 	1: Color.ORANGE_RED,    # TYPE_BOOL
 	2: Color.DODGER_BLUE,   # TYPE_INT
@@ -32,11 +36,13 @@ var schema_data = null
 	6: Color.GOLD,          # TYPE_DICTIONARY
 }
 
+@export var json_node_scene: PackedScene
+
 func _ready():
 
-	var resolution = Vector2i(960, 540)
-	get_window().size = resolution
+	var resolution = Vector2i(1024, 576)
 	get_window().content_scale_size = resolution
+	get_window().size = resolution
 	get_window().position =  DisplayServer.screen_get_size() / 2 - get_window().size / 2
 	
 	# 在工具栏里添加按钮
@@ -277,7 +283,7 @@ func _visualize_json_data():
 	_clear_all_nodes()
 	
 	if json_data:
-		_create_json_node(json_data, 0, Vector2(400, 300))
+		_create_json_node(json_data, current_node_count, Vector2(400, 300))
 		
 		
 		# 递归创建子节点
@@ -286,150 +292,157 @@ func _visualize_json_data():
 
 ## 递归创建JSON节点
 ## TODO: id 管理
-func _create_json_node(data,node_id=0, position = Vector2.ZERO,parent_port_type = 0):
-	var node = GraphNode.new()
-	node.resizable = true
-	node.name = "Node_%d" % node_id
+func _create_json_node(node_data,node_id=0, position = Vector2.ZERO,parent_port_type = 0):
+	
+	# 每次创建node，需要将编辑器记录的node数量+1
+	current_node_count += 1
+
+	var node = json_node_scene.instantiate()
 	node.position_offset = position
-	node.draggable = true
-	node.selectable = true	
-	node.custom_minimum_size = Vector2(200, 150)
-	
-	# 根据数据类型设置颜色
-	var data_type = typeof(data)
-	var color = Color.WHITE
-	
-	match data_type:
-		TYPE_NIL:
-			color = Color.GRAY
-			node.title += " (null)"
-		TYPE_BOOL:
-			color = Color.ORANGE_RED
-			node.title += " (bool)"
-		TYPE_INT, TYPE_FLOAT:
-			color = Color.DODGER_BLUE
-			node.title += " (number)"
-		TYPE_STRING:
-			color = Color.LIME_GREEN
-			node.title += " (string)"
-		TYPE_ARRAY:
-			color = Color.MEDIUM_PURPLE
-			node.title += " (array[%d])" % data.size()
-		TYPE_DICTIONARY:
-			color = Color.GOLD
-			node.title += " (object)"
-	
-	node.add_theme_color_override("title_color", color)
-	
-	
-	# 处理字典：添加slots
-	if data is Dictionary :
-		for i in range(data.keys().size()):
-			var key = data.keys()[i]
-			var value = data[key]
 
-			if i == 0: 
-				node.title = value
+	
+	# 设置节点数据
+	var node_name = "Node_%d" % node_id
+	node.set_node_data(node_data,node_name)
 
-			var json_node_slot_scene = preload("res://scenes/tools/json_node/json_node_slot.tscn").instantiate()
-			json_node_slot_scene.name = str(key)
-			
-			json_node_slot_scene.get_node("KeyLabel").text = str(key)
-			if i == 0:
-				json_node_slot_scene.get_node("KeyLabel").text = node.name
+	# 设置节点颜色
+	var node_color = json_type_colors[json_node_types[node.node_type]]
+	node.set_node_color(node_color)
+	
+
+	## 处理字典：添加slots
+	## 以键='$type'的值作为slot[0]，并将其设置为node的title
+	## 以键='$note'的值作为注释，不创建slot
+	## 其他键值对，若key不以'$'开头，则创建slot 
+	
+	if node.node_type == TYPE_DICTIONARY:
+		var now_slot_index = 0
+		
+		for i in range(node_data.keys().size()):
+			var key = node_data.keys()[i]
+			var value = node_data[key]
+
+			if key == "$type":
+				# 标题已在node初始化时内部设置
+				continue
+			elif key == "$note":
+				# 注释不创建slot
+				node.tooltip_text = str(value)
+				continue
+			else:
+				now_slot_index += 1
+
+			var json_node_slot = node.json_node_slot_scene.instantiate()
+			json_node_slot.name = str(key)
+			json_node_slot.get_node("KeyLabel").text = str(key)
+
+
 			var right_enable = false
 			var value_item = Label.new()
-			var slot_color = port_type_colors[parent_port_type] 
+			var slot_color = json_type_colors[json_node_types[typeof(value)]] 
+			var value_type = typeof(value)
 			
-			# 当前不是第一个slot时，设置value显示和类型
-			if i > 0:
-				var value_type = typeof(value)
-				slot_color = port_type_colors[TYPE_NIL]
-				match value_type:
-					TYPE_NIL:
-						value_item = json_node_slot_scene.get_node("OtherType")
-						value_item.visible = true
-						value_item.text = "null"
-						
-					TYPE_BOOL:
-						# 设置复选框可见
-						value_item = json_node_slot_scene.get_node("CheckButton")
-						value_item.visible = true
-						value_item.pressed = bool(value)
-
-					TYPE_INT:
-						# 设置数字输入框可见
-						value_item = json_node_slot_scene.get_node("SpinBox")
-						value_item.visible = true
-						value_item.step = 1
-						value_item.allow_greater = true
-						value_item.allow_lesser = true
-						value_item.value = float(value)
-
+			# godot 会把 不带小数点的数字 解析为 float 类型，所以手动修改
+			if value_type == TYPE_FLOAT and value == float(int(value)):
+				value_type = TYPE_INT
+			
+			match value_type:
+				TYPE_NIL:
+					value_item = json_node_slot.get_node("OtherType")
+					value_item.visible = true
+					value_item.text = "null"
 					
-					TYPE_FLOAT:
-						# 设置数字输入框可见
-						value_item = json_node_slot_scene.get_node("SpinBox")
-						value_item.visible = true
-						value_item.step = 0.001
-						value_item.allow_greater = true
-						value_item.allow_lesser = true
-						value_item.value = float(value)
-						
-					TYPE_STRING:
-						# 设置文本输入框可见
-						value_item = json_node_slot_scene.get_node("LineEdit")
-						value_item.visible = true
-						value_item.text = str(value)
-						
-					TYPE_ARRAY:
-						# 设置数组标签可见
-						value_item = json_node_slot_scene.get_node("OtherType")
-						value_item.visible = true
-						value_item.text = "Array[%d]" % value.size()
-						right_enable = true
-						
-					TYPE_DICTIONARY:
-						# 设置对象标签可见
-						value_item = json_node_slot_scene.get_node("OtherType")
-						value_item.visible = true
-						value_item.text = "其他对象"
-						right_enable = true
+				TYPE_BOOL:
+					# 设置复选框可见
+					value_item = json_node_slot.get_node("CheckButton")
+					value_item.visible = true
+					value_item.button_pressed = bool(value)
+
+				TYPE_INT:
+					# 设置数字输入框可见
+					value_item = json_node_slot.get_node("SpinBox")
+					value_item.visible = true
+					value_item.step = 1
+					value_item.allow_greater = true
+					value_item.allow_lesser = true
+					value_item.value = float(value)
+
+				
+				TYPE_FLOAT:
+					# 设置数字输入框可见
+					value_item = json_node_slot.get_node("SpinBox")
+					value_item.visible = true
+					value_item.step = 0.001
+					value_item.allow_greater = true
+					value_item.allow_lesser = true
+					value_item.value = float(value)
+					
+				TYPE_STRING:
+					# 设置文本输入框可见
+					value_item = json_node_slot.get_node("LineEdit")
+					value_item.visible = true
+					value_item.text = str(value)
+					
+				TYPE_ARRAY:
+					# 设置数组标签可见
+					value_item = json_node_slot.get_node("OtherType")
+					value_item.visible = true
+					value_item.text = "Array[%d]" % value.size()
+					right_enable = true
+					
+				TYPE_DICTIONARY:
+					# 设置对象标签可见
+					value_item = json_node_slot.get_node("OtherType")
+					value_item.visible = true
+					value_item.text = "其他对象"
+					right_enable = true
 					
 					
 			value_item.add_theme_color_override("font_color", slot_color)
-			json_node_slot_scene.get_node("KeyLabel").add_theme_color_override("font_color", slot_color)
-			node.add_child(json_node_slot_scene)
-			node.set_slot_enabled_right(i - 1, right_enable)
-			node.set_slot_color_right(i - 1, slot_color)
+			json_node_slot.get_node("KeyLabel").add_theme_color_override("font_color", slot_color)
+			json_node_slot.slot_type = value_type
+			node.add_slot(json_node_slot, now_slot_index, right_enable, slot_color)
 			
 			
 		graph_edit.add_child(node)
 
-		# # 遍历node的slots，连接父节点，递归创建子节点
-		# for i in range(0, data.keys().size()):
-		# 	if i == 0:
-		# 		continue
-		# 	var key = data.keys()[i]
-		# 	var value = data[key]
-		# 	var value_type = typeof(value)
-		# 	var slot_position = node.get_slot_position_right(i) + node.position_offset + Vector2(250, 0)
-		# 	var port_type = json_node_types[value_type]
-		# 	node.set_slot_type_right(i, port_type)
-		# 	_create_json_node(value, slot_position, node.name, json_node_types[value_type])
-		# 	# 连接节点
-		# 	graph_edit.connect_node(
-		# 		node.name, 
-		# 		i,
-		# 		key, 
-		# 		0
-		# 	)
-			
-
+		# 遍历node的slots，连接父节点，递归创建子节点
+		for slot_key in node.slot_instances.keys():
+			if node.is_slot_enabled_right(slot_key):
+				var slot_instance = node.slot_instances[slot_key] as JSONNodeSlot
+				var key = slot_instance.name
+				var value = node_data[key]
+				var value_type = slot_instance.slot_type
+				match value_type:
+					TYPE_DICTIONARY:
+						var slot_position = node.position_offset + Vector2(250, 0)
+						var child_node = _create_json_node(value, current_node_count, slot_position, json_node_types[value_type])
+						# 连接节点
+						graph_edit.connect_node(
+							node.name, 
+							slot_key,
+							child_node.name, 
+							0
+						)
+					TYPE_ARRAY: # 列表结构只允许一层
+						if value.size() > 0:
+							for j in range(value.size()):
+								var array_value = value[j]
+								var array_value_type = typeof(array_value)
+								var slot_position = node.position_offset + Vector2(250, j * 100)
+								var child_node = _create_json_node(array_value, current_node_count, slot_position, json_node_types[array_value_type])
+								# 连接节点
+								graph_edit.connect_node(
+									node.name, 
+									slot_key,
+									child_node.name, 
+									0
+								)
 	
-	elif data is Array:
+	elif node.node_type == TYPE_ARRAY:
 		pass  # TODO：数组暂不处理
 
+	return node
 
 # 添加JSON节点（用于手动添加）
 func _add_json_node(name, data, position = Vector2.ZERO):
