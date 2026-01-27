@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://8ls63ukkmtjh"]
+
+[ext_resource type="Script" uid="uid://k8uxyydxfrv6" path="res://scenes/ui/floating_text/跳字test.gd" id="1_tbr81"]
+
+[node name="跳字test" type="Node" unique_id=553107203]
+script = ExtResource("1_tbr81")

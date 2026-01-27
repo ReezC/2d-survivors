@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgvgtccg7j0lb"]
+[gd_scene format=3 uid="uid://bgvgtccg7j0lb"]
 
 [ext_resource type="Script" uid="uid://d131pybs7elsj" path="res://scenes/ui/floating_text/战斗跳字.gd" id="1_mexdl"]
 [ext_resource type="FontFile" uid="uid://s7y1p3r76p50" path="res://assets/Ninja Adventure - Asset Pack/Ui/Font/NormalFont.ttf" id="1_vwn4h"]
@@ -9,10 +9,13 @@ font_size = 32
 outline_size = 10
 outline_color = Color(0.033853278, 0.033853278, 0.033853274, 1)
 
-[node name="战斗跳字" type="Node2D"]
+[node name="战斗跳字" type="Control" unique_id=402729830]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_mexdl")
 
-[node name="跳字Label" type="Label" parent="."]
+[node name="跳字Label" type="Label" parent="." unique_id=587830543]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -24,6 +27,6 @@ offset_right = 20.0
 offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "10"
+text = "999"
 label_settings = SubResource("LabelSettings_ukiw8")
 horizontal_alignment = 1

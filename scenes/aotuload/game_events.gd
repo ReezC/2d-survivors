@@ -2,6 +2,7 @@ extends Node
 
 
 const 受击闪白material = preload("uid://c0gikbxr2hvpe")
+# const 战斗跳字场景 = preload("res://scenes/ui/floating_text/战斗跳字.tscn")
 
 signal experience_vial_collected(exp_amount: int)
 signal ability_upgrade_added(upgrade:AbilityUpgrade, current_upgrades:Dictionary)

@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://b0cyxyjwe5t27"]
+[gd_resource type="TileSet" format=3 uid="uid://b0cyxyjwe5t27"]
 
 [ext_resource type="Texture2D" uid="uid://bxdgcrlqcsfd3" path="res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="1_5base"]
 [ext_resource type="Texture2D" uid="uid://dn5qsuvhdn7an" path="res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/Interior/TilesetInteriorFloor.png" id="3_v1kxy"]

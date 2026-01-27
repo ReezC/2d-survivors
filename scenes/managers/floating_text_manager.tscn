@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dqqshtmt65vb2"]
+
+[ext_resource type="Script" uid="uid://cvttulkc63y0e" path="res://scenes/managers/floating_text_manager.gd" id="1_agf0y"]
+[ext_resource type="PackedScene" uid="uid://bgvgtccg7j0lb" path="res://scenes/ui/floating_text/战斗跳字.tscn" id="2_m3ac4"]
+
+[node name="FloatingTextManager" type="Node" unique_id=1198763950]
+script = ExtResource("1_agf0y")
+"跳字场景" = ExtResource("2_m3ac4")
