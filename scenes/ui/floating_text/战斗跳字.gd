@@ -14,12 +14,11 @@ var 解放变大前的缩放比例 = 0.3
 var 最大缩放比例 = 2
 var 驻留缩放比例 = 1
 
-
 # position参数
-var 向驻留位置移动的朝向 = Vector2(randf_range(-0.7,0.7), randf_range(-1,-0.3)).normalized()
-var 向驻留位置移动的距离 = randf_range(50, 200)
+var 向驻留位置移动的朝向 = Vector2(randf_range(-1,1), randf_range(-1,-0.3)).normalized()
+var 向驻留位置移动的距离 = randf_range(0, 10)
 var 位置开始驻留时的进度 = 0.1
-var 向上移动的速度 = 50
+var 向上移动的速度 = 5
 var 向驻留位置移动的速度 = 向驻留位置移动的距离 / 位置开始驻留时的进度
 
 # modulate.a参数
@@ -31,7 +30,7 @@ var 渐隐结束时间比例 = 1.0
 func 设置跳字内容(内容: String, 颜色: Color) -> void:
 	跳字label.text = 内容
 	modulate = 颜色
-	
+	print("向驻留位置移动的朝向:", 向驻留位置移动的朝向)
 	var tween = create_tween()
 	
 	

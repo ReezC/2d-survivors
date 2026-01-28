@@ -2,7 +2,7 @@ extends Node
 class_name 跳字对象池
 
 # 跳字场景
-@onready var 跳字场景: PackedScene = preload("res://scenes/ui/floating_text/战斗跳字.tscn")
+@export var 跳字场景: PackedScene = preload("res://scenes/ui/floating_text/战斗跳字.tscn")
 
 # 对象池设置
 @export var 初始池大小: int = 20
@@ -26,6 +26,12 @@ func _ready() -> void:
 	
 	# 预创建对象池
 	初始化对象池()
+	GameEvents.创建跳字.connect(显示跳字)
+
+
+
+
+	
 
 func 初始化对象池() -> void:
 	for i in 初始池大小:
@@ -121,23 +127,6 @@ func 清理多余对象() -> void:
 			可用对象数组.remove_at(0)
 			待清理对象.queue_free()
 
-# 辅助函数保持不变
-func 显示伤害数字(目标位置: Vector2, 伤害值: int, 是否暴击: bool = false) -> Node:
-	var 颜色: Color
-	var 内容: String
-	
-	if 是否暴击:
-		颜色 = Color.GOLD
-		内容 = "暴击！%d" % 伤害值
-	else:
-		if 伤害值 > 0:
-			颜色 = Color.RED
-			内容 = "-%d" % 伤害值
-		else:
-			颜色 = Color.GREEN
-			内容 = "+%d" % abs(伤害值)
-	
-	return 显示跳字(目标位置, 内容, 颜色,1 if 是否暴击 else 0)
 
 func 显示治疗数字(目标位置: Vector2, 治疗值: int) -> Node:
 	return 显示跳字(目标位置, "+%d" % 治疗值, Color.GREEN)

@@ -15,6 +15,10 @@ func emit_ability_upgrade_added(upgrade:AbilityUpgrade, current_upgrades:Diction
 	ability_upgrade_added.emit(upgrade, current_upgrades)
 
 
+
+signal 创建跳字(position:Vector2, text:String, color:Color,z层级: int)
+
+
 ## 获取随机结果，概率范围
 ##
 ## @param 概率: float 概率值，范围[0,1]

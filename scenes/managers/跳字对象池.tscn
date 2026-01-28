@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dqqshtmt65vb2"]
+
+[ext_resource type="Script" uid="uid://cvttulkc63y0e" path="res://scenes/managers/跳字对象池.gd" id="1_qxdcu"]
+
+[node name="跳字对象池" type="Node" unique_id=1198763950]
+script = ExtResource("1_qxdcu")

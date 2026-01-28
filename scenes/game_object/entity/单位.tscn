@@ -1,38 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcslmpa4nca4m"]
+[gd_scene format=3 uid="uid://dcslmpa4nca4m"]
 
 [ext_resource type="Script" uid="uid://cn50yihr5or8p" path="res://scenes/game_object/entity/单位.gd" id="1_flcbh"]
 [ext_resource type="PackedScene" uid="uid://dmsb646ibiws7" path="res://scenes/component/hurtbox_component.tscn" id="2_paknp"]
 [ext_resource type="PackedScene" uid="uid://bwl6aqsov574v" path="res://scenes/component/health_component.tscn" id="3_01oq6"]
 [ext_resource type="PackedScene" uid="uid://c0gsxjqxoqjm8" path="res://scenes/ui/health_bar/health_bar.tscn" id="4_rxq2h"]
 
-[node name="单位" type="CharacterBody2D" groups=["entities_layer"]]
+[node name="单位" type="CharacterBody2D" unique_id=1080705466 groups=["entities_layer"]]
 collision_layer = 0
 script = ExtResource("1_flcbh")
 
-[node name="视觉" type="Node2D" parent="."]
+[node name="视觉" type="Node2D" parent="." unique_id=1658827041]
 unique_name_in_owner = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="视觉"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="视觉" unique_id=516307281]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1786467140]
 
-[node name="移动碰撞" type="CollisionShape2D" parent="."]
+[node name="移动碰撞" type="CollisionShape2D" parent="." unique_id=288392247]
 position = Vector2(0, -4)
 
-[node name="HurtboxComponent" parent="." instance=ExtResource("2_paknp")]
+[node name="HurtboxComponent" parent="." unique_id=581852039 instance=ExtResource("2_paknp")]
 collision_mask = 0
 
-[node name="HealthComponent" parent="." instance=ExtResource("3_01oq6")]
+[node name="HealthComponent" parent="." unique_id=1949130037 instance=ExtResource("3_01oq6")]
 
-[node name="HealthBar" parent="." instance=ExtResource("4_rxq2h")]
+[node name="HealthBar" parent="." unique_id=517147532 instance=ExtResource("4_rxq2h")]
 offset_left = -16.0
 offset_top = -22.0
 offset_right = 16.0
 offset_bottom = -18.0
 metadata/_edit_use_anchors_ = true
 
-[node name="受击闪白效果Timer" type="Timer" parent="."]
-wait_time = 0.2
+[node name="受击闪白效果Timer" type="Timer" parent="." unique_id=233702438]
+wait_time = 0.1
 one_shot = true
 
 [connection signal="被击中" from="HurtboxComponent" to="." method="_on_hurtbox_component_被击中"]

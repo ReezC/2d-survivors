@@ -5,11 +5,12 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_ukiw8"]
 font = ExtResource("1_vwn4h")
-font_size = 32
-outline_size = 10
+font_size = 10
+outline_size = 3
 outline_color = Color(0.033853278, 0.033853278, 0.033853274, 1)
+shadow_size = 0
 
-[node name="战斗跳字" type="Control" unique_id=402729830]
+[node name="战斗跳字" type="Control" unique_id=402729830 groups=["foreground_layer"]]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_mexdl")

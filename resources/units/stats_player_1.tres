@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="UnitStats" load_steps=3 format=3 uid="uid://dlw0m3h1rjjco"]
+[gd_resource type="Resource" script_class="UnitStats" format=3 uid="uid://dlw0m3h1rjjco"]
 
 [ext_resource type="Script" uid="uid://dimqhi4axfg2l" path="res://resources/units/unit_stats.gd" id="1_sqvdb"]
 [ext_resource type="Texture2D" uid="uid://dtkeg5q6jrmpp" path="res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/Faceset.png" id="1_vtwp4"]
@@ -7,6 +7,6 @@
 script = ExtResource("1_sqvdb")
 "名称" = "树"
 "图标" = ExtResource("1_vtwp4")
-"生命" = 10
+"生命" = 100
 "移动速度" = 70.0
 metadata/_custom_type_script = "uid://dimqhi4axfg2l"
