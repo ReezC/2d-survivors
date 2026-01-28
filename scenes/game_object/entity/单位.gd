@@ -45,7 +45,7 @@ func _on_hurtbox_component_被击中(hitbox: HitboxComponent) -> void:
 			var 实际伤害 = hitbox.命中伤害 * (1.0 - 格挡伤害减免)
 			health_component.受到伤害(实际伤害)
 			设置受击闪白material(GameEvents.受击闪白material)
-			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "-%d" % 实际伤害, Color.RED, 1)
+			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % 实际伤害, Color.RED, 1)
 
 		elif 判定随机数 < 闪避率 + 格挡率 + 暴击率:
 			# 暴击成功
@@ -53,12 +53,12 @@ func _on_hurtbox_component_被击中(hitbox: HitboxComponent) -> void:
 			var 实际伤害 = hitbox.命中伤害 * (1.0 + 暴击伤害加成)
 			health_component.受到伤害(实际伤害)
 			设置受击闪白material(GameEvents.受击闪白material)
-			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "暴击！-%d" % 实际伤害, Color.GOLD, 1)
+			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d!" % 实际伤害, Color.GOLD, 1)
 		else:
 			# 普通命中
 			health_component.受到伤害(hitbox.命中伤害)
 			设置受击闪白material(GameEvents.受击闪白material)
-			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "-%d" % hitbox.命中伤害, Color.RED, 0)
+			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % hitbox.命中伤害, Color.RED, 0)
 
 
 func _on_受击闪白效果timer_timeout() -> void:

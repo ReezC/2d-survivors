@@ -16,6 +16,8 @@ func _input(event: InputEvent) -> void:
 			var 随机伤害 = randi_range(10, 100)
 			var 是否暴击 = randf() < 0.2
 			显示伤害数字(event.position, 随机伤害, 是否暴击)
+			# 显示伤害数字(event.position, 随机伤害, 是否暴击)
+			# 显示伤害数字(event.position, 随机伤害, 是否暴击)
 			
 			# 显示状态
 			print("对象池状态: ", 跳字池.获取对象池状态())

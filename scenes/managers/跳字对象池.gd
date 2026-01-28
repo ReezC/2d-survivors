@@ -93,6 +93,8 @@ func 显示跳字(位置: Vector2, 内容: String, 颜色: Color = Color.WHITE,Z
 	跳字.name = "战斗跳字_%d" % 跳字ID
 	跳字.z_index = Z层级
 	
+	父节点.move_child(跳字, 父节点.get_child_count() - 1)
+
 	# 添加到使用中字典
 	使用中对象字典[跳字] = Time.get_ticks_msec()
 	
@@ -138,3 +140,16 @@ func 获取对象池状态() -> Dictionary:
 		"总数量": 可用对象数组.size() + 使用中对象字典.size(),
 		"最大容量": 最大池大小
 	}
+
+
+# 测试函数
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			# 点击时显示随机伤害数字
+			var 随机伤害 = randi_range(10, 100)
+			var 是否暴击 = randf() < 0.2
+			显示跳字(event.position, "%d" % 随机伤害, Color.RED)
+			
+			# 显示状态
+			

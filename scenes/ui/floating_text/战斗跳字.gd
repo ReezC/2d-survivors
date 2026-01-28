@@ -15,11 +15,9 @@ var 最大缩放比例 = 2
 var 驻留缩放比例 = 1
 
 # position参数
-var 向驻留位置移动的朝向 = Vector2(randf_range(-1,1), randf_range(-1,-0.3)).normalized()
-var 向驻留位置移动的距离 = randf_range(0, 10)
+var 驻留位置相对偏移 = Vector2(randf_range(-10,10), randf_range(-10,10))
 var 位置开始驻留时的进度 = 0.1
 var 向上移动的速度 = 5
-var 向驻留位置移动的速度 = 向驻留位置移动的距离 / 位置开始驻留时的进度
 
 # modulate.a参数
 var 驻留时长 = 0.75
@@ -27,13 +25,14 @@ var 渐隐开始时间比例 = 位置开始驻留时的进度 + 驻留时长
 var 渐隐结束时间比例 = 1.0
 
 
+
 func 设置跳字内容(内容: String, 颜色: Color) -> void:
 	跳字label.text = 内容
 	modulate = 颜色
-	print("向驻留位置移动的朝向:", 向驻留位置移动的朝向)
 	var tween = create_tween()
 	
-	
+	# 初始偏移
+	self.global_position += Vector2(randf_range(-10,10),randf_range(-5,5))
 
 	## tween_method(func,a,b,t):声明一个func，该方法默认接受一个从a到b的动态值，值的变化时间是t
 	
@@ -51,7 +50,7 @@ func _tween_跳字(
 	# 计算position
 	if 当前进度 <= 位置开始驻留时的进度:
 		# var old_pos = self.global_position
-		self.global_position += 向驻留位置移动的朝向 * 向驻留位置移动的速度 * get_process_delta_time()
+		self.global_position += 驻留位置相对偏移 * (get_process_delta_time() / 位置开始驻留时的进度 * 跳字时间)
 		# print("delta_pos:", self.global_position - old_pos)
 	else:
 		self.global_position.y -= 向上移动的速度  * get_process_delta_time()

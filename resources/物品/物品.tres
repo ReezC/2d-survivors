@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="物品" format=3 uid="uid://u46udptjhsqm"]
+
+[ext_resource type="Script" uid="uid://bcfknv8fcsmpc" path="res://resources/物品/物品.gd" id="1_micya"]
+[ext_resource type="Texture2D" uid="uid://bgjs7bxgmkj3d" path="res://icon.svg" id="2_q1mkt"]
+
+[resource]
+script = ExtResource("1_micya")
+"物品图标" = ExtResource("2_q1mkt")
