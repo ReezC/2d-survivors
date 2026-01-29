@@ -34,8 +34,8 @@ signal 生命值变化(变化值: float)
 var 生命上限: int = 1
 var 当前生命值: int = 1
 
-func setup(单位属性:UnitStats) -> void:
-	生命上限 = 单位属性.生命
+func setup(单位的属性:UnitStats) -> void:
+	生命上限 = 单位的属性.生命
 	当前生命值 = 生命上限
 	生命值变化.emit(0)
 

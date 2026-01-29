@@ -8,10 +8,10 @@ class_name Unit
 @onready var health_bar: HealthBar = $HealthBar
 @onready var 受击闪白效果timer: Timer = $受击闪白效果Timer
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
-@export var 单位属性: UnitStats
+@export var 单位的属性: UnitStats
 
 func _ready() -> void:
-	health_component.setup(单位属性)
+	health_component.setup(单位的属性)
 
 func 设置受击闪白material(闪白material:ShaderMaterial) -> void:
 	animated_sprite_2d.material = 闪白material
@@ -30,9 +30,9 @@ func 设置受击闪白material(闪白material:ShaderMaterial) -> void:
 func _on_hurtbox_component_被击中(hitbox: HitboxComponent) -> void:
 	if hitbox.命中伤害 > 0:
 		# 判定伤害事件
-		var 格挡率 = 单位属性.格挡率
-		var 闪避率 = 单位属性.闪避率
-		var 暴击率 = hitbox.source.单位属性.暴击率
+		var 格挡率 = 单位的属性.格挡率
+		var 闪避率 = 单位的属性.闪避率
+		var 暴击率 = hitbox.source.单位的属性.暴击率
 		var 总概率 = 格挡率 + 闪避率 + 暴击率
 		var 判定随机数 = randf() * min(总概率, 1.0)
 
@@ -41,7 +41,7 @@ func _on_hurtbox_component_被击中(hitbox: HitboxComponent) -> void:
 			pass
 		elif 判定随机数 < 闪避率 + 格挡率:
 			# 格挡成功
-			var 格挡伤害减免 = 单位属性.格挡伤害减免
+			var 格挡伤害减免 = 单位的属性.格挡伤害减免
 			var 实际伤害 = hitbox.命中伤害 * (1.0 - 格挡伤害减免)
 			health_component.受到伤害(实际伤害)
 			设置受击闪白material(GameEvents.受击闪白material)

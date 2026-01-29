@@ -1,9 +1,6 @@
-extends Resource
+class_name 单位属性 extends Resource
 
 
-
-## 为了方便乘区管理，所有的单位属性运算都只有加和减，没有乘除
-class_name 单位属性
 
 signal 属性变化(属性:单位属性, 修改值: float)
 
@@ -31,7 +28,7 @@ func 设置_初始值(value: float) -> void:
 	self.值 = value
 
 func 设置_当前值(value: float) -> void:
-	值 = clamp(value, 最小值, 最大值)
+	self.值 = clamp(value, 最小值, 最大值)
 	emit_signal("属性变化", self, 值)
 
 func _计算最终值() -> float:
@@ -47,8 +44,18 @@ func _计算最终值() -> float:
 	# 再应用修改器
 	for 修改器 in 属性修改器列表:
 		最终值 = 修改器.应用修改(最终值)
+		if 修改器.修改类型 == 单位属性修改器.修改类型枚举.强行设置_硬:
+			return 最终值
+		elif 修改器.修改类型 == 单位属性修改器.修改类型枚举.强行设置_软:
+			break
+	
+	# 属性后处理
+	最终值 = 后处理(最终值)
 
 	return 最终值
+
+func 获取最终值() -> float:
+	return _计算最终值()
 
 
 ## 不同属性间内置的关联，例如生命上限依赖于生命上限加成，攻击力依赖于力量值等
@@ -59,4 +66,14 @@ func 获取依赖的属性列表() -> Array[String]:
 ## 计算属性内联的依赖，例如 生命上限最终值 = 生命上限 * (1 + 生命上限加成最终值)
 
 func 属性依赖计算(_计算参数:Array[单位属性]) -> float:
-	return 值
+	return self.值
+
+## 默认实现：应用上下限和步长
+func 后处理(value: float) -> float:
+	value = clamp(value, 最小值, 最大值)
+	# 应用最小单位
+	if abs(value) < 最小单位:
+		value = 0.0
+	else:
+		value = round(value / 最小单位) * 最小单位
+	return value

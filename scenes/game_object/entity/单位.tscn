@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dcslmpa4nca4m"]
 
 [ext_resource type="Script" uid="uid://cn50yihr5or8p" path="res://scenes/game_object/entity/单位.gd" id="1_flcbh"]
+[ext_resource type="PackedScene" uid="uid://bt2kptplq7s53" path="res://resources/单位属性/单位属性Component.tscn" id="2_hl4j3"]
 [ext_resource type="PackedScene" uid="uid://dmsb646ibiws7" path="res://scenes/component/hurtbox_component.tscn" id="2_paknp"]
 [ext_resource type="PackedScene" uid="uid://bwl6aqsov574v" path="res://scenes/component/health_component.tscn" id="3_01oq6"]
 [ext_resource type="PackedScene" uid="uid://c0gsxjqxoqjm8" path="res://scenes/ui/health_bar/health_bar.tscn" id="4_rxq2h"]
@@ -8,6 +9,8 @@
 [node name="单位" type="CharacterBody2D" unique_id=1080705466 groups=["entities_layer"]]
 collision_layer = 0
 script = ExtResource("1_flcbh")
+
+[node name="单位属性component" parent="." unique_id=176829961 instance=ExtResource("2_hl4j3")]
 
 [node name="视觉" type="Node2D" parent="." unique_id=1658827041]
 unique_name_in_owner = true

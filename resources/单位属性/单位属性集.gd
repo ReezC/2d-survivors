@@ -8,13 +8,14 @@ class_name 单位属性集
 ## 运行时数据
 var 属性字典: Dictionary[String, 单位属性] = {}
 
-func 初始化属性集() -> void:
+func 初始化属性集(v):
+    属性们 = v
     属性字典.clear()
     for 属性 in 属性们:
         if 属性字典.has(属性.属性名称):
             push_error("单位属性集初始化错误：存在重复的属性名称：" + 属性.属性名称)
             continue
-        var 复制的属性: 单位属性 = 属性.duplicate() as 单位属性
+        var 复制的属性 = 属性.duplicate() as 单位属性
         复制的属性.属于属性集 = self
         属性字典[属性.属性名称] = 复制的属性
         复制的属性.属性变化.connect(_on_属性变化)

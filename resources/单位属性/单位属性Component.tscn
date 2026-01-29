@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bt2kptplq7s53"]
+
+[ext_resource type="Script" uid="uid://307tptns0dmv" path="res://resources/单位属性/单位属性component.gd" id="1_ntigb"]
+
+[node name="单位属性component" type="Node" unique_id=176829961]
+script = ExtResource("1_ntigb")

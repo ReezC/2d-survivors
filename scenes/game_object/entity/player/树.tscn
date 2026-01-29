@@ -5,8 +5,13 @@
 [ext_resource type="Resource" uid="uid://dlw0m3h1rjjco" path="res://resources/units/stats_player_1.tres" id="3_lkfce"]
 [ext_resource type="Texture2D" uid="uid://bcgaeusuxra20" path="res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Shadow.png" id="4_ctfnk"]
 [ext_resource type="Texture2D" uid="uid://c5i4bpno8yx14" path="res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/SeparateAnim/Walk.png" id="4_ktm2w"]
+[ext_resource type="Script" uid="uid://bjvqbui703u8x" path="res://resources/单位属性/单位属性集.gd" id="4_wbw41"]
 [ext_resource type="Texture2D" uid="uid://df5avkenr6r6y" path="res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/SeparateAnim/Dead.png" id="5_wbw41"]
 [ext_resource type="Texture2D" uid="uid://8shdsepgwthh" path="res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/SeparateAnim/Special2.png" id="6_r34m6"]
+
+[sub_resource type="Resource" id="Resource_ktm2w"]
+script = ExtResource("4_wbw41")
+metadata/_custom_type_script = "uid://bjvqbui703u8x"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1iqai"]
 atlas = ExtResource("4_ktm2w")
@@ -239,6 +244,9 @@ collision_mask = 3
 script = ExtResource("2_ctfnk")
 "单位属性" = ExtResource("3_lkfce")
 
+[node name="单位属性component" parent="." index="0" unique_id=176829961]
+"属性集" = SubResource("Resource_ktm2w")
+
 [node name="阴影" type="Sprite2D" parent="视觉" parent_id_path=PackedInt32Array(1658827041) index="0" unique_id=1997413157]
 texture = ExtResource("4_ctfnk")
 
@@ -248,14 +256,14 @@ sprite_frames = SubResource("SpriteFrames_ju0h6")
 animation = &"Idle_Down"
 autoplay = "Idle_Down"
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=1786467140]
+[node name="AnimationPlayer" parent="." index="2" unique_id=1786467140]
 libraries/ = SubResource("AnimationLibrary_1iqai")
 
-[node name="移动碰撞" parent="." index="2" unique_id=288392247]
+[node name="移动碰撞" parent="." index="3" unique_id=288392247]
 shape = SubResource("CircleShape2D_qmmqe")
 debug_color = Color(0.690947, 0.49436867, 0.16542876, 0.41960785)
 
-[node name="HurtboxComponent" parent="." index="3" unique_id=581852039]
+[node name="HurtboxComponent" parent="." index="4" unique_id=581852039]
 collision_layer = 16
 collision_mask = 128
 
@@ -264,6 +272,6 @@ position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_ctfnk")
 debug_color = Color(0.8828727, 0.23635271, 0.6099321, 0.41960785)
 
-[node name="HealthBar" parent="." index="5" unique_id=517147532]
+[node name="HealthBar" parent="." index="6" unique_id=517147532]
 "背景颜色" = Color(0.13725491, 0.019607844, 0.02745098, 1)
 "填充颜色" = Color(1, 0.2901961, 0.4509804, 1)
