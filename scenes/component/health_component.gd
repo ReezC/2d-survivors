@@ -48,6 +48,8 @@ func 受到伤害(伤害值:float) -> void:
 	当前生命值 = max(当前生命值 - 伤害值, 0)
 	生命值变化.emit(- 伤害值)
 	print("%s 受到 %d 点伤害，剩余生命： %s/%s" % [owner.name, 伤害值, 当前生命值, 生命上限])
+	var 单位属性component = owner.get_node("单位属性component")
+	print("%d / %d" % [单位属性component.获取属性值("生命"),单位属性component.获取属性值("最大生命值")])
 	Callable(检查死亡).call_deferred()
 
 func 受到治疗(治疗值:float) -> void:

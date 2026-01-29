@@ -3,8 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://dcslmpa4nca4m" path="res://scenes/game_object/entity/单位.tscn" id="1_au3mk"]
 [ext_resource type="Script" uid="uid://ehv06eqk1cx7" path="res://scenes/game_object/entity/enemy/enemy.gd" id="2_2vcqf"]
 [ext_resource type="Texture2D" uid="uid://clwno477jjx8s" path="res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Slime2/Slime2.png" id="2_nqg02"]
-[ext_resource type="Resource" uid="uid://dfyamsf5pp2n6" path="res://resources/units/enemies/stats_绿史莱姆.tres" id="3_2vcqf"]
+[ext_resource type="Script" uid="uid://dimqhi4axfg2l" path="res://resources/units/unit_stats.gd" id="3_s2a2t"]
 [ext_resource type="PackedScene" uid="uid://cqkh2idk0bmgo" path="res://scenes/component/hitbox_component.tscn" id="5_s2a2t"]
+
+[sub_resource type="Resource" id="Resource_wikua"]
+script = ExtResource("3_s2a2t")
+"单位类型" = 1
+"移动速度" = 35.0
+metadata/_custom_type_script = "uid://dimqhi4axfg2l"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2vcqf"]
 atlas = ExtResource("2_nqg02")
@@ -160,24 +166,24 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_au3mk"]
-radius = 7.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_2vcqf"]
 radius = 30.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2a2t"]
-size = Vector2(15, 12)
+[sub_resource type="CircleShape2D" id="CircleShape2D_au3mk"]
+radius = 7.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wikua"]
 size = Vector2(14, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2a2t"]
+size = Vector2(15, 12)
 
 [node name="绿史莱姆" unique_id=192549199 groups=["enemy"] instance=ExtResource("1_au3mk")]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("2_2vcqf")
 "群体运动推动力" = 5.0
-"单位属性" = ExtResource("3_2vcqf")
+"单位的属性" = SubResource("Resource_wikua")
 
 [node name="AnimatedSprite2D" parent="视觉" parent_id_path=PackedInt32Array(1658827041) index="0" unique_id=516307281]
 position = Vector2(0, -6)
@@ -185,11 +191,6 @@ sprite_frames = SubResource("SpriteFrames_wikua")
 animation = &"Run_Down"
 autoplay = "Idle"
 frame_progress = 0.7478816
-
-[node name="移动碰撞" parent="." index="2" unique_id=288392247]
-position = Vector2(0, -3)
-shape = SubResource("CircleShape2D_au3mk")
-debug_color = Color(0.7024835, 0.4852388, 0.16611946, 0.41960785)
 
 [node name="视野区域" type="Area2D" parent="." index="3" unique_id=1928895033]
 collision_layer = 0
@@ -199,14 +200,10 @@ collision_mask = 4
 shape = SubResource("CircleShape2D_2vcqf")
 debug_color = Color(0, 0.5764706, 0.6745098, 0.16862746)
 
-[node name="HurtboxComponent" parent="." index="4" unique_id=581852039]
-collision_layer = 64
-collision_mask = 32
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0" unique_id=651511056]
-position = Vector2(0, -6)
-shape = SubResource("RectangleShape2D_s2a2t")
-debug_color = Color(0, 0.45237482, 0.73890954, 0.41960785)
+[node name="移动碰撞" parent="." index="4" unique_id=288392247]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_au3mk")
+debug_color = Color(0.7024835, 0.4852388, 0.16611946, 0.41960785)
 
 [node name="HitboxComponent" parent="." index="5" unique_id=120207407 node_paths=PackedStringArray("source") instance=ExtResource("5_s2a2t")]
 collision_layer = 128
@@ -218,6 +215,15 @@ position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_wikua")
 debug_color = Color(0.7577971, 0.323612, 0.80577916, 0.41960785)
 
-[node name="HealthBar" parent="." index="7" unique_id=517147532]
+[node name="HurtboxComponent" parent="." index="6" unique_id=581852039]
+collision_layer = 64
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0" unique_id=651511056]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_s2a2t")
+debug_color = Color(0, 0.45237482, 0.73890954, 0.41960785)
+
+[node name="HealthBar" parent="." index="8" unique_id=517147532]
 "背景颜色" = Color(0.27058825, 0.24705882, 0.18039216, 1)
 "填充颜色" = Color(0.33333334, 0.38431373, 0.3019608, 1)

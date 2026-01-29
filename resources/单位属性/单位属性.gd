@@ -8,27 +8,27 @@ signal 属性变化(属性:单位属性, 修改值: float)
 @export var 图标: Texture2D
 @export_multiline var 属性描述: String
 @export var 最小值: float
-@export var 最大值: float
+@export var 最大值: float = INF
 
 ## 属性的原始数值
-@export var 初始值:= 0.0 : set = 设置_初始值
+@export var 初始值:= 0.0 : set = 设置_初始值 # 每次给初始值进行赋值时，都会调用设置函数进行限制
 @export var 最小单位: float = 0.001
 @export_enum("线性叠加","收敛叠加","连乘叠加") var 叠加方式: int = 0
 
 
 ## 属性的当前状态
-var 值: float : set = 设置_当前值
+@export var 值: float : set = 设置_当前值
 var 属性修改器列表: Array[单位属性修改器] = []
 var 属于属性集: 单位属性集 = null
 
 
+## 初始值在export设置后为只读
+func 设置_初始值(value: float):
+	初始值 = value
+	值 = value
 
-func 设置_初始值(value: float) -> void:
-	self.初始值 = value
-	self.值 = value
-
-func 设置_当前值(value: float) -> void:
-	self.值 = clamp(value, 最小值, 最大值)
+func 设置_当前值(value: float):
+	值 = clamp(value, 最小值, 最大值)
 	emit_signal("属性变化", self, 值)
 
 func _计算最终值() -> float:

@@ -9,10 +9,10 @@ signal ability_upgrade_added(upgrade:AbilityUpgrade, current_upgrades:Dictionary
 
 ## 品质枚举，不光是物品
 enum 品质枚举{
-    普通,
-    稀有,
-    史诗,
-    传说
+	普通,
+	稀有,
+	史诗,
+	传说
 }
 
 
@@ -25,7 +25,6 @@ func emit_ability_upgrade_added(upgrade:AbilityUpgrade, current_upgrades:Diction
 
 
 
-signal 创建跳字(position:Vector2, text:String, color:Color,z层级: int)
 
 
 ## 获取随机结果，概率范围

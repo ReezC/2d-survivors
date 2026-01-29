@@ -34,7 +34,7 @@ func _on_hurtbox_component_被击中(hitbox: HitboxComponent) -> void:
 		var 闪避率 = 单位的属性.闪避率
 		var 暴击率 = hitbox.source.单位的属性.暴击率
 		var 总概率 = 格挡率 + 闪避率 + 暴击率
-		var 判定随机数 = randf() * min(总概率, 1.0)
+		var 判定随机数 = randf() * 1.0 if 总概率 < 1.0 else randf() * 总概率
 
 		if 判定随机数 < 闪避率:
 			# 闪避成功
@@ -49,8 +49,8 @@ func _on_hurtbox_component_被击中(hitbox: HitboxComponent) -> void:
 
 		elif 判定随机数 < 闪避率 + 格挡率 + 暴击率:
 			# 暴击成功
-			var 暴击伤害加成 = hitbox.source.单位属性.暴击伤害加成
-			var 实际伤害 = hitbox.命中伤害 * (1.0 + 暴击伤害加成)
+			var 暴击时额外伤害 = hitbox.source.单位的属性.暴击时额外伤害
+			var 实际伤害 = hitbox.命中伤害 * (1.0 + 暴击时额外伤害)
 			health_component.受到伤害(实际伤害)
 			设置受击闪白material(GameEvents.受击闪白material)
 			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d!" % 实际伤害, Color.GOLD, 1)

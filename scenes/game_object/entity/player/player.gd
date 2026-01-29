@@ -12,7 +12,7 @@ var 已死亡: bool = false
 
 func _ready() -> void:
 	super._ready()
-	move_speed = 单位属性.移动速度
+	move_speed = 单位的属性.移动速度
 
 func _process(delta: float) -> void:
 	
