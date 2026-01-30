@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="单位属性" format=3 uid="uid://bs5q85r32ucxe"]
+
+[ext_resource type="Script" uid="uid://c218ra1pf7xxj" path="res://resources/单位属性/单位属性.gd" id="1_7mmix"]
+[ext_resource type="Texture2D" uid="uid://blbd4dn0qfryy" path="res://assets/Ninja Adventure - Asset Pack/Items/Object/Dice 20.png" id="2_ko5by"]
+
+[resource]
+script = ExtResource("1_7mmix")
+"属性名称" = "暴击率"
+"属性描述" = "造成暴击的几率"
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"

@@ -5,7 +5,7 @@ extends Node
 
 func _ready() -> void:
 	var player = get_tree().get_first_node_in_group("player") as Unit
-	player.health_component.死亡.connect(on_player_died)
+	player.attribute_component.死亡.connect(on_player_died)
 	pass
 	
 

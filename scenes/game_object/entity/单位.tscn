@@ -3,14 +3,120 @@
 [ext_resource type="Script" uid="uid://cn50yihr5or8p" path="res://scenes/game_object/entity/单位.gd" id="1_flcbh"]
 [ext_resource type="PackedScene" uid="uid://bt2kptplq7s53" path="res://resources/单位属性/单位属性Component.tscn" id="2_hl4j3"]
 [ext_resource type="PackedScene" uid="uid://dmsb646ibiws7" path="res://scenes/component/hurtbox_component.tscn" id="2_paknp"]
-[ext_resource type="PackedScene" uid="uid://bwl6aqsov574v" path="res://scenes/component/health_component.tscn" id="3_01oq6"]
 [ext_resource type="PackedScene" uid="uid://c0gsxjqxoqjm8" path="res://scenes/ui/health_bar/health_bar.tscn" id="4_rxq2h"]
+[ext_resource type="Script" uid="uid://bjvqbui703u8x" path="res://resources/单位属性/单位属性集.gd" id="4_trysj"]
+[ext_resource type="Script" uid="uid://c218ra1pf7xxj" path="res://resources/单位属性/单位属性.gd" id="5_7jolj"]
+[ext_resource type="Script" uid="uid://cocpxte7moiwt" path="res://resources/单位属性/最大生命值_单位属性.gd" id="6_upjb3"]
+[ext_resource type="Script" uid="uid://bd83jqryqem3b" path="res://resources/单位属性/生命_单位属性.gd" id="7_h4mj0"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gus42"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_5otv6"]
+script = ExtResource("5_7jolj")
+"属性名称" = "攻击速度"
+"图标" = SubResource("CompressedTexture2D_gus42")
+"属性描述" = "影响部分技能的释放速度"
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mr7xe"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_rgxxv"]
+script = ExtResource("5_7jolj")
+"属性名称" = "暴击伤害倍率"
+"图标" = SubResource("CompressedTexture2D_mr7xe")
+"属性描述" = "造成暴击时，伤害提高的比例"
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u083o"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_yq5en"]
+script = ExtResource("5_7jolj")
+"属性名称" = "暴击率"
+"图标" = SubResource("CompressedTexture2D_u083o")
+"属性描述" = "造成暴击的几率"
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uknxl"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_fmb5p"]
+script = ExtResource("6_upjb3")
+"属性名称" = "最大生命值"
+"图标" = SubResource("CompressedTexture2D_uknxl")
+"属性描述" = "多多益善~"
+"最小单位" = 1.0
+"值" = 100.0
+metadata/_custom_type_script = "uid://cocpxte7moiwt"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dfiwh"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_rcyav"]
+script = ExtResource("5_7jolj")
+"属性名称" = "最大生命值加成"
+"图标" = SubResource("CompressedTexture2D_dfiwh")
+"属性描述" = "按比例提高最大生命值"
+"最小值" = -1.0
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mdi2p"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_r4f37"]
+script = ExtResource("5_7jolj")
+"属性名称" = "格挡率"
+"图标" = SubResource("CompressedTexture2D_mdi2p")
+"属性描述" = "格挡伤害的几率"
+"最大值" = 1.0
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5yx6j"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_lknm7"]
+script = ExtResource("7_h4mj0")
+"属性名称" = "生命值"
+"图标" = SubResource("CompressedTexture2D_5yx6j")
+"属性描述" = "不要让它太小，一般情况来说"
+"最小单位" = 1.0
+metadata/_custom_type_script = "uid://bd83jqryqem3b"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qf13i"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_trysj"]
+resource_local_to_scene = true
+script = ExtResource("5_7jolj")
+"属性名称" = "移动速度"
+"图标" = SubResource("CompressedTexture2D_qf13i")
+"属性描述" = "移动速度就是移动的速度"
+"值" = 50.0
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c3534"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_i2twl"]
+script = ExtResource("5_7jolj")
+"属性名称" = "闪避率"
+"图标" = SubResource("CompressedTexture2D_c3534")
+"属性描述" = "闪避伤害的几率"
+"最大值" = 1.0
+"叠加方式" = 1
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="Resource" id="Resource_7jolj"]
+resource_local_to_scene = true
+script = ExtResource("4_trysj")
+"属性们" = Array[ExtResource("5_7jolj")]([SubResource("Resource_5otv6"), SubResource("Resource_rgxxv"), SubResource("Resource_yq5en"), SubResource("Resource_fmb5p"), SubResource("Resource_rcyav"), SubResource("Resource_r4f37"), SubResource("Resource_lknm7"), SubResource("Resource_trysj"), SubResource("Resource_i2twl")])
+metadata/_custom_type_script = "uid://bjvqbui703u8x"
 
 [node name="单位" type="CharacterBody2D" unique_id=1080705466 groups=["entities_layer"]]
 collision_layer = 0
 script = ExtResource("1_flcbh")
-
-[node name="单位属性component" parent="." unique_id=176829961 instance=ExtResource("2_hl4j3")]
 
 [node name="视觉" type="Node2D" parent="." unique_id=1658827041]
 unique_name_in_owner = true
@@ -25,7 +131,8 @@ position = Vector2(0, -4)
 [node name="HurtboxComponent" parent="." unique_id=581852039 instance=ExtResource("2_paknp")]
 collision_mask = 0
 
-[node name="HealthComponent" parent="." unique_id=1949130037 instance=ExtResource("3_01oq6")]
+[node name="单位属性component" parent="." unique_id=176829961 instance=ExtResource("2_hl4j3")]
+"属性集" = SubResource("Resource_7jolj")
 
 [node name="HealthBar" parent="." unique_id=517147532 instance=ExtResource("4_rxq2h")]
 offset_left = -16.0
@@ -35,9 +142,9 @@ offset_bottom = -18.0
 metadata/_edit_use_anchors_ = true
 
 [node name="受击闪白效果Timer" type="Timer" parent="." unique_id=233702438]
-wait_time = 0.1
+wait_time = 0.15
 one_shot = true
 
 [connection signal="被击中" from="HurtboxComponent" to="." method="_on_hurtbox_component_被击中"]
-[connection signal="生命值变化" from="HealthComponent" to="HealthBar" method="_on_health_component_生命值变化"]
+[connection signal="生命值变化" from="单位属性component" to="HealthBar" method="_on_单位属性component_生命值变化"]
 [connection signal="timeout" from="受击闪白效果Timer" to="." method="_on_受击闪白效果timer_timeout"]

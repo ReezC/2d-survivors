@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="单位属性" format=3 uid="uid://bdyte3w48oqa3"]
+
+[ext_resource type="Script" uid="uid://c218ra1pf7xxj" path="res://resources/单位属性/单位属性.gd" id="1_w0ln0"]
+[ext_resource type="Texture2D" uid="uid://blbd4dn0qfryy" path="res://assets/Ninja Adventure - Asset Pack/Items/Object/Dice 20.png" id="2_e6igc"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_w0ln0")
+"属性名称" = "移动速度"
+"属性描述" = "移动速度就是移动的速度"
+"值" = 50.0
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"

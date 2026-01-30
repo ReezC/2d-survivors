@@ -4,7 +4,7 @@ class_name HealthBar
 @export var 背景颜色: Color
 @export var 填充颜色: Color
 
-@onready var health_lable: Label = $HealthLable
+@onready var health_label: Label = $HealthLabel
 @onready var progress_bar: ProgressBar = $ProgressBar
 
 func _ready() -> void:
@@ -20,7 +20,8 @@ func _ready() -> void:
 func 更新生命条(当前生命值: int, 生命上限: int) -> void:
 	progress_bar.max_value = 生命上限
 	progress_bar.value = 当前生命值
-	health_lable.text = "%d" % 当前生命值
+	health_label.text = "%d" % 当前生命值
 
-func _on_health_component_生命值变化(变化值: float) -> void:
-	更新生命条(owner.health_component.当前生命值, owner.health_component.生命上限)
+
+func _on_单位属性component_生命值变化(生命值属性:单位属性) -> void:
+	更新生命条(owner.attribute_component.获取属性值("生命值"), owner.attribute_component.获取属性值("最大生命值"))

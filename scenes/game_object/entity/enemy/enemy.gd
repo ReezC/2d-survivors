@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 	# 如果距离小于碰撞半径相关的一个值，则停止移动
 	if distance_to_player < player_collision_radius:
 		direction = Vector2.ZERO
-	velocity = direction * 单位的属性.移动速度
+	velocity = direction * attribute_component.获取属性值("移动速度")
 	move_and_slide()
 
 	# 更新动画状态

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="单位属性集" format=3 uid="uid://c57ygngoraqk0"]
+
+[ext_resource type="Script" uid="uid://bjvqbui703u8x" path="res://resources/单位属性/单位属性集.gd" id="1_f0d16"]
+[ext_resource type="Script" uid="uid://c218ra1pf7xxj" path="res://resources/单位属性/单位属性.gd" id="2_hby8o"]
+[ext_resource type="Resource" uid="uid://dd0ljxgj2r05n" path="res://resources/单位属性/单位属性配置/攻击速度.tres" id="3_2g3kr"]
+[ext_resource type="Resource" uid="uid://bs5q85r32ucxe" path="res://resources/单位属性/单位属性配置/暴击率.tres" id="3_5djxn"]
+[ext_resource type="Resource" uid="uid://qv7qvibogggp" path="res://resources/单位属性/单位属性配置/暴击伤害倍率.tres" id="4_e0i6o"]
+[ext_resource type="Resource" uid="uid://8kt5dyi6ukce" path="res://resources/单位属性/单位属性配置/最大生命值.tres" id="5_2g3kr"]
+[ext_resource type="Resource" uid="uid://cor4ff1truorm" path="res://resources/单位属性/单位属性配置/最大生命值加成.tres" id="6_awdqu"]
+[ext_resource type="Resource" uid="uid://dx3u2eytqd57y" path="res://resources/单位属性/单位属性配置/格挡率.tres" id="7_smjty"]
+[ext_resource type="Resource" uid="uid://cso6sk2l0xblg" path="res://resources/单位属性/单位属性配置/生命值.tres" id="8_p12cw"]
+[ext_resource type="Resource" uid="uid://cko32vxrwv8w6" path="res://resources/单位属性/单位属性配置/闪避率.tres" id="9_bf5rb"]
+[ext_resource type="Resource" uid="uid://bdyte3w48oqa3" path="res://resources/单位属性/单位属性配置/移动速度.tres" id="10_e0i6o"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_f0d16")
+"属性们" = Array[ExtResource("2_hby8o")]([ExtResource("3_2g3kr"), ExtResource("4_e0i6o"), ExtResource("3_5djxn"), ExtResource("5_2g3kr"), ExtResource("6_awdqu"), ExtResource("7_smjty"), ExtResource("8_p12cw"), ExtResource("10_e0i6o"), ExtResource("9_bf5rb")])
+metadata/_custom_type_script = "uid://bjvqbui703u8x"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0gsxjqxoqjm8"]
+[gd_scene format=3 uid="uid://c0gsxjqxoqjm8"]
 
 [ext_resource type="Script" uid="uid://bo5s33gegoi1k" path="res://scenes/ui/health_bar/health_bar.gd" id="1_mphu7"]
 [ext_resource type="FontFile" uid="uid://s7y1p3r76p50" path="res://assets/Ninja Adventure - Asset Pack/Ui/Font/NormalFont.ttf" id="1_ruhgv"]
@@ -29,7 +29,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 anti_aliasing = false
 
-[node name="HealthBar" type="Control"]
+[node name="HealthBar" type="Control" unique_id=1741784382]
 custom_minimum_size = Vector2(32, 4)
 layout_mode = 3
 anchors_preset = 0
@@ -37,7 +37,7 @@ offset_right = 32.0
 offset_bottom = 4.0
 script = ExtResource("1_mphu7")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1640792044]
 custom_minimum_size = Vector2(32, 4)
 layout_mode = 1
 offset_right = 32.0
@@ -49,7 +49,7 @@ max_value = 1.0
 value = 0.5
 show_percentage = false
 
-[node name="HealthLable" type="Label" parent="."]
+[node name="HealthLabel" type="Label" parent="." unique_id=1058815091]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,5 +63,5 @@ grow_vertical = 2
 scale = Vector2(0.565, 0.565)
 theme_override_fonts/font = ExtResource("1_ruhgv")
 theme_override_font_sizes/font_size = 9
-text = "10"
+text = "?"
 horizontal_alignment = 1

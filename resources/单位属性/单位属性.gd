@@ -2,36 +2,40 @@ class_name 单位属性 extends Resource
 
 
 
-signal 属性变化(属性:单位属性, 修改值: float)
+signal 属性变化(属性:单位属性)
 
 @export var 属性名称: String
-@export var 图标: Texture2D
+@export var 图标: Texture2D = preload("uid://blbd4dn0qfryy")
 @export_multiline var 属性描述: String
 @export var 最小值: float
 @export var 最大值: float = INF
 
 ## 属性的原始数值
-@export var 初始值:= 0.0 : set = 设置_初始值 # 每次给初始值进行赋值时，都会调用设置函数进行限制
+@export var 初始值:= 0.0 : set = 设置_初始值
 @export var 最小单位: float = 0.001
 @export_enum("线性叠加","收敛叠加","连乘叠加") var 叠加方式: int = 0
 
 
 ## 属性的当前状态
-@export var 值: float : set = 设置_当前值
+@export var 值: float : set = 设置_当前值 #每次修改都会调用setter
 
 
 var 属性修改器列表: Array[单位属性修改器] = []
 var 属于属性集: 单位属性集 = null
 
+func _init() -> void:
+	resource_local_to_scene = true
 
 ## 初始值在export设置后为只读
 func 设置_初始值(value: float):
-	初始值 = value
-	值 = value
+	初始值 = 后处理(value)
+	值 = 后处理(初始值)
 
 func 设置_当前值(value: float):
 	值 = 后处理(value)
-	emit_signal("属性变化", self, 值)
+	属性变化.emit(self)
+	
+	
 
 func _计算最终值() -> float:
 	var 最终值 = 0.0
@@ -45,7 +49,7 @@ func _计算最终值() -> float:
 
 	# 再应用修改器
 	for 修改器 in 属性修改器列表:
-		最终值 = 修改器.应用修改(最终值)
+		最终值 = 单位属性修改器.应用修改(修改器.修改类型, 最终值, 修改器.修正值)
 		if 修改器.修改类型 == 单位属性修改器.修改类型枚举.强行设置_硬:
 			return 最终值
 		elif 修改器.修改类型 == 单位属性修改器.修改类型枚举.强行设置_软:
@@ -60,7 +64,11 @@ func 获取最终值() -> float:
 	return _计算最终值()
 
 #region 一次性修改属性
-func 加(value: float) -> void:
+func 一次性修改属性(修改类型: 单位属性修改器.修改类型枚举, 修正值: float) -> void:
+	var 新值: float = 单位属性修改器.应用修改(修改类型, 值, 修正值)
+	值 = 新值
+	print("属性 %s 发生变化，修改类型：%s，修正值：%f，当前值：%f" % [属性名称, str(修改类型), 修正值, 值])
+	
 	
 #endregion
 

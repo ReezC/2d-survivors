@@ -9,6 +9,6 @@ func _process(delta: float):
 		return
 	var time_elapsed = arena_time_manager.get_time_elapsed()
 
-	var minutes = int(time_elapsed) / 60
+	var minutes = int(time_elapsed / 60)
 	var seconds = int(time_elapsed) % 60
 	time_label.text = "%02d:%02d" % [minutes, seconds]

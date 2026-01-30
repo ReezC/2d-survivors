@@ -9,8 +9,9 @@ const SPAWN_RADIUS = 375
 
 
 func _ready() -> void:
-	timer.timeout.connect(on_timer_timeout)
-	arena_time_manager.arena_difficulty_changed.connect(on_arena_difficulty_changed)
+	# timer.timeout.connect(on_timer_timeout)
+	# arena_time_manager.arena_difficulty_changed.connect(on_arena_difficulty_changed)
+	pass
 
 # 计算生成位置()
 func get_spawn_position(direction: Vector2 = Vector2.RIGHT.rotated(randf_range(0,TAU))) -> Vector2:

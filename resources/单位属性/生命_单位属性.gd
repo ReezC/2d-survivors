@@ -2,7 +2,7 @@ class_name 生命_单位属性 extends 单位属性
 
 
 func _init() -> void:
-	属性名称 = "生命"
+	属性名称 = "生命值"
 
 func 获取依赖的属性列表() -> Array[String]:
 	return [
