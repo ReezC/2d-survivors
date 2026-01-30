@@ -18,6 +18,8 @@ signal 属性变化(属性:单位属性, 修改值: float)
 
 ## 属性的当前状态
 @export var 值: float : set = 设置_当前值
+
+
 var 属性修改器列表: Array[单位属性修改器] = []
 var 属于属性集: 单位属性集 = null
 
@@ -28,7 +30,7 @@ func 设置_初始值(value: float):
 	值 = value
 
 func 设置_当前值(value: float):
-	值 = clamp(value, 最小值, 最大值)
+	值 = 后处理(value)
 	emit_signal("属性变化", self, 值)
 
 func _计算最终值() -> float:
@@ -56,6 +58,19 @@ func _计算最终值() -> float:
 
 func 获取最终值() -> float:
 	return _计算最终值()
+
+#region 一次性修改属性
+func 加(value: float) -> void:
+	
+#endregion
+
+#region 修改器操作
+func 添加属性修改器(修改器: 单位属性修改器) -> void:
+	属性修改器列表.append(修改器)
+	
+func 移除属性修改器(修改器: 单位属性修改器) -> void:
+	属性修改器列表.erase(修改器)
+#endregion
 
 
 ## 不同属性间内置的关联，例如生命上限依赖于生命上限加成，攻击力依赖于力量值等

@@ -17,7 +17,7 @@ var 驻留缩放比例 = 1
 # position参数
 var 驻留位置相对偏移 = Vector2(randf_range(-10,10), randf_range(-10,10))
 var 位置开始驻留时的进度 = 0.1
-var 向上移动的速度 = 5
+var 驻留后的位置偏移 = Vector2(randf_range(-5,5), randf_range(-5,5))
 
 # modulate.a参数
 var 驻留时长 = 0.75
@@ -53,7 +53,7 @@ func _tween_跳字(
 		self.global_position += 驻留位置相对偏移 * (get_process_delta_time() / 位置开始驻留时的进度 * 跳字时间)
 		# print("delta_pos:", self.global_position - old_pos)
 	else:
-		self.global_position.y -= 向上移动的速度  * get_process_delta_time()
+		self.global_position += 驻留后的位置偏移 * (get_process_delta_time() / (1.0 - 位置开始驻留时的进度) * 跳字时间)
 
 	# 计算scale
 	if 当前进度 <= 解放变大的进度:
