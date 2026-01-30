@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="武器" format=3 uid="uid://cvwj8gvlegrd5"]
+
+[ext_resource type="Script" uid="uid://n1cgi5h4ynto" path="res://resources/物品/装备/武器.gd" id="1_dby4n"]
+[ext_resource type="Texture2D" uid="uid://cnegncrf4kim2" path="res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Sword2/Sprite.png" id="2_lsnew"]
+[ext_resource type="Resource" uid="uid://bj606ag0w05ig" path="res://resources/物品/装备/武器/无名小刀加成.tres" id="3_8s2bi"]
+
+[resource]
+script = ExtResource("1_dby4n")
+"装备加成" = ExtResource("3_8s2bi")
+"物品名称" = "无名小刀"
+"物品图标" = ExtResource("2_lsnew")
+"物品描述" = "一把简单的小刀"
+"物品类型" = 1
+metadata/_custom_type_script = "uid://b10rvnkqxi4au"

@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://bfwv3v2p7s7ie"]
+[gd_scene format=3 uid="uid://dhl17ynii2j62"]
 
-[ext_resource type="Script" uid="uid://c8wdrqsw6q557" path="res://scenes/ability/sword_ability/sword_ability.gd" id="1_abpad"]
-[ext_resource type="Texture2D" uid="uid://cnegncrf4kim2" path="res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Sword2/Sprite.png" id="2_abpad"]
-[ext_resource type="PackedScene" uid="uid://cqkh2idk0bmgo" path="res://scenes/component/hitbox_component.tscn" id="3_t8g1f"]
+[ext_resource type="Script" uid="uid://drsiooj6321hn" path="res://scenes/技能/无名小刀/无名小刀技能逻辑.gd" id="1_aogkj"]
+[ext_resource type="Texture2D" uid="uid://cnegncrf4kim2" path="res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Sword2/Sprite.png" id="2_0ipga"]
+[ext_resource type="PackedScene" uid="uid://cqkh2idk0bmgo" path="res://scenes/component/hitbox_component.tscn" id="3_eahmj"]
 
 [sub_resource type="Animation" id="Animation_abpad"]
 length = 0.001
@@ -105,23 +105,21 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ut1t0"]
 
-[node name="SwordAbility" type="Node2D"]
-script = ExtResource("1_abpad")
+[node name="无名小刀技能逻辑" type="Node2D" unique_id=1483368322]
+script = ExtResource("1_aogkj")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_t8g1f")
-}
-autoplay = "swing"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=211966862]
+libraries/ = SubResource("AnimationLibrary_t8g1f")
+autoplay = &"swing"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2121859668]
 rotation = 3.1415927
-texture = ExtResource("2_abpad")
+texture = ExtResource("2_0ipga")
 offset = Vector2(0, -4)
 
-[node name="HitboxComponent" parent="." instance=ExtResource("3_t8g1f")]
+[node name="HitboxComponent" parent="." unique_id=1392148474 instance=ExtResource("3_eahmj")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1588986438]
 position = Vector2(10, 0)
 shape = SubResource("RectangleShape2D_ut1t0")
 disabled = true

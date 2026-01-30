@@ -100,3 +100,8 @@ func 后处理(value: float) -> float:
 	else:
 		value = round(value / 最小单位) * 最小单位
 	return value
+
+func _to_string() -> String:
+	if 属性名称 == null:
+		return "未命名属性"
+	return "%s: %f" % [属性名称, 值]

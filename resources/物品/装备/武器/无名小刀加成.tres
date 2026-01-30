@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="角色加成包" format=3 uid="uid://bj606ag0w05ig"]
+
+[ext_resource type="Script" uid="uid://cpydu3ye58k83" path="res://resources/角色加成/角色加成.gd" id="1_2d30d"]
+[ext_resource type="Script" uid="uid://df6nsrswq3x7e" path="res://resources/角色加成/角色加成包.gd" id="1_u0j88"]
+[ext_resource type="Script" uid="uid://barpckfftxa0a" path="res://resources/角色加成/属性加成.gd" id="3_bsrfk"]
+[ext_resource type="Script" uid="uid://bqcvp87smym4f" path="res://resources/单位属性/单位属性修改器.gd" id="4_r6xd8"]
+[ext_resource type="Script" uid="uid://c2kryw55ij6l2" path="res://resources/角色加成/赋予技能.gd" id="5_r6xd8"]
+[ext_resource type="Resource" uid="uid://bpp7o75g0ukfk" path="res://resources/技能/无名小刀技能.tres" id="6_kjgel"]
+
+[sub_resource type="Resource" id="Resource_bsrfk"]
+script = ExtResource("4_r6xd8")
+"修正值" = 1.0
+metadata/_custom_type_script = "uid://bqcvp87smym4f"
+
+[sub_resource type="Resource" id="Resource_r6xd8"]
+script = ExtResource("3_bsrfk")
+"属性名称" = "攻击速度"
+"属性修改值" = SubResource("Resource_bsrfk")
+metadata/_custom_type_script = "uid://barpckfftxa0a"
+
+[sub_resource type="Resource" id="Resource_kjgel"]
+script = ExtResource("5_r6xd8")
+"赋予技能" = ExtResource("6_kjgel")
+metadata/_custom_type_script = "uid://c2kryw55ij6l2"
+
+[resource]
+script = ExtResource("1_u0j88")
+name = "无名小刀加成"
+"角色加成们" = Array[ExtResource("1_2d30d")]([SubResource("Resource_r6xd8"), SubResource("Resource_kjgel")])
+metadata/_custom_type_script = "uid://cpydu3ye58k83"

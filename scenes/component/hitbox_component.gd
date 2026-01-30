@@ -1,7 +1,7 @@
 extends Area2D
 class_name HitboxComponent
 
-var 命中伤害: float = 23.0
+var 命中伤害: float = 2.0
 @export var source:Node2D = null # 源对象，可能不是owner
 
 

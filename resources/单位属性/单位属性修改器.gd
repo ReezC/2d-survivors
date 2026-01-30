@@ -10,8 +10,8 @@ enum 修改类型枚举 {
 	强行设置_硬, # 不受上下限限制
 }
 
-var 修改类型: 修改类型枚举
-var 修正值: float = 0.0
+@export var 修改类型: 修改类型枚举
+@export var 修正值: float = 0.0
 var 修正来源
 
 
