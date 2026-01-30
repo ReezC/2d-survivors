@@ -36,8 +36,9 @@ anchors_preset = 0
 offset_right = 32.0
 offset_bottom = 4.0
 script = ExtResource("1_mphu7")
+"动画速度" = 50.0
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1640792044]
+[node name="DamageBar" type="ProgressBar" parent="." unique_id=1290357048]
 custom_minimum_size = Vector2(32, 4)
 layout_mode = 1
 offset_right = 32.0
@@ -46,7 +47,18 @@ pivot_offset = Vector2(16, 3)
 theme_override_styles/background = SubResource("StyleBoxFlat_ilash")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ruhgv")
 max_value = 1.0
-value = 0.5
+value = 0.63
+show_percentage = false
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1640792044]
+custom_minimum_size = Vector2(32, 4)
+layout_mode = 1
+offset_right = 32.0
+offset_bottom = 4.0
+pivot_offset = Vector2(16, 3)
+theme_override_styles/fill = SubResource("StyleBoxFlat_ruhgv")
+max_value = 1.0
+value = 0.38
 show_percentage = false
 
 [node name="HealthLabel" type="Label" parent="." unique_id=1058815091]
