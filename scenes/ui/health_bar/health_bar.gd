@@ -158,7 +158,7 @@ func 重置():
 	damage_bar.value = progress_bar.value
 
 func _on_单位属性component_生命值变化(生命值属性:单位属性) -> void:
-	更新生命条(owner.attribute_component.获取属性值("生命值"), owner.attribute_component.获取属性值("最大生命值"))
+	更新生命条(owner.attribute_component.获取属性值("生命值"), owner.attribute_component.获取属性值("生命上限"))
 
 
 func _更新数字跳动(delta: float):

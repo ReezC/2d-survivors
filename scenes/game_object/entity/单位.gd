@@ -9,9 +9,16 @@ class_name Unit
 @onready var 受击闪白效果timer: Timer = $受击闪白效果Timer
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
 
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var state_machine = $AnimationTree.get("parameters/playback")
+	
+signal 出生	
+signal 死亡
 
 func _ready() -> void:
 	attribute_component.初始化属性()
+	animation_tree.active = true
+	出生.emit()
 
 func 设置受击闪白material(闪白material:ShaderMaterial) -> void:
 	animated_sprite_2d.material = 闪白material

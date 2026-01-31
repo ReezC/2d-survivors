@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://barpckfftxa0a" path="res://resources/角色加成/属性加成.gd" id="3_bsrfk"]
 [ext_resource type="Script" uid="uid://bqcvp87smym4f" path="res://resources/单位属性/单位属性修改器.gd" id="4_r6xd8"]
 [ext_resource type="Script" uid="uid://c2kryw55ij6l2" path="res://resources/角色加成/赋予技能.gd" id="5_r6xd8"]
-[ext_resource type="Resource" uid="uid://bpp7o75g0ukfk" path="res://resources/技能/无名小刀技能.tres" id="6_kjgel"]
+[ext_resource type="Resource" uid="uid://bpp7o75g0ukfk" path="res://技能/技能数据/无名小刀技能.tres" id="6_kjgel"]
 
 [sub_resource type="Resource" id="Resource_bsrfk"]
 script = ExtResource("4_r6xd8")

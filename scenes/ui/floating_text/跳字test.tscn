@@ -4,3 +4,4 @@
 
 [node name="跳字test" type="Node" unique_id=553107203]
 script = ExtResource("1_tbr81")
+"跳字类型" = "暴击跳字"

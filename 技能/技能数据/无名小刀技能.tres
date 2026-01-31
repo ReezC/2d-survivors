@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="技能数据" format=3 uid="uid://bpp7o75g0ukfk"]
+
+[ext_resource type="Script" uid="uid://cf5tsjb2i13c0" path="res://技能/技能数据.gd" id="1_5rqfk"]
+[ext_resource type="Texture2D" uid="uid://cnegncrf4kim2" path="res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Sword2/Sprite.png" id="3_ly878"]
+
+[resource]
+script = ExtResource("1_5rqfk")
+"技能ID" = 1
+"技能图标" = ExtResource("3_ly878")
+"技能名称" = "无名小刀"
+"技能描述" = "无名小刀的普通攻击"
+"冷却时间" = 3.0
+"技能逻辑配置文件" = "res://技能/skill_data/0.json"
+metadata/_custom_type_script = "uid://cf5tsjb2i13c0"

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://6ja3bsemrpvc"]
+
+[ext_resource type="Script" uid="uid://dj1h61luskfle" path="res://技能/buff_instance.gd" id="1_f1yds"]
+
+[node name="BuffInstance" type="Node" unique_id=452701777]
+script = ExtResource("1_f1yds")

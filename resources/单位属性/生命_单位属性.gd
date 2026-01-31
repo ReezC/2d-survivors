@@ -1,12 +1,9 @@
 class_name 生命_单位属性 extends 单位属性
 
 
-func _init() -> void:
-	属性名称 = "生命值"
-
-func 获取依赖的属性列表() -> Array[String]:
+func 获取依赖的属性列表() -> Array[属性类型枚举]:
 	return [
-		"最大生命值",
+		属性类型枚举.生命上限,
 	]
 
 func 属性依赖计算(_计算参数:Array[单位属性]) -> float:

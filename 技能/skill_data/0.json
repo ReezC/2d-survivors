@@ -1,0 +1,26 @@
+{
+	"$type":"calculator.skill",
+	"name":"演示配置",
+	"blackBoard":{
+		"$type":"calculator.BlackBoard"
+	},
+	"CD":{
+		"$type":"calculator.FloatValue.Const",
+		"value":"5"
+	},
+	"buff":{
+		"$type":"calculator.OneBuff",
+		"name":"释放中",
+		"duration":{
+			"$type":"calculator.FloatValue.Const",
+			"value":"1000"
+		},
+		"maxStack":{
+			"$type":"calculator.FloatValue.Const"
+		},
+		"stackType":"none",
+		"buffLogic":{
+			"$type":"calculator.BuffLogic.BuffList"
+		}
+	}
+}

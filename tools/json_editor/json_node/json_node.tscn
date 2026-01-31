@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpb5kgcytmlkl"]
+[gd_scene format=3 uid="uid://cpb5kgcytmlkl"]
 
-[ext_resource type="Script" uid="uid://b1k7ljhqqmlo2" path="res://scenes/tools/json_editor/json_node/json_node.gd" id="1_a8spl"]
-[ext_resource type="PackedScene" uid="uid://baegd641aage2" path="res://scenes/tools/json_editor/json_node/json_node_slot.tscn" id="1_kp0nf"]
+[ext_resource type="Script" uid="uid://b1k7ljhqqmlo2" path="res://tools/json_editor/json_node/json_node.gd" id="1_a8spl"]
+[ext_resource type="PackedScene" uid="uid://baegd641aage2" path="res://tools/json_editor/json_node/json_node_slot.tscn" id="1_kp0nf"]
 
 [node name="GraphNode" type="GraphNode"]
 custom_minimum_size = Vector2(200, 150)

@@ -142,14 +142,14 @@ func 获取对象池状态() -> Dictionary:
 	}
 
 
-# 测试函数
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			# 点击时显示随机伤害数字
-			var 随机伤害 = randi_range(10, 100)
-			# var 是否暴击 = randf() < 0.2
-			显示跳字(event.position, "%d" % 随机伤害, Color.RED)
+# # 测试函数
+# func _input(event: InputEvent) -> void:
+# 	if event is InputEventMouseButton:
+# 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+# 			# 点击时显示随机伤害数字
+# 			var 随机伤害 = randi_range(10, 100)
+# 			# var 是否暴击 = randf() < 0.2
+# 			显示跳字(event.position, "%d" % 随机伤害, Color.RED)
 			
-			# 显示状态
+# 			# 显示状态
 			

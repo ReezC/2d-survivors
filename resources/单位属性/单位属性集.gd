@@ -2,17 +2,17 @@ extends Resource
 
 class_name 单位属性集
 
-@export var 属性们: Array[单位属性] :set = 初始化属性集
+@export var 属性们: Array[单位属性]
 
 
 ## 运行时数据
 var 属性字典: Dictionary[String, 单位属性] = {}
 
 ## 因为不想让属性集在运行时被修改，所以使用拷贝的字典
-func 初始化属性集(v):
-	属性们 = v
+func 初始化属性集():
 	属性字典.clear()
 	for 属性 in 属性们:
+		属性.初始化单位属性()
 		if 属性字典.has(属性.属性名称):
 			push_error("单位属性集初始化错误：存在重复的属性名称：" + 属性.属性名称)
 			continue

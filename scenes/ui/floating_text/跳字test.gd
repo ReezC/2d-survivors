@@ -1,6 +1,7 @@
 extends Node
 
 @onready var 跳字池: 跳字对象池 = preload("res://scenes/managers/跳字对象池.tscn").instantiate()
+@export_enum("普通跳字","暴击跳字") var 跳字类型: String
 
 func _ready() -> void:
 	# 添加对象池到场景
@@ -21,6 +22,8 @@ func _input(event: InputEvent) -> void:
 			
 			# 显示状态
 			print("对象池状态: ", 跳字池.获取对象池状态())
+			print(str(跳字类型))
+			print(typeof(跳字类型))
 
 
 func 显示伤害数字(目标位置: Vector2, 伤害值: int, 是否暴击: bool):

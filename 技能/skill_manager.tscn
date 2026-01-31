@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cgb517d5dsjaa"]
+
+[ext_resource type="Script" uid="uid://dsr4bemynf0c8" path="res://技能/skill_manager.gd" id="1_lkgul"]
+
+[node name="SkillManager" type="Node" unique_id=845903834]
+script = ExtResource("1_lkgul")

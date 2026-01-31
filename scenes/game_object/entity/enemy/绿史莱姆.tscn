@@ -160,17 +160,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_au3mk"]
-radius = 6.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_2vcqf"]
 radius = 30.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlhfe"]
-size = Vector2(14, 12)
+[sub_resource type="CircleShape2D" id="CircleShape2D_au3mk"]
+radius = 6.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wikua"]
 size = Vector2(14, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlhfe"]
+size = Vector2(14, 12)
 
 [node name="绿史莱姆" unique_id=192549199 groups=["enemy"] instance=ExtResource("1_au3mk")]
 collision_layer = 4
@@ -188,11 +188,6 @@ animation = &"Run_Down"
 autoplay = "Idle"
 frame_progress = 0.08351295
 
-[node name="移动碰撞" parent="." index="2" unique_id=288392247]
-position = Vector2(0, -5)
-shape = SubResource("CircleShape2D_au3mk")
-debug_color = Color(0.7024835, 0.4852388, 0.16611946, 0.41960785)
-
 [node name="视野区域" type="Area2D" parent="." index="3" unique_id=1928895033]
 collision_layer = 0
 collision_mask = 4
@@ -201,13 +196,10 @@ collision_mask = 4
 shape = SubResource("CircleShape2D_2vcqf")
 debug_color = Color(0, 0.5764706, 0.6745098, 0.16862746)
 
-[node name="HurtboxComponent" parent="." index="4" unique_id=581852039]
-collision_layer = 64
-collision_mask = 32
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0" unique_id=1757577476]
-position = Vector2(0, -6)
-shape = SubResource("RectangleShape2D_dlhfe")
+[node name="移动碰撞" parent="." index="4" unique_id=288392247]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_au3mk")
+debug_color = Color(0.7024835, 0.4852388, 0.16611946, 0.41960785)
 
 [node name="HitboxComponent" parent="." index="5" unique_id=120207407 node_paths=PackedStringArray("source") instance=ExtResource("5_s2a2t")]
 collision_layer = 128
@@ -219,9 +211,17 @@ position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_wikua")
 debug_color = Color(0.7577971, 0.323612, 0.80577916, 0.41960785)
 
-[node name="单位属性component" parent="." index="6" unique_id=176829961]
+[node name="HurtboxComponent" parent="." index="6" unique_id=581852039]
+collision_layer = 64
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0" unique_id=1757577476]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_dlhfe")
+
+[node name="单位属性component" parent="." index="7" unique_id=176829961]
 "属性集" = ExtResource("5_wikua")
 
-[node name="HealthBar" parent="." index="7" unique_id=517147532]
+[node name="HealthBar" parent="." index="9" unique_id=517147532]
 "背景颜色" = Color(0.27058825, 0.24705882, 0.18039216, 1)
 "填充颜色" = Color(0.33333334, 0.38431373, 0.3019608, 1)

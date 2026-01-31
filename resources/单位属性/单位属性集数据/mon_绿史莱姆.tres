@@ -5,110 +5,124 @@
 [ext_resource type="Script" uid="uid://cocpxte7moiwt" path="res://resources/单位属性/最大生命值_单位属性.gd" id="3_ao34u"]
 [ext_resource type="Script" uid="uid://bd83jqryqem3b" path="res://resources/单位属性/生命_单位属性.gd" id="4_icuh5"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tabb3"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wbw41"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_gudbt"]
+[sub_resource type="Resource" id="Resource_ye6iw"]
+resource_name = "攻击速度"
 script = ExtResource("2_px4vd")
-"属性名称" = "攻击速度"
-"图标" = SubResource("CompressedTexture2D_tabb3")
+"属性类型" = 5
+"图标" = SubResource("CompressedTexture2D_wbw41")
 "属性描述" = "影响部分技能的释放速度"
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1gl80"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hdd6p"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_y4r7x"]
-script = ExtResource("2_px4vd")
-"属性名称" = "暴击伤害倍率"
-"图标" = SubResource("CompressedTexture2D_1gl80")
-"属性描述" = "造成暴击时，伤害提高的比例"
-"初始值" = 0.5
-"值" = 0.5
-metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+[sub_resource type="Resource" id="Resource_ill25"]
+resource_name = "生命值"
+script = ExtResource("4_icuh5")
+"图标" = SubResource("CompressedTexture2D_hdd6p")
+"属性描述" = "不要让它太小，一般情况来说"
+metadata/_custom_type_script = "uid://bd83jqryqem3b"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cxwhy"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uo5vx"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_iwx7t"]
-script = ExtResource("2_px4vd")
-"属性名称" = "暴击率"
-"图标" = SubResource("CompressedTexture2D_cxwhy")
-"属性描述" = "造成暴击的几率"
-"值" = 0.05
-metadata/_custom_type_script = "uid://c218ra1pf7xxj"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_02cnh"]
-load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
-
-[sub_resource type="Resource" id="Resource_r5cey"]
+[sub_resource type="Resource" id="Resource_5eaic"]
+resource_name = "生命上限"
 script = ExtResource("3_ao34u")
-"属性名称" = "最大生命值"
-"图标" = SubResource("CompressedTexture2D_02cnh")
+"属性类型" = 1
+"图标" = SubResource("CompressedTexture2D_uo5vx")
 "属性描述" = "多多益善~"
-"最小单位" = 1.0
 "值" = 10.0
 metadata/_custom_type_script = "uid://cocpxte7moiwt"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hp4id"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qmmqe"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_xax2p"]
+[sub_resource type="Resource" id="Resource_lnpja"]
+resource_name = "暴击伤害倍率"
 script = ExtResource("2_px4vd")
-"属性名称" = "最大生命值加成"
-"图标" = SubResource("CompressedTexture2D_hp4id")
+"属性类型" = 4
+"图标" = SubResource("CompressedTexture2D_qmmqe")
+"属性描述" = "造成暴击时，伤害提高的比例"
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_00o66"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_bdaga"]
+resource_name = "暴击率"
+script = ExtResource("2_px4vd")
+"属性类型" = 3
+"图标" = SubResource("CompressedTexture2D_00o66")
+"属性描述" = "造成暴击的几率"
+"初始值" = 0.05
+"值" = 0.05
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c8o2f"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_fpvc5"]
+resource_name = "生命上限加成"
+script = ExtResource("2_px4vd")
+"属性类型" = 2
+"图标" = SubResource("CompressedTexture2D_c8o2f")
 "属性描述" = "按比例提高最大生命值"
-"最小值" = -1.0
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wfrix"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jipc3"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_1hy52"]
+[sub_resource type="Resource" id="Resource_e6s84"]
+resource_name = "格挡率"
 script = ExtResource("2_px4vd")
-"属性名称" = "格挡率"
-"图标" = SubResource("CompressedTexture2D_wfrix")
+"属性类型" = 7
+"图标" = SubResource("CompressedTexture2D_jipc3")
 "属性描述" = "格挡伤害的几率"
-"最大值" = 1.0
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1tsda"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aaojh"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_k2i0x"]
-script = ExtResource("4_icuh5")
-"属性名称" = "生命值"
-"图标" = SubResource("CompressedTexture2D_1tsda")
-"属性描述" = "不要让它太小，一般情况来说"
-"最小单位" = 1.0
-metadata/_custom_type_script = "uid://bd83jqryqem3b"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_41krf"]
-load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
-
-[sub_resource type="Resource" id="Resource_48l3h"]
+[sub_resource type="Resource" id="Resource_o6rgh"]
 resource_local_to_scene = true
+resource_name = "移动速度"
 script = ExtResource("2_px4vd")
-"属性名称" = "移动速度"
-"图标" = SubResource("CompressedTexture2D_41krf")
+"属性类型" = 6
+"图标" = SubResource("CompressedTexture2D_aaojh")
 "属性描述" = "移动速度就是移动的速度"
-"值" = 30.0
+"值" = 50.0
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d37mg"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r34m6"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_384uj"]
+[sub_resource type="Resource" id="Resource_qmmqe"]
+resource_name = "闪避率"
 script = ExtResource("2_px4vd")
-"属性名称" = "闪避率"
-"图标" = SubResource("CompressedTexture2D_d37mg")
+"属性类型" = 8
+"图标" = SubResource("CompressedTexture2D_r34m6")
 "属性描述" = "闪避伤害的几率"
-"最大值" = 1.0
+"叠加方式" = 1
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ye6iw"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_sbb84"]
+resource_name = "冷却缩减"
+script = ExtResource("2_px4vd")
+"属性类型" = 10
+"图标" = SubResource("CompressedTexture2D_ye6iw")
+"属性描述" = "缩减技能冷却时间"
 "叠加方式" = 1
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_p7id7")
-"属性们" = Array[ExtResource("2_px4vd")]([SubResource("Resource_gudbt"), SubResource("Resource_y4r7x"), SubResource("Resource_iwx7t"), SubResource("Resource_r5cey"), SubResource("Resource_xax2p"), SubResource("Resource_1hy52"), SubResource("Resource_k2i0x"), SubResource("Resource_48l3h"), SubResource("Resource_384uj")])
+"属性们" = Array[ExtResource("2_px4vd")]([SubResource("Resource_ye6iw"), SubResource("Resource_ill25"), SubResource("Resource_5eaic"), SubResource("Resource_lnpja"), SubResource("Resource_bdaga"), SubResource("Resource_fpvc5"), SubResource("Resource_e6s84"), SubResource("Resource_o6rgh"), SubResource("Resource_qmmqe"), SubResource("Resource_sbb84")])
 metadata/_custom_type_script = "uid://bjvqbui703u8x"

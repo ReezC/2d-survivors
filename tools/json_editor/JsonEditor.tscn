@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6kwxxhlmdjtn"]
+[gd_scene format=3 uid="uid://b6kwxxhlmdjtn"]
 
-[ext_resource type="Script" uid="uid://b64bd8liafub" path="res://scenes/tools/json_editor/json_editor.gd" id="1_p1ux4"]
-[ext_resource type="PackedScene" uid="uid://cpb5kgcytmlkl" path="res://scenes/tools/json_editor/json_node/json_node.tscn" id="2_42mqc"]
+[ext_resource type="Script" uid="uid://b64bd8liafub" path="res://tools/json_editor/json_editor.gd" id="1_p1ux4"]
+[ext_resource type="PackedScene" uid="uid://cpb5kgcytmlkl" path="res://tools/json_editor/json_node/json_node.tscn" id="2_42mqc"]
 
 [sub_resource type="Theme" id="Theme_p1ux4"]
 default_font_size = 16

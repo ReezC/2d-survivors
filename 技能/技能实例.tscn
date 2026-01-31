@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://civjubkgk82lq"]
+
+[ext_resource type="Script" uid="uid://b0da53sk3nsgb" path="res://技能/技能实例.gd" id="1_hlhy0"]
+
+[node name="技能实例" type="Node" unique_id=1136777421]
+script = ExtResource("1_hlhy0")

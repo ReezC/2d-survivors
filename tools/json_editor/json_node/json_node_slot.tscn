@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://baegd641aage2"]
+[gd_scene format=3 uid="uid://baegd641aage2"]
 
-[ext_resource type="Script" uid="uid://boakc3iixvjm1" path="res://scenes/tools/json_editor/json_node/json_node_slot.gd" id="1_ataxi"]
+[ext_resource type="Script" uid="uid://boakc3iixvjm1" path="res://tools/json_editor/json_node/json_node_slot.gd" id="1_ataxi"]
 
 [node name="JsonNodeSlot" type="HSplitContainer"]
 anchors_preset = 15
