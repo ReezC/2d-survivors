@@ -4,3 +4,4 @@
 
 [node name="SkillManager" type="Node" unique_id=845903834]
 script = ExtResource("1_lkgul")
+"子物体场景路径" = "res://技能/子物体"

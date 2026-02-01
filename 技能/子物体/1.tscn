@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dg1ebr5sxep83"]
+
+[ext_resource type="PackedScene" uid="uid://cw26e1msf5gxn" path="res://技能/子物体/子物体.tscn" id="1_6igds"]
+[ext_resource type="Texture2D" uid="uid://f84ggyv8gaj6" path="res://assets/Ninja Adventure - Asset Pack/FX/Projectile/Shuriken.png" id="2_8mmiq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxy41"]
+atlas = ExtResource("2_8mmiq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1821q"]
+atlas = ExtResource("2_8mmiq")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dk0mn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxy41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1821q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8gdh"]
+size = Vector2(14, 14)
+
+[node name="子物体" unique_id=635526881 instance=ExtResource("1_6igds")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=247134606]
+sprite_frames = SubResource("SpriteFrames_dk0mn")
+autoplay = "default"
+frame_progress = 0.8813868
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" parent_id_path=PackedInt32Array(195429740) index="0" unique_id=1666793010]
+shape = SubResource("RectangleShape2D_i8gdh")

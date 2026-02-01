@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cw26e1msf5gxn"]
+
+[ext_resource type="Script" uid="uid://sahatc4wv3em" path="res://技能/子物体/子物体.gd" id="1_swn2h"]
+[ext_resource type="PackedScene" uid="uid://cqkh2idk0bmgo" path="res://scenes/component/hitbox_component.tscn" id="3_0ybhp"]
+
+[node name="子物体" type="Node2D" unique_id=635526881]
+script = ExtResource("1_swn2h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=247134606]
+
+[node name="HitboxComponent" parent="." unique_id=195429740 instance=ExtResource("3_0ybhp")]
+collision_layer = 32
+collision_mask = 64

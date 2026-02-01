@@ -15,7 +15,7 @@ var 禁止移动 :bool= false
 
 # 敌人AI逻辑
 func _process(delta: float) -> void:
-	if 禁止移动:
+	if 当前状态 == 角色状态.死亡:
 		return
 	var direction = get_move_direction()
 	var player = get_tree().get_first_node_in_group("player") as CharacterBody2D

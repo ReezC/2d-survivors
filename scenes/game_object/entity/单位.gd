@@ -15,6 +15,26 @@ class_name Unit
 signal 出生	
 signal 死亡
 
+enum 角色状态{
+	待机,
+	移动,
+	死亡,
+	释放技能,
+}
+
+var 当前状态: 角色状态 = 角色状态.待机 :set = 修改角色状态
+var 上一个状态: 角色状态 = 角色状态.待机
+
+func 修改角色状态(新状态: 角色状态) -> void:
+	_on_角色状态退出(当前状态)
+	_on_角色状态进入(新状态)
+	上一个状态 = 当前状态
+	当前状态 = 新状态
+func _on_角色状态进入(新状态: 角色状态) -> void:
+	pass
+
+func _on_角色状态退出(旧状态: 角色状态) -> void:
+	pass
 func _ready() -> void:
 	attribute_component.初始化属性()
 	animation_tree.active = true
@@ -67,6 +87,14 @@ func _on_hurtbox_component_被击中(hitbox: HitboxComponent) -> void:
 			设置受击闪白material(GameEvents.受击闪白material)
 			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % hitbox.命中伤害, Color.RED, 0)
 
+
+func die() -> void:
+	当前状态 = 角色状态.死亡
+	死亡.emit()
+	print("%s 死亡" % name)
+	# 添加死亡倒计时，3秒后删除节点
+	await get_tree().create_timer(3.0).timeout
+	self.queue_free()
 
 func _on_受击闪白效果timer_timeout() -> void:
 	animated_sprite_2d.material = null

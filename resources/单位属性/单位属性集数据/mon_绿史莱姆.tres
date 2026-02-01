@@ -8,7 +8,7 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wbw41"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_ye6iw"]
+[sub_resource type="Resource" id="Resource_p7id7"]
 resource_name = "攻击速度"
 script = ExtResource("2_px4vd")
 "属性类型" = 5
@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hdd6p"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_ill25"]
+[sub_resource type="Resource" id="Resource_px4vd"]
 resource_name = "生命值"
 script = ExtResource("4_icuh5")
 "图标" = SubResource("CompressedTexture2D_hdd6p")
@@ -29,7 +29,7 @@ metadata/_custom_type_script = "uid://bd83jqryqem3b"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uo5vx"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_5eaic"]
+[sub_resource type="Resource" id="Resource_ao34u"]
 resource_name = "生命上限"
 script = ExtResource("3_ao34u")
 "属性类型" = 1
@@ -41,7 +41,7 @@ metadata/_custom_type_script = "uid://cocpxte7moiwt"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qmmqe"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_lnpja"]
+[sub_resource type="Resource" id="Resource_icuh5"]
 resource_name = "暴击伤害倍率"
 script = ExtResource("2_px4vd")
 "属性类型" = 4
@@ -52,7 +52,7 @@ metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_00o66"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_bdaga"]
+[sub_resource type="Resource" id="Resource_t1qiv"]
 resource_name = "暴击率"
 script = ExtResource("2_px4vd")
 "属性类型" = 3
@@ -65,7 +65,7 @@ metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c8o2f"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_fpvc5"]
+[sub_resource type="Resource" id="Resource_fwjf5"]
 resource_name = "生命上限加成"
 script = ExtResource("2_px4vd")
 "属性类型" = 2
@@ -76,7 +76,7 @@ metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jipc3"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_e6s84"]
+[sub_resource type="Resource" id="Resource_k7f8g"]
 resource_name = "格挡率"
 script = ExtResource("2_px4vd")
 "属性类型" = 7
@@ -87,20 +87,20 @@ metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aaojh"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_o6rgh"]
+[sub_resource type="Resource" id="Resource_km1hd"]
 resource_local_to_scene = true
 resource_name = "移动速度"
 script = ExtResource("2_px4vd")
 "属性类型" = 6
 "图标" = SubResource("CompressedTexture2D_aaojh")
 "属性描述" = "移动速度就是移动的速度"
-"值" = 50.0
+"值" = 30.0
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r34m6"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_qmmqe"]
+[sub_resource type="Resource" id="Resource_rx7p4"]
 resource_name = "闪避率"
 script = ExtResource("2_px4vd")
 "属性类型" = 8
@@ -112,7 +112,7 @@ metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ye6iw"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_sbb84"]
+[sub_resource type="Resource" id="Resource_4i822"]
 resource_name = "冷却缩减"
 script = ExtResource("2_px4vd")
 "属性类型" = 10
@@ -124,5 +124,5 @@ metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_p7id7")
-"属性们" = Array[ExtResource("2_px4vd")]([SubResource("Resource_ye6iw"), SubResource("Resource_ill25"), SubResource("Resource_5eaic"), SubResource("Resource_lnpja"), SubResource("Resource_bdaga"), SubResource("Resource_fpvc5"), SubResource("Resource_e6s84"), SubResource("Resource_o6rgh"), SubResource("Resource_qmmqe"), SubResource("Resource_sbb84")])
+"属性们" = Array[ExtResource("2_px4vd")]([SubResource("Resource_p7id7"), SubResource("Resource_px4vd"), SubResource("Resource_ao34u"), SubResource("Resource_icuh5"), SubResource("Resource_t1qiv"), SubResource("Resource_fwjf5"), SubResource("Resource_k7f8g"), SubResource("Resource_km1hd"), SubResource("Resource_rx7p4"), SubResource("Resource_4i822")])
 metadata/_custom_type_script = "uid://bjvqbui703u8x"

@@ -4,19 +4,18 @@ class_name Player
 var acccelerate = 10
 var inputDirection:Vector2 = Vector2.ZERO
 var facingDirection:Vector2 = Vector2.DOWN
+var facingDirection_x: float = 0.0
 var 平滑移速:Vector2 = Vector2.ZERO
+@onready var skill_manager: SkillManager = $SkillManager
+@onready var skills: Node = $SkillManager/Skills
+@onready var buffs: Node = $SkillManager/Buffs
 
 # var 已死亡: bool = false
 
-enum 角色状态{
-	待机,
-	移动,
-	死亡,
-	释放技能,
-}
 
-var 当前状态: 角色状态 = 角色状态.待机 :set = 修改角色状态
-var 上一个状态: 角色状态 = 角色状态.待机
+
+
+
 
 func _ready() -> void:
 	super._ready()
@@ -32,7 +31,10 @@ func _process(delta: float) -> void:
 	# 获取输入方向
 	inputDirection = Input.get_vector("move_left","move_right","move_up","move_down")
 	if 当前状态 != 角色状态.死亡:
-		if inputDirection != Vector2.ZERO:
+		if 当前状态 == 角色状态.释放技能:
+			# 释放技能时允许移动
+			pass
+		elif inputDirection != Vector2.ZERO:
 			当前状态 = 角色状态.移动
 		else:
 			当前状态 = 角色状态.待机
@@ -50,19 +52,9 @@ func _process(delta: float) -> void:
 	# elif inputDirection.x<-.1:
 	# 	animated_sprite_2d.flip_h = true
 
-func die() -> void:
-	当前状态 = 角色状态.死亡
-	死亡.emit()
-	print("%s 死亡" % name)
-	# 添加死亡倒计时，3秒后删除节点
-	await get_tree().create_timer(3.0).timeout
-	self.queue_free()
 
-func 修改角色状态(新状态: 角色状态) -> void:
-	_on_角色状态退出(当前状态)
-	_on_角色状态进入(新状态)
-	上一个状态 = 当前状态
-	当前状态 = 新状态
+
+
 
 func set_anim() -> void:
 	match 当前状态:
@@ -70,7 +62,7 @@ func set_anim() -> void:
 			state_machine.travel("dead")
 		角色状态.释放技能:
 			state_machine.travel("skill")
-			# 暂定释放技能时可以移动
+			animation_tree.set("parameters/skill/blend_position", get_x_facing_direction())
 		角色状态.待机:
 			state_machine.travel("Idle")
 			animation_tree.set("parameters/Idle/blend_position", get_facing_direction())
@@ -79,14 +71,14 @@ func set_anim() -> void:
 			animation_tree.set("parameters/Run/blend_position", get_facing_direction())
 
 		
-func _on_角色状态进入(新状态: 角色状态) -> void:
-	pass
-
-func _on_角色状态退出(旧状态: 角色状态) -> void:
-	pass
 
 
 
+func get_x_facing_direction() -> float:
+	var x_input = inputDirection.x
+	if x_input == 0:
+		return facingDirection_x
+	return x_input
 
 func get_facing_direction() -> Vector2:
 	if inputDirection == Vector2.ZERO:

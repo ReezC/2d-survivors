@@ -6,7 +6,7 @@ const 受击闪白material = preload("uid://c0gikbxr2hvpe")
 
 signal experience_vial_collected(exp_amount: int)
 signal ability_upgrade_added(upgrade:AbilityUpgrade, current_upgrades:Dictionary)
-signal 创建跳字(位置: Vector2, 数值: int, 类型: int)
+signal 创建跳字(位置: Vector2, 内容: String, 颜色: Color)
 
 
 ## 品质枚举，不光是物品

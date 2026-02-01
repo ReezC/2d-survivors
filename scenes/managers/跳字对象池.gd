@@ -6,7 +6,7 @@ class_name 跳字对象池
 
 # 对象池设置
 @export var 初始池大小: int = 20
-@export var 最大池大小: int = 100
+@export var 最大池大小: int = 500
 @export var 自动扩展: bool = true
 @export var 跳字存活时间: float = 1.5
 @export var 父节点路径: NodePath

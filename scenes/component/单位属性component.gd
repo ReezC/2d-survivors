@@ -52,12 +52,14 @@ func 受到治疗(治疗值:float) -> void:
 	var 生命上限 = 获取属性值("生命上限")
 	print("%s 受到 %d 点治疗，当前生命： %s/%s" % [owner.name, 治疗值, 剩余生命值, 生命上限])
 
-func 检查死亡() -> void:
+func 检查死亡() -> bool:
 	var 当前生命值 = 获取属性值("生命值")
 	if 当前生命值 == 0:
 		生命值归零.emit()
 		owner.die()
 		print("%s 生命值归零" % owner.name)
+		return true
+	return false
 
 func _on_生命值属性变化(生命值属性:单位属性) -> void:
 	生命值变化.emit(生命值属性)

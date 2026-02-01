@@ -1,8 +1,8 @@
 extends Area2D
 class_name HurtboxComponent
 
-@export var health_component:Node
-@onready var 单位属性component:Node
+#@export var health_component:Node
+# @onready var 单位属性component:Node
 
 signal 被击中(hitbox:HitboxComponent)
 

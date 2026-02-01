@@ -5,7 +5,6 @@
 
 [resource]
 script = ExtResource("1_5rqfk")
-"技能ID" = 1
 "技能图标" = ExtResource("3_ly878")
 "技能名称" = "无名小刀"
 "技能描述" = "无名小刀的普通攻击"
