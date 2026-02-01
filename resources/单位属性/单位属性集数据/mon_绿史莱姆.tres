@@ -35,7 +35,7 @@ script = ExtResource("3_ao34u")
 "属性类型" = 1
 "图标" = SubResource("CompressedTexture2D_uo5vx")
 "属性描述" = "多多益善~"
-"值" = 10.0
+"值" = 15.0
 metadata/_custom_type_script = "uid://cocpxte7moiwt"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qmmqe"]

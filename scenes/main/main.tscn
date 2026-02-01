@@ -51,13 +51,13 @@ tile_set = ExtResource("1_iuonh")
 y_sort_enabled = true
 
 [node name="绿史莱姆" parent="Entities" unique_id=2146615582 instance=ExtResource("11_th5th")]
-position = Vector2(79, 27)
+position = Vector2(214, -126)
 
 [node name="绿史莱姆2" parent="Entities" unique_id=264844523 instance=ExtResource("11_th5th")]
-position = Vector2(-23, 81)
+position = Vector2(-178, 231)
 
 [node name="绿史莱姆3" parent="Entities" unique_id=899903208 instance=ExtResource("11_th5th")]
-position = Vector2(18, 31)
+position = Vector2(-177, -174)
 
 [node name="树" parent="Entities" unique_id=95003129 instance=ExtResource("11_blune")]
 

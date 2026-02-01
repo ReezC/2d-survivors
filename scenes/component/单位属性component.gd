@@ -56,8 +56,8 @@ func 检查死亡() -> bool:
 	var 当前生命值 = 获取属性值("生命值")
 	if 当前生命值 == 0:
 		生命值归零.emit()
-		owner.die()
 		print("%s 生命值归零" % owner.name)
+		owner.die()
 		return true
 	return false
 

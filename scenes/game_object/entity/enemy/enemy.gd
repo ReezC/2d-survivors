@@ -2,8 +2,10 @@ extends	Unit
 class_name	Enemy
 
 
-var facingDirection:String = "Down"
+# var facingDirection:String = "Down"
 var animation2Play:String = "Idle"
+
+
 
 @export var 群体运动推动力: float = 5.0 # 群体运动推动力
 
@@ -15,9 +17,8 @@ var 禁止移动 :bool= false
 
 # 敌人AI逻辑
 func _process(delta: float) -> void:
-	if 当前状态 == 角色状态.死亡:
-		return
-	var direction = get_move_direction()
+	var move_direction = get_move_direction()
+	facingDirection = move_direction if move_direction != Vector2.ZERO else facingDirection
 	var player = get_tree().get_first_node_in_group("player") as CharacterBody2D
 	if player == null:
 		return
@@ -27,16 +28,43 @@ func _process(delta: float) -> void:
 	# print("玩家碰撞半径: ", player_collision_radius)
 	# 如果距离小于碰撞半径相关的一个值，则停止移动
 	if distance_to_player < player_collision_radius:
-		direction = Vector2.ZERO
-	velocity = direction * attribute_component.获取属性值("移动速度")
+		move_direction = Vector2.ZERO
+	# velocity = move_direction * attribute_component.获取属性值("移动速度")
+
+
+	if 当前状态 != 角色状态.死亡:
+		if 当前状态 == 角色状态.释放技能:
+			# 释放技能时允许移动
+			pass
+		elif move_direction != Vector2.ZERO:
+			当前状态 = 角色状态.移动
+		else:
+			当前状态 = 角色状态.待机
+		velocity = velocity.lerp(move_direction * attribute_component.获取属性值("移动速度"),acccelerate * delta)
+		
+	else:
+		velocity = velocity.lerp(Vector2.ZERO,acccelerate * delta)
 	move_and_slide()
 
-	# 更新动画状态
-	if velocity.length() >10:
-		animation2Play = "Run_" + get_direction_name()
-	else :
-		animation2Play = "Idle"
-	animated_sprite_2d.play(animation2Play)
+
+	set_anim()
+
+
+func set_anim() -> void:
+	match 当前状态:
+		角色状态.死亡:
+			state_machine.travel("Dead")
+		角色状态.释放技能:
+			state_machine.travel("Skill")
+			# animation_tree.set("parameters/Skill/blend_position", get_x_facing_direction())
+		角色状态.待机:
+			state_machine.travel("Idle")
+			# animation_tree.set("parameters/Idle/blend_position", facingDirection)
+		角色状态.移动:
+			state_machine.travel("Run")
+			animation_tree.set("parameters/Run/blend_position", facingDirection)
+
+
 
 # 获取移动方向
 func get_move_direction():
@@ -64,14 +92,3 @@ func get_player_collision_radius() -> float:
 		if collision_shape != null and collision_shape.shape is CircleShape2D:
 			return (collision_shape.shape as CircleShape2D).radius
 	return 0.0
-
-# 获取朝向名称
-func get_direction_name() -> String:
-	if velocity == Vector2.ZERO:
-		return facingDirection
-		
-	facingDirection = 'Down' if abs(velocity.y) >= abs(velocity.x) and velocity.y > .1 else facingDirection
-	facingDirection = 'Up' if abs(velocity.y) >= abs(velocity.x) and velocity.y < -.1 else facingDirection
-	facingDirection = 'Right' if abs(velocity.x) > abs(velocity.y) and velocity.x > .1 else facingDirection
-	facingDirection = 'Left' if abs(velocity.x) > abs(velocity.y) and velocity.x < -.1 else facingDirection
-	return facingDirection

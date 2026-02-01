@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cebgv3ga5rf6m"]
+
+[ext_resource type="PackedScene" uid="uid://cw26e1msf5gxn" path="res://技能/子物体/子物体.tscn" id="1_qch2r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0u08"]
+size = Vector2(14, 12)
+
+[node name="子物体" unique_id=635526881 instance=ExtResource("1_qch2r")]
+
+[node name="HitboxComponent" parent="." index="1" unique_id=195429740]
+collision_layer = 128
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0" unique_id=1884520062]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_r0u08")

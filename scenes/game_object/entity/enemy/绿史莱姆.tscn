@@ -3,11 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://dcslmpa4nca4m" path="res://scenes/game_object/entity/单位.tscn" id="1_au3mk"]
 [ext_resource type="Script" uid="uid://ehv06eqk1cx7" path="res://scenes/game_object/entity/enemy/enemy.gd" id="2_2vcqf"]
 [ext_resource type="Texture2D" uid="uid://clwno477jjx8s" path="res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Slime2/Slime2.png" id="2_nqg02"]
-[ext_resource type="Script" uid="uid://bjvqbui703u8x" path="res://resources/单位属性/单位属性集.gd" id="5_dlhfe"]
+[ext_resource type="Texture2D" uid="uid://cqktwr6fkrcht" path="res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Slime2/Faceset.png" id="3_4re02"]
 [ext_resource type="PackedScene" uid="uid://cqkh2idk0bmgo" path="res://scenes/component/hitbox_component.tscn" id="5_s2a2t"]
-[ext_resource type="Script" uid="uid://c218ra1pf7xxj" path="res://resources/单位属性/单位属性.gd" id="6_4re02"]
-[ext_resource type="Script" uid="uid://bd83jqryqem3b" path="res://resources/单位属性/生命_单位属性.gd" id="7_tabb3"]
-[ext_resource type="Script" uid="uid://cocpxte7moiwt" path="res://resources/单位属性/最大生命值_单位属性.gd" id="8_gudbt"]
+[ext_resource type="Resource" uid="uid://cgxq8f78f5lil" path="res://resources/单位属性/单位属性集数据/mon_绿史莱姆.tres" id="6_wikua"]
+[ext_resource type="PackedScene" uid="uid://civjubkgk82lq" path="res://技能/技能实例.tscn" id="7_dlhfe"]
+[ext_resource type="Resource" uid="uid://cjn15na4ncwr2" path="res://技能/技能数据/有毒外皮.tres" id="8_4re02"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfrix"]
+atlas = ExtResource("2_nqg02")
+region = Rect2(16, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2vcqf"]
 atlas = ExtResource("2_nqg02")
@@ -83,6 +87,14 @@ region = Rect2(16, 48, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wikua"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfrix")
+}],
+"loop": true,
+"name": &"Dead",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_2vcqf")
@@ -163,6 +175,271 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_cxwhy"]
+resource_name = "Dead"
+length = 2.0
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("视觉/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Dead"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("视觉/AnimatedSprite2D:modulate:a")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_iwx7t"]
+resource_name = "Idle"
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("视觉/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("视觉/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_4re02"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("视觉/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Dead"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("视觉/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("视觉/AnimatedSprite2D:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_tabb3"]
+resource_name = "Run_Down"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("视觉/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Run_Down"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("视觉/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_gudbt"]
+resource_name = "Run_Left"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("视觉/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Run_Left"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("视觉/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_1gl80"]
+resource_name = "Run_Right"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("视觉/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Run_Right"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("视觉/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_y4r7x"]
+resource_name = "Run_Up"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("视觉/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Run_Up"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("视觉/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gudbt"]
+_data = {
+&"Dead": SubResource("Animation_cxwhy"),
+&"Idle": SubResource("Animation_iwx7t"),
+&"RESET": SubResource("Animation_4re02"),
+&"Run_Down": SubResource("Animation_tabb3"),
+&"Run_Left": SubResource("Animation_gudbt"),
+&"Run_Right": SubResource("Animation_1gl80"),
+&"Run_Up": SubResource("Animation_y4r7x")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cxwhy"]
+animation = &"Dead"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4re02"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tabb3"]
+animation = &"Run_Down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gudbt"]
+animation = &"Run_Up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1gl80"]
+animation = &"Run_Left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y4r7x"]
+animation = &"Run_Right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_cxwhy"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_tabb3")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_gudbt")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_1gl80")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_y4r7x")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4re02"]
+states/Dead/node = SubResource("AnimationNodeAnimation_cxwhy")
+states/Dead/position = Vector2(459, 166)
+states/Idle/node = SubResource("AnimationNodeAnimation_4re02")
+states/Idle/position = Vector2(323, 166)
+states/Run/node = SubResource("AnimationNodeBlendSpace2D_cxwhy")
+states/Run/position = Vector2(459, 93)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_2vcqf"]
 radius = 30.0
 
@@ -175,133 +452,13 @@ size = Vector2(14, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dlhfe"]
 size = Vector2(14, 12)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wbw41"]
-load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
-
-[sub_resource type="Resource" id="Resource_p7id7"]
-resource_name = "攻击速度"
-script = ExtResource("6_4re02")
-"属性类型" = 5
-"图标" = SubResource("CompressedTexture2D_wbw41")
-"属性描述" = "影响部分技能的释放速度"
-metadata/_custom_type_script = "uid://c218ra1pf7xxj"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hdd6p"]
-load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
-
-[sub_resource type="Resource" id="Resource_px4vd"]
-resource_name = "生命值"
-script = ExtResource("7_tabb3")
-"图标" = SubResource("CompressedTexture2D_hdd6p")
-"属性描述" = "不要让它太小，一般情况来说"
-metadata/_custom_type_script = "uid://bd83jqryqem3b"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uo5vx"]
-load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
-
-[sub_resource type="Resource" id="Resource_ao34u"]
-resource_name = "生命上限"
-script = ExtResource("8_gudbt")
-"属性类型" = 1
-"图标" = SubResource("CompressedTexture2D_uo5vx")
-"属性描述" = "多多益善~"
-"值" = 10.0
-metadata/_custom_type_script = "uid://cocpxte7moiwt"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qmmqe"]
-load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
-
-[sub_resource type="Resource" id="Resource_icuh5"]
-resource_name = "暴击伤害倍率"
-script = ExtResource("6_4re02")
-"属性类型" = 4
-"图标" = SubResource("CompressedTexture2D_qmmqe")
-"属性描述" = "造成暴击时，伤害提高的比例"
-metadata/_custom_type_script = "uid://c218ra1pf7xxj"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_00o66"]
-load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
-
-[sub_resource type="Resource" id="Resource_t1qiv"]
-resource_name = "暴击率"
-script = ExtResource("6_4re02")
-"属性类型" = 3
-"图标" = SubResource("CompressedTexture2D_00o66")
-"属性描述" = "造成暴击的几率"
-"初始值" = 0.05
-"值" = 0.05
-metadata/_custom_type_script = "uid://c218ra1pf7xxj"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c8o2f"]
-load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
-
-[sub_resource type="Resource" id="Resource_fwjf5"]
-resource_name = "生命上限加成"
-script = ExtResource("6_4re02")
-"属性类型" = 2
-"图标" = SubResource("CompressedTexture2D_c8o2f")
-"属性描述" = "按比例提高最大生命值"
-metadata/_custom_type_script = "uid://c218ra1pf7xxj"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jipc3"]
-load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
-
-[sub_resource type="Resource" id="Resource_k7f8g"]
-resource_name = "格挡率"
-script = ExtResource("6_4re02")
-"属性类型" = 7
-"图标" = SubResource("CompressedTexture2D_jipc3")
-"属性描述" = "格挡伤害的几率"
-metadata/_custom_type_script = "uid://c218ra1pf7xxj"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aaojh"]
-load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
-
-[sub_resource type="Resource" id="Resource_dlhfe"]
-resource_local_to_scene = true
-resource_name = "移动速度"
-script = ExtResource("6_4re02")
-"属性类型" = 6
-"图标" = SubResource("CompressedTexture2D_aaojh")
-"属性描述" = "移动速度就是移动的速度"
-"值" = 30.0
-metadata/_custom_type_script = "uid://c218ra1pf7xxj"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r34m6"]
-load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
-
-[sub_resource type="Resource" id="Resource_rx7p4"]
-resource_name = "闪避率"
-script = ExtResource("6_4re02")
-"属性类型" = 8
-"图标" = SubResource("CompressedTexture2D_r34m6")
-"属性描述" = "闪避伤害的几率"
-"叠加方式" = 1
-metadata/_custom_type_script = "uid://c218ra1pf7xxj"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ye6iw"]
-load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
-
-[sub_resource type="Resource" id="Resource_4i822"]
-resource_name = "冷却缩减"
-script = ExtResource("6_4re02")
-"属性类型" = 10
-"图标" = SubResource("CompressedTexture2D_ye6iw")
-"属性描述" = "缩减技能冷却时间"
-"叠加方式" = 1
-metadata/_custom_type_script = "uid://c218ra1pf7xxj"
-
-[sub_resource type="Resource" id="Resource_4re02"]
-resource_local_to_scene = true
-script = ExtResource("5_dlhfe")
-"属性们" = Array[ExtResource("6_4re02")]([SubResource("Resource_p7id7"), SubResource("Resource_px4vd"), SubResource("Resource_ao34u"), SubResource("Resource_icuh5"), SubResource("Resource_t1qiv"), SubResource("Resource_fwjf5"), SubResource("Resource_k7f8g"), SubResource("Resource_dlhfe"), SubResource("Resource_rx7p4"), SubResource("Resource_4i822")])
-metadata/_custom_type_script = "uid://bjvqbui703u8x"
-
 [node name="绿史莱姆" unique_id=192549199 groups=["enemy"] instance=ExtResource("1_au3mk")]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("2_2vcqf")
 "群体运动推动力" = 5.0
+"单位名称" = "史莱姆"
+icon = ExtResource("3_4re02")
 
 [node name="视觉" parent="." index="0" unique_id=1658827041]
 position = Vector2(0, -1)
@@ -309,9 +466,18 @@ position = Vector2(0, -1)
 [node name="AnimatedSprite2D" parent="视觉" index="0" unique_id=516307281]
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_wikua")
-animation = &"Run_Down"
+animation = &"Dead"
 autoplay = "Idle"
-frame_progress = 0.08351295
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1786467140]
+libraries/ = SubResource("AnimationLibrary_gudbt")
+
+[node name="AnimationTree" parent="." index="2" unique_id=1100281063]
+active = false
+tree_root = SubResource("AnimationNodeStateMachine_4re02")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Run/blend_position = Vector2(-0.3199635, -0.15752208)
 
 [node name="视野区域" type="Area2D" parent="." index="3" unique_id=1928895033]
 collision_layer = 0
@@ -329,6 +495,8 @@ debug_color = Color(0.7024835, 0.4852388, 0.16611946, 0.41960785)
 [node name="HitboxComponent" parent="." index="5" unique_id=120207407 node_paths=PackedStringArray("source") instance=ExtResource("5_s2a2t")]
 collision_layer = 128
 collision_mask = 16
+monitoring = false
+monitorable = false
 source = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0" unique_id=1365990381]
@@ -345,7 +513,10 @@ position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_dlhfe")
 
 [node name="单位属性component" parent="." index="7" unique_id=176829961]
-"属性集" = SubResource("Resource_4re02")
+"属性集" = ExtResource("6_wikua")
+
+[node name="技能实例" parent="SkillManager/Skills" parent_id_path=PackedInt32Array(1829939027) index="0" unique_id=1136777421 instance=ExtResource("7_dlhfe")]
+"技能本体数据" = ExtResource("8_4re02")
 
 [node name="HealthBar" parent="." index="9" unique_id=517147532]
 "背景颜色" = Color(0.27058825, 0.24705882, 0.18039216, 1)

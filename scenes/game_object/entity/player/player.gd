@@ -1,14 +1,11 @@
 extends Unit
 class_name Player
 
-var acccelerate = 10
+
 var inputDirection:Vector2 = Vector2.ZERO
-var facingDirection:Vector2 = Vector2.DOWN
 var facingDirection_x: float = 0.0
 var 平滑移速:Vector2 = Vector2.ZERO
-@onready var skill_manager: SkillManager = $SkillManager
-@onready var skills: Node = $SkillManager/Skills
-@onready var buffs: Node = $SkillManager/Buffs
+
 
 # var 已死亡: bool = false
 
@@ -59,10 +56,10 @@ func _process(delta: float) -> void:
 func set_anim() -> void:
 	match 当前状态:
 		角色状态.死亡:
-			state_machine.travel("dead")
+			state_machine.travel("Dead")
 		角色状态.释放技能:
-			state_machine.travel("skill")
-			animation_tree.set("parameters/skill/blend_position", get_x_facing_direction())
+			state_machine.travel("Skill")
+			animation_tree.set("parameters/Skill/blend_position", get_x_facing_direction())
 		角色状态.待机:
 			state_machine.travel("Idle")
 			animation_tree.set("parameters/Idle/blend_position", get_facing_direction())

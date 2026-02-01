@@ -8,7 +8,8 @@ var 持续时间: float = 0.0
 
 
 var 层数: int = 0
-var 最大层数: int = 1
+var 最大层数:= INF
+var 叠加计时类型: buff叠加计时类型枚举 = buff叠加计时类型枚举.不改变计时
 
 var BlackBoard: Dictionary = {}
 var buff_timer: Timer = Timer.new()
@@ -19,7 +20,7 @@ var skill_manager: Node
 signal buff开始
 signal buff结束
 
-enum buff叠加计时类型 {
+enum buff叠加计时类型枚举 {
 	不改变计时,
 	叠加时刷新计时,
 	每层独立计时,
@@ -31,10 +32,21 @@ func _init(_buff_data: Dictionary, _施法者: Node,_parent_buff:BuffInstance = 
 	name = _buff_data.get("name", "BuffInstance")
 	buff_data = _buff_data
 	施法者 = _施法者
+	skill_manager = 施法者.skill_manager
 	parent_buff = _parent_buff if _parent_buff != null else self
 	
 	# TODO：叠层逻辑在此时处理
-	最大层数 = max(1, int(_解析数值(buff_data.get("maxStack"))))
+	最大层数 = max(1, int(skill_manager._解析数值(buff_data.get("maxStack"))))
+	var 叠加计时类型配置 = buff_data.get("stackType")
+	match 叠加计时类型配置:
+		"none":
+			叠加计时类型 = buff叠加计时类型枚举.不改变计时
+		"refresh":
+			叠加计时类型 = buff叠加计时类型枚举.叠加时刷新计时
+		"independent":
+			叠加计时类型 = buff叠加计时类型枚举.每层独立计时
+		"extend":
+			叠加计时类型 = buff叠加计时类型枚举.延长计时
 	
 
 
@@ -48,7 +60,7 @@ func _ready() -> void:
 	on_buff_start()
 	var buff_logic_data = buff_data.get("buffLogic")
 	buff_excute(buff_logic_data)
-	skill_manager = 施法者.skill_manager
+	
 
 func buff_excute(buff_logic_data: Dictionary) -> void:
 	match buff_logic_data.get("$type").split(".")[-1]:
@@ -67,7 +79,7 @@ func buff_excute(buff_logic_data: Dictionary) -> void:
 				buff_excute(logic)
 
 		"ActionOverTime":
-			var interval = _解析数值(buff_logic_data.get("interval")) / 1000.0
+			var interval =skill_manager. _解析数值(buff_logic_data.get("interval")) / 1000.0
 			if interval <= 0.0:
 				push_error("[color=red]ActionOverTime 的 interval 必须大于0[/color]")
 				return
@@ -88,8 +100,8 @@ func buff_excute(buff_logic_data: Dictionary) -> void:
 func on_buff_start() -> void:
 	emit_signal("buff开始")
 	# buff开始时的逻辑
-	当前目标 = parent_buff.施法者 as Node2D if parent_buff != null else 施法者 as Node2D
-	var 配置的持续时间 = _解析数值(buff_data.get("duration")) / 1000.0
+	当前目标 = parent_buff.施法者 as Node2D if parent_buff != null else null
+	var 配置的持续时间 = skill_manager._解析数值(buff_data.get("duration")) / 1000.0
 	if 配置的持续时间 < 0:
 		持续时间 = INF
 	else:
@@ -131,38 +143,72 @@ func skillAction_execute(action: Dictionary) -> void:
 		"CreateObj":
 			var obj_id = int(action.get("id"))
 			var obj_scene_path = skill_manager.子物体场景路径 + "/" + str(obj_id) + ".tscn" as String
-			var obj_duration = _解析数值(action.get("duration")) / 1000.0
+			var obj_duration = skill_manager._解析数值(action.get("duration")) / 1000.0
 			var obj_movement_config = action.get("movement")
-			match obj_movement_config.get("$type").split(".")[-1]:
-				"Line":
-					var line_obj_direction = 当前目标.global_position.direction_to(施法者.global_position) * -1
-					var toTarget = obj_movement_config.get("toTarget")
-					if not toTarget:
-						var directX = _解析数值(obj_movement_config.get("directionX"))
-						var directY = _解析数值(obj_movement_config.get("directionY"))
-						line_obj_direction = Vector2(directX, directY).normalized().rotated(Vector2.DOWN.angle()).rotated(施法者.facingDirection.angle())
-					var speed = _解析数值(obj_movement_config.get("speed"))
-					var obj_instance = load(obj_scene_path).instantiate() as 子物体
-					obj_instance.global_position = 施法者.global_position
-					var obj_duration_timer = Timer.new()
-					obj_duration_timer.wait_time = obj_duration
-					obj_duration_timer.one_shot = true
-					obj_duration_timer.timeout.connect(func():
-						obj_instance.queue_free()
-					)
-					obj_instance.add_child(obj_duration_timer)
-					# TODO:更精细的hitbox管理
-					skill_manager.get_tree().get_first_node_in_group("foreground_layer").add_child(obj_instance)
-					obj_instance.hitbox_component.source = 施法者
-					obj_duration_timer.start()
-					obj_instance.set_physics_process(true)
-					obj_instance.obj_process = func(delta: float) -> void:
-						obj_instance.global_position += line_obj_direction * speed * delta
-
+			var obj_instance = load(obj_scene_path).instantiate() as 子物体
+			obj_instance.global_position = 施法者.global_position
+			var obj_duration_timer = Timer.new()
+			obj_duration_timer.wait_time = obj_duration
+			obj_duration_timer.one_shot = true
+			obj_duration_timer.timeout.connect(func():
+				obj_instance.queue_free()
+			)
+			create_obj(obj_instance, obj_movement_config, obj_duration_timer)
+			
 					
+
+		"CreateHitbox":
+			var hitbox_duration = skill_manager._解析数值(action.get("duration")) / 1000.0
+			var hitbox_half_width = skill_manager._解析数值(action.get("halfWidth"))
+			var hitbox_half_height = skill_manager._解析数值(action.get("halfHeight"))
+			var hitbox_movement_config = action.get("movement")
+			var hitbox_instance = HitboxComponent.new()
+			hitbox_instance.source = 施法者
+			hitbox_instance.shape = RectangleShape2D.new()
+			hitbox_instance.shape.extents = Vector2(hitbox_half_width, hitbox_half_height)
+			hitbox_instance.global_position = 施法者.global_position
+			var hitbox_duration_timer = Timer.new()
+			hitbox_duration_timer.wait_time = hitbox_duration
+			hitbox_duration_timer.one_shot = true
+			hitbox_duration_timer.timeout.connect(func():
+				hitbox_instance.queue_free()
+			)
+			hitbox_instance.set_physics_process(false)
+			create_obj(hitbox_instance, hitbox_movement_config, hitbox_duration_timer)
+			
 		_:
 			print_rich("[color=red]未知的技能行为类型: %s[/color]" % action.get("$type"))
-	
+
+
+func create_obj(_obj_instance,_obj_movement_config,_obj_duration_timer) -> void:
+	var 子物体运动类型 = _obj_movement_config.get("$type").split(".")[-1]
+	match 子物体运动类型:
+		"Line":
+			var line_obj_direction = 当前目标.global_position.direction_to(施法者.global_position) * -1
+			var toTarget = _obj_movement_config.get("toTarget")
+			if not toTarget:
+				var directX = skill_manager._解析数值(_obj_movement_config.get("directionX"))
+				var directY = skill_manager._解析数值(_obj_movement_config.get("directionY"))
+				line_obj_direction = Vector2(directX, directY).normalized().rotated(Vector2.DOWN.angle()).rotated(施法者.facingDirection.angle())
+			var speed = skill_manager._解析数值(_obj_movement_config.get("speed"))
+			_obj_instance.obj_process = func(delta: float) -> void:
+				_obj_instance.global_position += line_obj_direction * speed * delta
+
+		"Bind":
+			var bind_to_caster = _obj_movement_config.get("bindToCaster", true)
+			_obj_instance.obj_process = func(delta: float) -> void:
+				if bind_to_caster:
+					_obj_instance.global_position = 施法者.global_position
+				else:
+					_obj_instance.global_position = 当前目标.global_position
+			
+			
+	_obj_instance.add_child(_obj_duration_timer)
+	# TODO:更精细的hitbox管理
+	skill_manager.get_tree().get_first_node_in_group("foreground_layer").add_child(_obj_instance)
+	_obj_instance.hitbox_component.source = 施法者
+	_obj_duration_timer.start()
+	_obj_instance.set_physics_process(true)
 
 #endregion
 
@@ -179,8 +225,8 @@ func target_selector_result(target_selector_config: Dictionary) -> Array:
 		"caster":
 			return [施法者]
 		"circleArea":
-			var radius = _解析数值(target_selector_config.get("radius"))
-			var fowardAngle = _解析数值(target_selector_config.get("fowardAngle"))
+			var radius = skill_manager._解析数值(target_selector_config.get("radius"))
+			var fowardAngle = skill_manager._解析数值(target_selector_config.get("fowardAngle"))
 			return skill_manager.get_target_in_circle_area(
 				施法者.global_position,
 				施法者.facingDirection,
@@ -195,95 +241,4 @@ func target_selector_result(target_selector_config: Dictionary) -> Array:
 
 
 
-#endregion
-
-
-#region 数值与条件解析器
-func _解析数值(值配置:Dictionary) -> float:
-	var 类型 = 值配置.get("$type").split(".")[-1]
-	match 类型:
-		"Const":
-			var v = 值配置.get("value")
-			return float(v) if v != null else 0.0
-		"Expression":
-			var expr = 值配置.get("expression", "0.0")
-			# 这里可以使用更复杂的表达式解析器
-			return Expression.new().execute(expr)
-		"Add":
-			var values = 值配置.get("values", [])
-			var 总和: float = 0.0
-			for v in values:
-				总和 += _解析数值(v)
-			return 总和
-		"Minus":
-			var value1 = 值配置.get("value1", {})
-			var value2 = 值配置.get("value2", {})
-			return _解析数值(value1) - _解析数值(value2)
-		"Multiply":
-			var values = 值配置.get("values", [])
-			var 积: float = 1.0
-			for v in values:
-				积 *= _解析数值(v)
-			return 积
-		"Divide":
-			var 被除数 = 值配置.get("value1", {})
-			var 除数 = 值配置.get("value2", {})
-			var 除数值 = _解析数值(除数)
-			if 除数值 != 0.0:
-				return _解析数值(被除数) / 除数值
-			else:
-				push_error("[color=red]除数不能为零[/color]")
-				return 0.0
-		"Int":
-			return float(int(_解析数值(值配置.get("value", {}))))
-		_:
-			push_error("[color=red]未知的数值类型: %s[/color]" % 类型)
-			return 0.0
-
-func _解析条件(条件配置:Dictionary)->bool:
-	var 类型 = 条件配置.get("$type").split(".")[-1]
-	match 类型:
-		"Const":
-			return 条件配置.get("value", false)
-		"expression":
-			var expr = 条件配置.get("expression", "false")
-			# 这里可以使用更复杂的表达式解析器
-			return Expression.new().execute(expr)
-		"Chance":
-			var 几率百分比 = 条件配置.get("chance", 0.0)
-			var 几率百分比加成 = 条件配置.get("addChances",[])
-			for 加成 in 几率百分比加成:
-				几率百分比 += _解析数值(加成)
-			var 随机值 = randi() % 100 + 1
-			return 随机值 < 几率百分比
-		"Gte":
-			var value1 = 条件配置.get("value1", {})
-			var value2 = 条件配置.get("value2", {})
-			return _解析数值(value1) >= _解析数值(value2)
-		"Lte":
-			var value1 = 条件配置.get("value1", {})
-			var value2 = 条件配置.get("value2", {})
-			return _解析数值(value1) <= _解析数值(value2)
-		"Equal":
-			var value1 = 条件配置.get("value1", {})
-			var value2 = 条件配置.get("value2", {})
-			return _解析数值(value1) == _解析数值(value2)
-		"And":
-			var conditions = 条件配置.get("conditions", [])
-			for cond in conditions:
-				if not _解析条件(cond):
-					return false
-			return true
-		"Or":
-			var conditions = 条件配置.get("conditions", [])
-			for cond in conditions:
-				if _解析条件(cond):
-					return true
-			return false
-		"Not":
-			var condition = 条件配置.get("condition", {})
-			return not _解析条件(condition)
-		_:
-			push_error("[color=red]未知的条件类型: %s[/color]" % 类型)
-			return false
 #endregion

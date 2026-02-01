@@ -30,6 +30,15 @@ var 数字跳动计时器: float = 0.0
 var 原始标签位置: Vector2
 
 
+@export var 渐隐时间: float = 2  # 渐隐动画持续时间（秒）
+@export var 渐隐后隐藏: bool = true  # 渐隐后是否隐藏节点
+@export var 渐隐后销毁: bool = false  # 渐隐后是否销毁节点
+var 是否正在渐隐: bool = false
+var 渐隐计时器: float = 0.0
+var 渐隐初始透明度: float = 1.0
+
+
+
 
 func _ready() -> void:
 	# 设置主血条样式
@@ -165,3 +174,49 @@ func _更新数字跳动(delta: float):
 	数字跳动计时器 += delta
 	var 跳动偏移 = sin(数字跳动计时器 * 数字跳动速度) * 数字跳动幅度
 	health_label.position = 原始标签位置 - Vector2(0, 跳动偏移)
+
+
+# 开始渐隐动画
+func 开始渐隐(渐隐时长: float = 渐隐时间, 是否隐藏: bool = 渐隐后隐藏, 是否销毁: bool = 渐隐后销毁) -> void:
+	if 是否正在渐隐:
+		return
+	
+	# 设置参数
+	渐隐时间 = 渐隐时长
+	渐隐后隐藏 = 是否隐藏
+	渐隐后销毁 = 是否销毁
+	
+	# 重置渐隐计时器
+	渐隐计时器 = 0.0
+	是否正在渐隐 = true
+	
+	# 记录初始透明度
+	渐隐初始透明度 = modulate.a
+	
+	# 显示节点确保可见
+	show()
+
+# 可选的：使用Tween实现更平滑的渐隐（需要Godot 4.0+）
+func 使用Tween渐隐(渐隐时长: float = 渐隐时间, 是否隐藏: bool = 渐隐后隐藏, 是否销毁: bool = 渐隐后销毁) -> void:
+	if 是否正在渐隐:
+		return
+	
+	是否正在渐隐 = true
+	
+	# 创建Tween
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	
+	# 设置透明度动画
+	tween.tween_property(self, "modulate", Color(modulate.r, modulate.g, modulate.b, 0.0), 渐隐时长)
+	
+	# 动画结束后的回调
+	tween.tween_callback(_tween_completed)
+
+func _tween_completed() -> void:
+	是否正在渐隐 = false
+	if 渐隐后隐藏:
+		hide()
+	if 渐隐后销毁 and is_inside_tree():
+		queue_free()

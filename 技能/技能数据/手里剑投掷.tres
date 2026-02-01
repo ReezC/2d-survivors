@@ -6,8 +6,10 @@
 [resource]
 script = ExtResource("1_umqiv")
 "技能ID" = 1
+"技能名称" = "手里剑掷"
 "技能图标" = ExtResource("2_q3e1i")
-"技能名称" = "手里剑投掷"
+"技能描述" = "投掷一把手里剑"
 "冷却时间" = 3.0
+"触发范围" = 500.0
 "技能逻辑配置文件" = "res://技能/skill_data/1.json"
 metadata/_custom_type_script = "uid://cf5tsjb2i13c0"

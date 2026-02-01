@@ -9,6 +9,10 @@ class_name Unit
 @onready var 受击闪白效果timer: Timer = $受击闪白效果Timer
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
 
+@onready var skill_manager: SkillManager = $SkillManager
+@onready var skills: Node = $SkillManager/Skills
+@onready var buffs: Node = $SkillManager/Buffs
+
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var state_machine = $AnimationTree.get("parameters/playback")
 	
@@ -22,16 +26,34 @@ enum 角色状态{
 	释放技能,
 }
 
+# 移动参数
+var acccelerate = 10
+var facingDirection:Vector2 = Vector2.DOWN
+
 var 当前状态: 角色状态 = 角色状态.待机 :set = 修改角色状态
 var 上一个状态: 角色状态 = 角色状态.待机
+@export var 单位名称: String = "单位" :set = 设置_单位名称
+@export var icon: Texture2D
+
+func 设置_单位名称(新名称: String) -> void:
+	单位名称 = 新名称
+	name = 新名称
 
 func 修改角色状态(新状态: 角色状态) -> void:
 	_on_角色状态退出(当前状态)
 	_on_角色状态进入(新状态)
 	上一个状态 = 当前状态
 	当前状态 = 新状态
+
+
 func _on_角色状态进入(新状态: 角色状态) -> void:
-	pass
+	match 新状态:
+		角色状态.死亡:
+			hurtbox_component.monitoring = false
+			hurtbox_component.monitorable = false
+			health_bar.使用Tween渐隐()
+		_:
+			pass
 
 func _on_角色状态退出(旧状态: 角色状态) -> void:
 	pass

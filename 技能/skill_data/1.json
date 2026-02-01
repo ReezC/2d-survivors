@@ -21,56 +21,52 @@
 		},
 		"stackType":"none",
 		"buffLogic":{
-			"$type":"skillconfig.BuffLogic.BuffList",
-			"buffs":[
-				{
-					"$type":"skillconfig.BuffLogic.PlayAnimation",
-					"animationName":"skill"
-				},
-				{
-					"$type":"skillconfig.BuffLogic.ActionOverTime",
-					"interval":{
+			"$type":"skillconfig.BuffLogic.ActionOverTime",
+			"interval":{
+				"$type":"skillconfig.FloatValue.Const",
+				"value":333.0
+			},
+			"action":{
+				"$type":"skillconfig.SkillAction.ActionOnTarget",
+				"targetSelector":{
+					"$type":"skillconfig.TargetSelector.circleArea",
+					"radius":{
 						"$type":"skillconfig.FloatValue.Const",
-						"value":333.0
+						"value":100.0
 					},
-					"action":{
-						"$type":"skillconfig.SkillAction.ActionOnTarget",
-						"targetSelector":{
-							"$type":"skillconfig.TargetSelector.circleArea",
-							"radius":{
-								"$type":"skillconfig.FloatValue.Const",
-								"value":100.0
-							},
-							"fowardAngle":{
-								"$type":"skillconfig.FloatValue.Const",
-								"value":360.0
-							}
+					"fowardAngle":{
+						"$type":"skillconfig.FloatValue.Const",
+						"value":360.0
+					}
+				},
+				"action":{
+					"$type":"skillconfig.SkillAction.CreateObj",
+					"id":1,
+					"duration":{
+						"$type":"skillconfig.FloatValue.Const",
+						"value":500.0
+					},
+					"movement":{
+						"$type":"skillconfig.SubObjMovement.Line",
+						"toTarget":true,
+						"directX":{
+							"$type":"skillconfig.FloatValue.Const"
 						},
-						"action":{
-							"$type":"skillconfig.SkillAction.CreateObj",
-							"id":1,
-							"duration":{
-								"$type":"skillconfig.FloatValue.Const",
-								"value":500.0
-							},
-							"movement":{
-								"$type":"skillconfig.SubObjMovement.Line",
-								"toTarget":true,
-								"directX":{
-									"$type":"skillconfig.FloatValue.Const"
-								},
-								"directY":{
-									"$type":"skillconfig.FloatValue.Const"
-								},
-								"speed":{
-									"$type":"skillconfig.FloatValue.Const",
-									"value":200.0
-								}
-							}
+						"directY":{
+							"$type":"skillconfig.FloatValue.Const"
+						},
+						"speed":{
+							"$type":"skillconfig.FloatValue.Const",
+							"value":200.0
 						}
 					}
 				}
-			]
+			}
 		}
+	},
+	"buffOccupyAnim":"Skill",
+	"skillTriggerRange":{
+		"$type":"skillconfig.FloatValue.Const",
+		"value":100.0
 	}
 }

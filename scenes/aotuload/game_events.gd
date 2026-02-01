@@ -17,7 +17,16 @@ enum 品质枚举{
 	传说
 }
 
-
+enum collision_layer_enum {
+	地形 = 1,
+	玩家移动碰撞 = 2,
+	敌人移动碰撞 = 4,
+	掉落物 = 8,
+	玩家hurtbox = 16,
+	玩家hitbox = 32,
+	敌人hurtbox = 64,
+	敌人hitbox = 128,
+}
 
 func emit_experience_vial_collected(exp_amount: int) -> void:
 	experience_vial_collected.emit(exp_amount)
