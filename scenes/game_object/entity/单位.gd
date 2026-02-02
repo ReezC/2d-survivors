@@ -49,8 +49,9 @@ func 修改角色状态(新状态: 角色状态) -> void:
 func _on_角色状态进入(新状态: 角色状态) -> void:
 	match 新状态:
 		角色状态.死亡:
-			hurtbox_component.monitoring = false
-			hurtbox_component.monitorable = false
+			hurtbox_component.set_deferred("monitoring", false)
+			hurtbox_component.set_deferred("monitorable", false)
+			
 			health_bar.使用Tween渐隐()
 		_:
 			pass
@@ -69,7 +70,7 @@ func 设置受击闪白material(闪白material:ShaderMaterial) -> void:
 		受击闪白效果timer.start()
 	
 
-## 被击中事件处理
+## 被击中时事件处理：
 ## 
 ## 暴击、闪避等战斗事件的判定在此处进行
 ## 采用归一圆桌算法：

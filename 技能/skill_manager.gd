@@ -144,14 +144,15 @@ func get_target_in_circle_area(
 		radius,
 		angle_deg
 	)
-	# for point in sector_polygon:
-	# 	GameEvents.创建跳字.emit(center_position + point, "扫！", Color.PURPLE)
+	for point in sector_polygon:
+		GameEvents.创建跳字.emit(center_position + point, "扫！", Color.PURPLE)
 	if sector_polygon.size() < 3:
 		push_error("扇形多边形顶点数不足")
 		return []
 	
 	# 创建多边形形状
 	var polygon_shape = ConvexPolygonShape2D.new()
+	# polygon_shape.points = Geometry2D.convex_hull(sector_polygon)
 	polygon_shape.points = sector_polygon
 	
 	# 设置查询参数
@@ -189,9 +190,9 @@ func create_sector_polygon(
 	var half_angle_rad = deg_to_rad(min(angle_deg, 360)) / 2.0
 	var start_angle = direction.angle() - half_angle_rad
 	var end_angle = direction.angle() + half_angle_rad
-	var num_points = int(TAU/half_angle_rad ) * 15  # 扇形边界上的点数
+	var num_points = int(ceil(angle_deg / 15.0))  # 每15度一个点
 
-	points.append(center_position)  # 扇形中心点
+	# points.append(center_position)  # 扇形中心点
 	
 	# GameEvents.创建跳字.emit(center_position, str(center_position), Color.PURPLE)
 

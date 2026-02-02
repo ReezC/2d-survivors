@@ -41,12 +41,13 @@ func on_timer_timeout():
 		return
 	
 	
-	var enemy_instance = basic_enemy_scene.instantiate() as Node2D
+	var enemy_instance = basic_enemy_scene.instantiate()
 	# enemy_instance.name = "Monster_%d" % enemy_instance.get_instance_id()
 	var entities_layer = get_tree().get_first_node_in_group("entities_layer")
 	enemy_instance.global_position = get_spawn_position()
-	enemy_instance.name = enemy_instance.单位名称
+	
 	entities_layer.add_child(enemy_instance)
+	enemy_instance.name = enemy_instance.单位名称
 
 	# print(enemy_instance.get_script())
 	# print(enemy_instance.get_class())

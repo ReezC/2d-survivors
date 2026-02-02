@@ -5,10 +5,6 @@
 	"blackBoard":{
 		"$type":"skillconfig.BlackBoard"
 	},
-	"CD":{
-		"$type":"skillconfig.FloatValue.Const",
-		"value":3000.0
-	},
 	"buff":{
 		"$type":"skillconfig.OneBuff",
 		"name":"手里剑投掷释放中",
@@ -59,14 +55,26 @@
 							"$type":"skillconfig.FloatValue.Const",
 							"value":200.0
 						}
+					},
+					"hitboxCollision":{
+						"$type":"skillconfig.HitboxCollision",
+						"collisionLayer":[
+							32
+						],
+						"collisionMask":[
+							64
+						]
 					}
 				}
 			}
 		}
 	},
-	"buffOccupyAnim":"Skill",
+	"CD":{
+		"$type":"skillconfig.FloatValue.Add"
+	},
 	"skillTriggerRange":{
 		"$type":"skillconfig.FloatValue.Const",
 		"value":100.0
-	}
+	},
+	"buffOccupyAnim":"Skill"
 }

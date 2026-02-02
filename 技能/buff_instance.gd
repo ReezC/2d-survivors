@@ -153,8 +153,23 @@ func skillAction_execute(action: Dictionary) -> void:
 			obj_duration_timer.timeout.connect(func():
 				obj_instance.queue_free()
 			)
-			create_obj(obj_instance, obj_movement_config, obj_duration_timer)
-			
+
+			var hitbox_collision_config = action.get("hitboxCollision")
+			var collisionLayer = hitbox_collision_config.get("collisionLayer", [])
+			var collisionMask = hitbox_collision_config.get("collisionMask", [])
+			var disableOnSourceDie = hitbox_collision_config.get("disableOnSourceDie", false)
+			if collisionLayer.size() > 0:
+				obj_instance.get_node("HitboxComponent").collision_layer = 0
+				for layer in collisionLayer:
+					obj_instance.get_node("HitboxComponent").collision_layer |= int(layer)
+			if collisionMask.size() > 0:
+				obj_instance.get_node("HitboxComponent").collision_mask = 0
+				for mask in collisionMask:
+					obj_instance.get_node("HitboxComponent").collision_mask |= int(mask)
+				obj_instance.get_node("HitboxComponent").disable_on_source_die = disableOnSourceDie
+
+			var created_obj = create_obj(obj_instance, obj_movement_config, obj_duration_timer)
+			created_obj.name = "SkillObj[%s]" % str(obj_id)
 					
 
 		"CreateHitbox":
@@ -172,22 +187,36 @@ func skillAction_execute(action: Dictionary) -> void:
 
 			var hitbox_half_width = skill_manager._解析数值(action.get("halfWidth"))
 			var hitbox_half_height = skill_manager._解析数值(action.get("halfHeight"))
+			var hitbox_collision_config = action.get("hitboxCollision")
+			var collisionLayer = hitbox_collision_config.get("collisionLayer", [])
+			var collisionMask = hitbox_collision_config.get("collisionMask", [])
+			var disableOnSourceDie = hitbox_collision_config.get("disableOnSourceDie", false)
+			if collisionLayer.size() > 0:
+				obj_instance.get_node("HitboxComponent").collision_layer = 0
+				for layer in collisionLayer:
+					obj_instance.get_node("HitboxComponent").collision_layer |= int(layer)
+			if collisionMask.size() > 0:
+				obj_instance.get_node("HitboxComponent").collision_mask = 0
+				for mask in collisionMask:
+					obj_instance.get_node("HitboxComponent").collision_mask |= int(mask)
+				obj_instance.get_node("HitboxComponent").disable_on_source_die = disableOnSourceDie
 			
 			
-			obj_instance.get_node("HitboxComponent").source = 施法者
 			var collision_shape = CollisionShape2D.new()
 			collision_shape.shape = RectangleShape2D.new()
 			collision_shape.name = "CollisionShape2D"
 			obj_instance.get_node("HitboxComponent").add_child(collision_shape)
 			collision_shape.shape.extents = Vector2(hitbox_half_width, hitbox_half_height)
 			
-			create_obj(obj_instance, obj_movement_config, obj_duration_timer)
+			var created_obj = create_obj(obj_instance, obj_movement_config, obj_duration_timer)
+			created_obj.name = "HitboxObj"
 			
 		_:
 			print_rich("[color=red]未知的技能行为类型: %s[/color]" % action.get("$type"))
 
 
-func create_obj(_obj_instance,_obj_movement_config,_obj_duration_timer) -> void:
+func create_obj(_obj_instance,_obj_movement_config,_obj_duration_timer) -> 子物体:
+	_obj_instance.get_node("HitboxComponent").source = 施法者
 	var 子物体运动类型 = _obj_movement_config.get("$type").split(".")[-1]
 	match 子物体运动类型:
 		"Line":
@@ -215,6 +244,7 @@ func create_obj(_obj_instance,_obj_movement_config,_obj_duration_timer) -> void:
 	skill_manager.get_tree().get_first_node_in_group("foreground_layer").add_child(_obj_instance)
 	_obj_duration_timer.start()
 	_obj_instance.set_physics_process(true)
+	return _obj_instance
 
 #endregion
 

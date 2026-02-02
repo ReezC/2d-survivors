@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://c218ra1pf7xxj" path="res://resources/单位属性/单位属性.gd" id="8_lnpja"]
 [ext_resource type="Script" uid="uid://cocpxte7moiwt" path="res://resources/单位属性/最大生命值_单位属性.gd" id="9_00o66"]
 [ext_resource type="Script" uid="uid://bd83jqryqem3b" path="res://resources/单位属性/生命_单位属性.gd" id="10_bdaga"]
+[ext_resource type="PackedScene" uid="uid://civjubkgk82lq" path="res://技能/技能实例.tscn" id="12_lnpja"]
+[ext_resource type="Resource" uid="uid://y6jywnhexlo6" path="res://技能/技能数据/手里剑投掷.tres" id="13_00o66"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1iqai"]
 atlas = ExtResource("4_ktm2w")
@@ -688,7 +690,7 @@ metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aaojh"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_r34m6"]
+[sub_resource type="Resource" id="Resource_bdaga"]
 resource_local_to_scene = true
 resource_name = "移动速度"
 script = ExtResource("8_lnpja")
@@ -722,10 +724,10 @@ script = ExtResource("8_lnpja")
 "叠加方式" = 1
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
-[sub_resource type="Resource" id="Resource_qmmqe"]
+[sub_resource type="Resource" id="Resource_uo5vx"]
 resource_local_to_scene = true
 script = ExtResource("7_qmmqe")
-"属性们" = Array[ExtResource("8_lnpja")]([SubResource("Resource_ye6iw"), SubResource("Resource_sbb84"), SubResource("Resource_cll8x"), SubResource("Resource_6u3n4"), SubResource("Resource_8u6q2"), SubResource("Resource_kjcqk"), SubResource("Resource_u0jmy"), SubResource("Resource_r34m6"), SubResource("Resource_72gil"), SubResource("Resource_vrs21")])
+"属性们" = Array[ExtResource("8_lnpja")]([SubResource("Resource_ye6iw"), SubResource("Resource_sbb84"), SubResource("Resource_cll8x"), SubResource("Resource_6u3n4"), SubResource("Resource_8u6q2"), SubResource("Resource_kjcqk"), SubResource("Resource_u0jmy"), SubResource("Resource_bdaga"), SubResource("Resource_72gil"), SubResource("Resource_vrs21")])
 metadata/_custom_type_script = "uid://bjvqbui703u8x"
 
 [node name="树" unique_id=1265436225 groups=["player"] instance=ExtResource("1_0fi5m")]
@@ -771,10 +773,13 @@ position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_wbw41")
 
 [node name="单位属性component" parent="." index="5" unique_id=176829961]
-"属性集" = SubResource("Resource_qmmqe")
+"属性集" = SubResource("Resource_uo5vx")
 
 [node name="SkillManager" parent="." index="6" unique_id=845903834]
 skill_ai = 1
+
+[node name="技能实例" parent="SkillManager/Skills" parent_id_path=PackedInt32Array(1829939027) index="0" unique_id=1136777421 instance=ExtResource("12_lnpja")]
+"技能本体数据" = ExtResource("13_00o66")
 
 [node name="HealthBar" parent="." index="7" unique_id=517147532]
 "背景颜色" = Color(0.13725491, 0.019607844, 0.02745098, 1)
