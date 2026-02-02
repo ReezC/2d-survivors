@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 		
 
 
-func _ready() -> void:
+func 初始化() -> void:
 	match skill_ai:
 		AI类型枚举.Player技能AI:
 			初始化_Player技能AI()

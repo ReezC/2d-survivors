@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cktsgbgo61qku"]
+
+[ext_resource type="Script" uid="uid://b64bd8liafub" path="res://tools/json_editor/json_editor.gd" id="1_kwnjk"]
+[ext_resource type="PackedScene" uid="uid://cxgfvl6k1q8y7" path="res://tools/json_editor/json_node/skill_json_node.tscn" id="2_sn0dj"]
+
+[node name="ConfigEditor" type="GraphEdit" unique_id=1932735271]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+snapping_distance = 10
+panning_scheme = 1
+script = ExtResource("1_kwnjk")
+json_type_colors = {
+0: Color(0.74509805, 0.74509805, 0.74509805, 1),
+1: Color(1, 0.27058825, 0, 1),
+2: Color(0.11764706, 0.5647059, 1, 1),
+3: Color(0.11764706, 0.5647059, 1, 1),
+4: Color(0.19607843, 0.8039216, 0.19607843, 1),
+5: Color(0.5764706, 0.4392157, 0.85882354, 1),
+6: Color(1, 0.84313726, 0, 1)
+}
+"技能Node节点场景" = ExtResource("2_sn0dj")
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=675723964]
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 2
+ok_button_text = "打开"
+cancel_button_text = "取消"
+file_mode = 0
+display_mode = 1
+filters = PackedStringArray("*.json ; JSON文件")
+
+[node name="SchemaDialog" type="FileDialog" parent="." unique_id=981958835]
+oversampling_override = 1.0
+title = "Open a File"
+file_mode = 0
+filters = PackedStringArray("*.json ; JSON Schema文件")
+
+[node name="SaveDialog" type="FileDialog" parent="." unique_id=1842838924]
+oversampling_override = 1.0
+title = "Open a File"
+file_mode = 0
+filters = PackedStringArray("*.json ; JSON文件")
+
+[node name="Nodes" type="Node" parent="." unique_id=806840040]
+
+[node name="PopupMenu" type="PopupMenu" parent="." unique_id=84258432]
+oversampling_override = 1.0

@@ -158,23 +158,30 @@ func skillAction_execute(action: Dictionary) -> void:
 					
 
 		"CreateHitbox":
-			var hitbox_duration = skill_manager._解析数值(action.get("duration")) / 1000.0
+			var obj_scene_path = skill_manager.子物体场景路径 + "/子物体.tscn" as String
+			var obj_duration = skill_manager._解析数值(action.get("duration")) / 1000.0
+			var obj_movement_config = action.get("movement")
+			var obj_instance = load(obj_scene_path).instantiate() as 子物体
+			obj_instance.global_position = 施法者.global_position
+			var obj_duration_timer = Timer.new()
+			obj_duration_timer.wait_time = obj_duration
+			obj_duration_timer.one_shot = true
+			obj_duration_timer.timeout.connect(func():
+				obj_instance.queue_free()
+			)
+
 			var hitbox_half_width = skill_manager._解析数值(action.get("halfWidth"))
 			var hitbox_half_height = skill_manager._解析数值(action.get("halfHeight"))
-			var hitbox_movement_config = action.get("movement")
-			var hitbox_instance = HitboxComponent.new()
-			hitbox_instance.source = 施法者
-			hitbox_instance.shape = RectangleShape2D.new()
-			hitbox_instance.shape.extents = Vector2(hitbox_half_width, hitbox_half_height)
-			hitbox_instance.global_position = 施法者.global_position
-			var hitbox_duration_timer = Timer.new()
-			hitbox_duration_timer.wait_time = hitbox_duration
-			hitbox_duration_timer.one_shot = true
-			hitbox_duration_timer.timeout.connect(func():
-				hitbox_instance.queue_free()
-			)
-			hitbox_instance.set_physics_process(false)
-			create_obj(hitbox_instance, hitbox_movement_config, hitbox_duration_timer)
+			
+			
+			obj_instance.get_node("HitboxComponent").source = 施法者
+			var collision_shape = CollisionShape2D.new()
+			collision_shape.shape = RectangleShape2D.new()
+			collision_shape.name = "CollisionShape2D"
+			obj_instance.get_node("HitboxComponent").add_child(collision_shape)
+			collision_shape.shape.extents = Vector2(hitbox_half_width, hitbox_half_height)
+			
+			create_obj(obj_instance, obj_movement_config, obj_duration_timer)
 			
 		_:
 			print_rich("[color=red]未知的技能行为类型: %s[/color]" % action.get("$type"))
@@ -206,7 +213,6 @@ func create_obj(_obj_instance,_obj_movement_config,_obj_duration_timer) -> void:
 	_obj_instance.add_child(_obj_duration_timer)
 	# TODO:更精细的hitbox管理
 	skill_manager.get_tree().get_first_node_in_group("foreground_layer").add_child(_obj_instance)
-	_obj_instance.hitbox_component.source = 施法者
 	_obj_duration_timer.start()
 	_obj_instance.set_physics_process(true)
 

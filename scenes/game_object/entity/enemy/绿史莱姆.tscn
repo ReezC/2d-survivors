@@ -5,9 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://clwno477jjx8s" path="res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Slime2/Slime2.png" id="2_nqg02"]
 [ext_resource type="Texture2D" uid="uid://cqktwr6fkrcht" path="res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Slime2/Faceset.png" id="3_4re02"]
 [ext_resource type="PackedScene" uid="uid://cqkh2idk0bmgo" path="res://scenes/component/hitbox_component.tscn" id="5_s2a2t"]
-[ext_resource type="Resource" uid="uid://cgxq8f78f5lil" path="res://resources/单位属性/单位属性集数据/mon_绿史莱姆.tres" id="6_wikua"]
+[ext_resource type="Script" uid="uid://bjvqbui703u8x" path="res://resources/单位属性/单位属性集.gd" id="6_gudbt"]
+[ext_resource type="Script" uid="uid://c218ra1pf7xxj" path="res://resources/单位属性/单位属性.gd" id="7_1gl80"]
 [ext_resource type="PackedScene" uid="uid://civjubkgk82lq" path="res://技能/技能实例.tscn" id="7_dlhfe"]
 [ext_resource type="Resource" uid="uid://cjn15na4ncwr2" path="res://技能/技能数据/有毒外皮.tres" id="8_4re02"]
+[ext_resource type="Script" uid="uid://bd83jqryqem3b" path="res://resources/单位属性/生命_单位属性.gd" id="8_y4r7x"]
+[ext_resource type="Script" uid="uid://cocpxte7moiwt" path="res://resources/单位属性/最大生命值_单位属性.gd" id="9_cxwhy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wfrix"]
 atlas = ExtResource("2_nqg02")
@@ -452,6 +455,128 @@ size = Vector2(14, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dlhfe"]
 size = Vector2(14, 12)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wbw41"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_p7id7"]
+resource_name = "攻击速度"
+script = ExtResource("7_1gl80")
+"属性类型" = 5
+"图标" = SubResource("CompressedTexture2D_wbw41")
+"属性描述" = "影响部分技能的释放速度"
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hdd6p"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_px4vd"]
+resource_name = "生命值"
+script = ExtResource("8_y4r7x")
+"图标" = SubResource("CompressedTexture2D_hdd6p")
+"属性描述" = "不要让它太小，一般情况来说"
+metadata/_custom_type_script = "uid://bd83jqryqem3b"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uo5vx"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_ao34u"]
+resource_name = "生命上限"
+script = ExtResource("9_cxwhy")
+"属性类型" = 1
+"图标" = SubResource("CompressedTexture2D_uo5vx")
+"属性描述" = "多多益善~"
+"值" = 15.0
+metadata/_custom_type_script = "uid://cocpxte7moiwt"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qmmqe"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_icuh5"]
+resource_name = "暴击伤害倍率"
+script = ExtResource("7_1gl80")
+"属性类型" = 4
+"图标" = SubResource("CompressedTexture2D_qmmqe")
+"属性描述" = "造成暴击时，伤害提高的比例"
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_00o66"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_t1qiv"]
+resource_name = "暴击率"
+script = ExtResource("7_1gl80")
+"属性类型" = 3
+"图标" = SubResource("CompressedTexture2D_00o66")
+"属性描述" = "造成暴击的几率"
+"初始值" = 0.05
+"值" = 0.05
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c8o2f"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_fwjf5"]
+resource_name = "生命上限加成"
+script = ExtResource("7_1gl80")
+"属性类型" = 2
+"图标" = SubResource("CompressedTexture2D_c8o2f")
+"属性描述" = "按比例提高最大生命值"
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jipc3"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_k7f8g"]
+resource_name = "格挡率"
+script = ExtResource("7_1gl80")
+"属性类型" = 7
+"图标" = SubResource("CompressedTexture2D_jipc3")
+"属性描述" = "格挡伤害的几率"
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aaojh"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_iwx7t"]
+resource_local_to_scene = true
+resource_name = "移动速度"
+script = ExtResource("7_1gl80")
+"属性类型" = 6
+"图标" = SubResource("CompressedTexture2D_aaojh")
+"属性描述" = "移动速度就是移动的速度"
+"值" = 30.0
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r34m6"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_rx7p4"]
+resource_name = "闪避率"
+script = ExtResource("7_1gl80")
+"属性类型" = 8
+"图标" = SubResource("CompressedTexture2D_r34m6")
+"属性描述" = "闪避伤害的几率"
+"叠加方式" = 1
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ye6iw"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_4i822"]
+resource_name = "冷却缩减"
+script = ExtResource("7_1gl80")
+"属性类型" = 10
+"图标" = SubResource("CompressedTexture2D_ye6iw")
+"属性描述" = "缩减技能冷却时间"
+"叠加方式" = 1
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="Resource" id="Resource_02cnh"]
+resource_local_to_scene = true
+script = ExtResource("6_gudbt")
+"属性们" = Array[ExtResource("7_1gl80")]([SubResource("Resource_p7id7"), SubResource("Resource_px4vd"), SubResource("Resource_ao34u"), SubResource("Resource_icuh5"), SubResource("Resource_t1qiv"), SubResource("Resource_fwjf5"), SubResource("Resource_k7f8g"), SubResource("Resource_iwx7t"), SubResource("Resource_rx7p4"), SubResource("Resource_4i822")])
+metadata/_custom_type_script = "uid://bjvqbui703u8x"
+
 [node name="绿史莱姆" unique_id=192549199 groups=["enemy"] instance=ExtResource("1_au3mk")]
 collision_layer = 4
 collision_mask = 0
@@ -513,7 +638,7 @@ position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_dlhfe")
 
 [node name="单位属性component" parent="." index="7" unique_id=176829961]
-"属性集" = ExtResource("6_wikua")
+"属性集" = SubResource("Resource_02cnh")
 
 [node name="技能实例" parent="SkillManager/Skills" parent_id_path=PackedInt32Array(1829939027) index="0" unique_id=1136777421 instance=ExtResource("7_dlhfe")]
 "技能本体数据" = ExtResource("8_4re02")

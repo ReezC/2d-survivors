@@ -10,5 +10,5 @@ script = ExtResource("1_1ksrx")
 "技能图标" = ExtResource("2_lyj65")
 "技能描述" = "接触时造成害"
 "技能类型" = 1
-"技能逻辑配置文件" = "res://技能/skill_data/301001.json"
+"技能逻辑配置文件" = "res://技能/skill_data/200001.json"
 metadata/_custom_type_script = "uid://cf5tsjb2i13c0"

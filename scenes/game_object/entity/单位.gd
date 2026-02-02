@@ -61,6 +61,7 @@ func _ready() -> void:
 	attribute_component.初始化属性()
 	animation_tree.active = true
 	出生.emit()
+	skill_manager.初始化()
 
 func 设置受击闪白material(闪白material:ShaderMaterial) -> void:
 	animated_sprite_2d.material = 闪白material

@@ -9,6 +9,5 @@ class_name 子物体
 var obj_process:Callable = func(delta: float) -> void:
 	pass
 
-
 func _physics_process(delta: float) -> void:
-	obj_process.call(delta)
+	obj_process.call_deferred(delta)
