@@ -61,42 +61,6 @@ func _ready() -> void:
 	var buff_logic_data = buff_data.get("buffLogic")
 	buff_excute(buff_logic_data)
 	
-
-func buff_excute(buff_logic_data: Dictionary) -> void:
-	match buff_logic_data.get("$type").split(".")[-1]:
-		"PlayAnimation":
-			# var animation_name = buff_logic_data.get("animationName")
-			# var anim_tree = 施法者.get_node_or_null("AnimationTree") as AnimationTree
-			if 施法者.当前状态 == 施法者.角色状态.死亡:
-				return
-			施法者.当前状态 = 施法者.角色状态.释放技能
-			buff结束.connect(func():
-				施法者.当前状态 = 施法者.角色状态.待机
-			)
-		"BuffList":
-			var buff_logics = buff_logic_data.get("buffs", [])
-			for logic in buff_logics:
-				buff_excute(logic)
-
-		"ActionOverTime":
-			var interval =skill_manager. _解析数值(buff_logic_data.get("interval")) / 1000.0
-			if interval <= 0.0:
-				push_error("[color=red]ActionOverTime 的 interval 必须大于0[/color]")
-				return
-			var action = buff_logic_data.get("action", {})
-			var action_over_time_timer = Timer.new()
-			action_over_time_timer.wait_time = interval
-			action_over_time_timer.autostart = true
-			action_over_time_timer.connect("timeout", func():
-				skillAction_execute(action)
-			)
-			add_child(action_over_time_timer)
-			action_over_time_timer.start()
-
-		_:
-			print_rich("[color=red]未知的buff逻辑类型: %s[/color]" % buff_logic_data.get("$type"))
-	
-	
 func on_buff_start() -> void:
 	emit_signal("buff开始")
 	# buff开始时的逻辑
@@ -129,9 +93,78 @@ func _on_buff_timer_timeout() -> void:
 	on_buff_end()
 
 
-#region 技能行为
+
+#region BuffLogic
+func buff_excute(buff_logic_data: Dictionary) -> void:
+	match buff_logic_data.get("$type").split(".")[-1]:
+		"PlayAnimation":
+			# var animation_name = buff_logic_data.get("animationName")
+			# var anim_tree = 施法者.get_node_or_null("AnimationTree") as AnimationTree
+			if 施法者.当前状态 == 施法者.角色状态.死亡:
+				return
+			施法者.当前状态 = 施法者.角色状态.释放技能
+			buff结束.connect(func():
+				施法者.当前状态 = 施法者.角色状态.待机
+			)
+		"BuffList":
+			var buff_logics = buff_logic_data.get("buffs", [])
+			for logic in buff_logics:
+				buff_excute(logic)
+
+		"ActionOverTime":
+			var interval =skill_manager. _解析数值(buff_logic_data.get("interval")) / 1000.0
+			if interval <= 0.0:
+				push_error("[color=red]ActionOverTime 的 interval 必须大于0[/color]")
+				return
+			var action = buff_logic_data.get("action", {})
+			var action_over_time_timer = Timer.new()
+			action_over_time_timer.wait_time = interval
+			action_over_time_timer.autostart = true
+			action_over_time_timer.connect("timeout", func():
+				skillAction_execute(action)
+			)
+			add_child(action_over_time_timer)
+			action_over_time_timer.start()
+
+		"ActionTimeline":
+			var actionOnTimeList = buff_logic_data.get("actionOnTimeList", [])
+			var timeMultiplier = skill_manager._解析数值(buff_logic_data.get("addTimeMultiplierPercent"))
+			if timeMultiplier <= -1.0: # 攻速小于0:时间轴不会开始
+				return
+			for actionOnTime in actionOnTimeList:
+				var time = skill_manager._解析数值(actionOnTime.get("time")) / 1000.0
+				var action = actionOnTime.get("action")
+				var action_timeline_timer = Timer.new()
+				action_timeline_timer.wait_time = time * (1 + timeMultiplier)
+				action_timeline_timer.one_shot = true
+				action_timeline_timer.timeout.connect(func():
+					skillAction_execute(action)
+					action_timeline_timer.queue_free()
+				)
+				add_child(action_timeline_timer)
+				action_timeline_timer.start()
+		_:
+			print_rich("[color=red]未知的buff逻辑类型: %s[/color]" % buff_logic_data.get("$type"))
+#endregion
+	
+
+#region SkillAction
 func skillAction_execute(action: Dictionary) -> void:
 	match action.get("$type").split(".")[-1]:
+		"ActionList":
+			var actions = action.get("actions", [])
+			for act in actions:
+				skillAction_execute(act)
+		"ActionIfElse":
+			var condition = action.get("condition")
+			var actionTrue_list = action.get("actionTrue", [])
+			var actionFalses_list = action.get("actionFalse", [])
+			if skill_manager._解析条件(condition):
+				for act in actionTrue_list:
+					skillAction_execute(act)
+			else:
+				for act in actionFalses_list:
+					skillAction_execute(act)
 		"ActionOnTarget":
 			var target_selector = action.get("targetSelector")
 			var buff_targets = target_selector_result(target_selector)
@@ -140,7 +173,7 @@ func skillAction_execute(action: Dictionary) -> void:
 			for target in buff_targets:
 				当前目标 = target
 				skillAction_execute(_action)
-		"CreateObj":
+		"CreateObj": # 使用预制的hitbox，这里不处理collisionshape
 			var obj_id = int(action.get("id"))
 			var obj_scene_path = skill_manager.子物体场景路径 + "/" + str(obj_id) + ".tscn" as String
 			var obj_duration = skill_manager._解析数值(action.get("duration")) / 1000.0
@@ -158,6 +191,8 @@ func skillAction_execute(action: Dictionary) -> void:
 			var collisionLayer = hitbox_collision_config.get("collisionLayer", [])
 			var collisionMask = hitbox_collision_config.get("collisionMask", [])
 			var disableOnSourceDie = hitbox_collision_config.get("disableOnSourceDie", false)
+			## 碰撞重置间隔，单位毫秒。若此处配置>0，则hitbox在碰撞后保持关闭此时间后才重新启用
+			var collideResetInterval = skill_manager._解析数值(hitbox_collision_config.get("collideResetInterval"))
 			if collisionLayer.size() > 0:
 				obj_instance.get_node("HitboxComponent").collision_layer = 0
 				for layer in collisionLayer:
@@ -167,7 +202,7 @@ func skillAction_execute(action: Dictionary) -> void:
 				for mask in collisionMask:
 					obj_instance.get_node("HitboxComponent").collision_mask |= int(mask)
 				obj_instance.get_node("HitboxComponent").disable_on_source_die = disableOnSourceDie
-
+				obj_instance.get_node("HitboxComponent").collide_reset_interval = collideResetInterval
 			var created_obj = create_obj(obj_instance, obj_movement_config, obj_duration_timer)
 			created_obj.name = "SkillObj[%s]" % str(obj_id)
 					
@@ -277,4 +312,31 @@ func target_selector_result(target_selector_config: Dictionary) -> Array:
 
 
 
+#endregion
+
+
+#region buff上下文值解析
+
+func _解析条件_按角色(角色: Node, 条件配置: Dictionary) -> bool:
+	var 类型 = 条件配置.get("$type").split(".")[-1]
+	match 类型:
+		"CurrentState":
+			var stateName = 条件配置.get("stateName", "")
+			return 角色.当前状态 == 角色.角色状态[stateName]
+		_:
+			push_error("[color=red]未知的按角色条件类型: %s[/color]" % 类型)
+			return false
+func _解析数值_按角色(角色: Node, 值配置:Dictionary) -> float:
+	var 类型 = 值配置.get("$type").split(".")[-1]
+	match 类型:
+		"expression":
+			var expr = 值配置.get("expression", "0.0")
+			# 这里可以使用更复杂的表达式解析器
+			return Expression.new().execute(expr)
+		"Attribute":
+			var attr = 值配置.get("attr")
+			return 角色.attribute_component.获取属性值(attr)
+		_:
+			push_error("[color=red]未知的按角色数值类型: %s[/color]" % 类型)
+			return 0.0
 #endregion

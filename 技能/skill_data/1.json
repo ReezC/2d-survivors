@@ -63,7 +63,10 @@
 						],
 						"collisionMask":[
 							64
-						]
+						],
+						"collideResetInterval":{
+							"$type":"skillconfig.FloatValue.Const"
+						}
 					}
 				}
 			}

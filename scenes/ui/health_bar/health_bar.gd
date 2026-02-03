@@ -30,7 +30,7 @@ var 数字跳动计时器: float = 0.0
 var 原始标签位置: Vector2
 
 
-@export var 渐隐时间: float = 2  # 渐隐动画持续时间（秒）
+@export var 渐隐时间: float = 0.5  # 渐隐动画持续时间（秒）
 @export var 渐隐后隐藏: bool = true  # 渐隐后是否隐藏节点
 @export var 渐隐后销毁: bool = false  # 渐隐后是否销毁节点
 var 是否正在渐隐: bool = false

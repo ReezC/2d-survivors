@@ -34,7 +34,7 @@ var 当前状态: 技能状态 = 技能状态.准备就绪 : set  = 设置状态
 
 	
 	
-func _ready() -> void:
+func 初始化() -> void:
 	施法者 = owner as Node2D
 
 	技能本体数据.解析技能配置()

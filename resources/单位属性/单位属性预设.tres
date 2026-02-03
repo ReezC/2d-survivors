@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="单位属性集" format=3 uid="uid://c57ygngoraqk0"]
-
-[ext_resource type="Script" uid="uid://bjvqbui703u8x" path="res://resources/单位属性/单位属性集.gd" id="1_f0d16"]
-[ext_resource type="Script" uid="uid://c218ra1pf7xxj" path="res://resources/单位属性/单位属性.gd" id="2_hby8o"]
-
-[resource]
-resource_local_to_scene = true
-script = ExtResource("1_f0d16")
-metadata/_custom_type_script = "uid://bjvqbui703u8x"

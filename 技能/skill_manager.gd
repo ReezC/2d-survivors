@@ -33,9 +33,10 @@ func 初始化() -> void:
 		AI类型枚举.Enemy技能AI:
 			pass
 	
-	# 生效被动技能
+	# 初始化技能
 	for skill in skills.get_children():
 		var skill_instance = skill as 技能实例
+		skill_instance.初始化()
 		if skill_instance.技能类型 == 技能数据.技能类型枚举.被动技能:
 			skill_instance.cast()
 #region AI逻辑
@@ -125,7 +126,7 @@ static func 播放技能动画(who:Node2D, 动画名称: String,技能动画持�
 
 
 
-#region 目标选择
+#region 目标扫描
 func get_target_in_circle_area(
 	center_position: Vector2,
 	direction: Vector2,
@@ -144,8 +145,8 @@ func get_target_in_circle_area(
 		radius,
 		angle_deg
 	)
-	for point in sector_polygon:
-		GameEvents.创建跳字.emit(center_position + point, "扫！", Color.PURPLE)
+	# for point in sector_polygon:
+		# GameEvents.创建跳字.emit(center_position + point, "扫！", Color.PURPLE)
 	if sector_polygon.size() < 3:
 		push_error("扇形多边形顶点数不足")
 		return []
@@ -217,7 +218,7 @@ func 从多目标中获取最近的目标(targets:Array)->Node2D:
 #endregion
 
 #region 数值与条件解析器
-func _解析数值(值配置:Dictionary) -> float:
+func _解析数值(值配置:Dictionary, source_buff:BuffInstance=null) -> float:
 	var 类型 = 值配置.get("$type").split(".")[-1]
 	match 类型:
 		"Const":
@@ -231,37 +232,43 @@ func _解析数值(值配置:Dictionary) -> float:
 			var values = 值配置.get("values", [])
 			var 总和: float = 0.0
 			for v in values:
-				总和 += _解析数值(v)
+				总和 += _解析数值(v, source_buff)
 			return 总和
 		"Minus":
 			var value1 = 值配置.get("value1", {})
 			var value2 = 值配置.get("value2", {})
-			return _解析数值(value1) - _解析数值(value2)
+			return _解析数值(value1, source_buff) - _解析数值(value2, source_buff)
 		"Multiply":
 			var values = 值配置.get("values", [])
 			var 积: float = 1.0
 			for v in values:
-				积 *= _解析数值(v)
+				积 *= _解析数值(v, source_buff)
 			return 积
 		"Divide":
 			var 被除数 = 值配置.get("value1", {})
 			var 除数 = 值配置.get("value2", {})
-			var 除数值 = _解析数值(除数)
+			var 除数值 = _解析数值(除数, source_buff)
 			if 除数值 != 0.0:
-				return _解析数值(被除数) / 除数值
+				return _解析数值(被除数, source_buff) / 除数值
 			else:
 				push_error("[color=red]除数不能为零[/color]")
 				return 0.0
 		"Int":
-			return float(int(_解析数值(值配置.get("value", {}))))
+			return float(int(_解析数值(值配置.get("value", {}), source_buff)))
+		"ByActor":
+			if source_buff == null:
+				push_error("[color=red]无法获取ByActor数值[/color]")
+				return 0.0
+			var actorType = 值配置.get("actorType", "Caster")
+			return source_buff._解析数值_按角色(actorType, 值配置.get("value"))
 		_:
 			push_error("[color=red]未知的数值类型: %s[/color]" % 类型)
 			return 0.0
 
-func _解析条件(条件配置:Dictionary)->bool:
+func _解析条件(条件配置:Dictionary, source_buff:BuffInstance = null)->bool:
 	var 类型 = 条件配置.get("$type").split(".")[-1]
 	match 类型:
-		"Const":
+		"Bool":
 			return 条件配置.get("value", false)
 		"expression":
 			var expr = 条件配置.get("expression", "false")
@@ -271,36 +278,55 @@ func _解析条件(条件配置:Dictionary)->bool:
 			var 几率百分比 = 条件配置.get("chance", 0.0)
 			var 几率百分比加成 = 条件配置.get("addChances",[])
 			for 加成 in 几率百分比加成:
-				几率百分比 += _解析数值(加成)
+				几率百分比 += _解析数值(加成, source_buff)
 			var 随机值 = randi() % 100 + 1
 			return 随机值 < 几率百分比
 		"Gte":
 			var value1 = 条件配置.get("value1", {})
 			var value2 = 条件配置.get("value2", {})
-			return _解析数值(value1) >= _解析数值(value2)
+			return _解析数值(value1, source_buff) >= _解析数值(value2, source_buff)
 		"Lte":
 			var value1 = 条件配置.get("value1", {})
 			var value2 = 条件配置.get("value2", {})
-			return _解析数值(value1) <= _解析数值(value2)
+			return _解析数值(value1, source_buff) <= _解析数值(value2, source_buff)
 		"Equal":
 			var value1 = 条件配置.get("value1", {})
 			var value2 = 条件配置.get("value2", {})
-			return _解析数值(value1) == _解析数值(value2)
+			return _解析数值(value1, source_buff) == _解析数值(value2, source_buff)
 		"And":
 			var conditions = 条件配置.get("conditions", [])
 			for cond in conditions:
-				if not _解析条件(cond):
+				if not _解析条件(cond, source_buff):
 					return false
 			return true
 		"Or":
 			var conditions = 条件配置.get("conditions", [])
 			for cond in conditions:
-				if _解析条件(cond):
+				if _解析条件(cond, source_buff):
 					return true
 			return false
 		"Not":
 			var condition = 条件配置.get("condition", {})
-			return not _解析条件(condition)
+			return not _解析条件(condition, source_buff)
+		"ByActor":
+			if source_buff == null:
+				push_error("[color=red]无法获取ByActor条件[/color]")
+				return false
+			var actorType = 条件配置.get("actorType", "Caster")
+			var actor_condition = 条件配置.get("condition")
+			var actor_node: Node = null
+			match actorType:
+				"Caster":
+					actor_node = source_buff.施法者
+				"CurentTarget":
+					actor_node = source_buff.当前目标
+				_:
+					push_error("[color=red]未知的ByActor actorType: %s[/color]" % actorType)
+					return false
+			if actor_node == null:
+				push_error("[color=red]ByActor 未找到对应的角色节点[/color]")
+				return false
+			return source_buff._解析条件_按角色(actor_node, actor_condition)
 		_:
 			push_error("[color=red]未知的条件类型: %s[/color]" % 类型)
 			return false

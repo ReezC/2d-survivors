@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cvlm27dbeq7l8"]
+
+[ext_resource type="Script" uid="uid://1cre6y8172cy" path="res://resources/config_files/csv_loader.gd" id="1_nqih7"]
+
+[node name="CsvLoader" type="Node" unique_id=290969155]
+script = ExtResource("1_nqih7")
