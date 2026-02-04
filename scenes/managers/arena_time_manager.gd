@@ -29,4 +29,4 @@ func get_time_elapsed() -> float:
 # 胜利条件：时间到
 func on_timer_timeout() -> void:
 	var end_screen_instance = end_screen_scene.instantiate() as CanvasLayer
-	add_child(end_screen_instance)
+	call_deferred("add_child", end_screen_instance)

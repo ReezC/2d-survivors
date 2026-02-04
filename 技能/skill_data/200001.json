@@ -1,93 +1,94 @@
 {
-	"$type": "skillconfig.skill",
-	"id": 200001.0,
-	"name": "有毒外皮",
-	"blackBoard": {
-		"$type": "skillconfig.BlackBoard"
+	"$type":"skillconfig.skill",
+	"id":200001,
+	"name":"有毒外皮",
+	"blackBoard":{
+		"$type":"skillconfig.BlackBoard"
 	},
-	"buff": {
-		"$type": "skillconfig.OneBuff",
-		"name": "有毒外皮",
-		"duration": {
-			"$type": "skillconfig.FloatValue.Const",
-			"value": -1.0
+	"buff":{
+		"$type":"skillconfig.OneBuff",
+		"name":"有毒外皮",
+		"duration":{
+			"$type":"skillconfig.FloatValue.Const",
+			"value":-1.0
 		},
-		"maxStack": {
-			"$type": "skillconfig.FloatValue.Const"
+		"maxStack":{
+			"$type":"skillconfig.FloatValue.Const"
 		},
-		"stackType": "none",
-		"buffLogic": {
-			"$type": "skillconfig.BuffLogic.ActionTimeline",
-			"actionOnTimeList": [
+		"stackType":"none",
+		"buffLogic":{
+			"$type":"skillconfig.BuffLogic.ActionTimeline",
+			"actionOnTimeList":[
 				{
-					"$type": "skillconfig.ActionOnTime",
-					"time": {
-						"$type": "skillconfig.FloatValue.Const"
+					"$type":"skillconfig.ActionOnTime",
+					"time":{
+						"$type":"skillconfig.FloatValue.Const"
 					},
-					"action": {
-						"$type": "skillconfig.SkillAction.CreateHitbox",
-						"duration": {
-							"$type": "skillconfig.FloatValue.Const",
-							"value": 100.0
+					"action":{
+						"$type":"skillconfig.SkillAction.CreateHitbox",
+						"duration":{
+							"$type":"skillconfig.FloatValue.Const",
+							"value":-1.0
 						},
-						"movement": {
-							"$type": "skillconfig.SubObjMovement.Bind"
+						"movement":{
+							"$type":"skillconfig.SubObjMovement.Bind"
 						},
-						"halfWidth": {
-							"$type": "skillconfig.FloatValue.Const",
-							"value": 7.0
+						"halfWidth":{
+							"$type":"skillconfig.FloatValue.Const",
+							"value":7.0
 						},
-						"halfHeight": {
-							"$type": "skillconfig.FloatValue.Const",
-							"value": 6.0
+						"halfHeight":{
+							"$type":"skillconfig.FloatValue.Const",
+							"value":6.0
 						},
-						"hitboxCollision": {
-							"$type": "skillconfig.HitboxCollision",
-							"collisionLayer": [
-								128.0
+						"hitboxCollision":{
+							"$type":"skillconfig.HitboxCollision",
+							"collisionLayer":[
+								128
 							],
-							"collisionMask": [
-								16.0
+							"collisionMask":[
+								16
 							],
-							"collideResetInterval": {
-								"$type": "skillconfig.FloatValue.Const",
-								"value": 500.0
+							"disableOnSourceDie":true,
+							"collideResetInterval":{
+								"$type":"skillconfig.FloatValue.Const",
+								"value":500.0
 							}
 						}
 					}
 				}
 			],
-			"addTimeMultiplierPercent": {
-				"$type": "skillconfig.FloatValue.Minus",
-				"$note": "note：攻速影响",
-				"$fold": true,
-				"value1": {
-					"$type": "skillconfig.FloatValue.Divide",
-					"value1": {
-						"$type": "skillconfig.FloatValue.Const",
-						"value": 1.0
+			"addTimeMultiplierPercent":{
+				"$type":"skillconfig.FloatValue.Minus",
+				"$note":"note：攻速影响",
+				"$fold":true,
+				"value1":{
+					"$type":"skillconfig.FloatValue.Divide",
+					"value1":{
+						"$type":"skillconfig.FloatValue.Const",
+						"value":1.0
 					},
-					"value2": {
-						"$type": "skillconfig.FloatValue.ByActor",
-						"actorType": "Caster",
-						"value": {
-							"$type": "skillconfig.ActorFloatValue.Attribute",
-							"attr": 11.0
+					"value2":{
+						"$type":"skillconfig.FloatValue.ByActor",
+						"actorType":"Caster",
+						"value":{
+							"$type":"skillconfig.ActorFloatValue.Attribute",
+							"attr":11
 						}
 					}
 				},
-				"value2": {
-					"$type": "skillconfig.FloatValue.Const",
-					"value": 1.0
+				"value2":{
+					"$type":"skillconfig.FloatValue.Const",
+					"value":1.0
 				}
 			}
 		}
 	},
-	"CD": {
-		"$type": "skillconfig.FloatValue.Const"
+	"CD":{
+		"$type":"skillconfig.FloatValue.Const"
 	},
-	"skillTriggerRange": {
-		"$type": "skillconfig.FloatValue.Const",
-		"value": -1.0
+	"skillTriggerRange":{
+		"$type":"skillconfig.FloatValue.Const",
+		"value":-1.0
 	}
 }

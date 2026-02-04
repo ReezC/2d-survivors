@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dgbi7qxf3ppa4"]
+
+[ext_resource type="Texture2D" uid="uid://bpqyh8lvfijd4" path="res://assets/Ninja Adventure - Asset Pack/FX/Magic/Circle/SpriteSheetSpark.png" id="1_ta7j0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta7j0"]
+atlas = ExtResource("1_ta7j0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_585w2"]
+atlas = ExtResource("1_ta7j0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7kms"]
+atlas = ExtResource("1_ta7j0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2mne"]
+atlas = ExtResource("1_ta7j0")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0vfe"]
+atlas = ExtResource("1_ta7j0")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8orn"]
+atlas = ExtResource("1_ta7j0")
+region = Rect2(160, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta7j0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_585w2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7kms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2mne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0vfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8orn")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]

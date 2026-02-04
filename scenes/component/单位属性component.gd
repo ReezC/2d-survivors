@@ -22,6 +22,9 @@ func 获取属性值(属性名称: String) -> float:
 
 func 获取属性(属性名称: String) -> 单位属性:
 	return 属性集.获取属性(属性名称)
+
+func 获取属性名称_by_id(属性id: int) -> String:
+	return 属性集.单位属性枚举.keys()[属性id - 1]
 #endregion
 
 

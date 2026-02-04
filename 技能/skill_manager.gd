@@ -260,7 +260,16 @@ func _解析数值(值配置:Dictionary, source_buff:BuffInstance=null) -> float
 				push_error("[color=red]无法获取ByActor数值[/color]")
 				return 0.0
 			var actorType = 值配置.get("actorType", "Caster")
-			return source_buff._解析数值_按角色(actorType, 值配置.get("value"))
+			var actor_node: Node = null
+			match actorType:
+				"Caster":
+					actor_node = source_buff.施法者
+				"CurentTarget":
+					actor_node = source_buff.当前目标
+				_:
+					push_error("[color=red]未知的ByActor actorType: %s[/color]" % actorType)
+					return 0.0
+			return source_buff._解析数值_按角色(actor_node, 值配置.get("value"))
 		_:
 			push_error("[color=red]未知的数值类型: %s[/color]" % 类型)
 			return 0.0

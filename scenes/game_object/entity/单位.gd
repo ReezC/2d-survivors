@@ -15,7 +15,7 @@ class_name Unit
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var state_machine = $AnimationTree.get("parameters/playback")
-	
+
 signal 出生	
 signal 死亡
 
@@ -159,3 +159,13 @@ func 计算碰撞相交位置(hitbox:HitboxComponent,hurtbox:HurtboxComponent) -
 	var 随机y:float = randf_range(相交上边界, 相交下边界)
 	var 随机坐标:Vector2 = Vector2(随机x, 随机y)
 	return 随机坐标
+
+## 创建特效实例
+func create_fx(fx_scene: PackedScene, offset: Vector2=Vector2.ZERO,bind:bool=false ,speed_scale: float = 1.0) -> void:
+	var fx_instance = fx_scene.instantiate() as fx
+	fx_instance.speed_scale = speed_scale
+	if bind:
+		add_child(fx_instance)
+	else:
+		fx_instance.position = global_position + offset
+		get_tree().current_scene.add_child(fx_instance)
