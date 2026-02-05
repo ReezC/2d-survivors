@@ -3,15 +3,10 @@ class_name Player
 
 
 var inputDirection:Vector2 = Vector2.ZERO
-var facingDirection_x: float = 0.0
 var 平滑移速:Vector2 = Vector2.ZERO
 
 
 # var 已死亡: bool = false
-
-
-
-
 
 
 func _ready() -> void:
@@ -74,7 +69,7 @@ func set_anim() -> void:
 func get_x_facing_direction() -> float:
 	var x_input = inputDirection.x
 	if x_input == 0:
-		return facingDirection_x
+		return facingDirection.x
 	return x_input
 
 func get_facing_direction() -> Vector2:

@@ -1,12 +1,13 @@
 extends Node
 
 
-const 受击闪白material = preload("uid://c0gikbxr2hvpe")
+const 受击闪白material = preload("res://effects/受击闪白.tres")
+const 受击闪红material = preload("res://effects/受击闪红.tres")
 # const 战斗跳字场景 = preload("res://scenes/ui/floating_text/战斗跳字.tscn")
 
 signal experience_vial_collected(exp_amount: int)
 signal ability_upgrade_added(upgrade:AbilityUpgrade, current_upgrades:Dictionary)
-signal 创建跳字(位置: Vector2, 内容: String, 颜色: Color)
+signal 创建跳字(位置: Vector2, 内容: String, 类型:跳字对象池.跳字类型枚举)
 
 
 ## 品质枚举，不光是物品

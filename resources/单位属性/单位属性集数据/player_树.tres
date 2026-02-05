@@ -43,6 +43,7 @@ metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 resource_name = "攻击力"
 script = ExtResource("2_bc0tf")
 "属性类型" = 3
+"初始值" = 2.0
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wbw41"]
@@ -78,6 +79,7 @@ script = ExtResource("2_bc0tf")
 "属性类型" = 6
 "图标" = SubResource("CompressedTexture2D_qmmqe")
 "属性描述" = "造成暴击时，伤害提高的比例"
+"初始值" = 0.5
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jipc3"]
@@ -89,6 +91,7 @@ script = ExtResource("2_bc0tf")
 "属性类型" = 7
 "图标" = SubResource("CompressedTexture2D_jipc3")
 "属性描述" = "格挡伤害的几率"
+"初始值" = 0.05
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r34m6"]
@@ -127,6 +130,7 @@ script = ExtResource("2_bc0tf")
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
 [sub_resource type="Resource" id="Resource_3rkqf"]
+resource_name = "格挡伤害减免"
 script = ExtResource("2_bc0tf")
 "属性类型" = 8
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"

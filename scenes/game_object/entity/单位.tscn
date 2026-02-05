@@ -41,7 +41,7 @@ offset_bottom = -18.0
 metadata/_edit_use_anchors_ = true
 
 [node name="受击闪白效果Timer" type="Timer" parent="." unique_id=233702438]
-wait_time = 0.15
+wait_time = 0.088
 one_shot = true
 
 [connection signal="被击中" from="HurtboxComponent" to="." method="_on_hurtbox_component_被击中"]

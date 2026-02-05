@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://2cqafx3ufw3s"]
+
+[ext_resource type="Script" uid="uid://6wpq760886yl" path="res://scenes/ui/floating_text/damage_manager.gd" id="1_ownlq"]
+
+[node name="DamageManager" type="Node" unique_id=1032267195]
+script = ExtResource("1_ownlq")

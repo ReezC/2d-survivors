@@ -5,6 +5,7 @@ class_name 战斗跳字
 @onready var 跳字label: Label = $跳字Label
 
 var 跳字时间 = 0.8
+var 大小倍率 = 1.0
 
 # scale参数
 var 解放变大的进度 = 0.05
@@ -26,9 +27,10 @@ var 渐隐结束时间比例 = 1.0
 
 
 
-func 设置跳字内容(内容: String, 颜色: Color) -> void:
+func 设置跳字内容(内容: String, 颜色: Color, _大小倍率:float = 1.0) -> void:
 	跳字label.text = 内容
 	modulate = 颜色
+	大小倍率 = _大小倍率
 	var tween = create_tween()
 	
 	# 初始偏移
@@ -65,6 +67,8 @@ func _tween_跳字(
 	else :
 		self.scale = Vector2.ONE * 驻留缩放比例
 
+	# 重写scale倍率
+	scale = self.scale * 大小倍率
 
 	# 计算modulate.a
 	if 当前进度 >= 渐隐开始时间比例:

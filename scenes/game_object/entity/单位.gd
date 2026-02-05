@@ -89,27 +89,49 @@ func _on_hurtbox_component_被击中(hitbox: HitboxComponent) -> void:
 
 		if 判定随机数 < 闪避率:
 			# 闪避成功
-			pass
+			if "player" in self.get_groups():
+				# 玩家闪避，显示绿色跳字
+				GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "闪避", 跳字对象池.跳字类型枚举.玩家闪避, 1)
+			elif "enemy" in self.get_groups():
+				# 非玩家单位闪避，显示怪物闪避跳字
+				GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "闪避", 跳字对象池.跳字类型枚举.怪物闪避, 1)
 		elif 判定随机数 < 闪避率 + 格挡率:
 			# 格挡成功
 			var 格挡伤害减免 = attribute_component.获取属性值("格挡伤害减免")
 			var 实际伤害 = hitbox.命中伤害 * (1.0 - 格挡伤害减免)
 			attribute_component.受到伤害(实际伤害)
-			设置受击闪白material(GameEvents.受击闪白material)
-			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % 实际伤害, Color.RED, 1)
+			
+			if "player" in self.get_groups():
+				# 玩家受到格挡伤害，显示蓝色跳字
+				GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % 实际伤害, 跳字对象池.跳字类型枚举.玩家格挡后的伤害, 1)
+				# 设置受击闪白material(GameEvents.受击闪白material)
+			elif "enemy" in self.get_groups():
+				# 非玩家单位受到格挡伤害，显示怪物格挡跳字
+				GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % 实际伤害, 跳字对象池.跳字类型枚举.怪物格挡后的伤害, 1)
+				# 设置受击闪白material(GameEvents.受击闪白material)
 
 		elif 判定随机数 < 闪避率 + 格挡率 + 暴击率:
 			# 暴击成功
 			var 暴击时额外伤害倍率 = hitbox.source.attribute_component.获取属性值("暴击伤害倍率")
 			var 实际伤害 = hitbox.命中伤害 * (1.0 + 暴击时额外伤害倍率)
 			attribute_component.受到伤害(实际伤害)
-			设置受击闪白material(GameEvents.受击闪白material)
-			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d!" % 实际伤害, Color.GOLD, 1)
+			
+			if "player" in self.get_groups():
+				GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "暴击%d!" % 实际伤害, 跳字对象池.跳字类型枚举.玩家受到的暴击伤害, 1)
+				设置受击闪白material(GameEvents.受击闪红material)
+			elif "enemy" in self.get_groups():
+				GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "暴击%d!" % 实际伤害, 跳字对象池.跳字类型枚举.怪物受到的暴击伤害, 1)
+				设置受击闪白material(GameEvents.受击闪白material)
 		else:
 			# 普通命中
 			attribute_component.受到伤害(hitbox.命中伤害)
-			设置受击闪白material(GameEvents.受击闪白material)
-			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % hitbox.命中伤害, Color.RED, 0)
+			
+			if "player" in self.get_groups():
+				GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % hitbox.命中伤害, 跳字对象池.跳字类型枚举.玩家受到的普通伤害, 1)
+				设置受击闪白material(GameEvents.受击闪红material)
+			elif "enemy" in self.get_groups():
+				GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % hitbox.命中伤害, 跳字对象池.跳字类型枚举.怪物受到的普通伤害, 0)
+				设置受击闪白material(GameEvents.受击闪白material)
 
 
 func die() -> void:
