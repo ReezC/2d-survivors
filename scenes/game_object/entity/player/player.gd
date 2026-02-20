@@ -20,7 +20,20 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 
 
-	# 获取输入方向
+	# 输入映射到移动
+	player_move(delta)
+	set_anim()
+	# 平滑碰撞
+	move_and_slide() 
+	
+	# # 根据左右移动翻转精灵
+	# if inputDirection.x >.1:
+	# 	animated_sprite_2d.flip_h = false
+	# elif inputDirection.x<-.1:
+	# 	animated_sprite_2d.flip_h = true
+
+
+func player_move(delta: float) -> void:
 	inputDirection = Input.get_vector("move_left","move_right","move_up","move_down")
 	if 当前状态 != 角色状态.死亡:
 		if 当前状态 == 角色状态.释放技能:
@@ -33,19 +46,6 @@ func _process(delta: float) -> void:
 		velocity = velocity.lerp(inputDirection * attribute_component.获取属性值("移动速度"),acccelerate * delta)
 	else:
 		velocity = velocity.lerp(Vector2.ZERO,acccelerate * delta)
-	
-	# 平滑碰撞
-	set_anim()
-	move_and_slide() 
-	
-	# # 根据左右移动翻转精灵
-	# if inputDirection.x >.1:
-	# 	animated_sprite_2d.flip_h = false
-	# elif inputDirection.x<-.1:
-	# 	animated_sprite_2d.flip_h = true
-
-
-
 
 
 func set_anim() -> void:

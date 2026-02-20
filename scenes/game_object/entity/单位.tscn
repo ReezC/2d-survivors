@@ -44,6 +44,7 @@ metadata/_edit_use_anchors_ = true
 wait_time = 0.088
 one_shot = true
 
+[connection signal="死亡" from="." to="SkillManager" method="_on_单位_死亡"]
 [connection signal="被击中" from="HurtboxComponent" to="." method="_on_hurtbox_component_被击中"]
 [connection signal="生命值变化" from="单位属性component" to="HealthBar" method="_on_单位属性component_生命值变化"]
 [connection signal="timeout" from="受击闪白效果Timer" to="." method="_on_受击闪白效果timer_timeout"]
