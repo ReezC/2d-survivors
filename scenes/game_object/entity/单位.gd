@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Unit
 
 
-@onready var 视觉: Node2D = %视觉
+@onready var 视觉 = %视觉
 @onready var animated_sprite_2d: AnimatedSprite2D = $视觉/AnimatedSprite2D
 @onready var attribute_component: 单位属性Component = $单位属性component
 @onready var health_bar: HealthBar = $HealthBar

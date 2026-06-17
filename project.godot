@@ -31,8 +31,9 @@ gdscript/warnings/unused_parameter=0
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=320
+window/size/borderless=true
+window/size/always_on_top=true
+window/size/extend_to_title=true
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
@@ -40,6 +41,12 @@ window/stretch/mode="canvas_items"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/CodeEditorSwitch/plugin.cfg", "res://addons/vfx_library/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://assets/MapleStory/": "orange"
+}
 
 [global_group]
 

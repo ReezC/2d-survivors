@@ -61,6 +61,8 @@ func set_anim() -> void:
 		角色状态.移动:
 			state_machine.travel("Run")
 			animation_tree.set("parameters/Run/blend_position", get_facing_direction())
+			print(animated_sprite_2d.global_position)
+			print(health_bar.global_position)
 
 		
 

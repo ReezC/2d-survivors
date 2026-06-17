@@ -1,12 +1,194 @@
-[gd_scene load_steps=3 format=3 uid="uid://l45s6onwo77q"]
+[gd_scene format=3 uid="uid://l45s6onwo77q"]
 
 [ext_resource type="PackedScene" uid="uid://dnmhmnx16opyw" path="res://scenes/game_object/entity/player/树.tscn" id="1_nbcxq"]
+[ext_resource type="Texture2D" uid="uid://c1ka1x82eo0sy" path="res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaDark/Faceset.png" id="2_ft7oy"]
+[ext_resource type="Script" uid="uid://bjvqbui703u8x" path="res://resources/单位属性/单位属性集.gd" id="3_kgteh"]
+[ext_resource type="Texture2D" uid="uid://6mm2pb4x3krd" path="res://assets/MapleStory/Character/00002000/stand1/0.arm._outlink.png" id="4_tcpev"]
+[ext_resource type="Script" uid="uid://c218ra1pf7xxj" path="res://resources/单位属性/单位属性.gd" id="4_yw2o3"]
+[ext_resource type="Texture2D" uid="uid://bss0tuqlul3nw" path="res://assets/MapleStory/Character/00002000/stand1/1.arm._outlink.png" id="5_qf25s"]
+[ext_resource type="Script" uid="uid://bd83jqryqem3b" path="res://resources/单位属性/生命_单位属性.gd" id="5_ryxxg"]
+[ext_resource type="Texture2D" uid="uid://orm8ye72r5yr" path="res://assets/MapleStory/Character/00002000/stand1/2.arm._outlink.png" id="6_sghvq"]
+[ext_resource type="Script" uid="uid://cocpxte7moiwt" path="res://resources/单位属性/最大生命值_单位属性.gd" id="6_tcpev"]
+[ext_resource type="Texture2D" uid="uid://blbd4dn0qfryy" path="res://assets/Ninja Adventure - Asset Pack/Items/Object/Dice 20.png" id="7_qf25s"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_81uua"]
 
-[node name="树" instance=ExtResource("1_nbcxq")]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgteh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_tcpev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qf25s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sghvq")
+}],
+"loop": true,
+"name": &"stand1",
+"speed": 5.0
+}]
 
-[node name="AnimatedSprite2D" parent="视觉" index="1"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hdd6p"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_sbb84"]
+resource_name = "生命值"
+script = ExtResource("5_ryxxg")
+"图标" = SubResource("CompressedTexture2D_hdd6p")
+"属性描述" = "不要让它太小，一般情况来说"
+metadata/_custom_type_script = "uid://bd83jqryqem3b"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uo5vx"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_ye6iw"]
+resource_name = "生命上限"
+script = ExtResource("6_tcpev")
+"属性类型" = 1
+"图标" = SubResource("CompressedTexture2D_uo5vx")
+"属性描述" = "多多益善~"
+"初始值" = 100.0
+metadata/_custom_type_script = "uid://cocpxte7moiwt"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c8o2f"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_cll8x"]
+resource_name = "生命上限加成"
+script = ExtResource("4_yw2o3")
+"属性类型" = 2
+"图标" = SubResource("CompressedTexture2D_c8o2f")
+"属性描述" = "按比例提高最大生命值"
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="Resource" id="Resource_7lulo"]
+resource_name = "攻击力"
+script = ExtResource("4_yw2o3")
+"属性类型" = 3
+"初始值" = 2.0
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wbw41"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_6u3n4"]
+resource_name = "攻击速度"
+script = ExtResource("4_yw2o3")
+"属性类型" = 10
+"图标" = SubResource("CompressedTexture2D_wbw41")
+"属性描述" = "影响部分技能的释放速度"
+"初始值" = 1.0
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_00o66"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_kjcqk"]
+resource_name = "暴击率"
+script = ExtResource("4_yw2o3")
+"属性类型" = 5
+"图标" = SubResource("CompressedTexture2D_00o66")
+"属性描述" = "造成暴击的几率"
+"初始值" = 0.05
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qmmqe"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_8u6q2"]
+resource_name = "暴击伤害倍率"
+script = ExtResource("4_yw2o3")
+"属性类型" = 6
+"图标" = SubResource("CompressedTexture2D_qmmqe")
+"属性描述" = "造成暴击时，伤害提高的比例"
+"初始值" = 0.5
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jipc3"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_u0jmy"]
+resource_name = "格挡率"
+script = ExtResource("4_yw2o3")
+"属性类型" = 7
+"图标" = SubResource("CompressedTexture2D_jipc3")
+"属性描述" = "格挡伤害的几率"
+"初始值" = 0.05
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r34m6"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_72gil"]
+resource_name = "闪避率"
+script = ExtResource("4_yw2o3")
+"属性类型" = 9
+"图标" = SubResource("CompressedTexture2D_r34m6")
+"属性描述" = "闪避伤害的几率"
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aaojh"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_sghvq"]
+resource_local_to_scene = true
+resource_name = "移动速度"
+script = ExtResource("4_yw2o3")
+"属性类型" = 11
+"图标" = SubResource("CompressedTexture2D_aaojh")
+"属性描述" = "移动速度就是移动的速度"
+"初始值" = 50.0
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ye6iw"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_vrs21"]
+resource_name = "冷却缩减"
+script = ExtResource("4_yw2o3")
+"属性类型" = 12
+"图标" = SubResource("CompressedTexture2D_ye6iw")
+"属性描述" = "缩减技能冷却时间"
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="Resource" id="Resource_3rkqf"]
+resource_name = "格挡伤害减免"
+script = ExtResource("4_yw2o3")
+"属性类型" = 8
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="Resource" id="Resource_ryxxg"]
+resource_local_to_scene = true
+script = ExtResource("3_kgteh")
+"属性们" = Array[ExtResource("4_yw2o3")]([SubResource("Resource_sbb84"), SubResource("Resource_ye6iw"), SubResource("Resource_cll8x"), SubResource("Resource_7lulo"), SubResource("Resource_6u3n4"), SubResource("Resource_kjcqk"), SubResource("Resource_8u6q2"), SubResource("Resource_u0jmy"), SubResource("Resource_72gil"), SubResource("Resource_sghvq"), SubResource("Resource_vrs21"), SubResource("Resource_3rkqf")])
+metadata/_custom_type_script = "uid://bjvqbui703u8x"
+
+[node name="藏" unique_id=816044646 instance=ExtResource("1_nbcxq")]
+"单位名称" = "藏"
+icon = ExtResource("2_ft7oy")
+
+[node name="阴影" parent="视觉" parent_id_path=PackedInt32Array(1580557336) index="0" unique_id=1997413157]
+texture = null
+
+[node name="AnimatedSprite2D" parent="视觉" parent_id_path=PackedInt32Array(1580557336) index="1" unique_id=516307281]
 sprite_frames = SubResource("SpriteFrames_81uua")
-animation = &"default"
 autoplay = ""
+
+[node name="body" parent="视觉" parent_id_path=PackedInt32Array(1580557336) index="2" unique_id=555882303]
+autoplay = ""
+
+[node name="arm" parent="视觉/body/navel" parent_id_path=PackedInt32Array(50764788) index="0" unique_id=1594210150]
+sprite_frames = SubResource("SpriteFrames_kgteh")
+
+[node name="AnimationTree" parent="." index="2" unique_id=1100281063]
+parameters/Idle/blend_position = Vector2(-0.61295545, 0.27049184)
+parameters/Run/blend_position = Vector2(-0.15303642, 0.55044246)
+
+[node name="单位属性component" parent="." index="5" unique_id=176829961]
+"属性集" = SubResource("Resource_ryxxg")
+
+[node name="HealthBar" parent="." index="7" unique_id=517147532]
+offset_top = -59.0
+offset_bottom = -55.0
