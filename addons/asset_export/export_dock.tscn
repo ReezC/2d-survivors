@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cw8p4xl07hv2y"]
+
+[ext_resource type="Script" uid="uid://dlpt5qfp2k7vw" path="res://addons/asset_export/export_dock.gd" id="1"]
+
+[node name="ExportDock" type="VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+script = ExtResource("1")

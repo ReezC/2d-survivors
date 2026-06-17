@@ -40,7 +40,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/CodeEditorSwitch/plugin.cfg", "res://addons/vfx_library/plugin.cfg")
+enabled=PackedStringArray("res://addons/CodeEditorSwitch/plugin.cfg", "res://addons/asset_export/plugin.cfg", "res://addons/vfx_library/plugin.cfg")
 
 [file_customization]
 

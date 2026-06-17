@@ -10,7 +10,7 @@
 collision_layer = 0
 script = ExtResource("1_flcbh")
 
-[node name="骨骼树" type="Node2D" parent="." unique_id=1585649826]
+[node name="body" type="RemoteTransform2D" parent="." unique_id=2092363739]
 
 [node name="视觉" type="Node2D" parent="." unique_id=1456117193]
 unique_name_in_owner = true

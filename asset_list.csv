@@ -1,0 +1,2325 @@
+路径,类型
+path,type
+res://assets/2D Pixel Dungeon Asset Pack/character and tileset/demonstration.png,png
+res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Character.png,png
+res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Character_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v2/skeleton_v2_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v2/skeleton_v2_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v2/skeleton_v2_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v2/skeleton_v2_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton2/v1/skeleton2_v1_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton2/v1/skeleton2_v1_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton2/v1/skeleton2_v1_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton2/v1/skeleton2_v1_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton2/v2/skeleton2_v2_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton2/v2/skeleton2_v2_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton2/v2/skeleton2_v2_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton2/v2/skeleton2_v2_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skull/v1/skull_v1_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skull/v1/skull_v1_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skull/v1/skull_v1_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skull/v1/skull_v1_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skull/v2/skull_v2_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skull/v2/skull_v2_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skull/v2/skull_v2_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skull/v2/skull_v2_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/vampire/v1/vampire_v1_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/vampire/v1/vampire_v1_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/vampire/v1/vampire_v1_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/vampire/v1/vampire_v1_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/vampire/v2/vampire_v2_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/vampire/v2/vampire_v2_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/vampire/v2/vampire_v2_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/vampire/v2/vampire_v2_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v2/priest1_v2_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v2/priest1_v2_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v2/priest1_v2_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v2/priest1_v2_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v1/priest2_v1_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v1/priest2_v1_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v1/priest2_v1_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v1/priest2_v1_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v2/priest2_v2_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v2/priest2_v2_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v2/priest2_v2_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v2/priest2_v2_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest3/v1/priest3_v1_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest3/v1/priest3_v1_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest3/v1/priest3_v1_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest3/v1/priest3_v1_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest3/v2/priest3_v2_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest3/v2/priest3_v2_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest3/v2/priest3_v2_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest3/v2/priest3_v2_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Dungeon_Character_at.png,png
+res://assets/2D Pixel Dungeon Asset Pack/Dungeon_Tileset_at.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/arrow_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/arrow_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/arrow_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/arrow_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_left_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_left_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_left_2_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_left_2_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_left_2_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_left_2_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_left_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_left_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_right_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_right_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_right_2_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_right_2_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_right_2_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_right_2_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_right_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_right_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_up_down_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_up_down_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_up_down_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/interface/square_up_down_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/arrow/arrow_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/arrow/arrow_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/arrow/arrow_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/arrow/arrow_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/arrow/Just_arrow.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/box_1/box_1_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/box_1/box_1_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/box_1/box_1_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/box_1/box_1_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/box_2/box_2_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/box_2/box_2_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/box_2/box_2_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/box_2/box_2_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/chest/chest_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/chest/chest_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/chest/chest_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/chest/chest_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/chest/chest_open_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/chest/chest_open_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/chest/chest_open_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/chest/chest_open_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/coin/coin_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/coin/coin_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/coin/coin_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/coin/coin_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flag/flag_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flag/flag_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flag/flag_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flag/flag_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_1_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_1_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_1_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_1_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_2_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_2_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_2_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_2_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_1_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_1_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_1_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_1_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_2_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_2_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_2_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_2_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_3_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_3_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_3_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_3_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_4_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_4_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_4_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_4_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/keys/keys_1_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/keys/keys_1_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/keys/keys_1_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/keys/keys_1_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/keys/keys_2_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/keys/keys_2_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/keys/keys_2_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/keys/keys_2_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/mini_box_1/mini_box_1_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/mini_box_1/mini_box_1_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/mini_box_1/mini_box_1_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/mini_box_1/mini_box_1_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/mini_box_2/mini_box_2_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/mini_box_2/mini_box_2_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/mini_box_2/mini_box_2_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/mini_box_2/mini_box_2_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/mini_chest/mini_chest_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/mini_chest/mini_chest_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/mini_chest/mini_chest_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/mini_chest/mini_chest_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/mini_chest/mini_chest_open_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/mini_chest/mini_chest_open_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/mini_chest/mini_chest_open_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/mini_chest/mini_chest_open_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/candlestick_1_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/candlestick_1_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/candlestick_1_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/candlestick_1_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/candlestick_2_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/candlestick_2_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/candlestick_2_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/candlestick_2_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/side_torch_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/side_torch_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/side_torch_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/side_torch_4.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/torch_1.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/torch_2.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/torch_3.png,png
+res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/torch_4.png,png
+res://assets/Enemy_Animations_Set/enemies-skeleton1_attack.png,png
+res://assets/Enemy_Animations_Set/enemies-skeleton1_death.png,png
+res://assets/Enemy_Animations_Set/enemies-skeleton1_idle.png,png
+res://assets/Enemy_Animations_Set/enemies-skeleton1_movement.png,png
+res://assets/Enemy_Animations_Set/enemies-skeleton1_take_damage.png,png
+res://assets/Enemy_Animations_Set/enemies-skeleton2_attack.png,png
+res://assets/Enemy_Animations_Set/enemies-skeleton2_death.png,png
+res://assets/Enemy_Animations_Set/enemies-skeleton2_death2.png,png
+res://assets/Enemy_Animations_Set/enemies-skeleton2_idle.png,png
+res://assets/Enemy_Animations_Set/enemies-skeleton2_movemen.png,png
+res://assets/Enemy_Animations_Set/enemies-skeleton2_take_damage.png,png
+res://assets/Enemy_Animations_Set/enemies-vampire_attack.png,png
+res://assets/Enemy_Animations_Set/enemies-vampire_death.png,png
+res://assets/Enemy_Animations_Set/enemies-vampire_idle.png,png
+res://assets/Enemy_Animations_Set/enemies-vampire_movement.png,png
+res://assets/Enemy_Animations_Set/enemies-vampire_take_damage.png,png
+res://assets/kenney_tiny-dungeon/Preview.png,png
+res://assets/kenney_tiny-dungeon/Sample.png,png
+res://assets/kenney_tiny-dungeon/Tilemap/tilemap.png,png
+res://assets/kenney_tiny-dungeon/Tilemap/tilemap_packed.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0000.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0001.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0002.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0003.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0004.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0005.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0006.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0007.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0008.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0009.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0010.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0011.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0012.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0013.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0014.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0015.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0016.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0017.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0018.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0019.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0020.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0021.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0022.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0023.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0024.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0025.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0026.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0027.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0028.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0029.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0030.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0031.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0032.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0033.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0034.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0035.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0036.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0037.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0038.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0039.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0040.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0041.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0042.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0043.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0044.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0045.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0046.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0047.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0048.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0049.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0050.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0051.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0052.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0053.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0054.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0055.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0056.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0057.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0058.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0059.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0060.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0061.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0062.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0063.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0064.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0065.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0066.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0067.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0068.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0069.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0070.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0071.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0072.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0073.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0074.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0075.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0076.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0077.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0078.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0079.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0080.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0081.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0082.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0083.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0084.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0085.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0086.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0087.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0088.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0089.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0090.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0091.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0092.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0093.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0094.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0095.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0096.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0097.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0098.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0099.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0100.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0101.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0102.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0103.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0104.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0105.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0106.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0107.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0108.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0109.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0110.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0111.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0112.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0113.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0114.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0115.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0116.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0117.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0118.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0119.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0120.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0121.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0122.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0123.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0124.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0125.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0126.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0127.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0128.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0129.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0130.png,png
+res://assets/kenney_tiny-dungeon/Tiles/tile_0131.png,png
+res://assets/MapleStory/Character/00002000/stand1/0.arm._outlink.png,png
+res://assets/MapleStory/Character/00002000/stand1/0.body._outlink.png,png
+res://assets/MapleStory/Character/00002000/stand1/1.arm._outlink.png,png
+res://assets/MapleStory/Character/00002000/stand1/1.body._outlink.png,png
+res://assets/MapleStory/Character/00002000/stand1/2.arm._outlink.png,png
+res://assets/MapleStory/Character/00002000/stand1/2.body._outlink.png,png
+res://assets/MapleStory/Character/00012000/front/head/front.head._outlink.png,png
+res://assets/MapleStory/Character/00012000/front/humanEar/humanEar._outlink.png,png
+res://assets/MapleStory/Character/Coat/01040002/0.mail._outlink.png,png
+res://assets/MapleStory/Character/Coat/01040002/1.mail._outlink.png,png
+res://assets/MapleStory/Character/Coat/01040002/2.mail._outlink.png,png
+res://assets/MapleStory/Character/Coat/01040006/stand1/0.mail._outlink.png,png
+res://assets/MapleStory/Character/Coat/01040006/stand1/1.mail._outlink.png,png
+res://assets/MapleStory/Character/Coat/01040006/stand1/2.mail._outlink.png,png
+res://assets/MapleStory/Character/Face/00020000/default/default.face._outlink.png,png
+res://assets/MapleStory/Character/Hair/00030000/stand1/default.hair._outlink.png,png
+res://assets/MapleStory/Character/Hair/00030000/stand1/default.hairOverHead._outlink.png,png
+res://assets/MapleStory/Character/Hair/00030000/stand1/default.hairShade.0._outlink.png,png
+res://assets/MapleStory/Character/Pants/01060002/stand1/0.pants._outlink.png,png
+res://assets/MapleStory/Character/Pants/01060002/stand1/1.pants._outlink.png,png
+res://assets/MapleStory/Character/Pants/01060002/stand1/2.pants._outlink.png,png
+res://assets/MapleStory/Character/Shoes/01072005/stand1/0.shoes._outlink.png,png
+res://assets/MapleStory/Character/Shoes/01072005/stand1/1.shoes._outlink.png,png
+res://assets/MapleStory/Character/Shoes/01072005/stand1/2.shoes._outlink.png,png
+res://assets/MapleStory/Character/Weapon/01302000/stand1/0.weapon._outlink.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Cat/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Cat/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/CatCyclop/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/CatCyclop/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Chicken/FacesetBlack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Chicken/FacesetBrown.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Chicken/FacesetCute.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Chicken/FacesetWhite.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Chicken/SpriteSheetBlack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Chicken/SpriteSheetBrown.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Chicken/SpriteSheetCute.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Chicken/SpriteSheetWhite.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Cow/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Cow/SpriteSheetWhite.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Cow/SpriteSheetWhiteSide.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Cub/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Cub/Faceset2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Cub/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Cub/SpriteSheet2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Dog/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Dog/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Dog2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Dog2/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Donkey/FacesetGrey.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Donkey/SpriteSheeGreySide.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Donkey/SpriteSheetGrey.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Fish/FacesetRed.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Fish/FacesetWhite.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Fish/FacesetYellow.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Fish/SpriteSheetRed.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Fish/SpriteSheetWhite.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Fish/SpriteSheetYellow.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Frog/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Frog/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Horse/FacesetBlack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Horse/FacesetBrown.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Horse/SpriteSheetBlack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Horse/SpriteSheetBlackSide.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Horse/SpriteSheetBrown.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Horse/SpriteSheetBrownSide.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lion/FacesetOrange.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lion/FacesetRed.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lion/FacesetWhite.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lion/FacesetYellow.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lion/SpriteSheetOrange.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lion/SpriteSheetOrangeSide.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lion/SpriteSheetRed.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lion/SpriteSheetRedSide.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lion/SpriteSheetWhite.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lion/SpriteSheetWhiteSide.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lion/SpriteSheetYellow.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lion/SpriteSheetYellowSide.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lioness/FacesetLioness.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lioness/FacesetLioness2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lioness/SpriteSheeLlioness.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lioness/SpriteSheeLlioness2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lioness/SpriteSheetLioness2Side.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Lioness/SpriteSheetLionessSide.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Monkey/FacesetBlack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Monkey/FacesetBrown.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Monkey/FacesetGrey.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Monkey/SpriteSheetBlack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Monkey/SpriteSheetBrown.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Monkey/SpriteSheetGrey.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Parrot/FacesetBlue.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Parrot/FacesetRed.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Parrot/SpriteSheetBlue.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Parrot/SpriteSheetRed.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Pig/FacesetBlack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Pig/FacesetPink.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Pig/FacesetRed.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Pig/SpriteSheetBlack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Pig/SpriteSheetPink.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Pig/SpriteSheetRed.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Racoon/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Animals/Racoon/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DemonCyclop/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DemonCyclop/Hit.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DemonCyclop/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DemonCyclop/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DemonCyclop/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DemonCyclop2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DemonCyclop2/Hit.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DemonCyclop2/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DemonCyclop2/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DemonCyclop2/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DragonBlue/Body1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DragonBlue/Body2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DragonBlue/BodyEnd.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DragonBlue/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DragonBlue/Head.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DragonBlue/Preview.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DragonBlue/Wing.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DragonGreen/Body1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DragonGreen/Body2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DragonGreen/BodyEnd.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DragonGreen/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DragonGreen/Head.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DragonGreen/Preview.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/DragonGreen/Wing.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBamboo/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBamboo/Charge.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBamboo/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBamboo/Hit.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBamboo/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBamboo/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBamboo2/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBamboo2/Charge.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBamboo2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBamboo2/Hit.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBamboo2/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBamboo2/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBlueSamurai/AttackLeft.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBlueSamurai/AttackRight.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBlueSamurai/ChargeLeft.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBlueSamurai/ChargeRight.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBlueSamurai/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBlueSamurai/Hit.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBlueSamurai/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantBlueSamurai/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantFlam/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantFlam/Hit.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantFlam/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantFrog/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantFrog/Charge.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantFrog/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantFrog/Hit.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantFrog/Idle40x40.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantFrog/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantFrog2/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantFrog2/Charge.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantFrog2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantFrog2/Hit.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantFrog2/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantFrog2/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRacoon/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRacoon/charge.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRacoon/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRacoon/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRacoon/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRacoon/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRacoonGold/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRacoonGold/Charge.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRacoonGold/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRacoonGold/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRacoonGold/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRacoonGold/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRedSamurai/AttackLeft.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRedSamurai/AttackRight.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRedSamurai/ChargeLeft.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRedSamurai/ChargeRight.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRedSamurai/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRedSamurai/Hit.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRedSamurai/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantRedSamurai/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantSlime/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantSlime/Hit.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantSlime/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantSlime/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantSlime2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantSlime2/Hit.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantSlime2/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantSlime2/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantSpirit/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantSpirit/Hit.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/GiantSpirit/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/TenguBlue/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/TenguBlue/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/TenguBlue/Hit.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/TenguBlue/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/TenguBlue/Trans.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/TenguBlue/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/TenguRed/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/TenguRed/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/TenguRed/Hit.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/TenguRed/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/TenguRed/Trans.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Boss/TenguRed/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/AllPreview.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/AllPreview2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Boy/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Boy/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Boy/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Boy/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Boy/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Boy/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Boy/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Boy/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Boy/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Boy/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageGreen/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageGreen/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageGreen/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageGreen/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageGreen/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageGreen/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageGreen/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageGreen/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageGreen/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageGreen/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageRed/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageRed/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageRed/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageRed/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageRed/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageRed/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageRed/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageRed/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageRed/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CamouflageRed/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl2/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl2/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl2/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl2/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl2/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl2/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl2/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl2/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Cavegirl2/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion2/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion2/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion2/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion2/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion2/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion2/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion2/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion2/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion2/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman2/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman2/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman2/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman2/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman2/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman2/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman2/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman2/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Caveman2/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Child/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Child/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonGreen/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonGreen/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonGreen/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonGreen/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonGreen/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonGreen/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonGreen/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonGreen/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonGreen/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonGreen/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonRed/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonRed/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonRed/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonRed/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonRed/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonRed/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonRed/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonRed/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonRed/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/DemonRed/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggBoy/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggBoy/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggBoy/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggBoy/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggBoy/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggBoy/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggBoy/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggBoy/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggBoy/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggBoy/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggGirl/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggGirl/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggGirl/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggGirl/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggGirl/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggGirl/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggGirl/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggGirl/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggGirl/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/EggGirl/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Eskimo/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Eskimo/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Eskimo/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Eskimo/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Eskimo/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Eskimo/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Eskimo/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Eskimo/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Eskimo/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Eskimo/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterRed/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterRed/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterRed/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterRed/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterRed/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterRed/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterRed/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterRed/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterRed/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterRed/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterWhite/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterWhite/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterWhite/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterWhite/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterWhite/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterWhite/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterWhite/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterWhite/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterWhite/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/FighterWhite/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Flam/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Flam/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Flam/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Flam/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Flam/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Flam/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Flam/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Flam/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Flam/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Flam/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GladiatorBlue/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GladiatorBlue/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GladiatorBlue/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GladiatorBlue/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GladiatorBlue/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GladiatorBlue/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GladiatorBlue/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GladiatorBlue/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GladiatorBlue/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GladiatorBlue/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GoldStatue/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GoldStatue/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GoldStatue/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GoldStatue/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GoldStatue/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GoldStatue/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GoldStatue/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GoldStatue/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GoldStatue/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GoldStatue/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GreenPig/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GreenPig/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GreenPig/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GreenPig/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GreenPig/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GreenPig/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GreenPig/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GreenPig/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GreenPig/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/GreenPig/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Hunter/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Hunter/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Hunter/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Hunter/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Hunter/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Hunter/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Hunter/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Hunter/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Hunter/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Hunter/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Inspector/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Inspector/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Inspector/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Inspector/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Inspector/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Inspector/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Inspector/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Inspector/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Inspector/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Inspector/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Knight/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Knight/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Knight/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Knight/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Knight/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Knight/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Knight/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Knight/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Knight/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Knight/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/KnightGold/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/KnightGold/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/KnightGold/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/KnightGold/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/KnightGold/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/KnightGold/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/KnightGold/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/KnightGold/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/KnightGold/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/KnightGold/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Lion/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Lion/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Lion/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Lion/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Lion/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Lion/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Lion/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Lion/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Lion/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Lion/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionBoy/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionBoy/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionBoy/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionBoy/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionBoy/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionBoy/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionBoy/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionBoy/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionBoy/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionBoy/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionOrange/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionOrange/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionOrange/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionOrange/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionOrange/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionOrange/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionOrange/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionOrange/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionOrange/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionOrange/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionYellow/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionYellow/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionYellow/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionYellow/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionYellow/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionYellow/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionYellow/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionYellow/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionYellow/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/LionYellow/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ManGreen/Faceset1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ManGreen/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ManGreen/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ManGreen/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ManGreen/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ManGreen/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ManGreen/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ManGreen/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ManGreen/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ManGreen/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskFrog/Dead14.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskFrog/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskFrog/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskFrog/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskFrog/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskFrog/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskFrog/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskFrog/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskFrog/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskFrog/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskGoldRacoon/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskGoldRacoon/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskGoldRacoon/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskGoldRacoon/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskGoldRacoon/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskGoldRacoon/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskGoldRacoon/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskGoldRacoon/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskGoldRacoon/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskGoldRacoon/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskRacoon/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskRacoon/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskRacoon/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskRacoon/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskRacoon/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskRacoon/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskRacoon/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskRacoon/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskRacoon/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MaskRacoon/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Master/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Master/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Master/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Master/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Master/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Master/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Master/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Master/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Master/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Master/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk2/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk2/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk2/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk2/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk2/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk2/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk2/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk2/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monk2/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monkey/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monkey/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monkey/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monkey/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monkey/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monkey/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monkey/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monkey/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monkey/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Monkey/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerBlue/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerBlue/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerBlue/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerBlue/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerBlue/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerBlue/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerBlue/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerBlue/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerBlue/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerBlue/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerRed/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerRed/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerRed/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerRed/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerRed/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerRed/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerRed/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerRed/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerRed/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/MonkeyBoxerRed/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue2/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue2/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue2/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue2/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue2/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue2/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue2/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue2/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBlue2/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBomb/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBomb/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBomb/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBomb/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBomb/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBomb/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBomb/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBomb/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBomb/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaBomb/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaDark/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaDark/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaDark/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaDark/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaDark/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaDark/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaDark/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaDark/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaDark/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaDark/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaEskimo/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaEskimo/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaEskimo/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaEskimo/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaEskimo/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaEskimo/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaEskimo/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaEskimo/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaEskimo/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaEskimo/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGray/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGray/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGray/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGray/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGray/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGray/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGray/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGray/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGray/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGray/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageBlack/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageBlack/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageBlack/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageBlack/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageBlack/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageBlack/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageBlack/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageBlack/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageBlack/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageBlack/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageOrange/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageOrange/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageOrange/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageOrange/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageOrange/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageOrange/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageOrange/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageOrange/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageOrange/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageOrange/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMasked/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMasked/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMasked/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMasked/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMasked/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMasked/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMasked/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMasked/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMasked/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaMasked/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed2/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed2/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed2/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed2/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed2/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed2/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed2/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed2/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed2/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaYellow/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaYellow/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaYellow/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaYellow/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaYellow/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaYellow/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaYellow/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaYellow/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaYellow/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaYellow/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Noble/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Noble/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Noble/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Noble/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Noble/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Noble/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Noble/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Noble/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Noble/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Noble/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan2/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan2/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan2/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan2/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan2/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan2/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan2/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan2/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan2/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan3/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan3/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan3/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan3/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan3/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan3/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan3/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan3/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan3/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldMan3/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldWoman/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/OldWoman/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Pig/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Pig/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Pig/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Pig/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Pig/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Pig/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Pig/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Pig/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Pig/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Pig/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Princess/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Princess/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Princess/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Princess/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Princess/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Princess/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Princess/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Princess/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Princess/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Princess/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedGladiator/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedGladiator/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedGladiator/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedGladiator/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedGladiator/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedGladiator/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedGladiator/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedGladiator/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedGladiator/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedGladiator/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedNinja3/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedNinja3/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedNinja3/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedNinja3/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedNinja3/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedNinja3/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedNinja3/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedNinja3/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedNinja3/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RedNinja3/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotCamouflage/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotCamouflage/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotCamouflage/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotCamouflage/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotCamouflage/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotCamouflage/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotCamouflage/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotCamouflage/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotCamouflage/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotCamouflage/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGreen/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGreen/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGreen/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGreen/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGreen/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGreen/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGreen/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGreen/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGreen/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGreen/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGrey/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGrey/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGrey/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGrey/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGrey/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGrey/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGrey/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGrey/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGrey/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/RobotGrey/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Samurai/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Samurai/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Samurai/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Samurai/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Samurai/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Samurai/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Samurai/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Samurai/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Samurai/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Samurai/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiBlue/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiBlue/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiBlue/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiBlue/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiBlue/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiBlue/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiBlue/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiBlue/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiBlue/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiBlue/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiRed/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiRed/redsamurai.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiRed/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiRed/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiRed/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiRed/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiRed/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiRed/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiRed/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SamuraiRed/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Shadow.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Shaman/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Shaman/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Shaman/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Shaman/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Shaman/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Shaman/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Shaman/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Shaman/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Shaman/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Shaman/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ShamanLion/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ShamanLion/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ShamanLion/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ShamanLion/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ShamanLion/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ShamanLion/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ShamanLion/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ShamanLion/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ShamanLion/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/ShamanLion/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Skeleton/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Skeleton/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Skeleton/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Skeleton/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Skeleton/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Skeleton/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Skeleton/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Skeleton/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Skeleton/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Skeleton/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SkeletonDemon/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SkeletonDemon/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SkeletonDemon/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SkeletonDemon/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SkeletonDemon/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SkeletonDemon/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SkeletonDemon/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SkeletonDemon/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SkeletonDemon/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SkeletonDemon/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererBlack/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererBlack/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererBlack/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererBlack/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererBlack/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererBlack/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererBlack/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererBlack/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererBlack/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererBlack/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererOrange/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererOrange/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererOrange/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererOrange/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererOrange/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererOrange/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererOrange/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererOrange/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererOrange/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/SorcererOrange/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Spirit/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Spirit/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Spirit/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Spirit/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Spirit/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Spirit/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Spirit/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Spirit/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Spirit/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Spirit/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Statue/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Statue/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Statue/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Statue/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Statue/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Statue/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Statue/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Statue/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Statue/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Statue/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan2/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan2/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan2/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan2/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan2/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan2/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan2/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan2/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Sultan2/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu2/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu2/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu2/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu2/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu2/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu2/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu2/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu2/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Tengu2/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Vampire/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Vampire/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Vampire/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Vampire/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Vampire/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Vampire/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Vampire/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Vampire/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Vampire/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Vampire/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager2/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager2/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager2/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager2/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager2/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager2/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager2/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager2/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager2/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager3/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager3/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager3/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager3/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager3/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager3/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager3/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager3/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager3/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager3/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager4/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager4/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager4/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager4/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager4/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager4/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager4/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager4/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager4/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager4/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager5/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager5/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager5/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager5/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager5/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager5/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager5/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager5/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager5/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Villager5/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Woman/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Woman/SeparateAnim/Attack.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Woman/SeparateAnim/Dead.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Woman/SeparateAnim/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Woman/SeparateAnim/Item.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Woman/SeparateAnim/Jump.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Woman/SeparateAnim/Special1.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Woman/SeparateAnim/Special2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Woman/SeparateAnim/Walk.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Characters/Woman/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Axolot/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Axolot/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/AxolotBlue/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/AxolotBlue/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Bamboo/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Bamboo/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/BambooYellow/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/BambooYellow/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Bear/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Bear/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Beast/Beast.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Beast/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Beast2/Beast2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Beast2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/BlueBat/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/BlueBat/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Butterfly/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Butterfly/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/ButterflyBlue/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/ButterflyBlue/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Cyclope/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Cyclope/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Cyclope2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Cyclope2/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Dragon/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Dragon/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/DragonYellow/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/DragonYellow/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Eye/Eye.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Eye/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Eye2/Eye2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Eye2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Fish/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Fish/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/FishRed/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/FishRed/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Flam/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Flam/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Flam2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Flam2/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/GoldRacoon/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/GoldRacoon/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/GreenOctopus/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/GreenOctopus/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Grey Trex/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Grey Trex/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/HeartGreen/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/HeartGreen/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/HeartRed/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/HeartRed/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/KappaGreen/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/KappaGreen/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/KappaRed/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/KappaRed/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/LanternGreen/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/LanternGreen/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/LanternRed/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/LanternRed/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Larva/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Larva/Larva.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Larva2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Larva2/Larva2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Lizard/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Lizard/Lizard.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Lizard2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Lizard2/Lizard2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Mole/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Mole/Mole.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Mole2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Mole2/Mole2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Mollusc/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Mollusc/Mollusc.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Mollusc2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Mollusc2/Mollusc2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Mouse/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Mouse/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/MouseBlack/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/MouseBlack/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Mushroom/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Mushroom/mushroom.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Mushroom2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Mushroom2/mushroom2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Octopus/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Octopus/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Octopus2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Octopus2/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Owl/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Owl/Owl.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Owl2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Owl2/Owl2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Panda/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Panda/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Racoon/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Racoon/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/RedOctopus/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/RedOctopus/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Reptile/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Reptile/Reptile.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Reptile2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Reptile2/Reptile2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Skull/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Skull/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/SkullBlue/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/SkullBlue/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Slime/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Slime/Slime.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Slime2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Slime2/Slime2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Slime3/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Slime3/Slime3.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Slime4/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Slime4/Slime4.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Snake/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Snake/Snake.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Snake2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Snake2/Snake2.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Snake3/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Snake3/Snake3.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Snake4/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Snake4/Snake4.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/SpiderRed/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/SpiderRed/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/SpiderYellow/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/SpiderYellow/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Spirit/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Spirit/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Spirit2/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Spirit2/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/TRex/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/TRex/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/YellowsBat/Faceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/YellowsBat/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Audio/Jingles/GameOver.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Jingles/GameOver2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Jingles/GameOver3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Jingles/GameOver4.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Jingles/LevelUp1.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Jingles/LevelUp2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Jingles/LevelUp3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Jingles/Secret1.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Jingles/Secret2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Jingles/Secret3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Jingles/Secret4.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Jingles/Success1.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Jingles/Success2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Jingles/Success3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Jingles/Success4.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/1 - Adventure Begin.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/10 - Dark Castle.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/11 - Clearing.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/12 - Temple.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/13 - Mystical.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/14 - Curse.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/15 - Credit Theme.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/16 - Melancholia.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/17 - Fight.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/18 - Aquatic.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/19 - Ascension.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/2 - The Cave.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/20 - Good Time.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/21 - Dungeon.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/22 - Dream.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/23 - Road.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/24 - Final Area.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/25 - End Theme 2.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/26 - Lost Village.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/27 - Chill.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/28 - Tension.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/29 - Lament.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/3 - Revelation.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/30 - Ruins.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/31 - Sunny.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/32 - Manor.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/33 - Calm Village.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/34  - Fight.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/35 - Adventure.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/36 - Village.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/37 - Dark Forest.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/4 - Village.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/5 - Peaceful.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/6 - Story (Short).ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/6 - Story.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/7 - Sad Theme.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/8 - End Theme.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Musics/9 - Quiet.ogg,ogg
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Alert/Alert.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Alert/Alert2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Alert/Alert3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Alert/Alert4.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Alert/Alert5.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Alert/Alert6.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Ambient/Rain.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Ambient/Rain2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Ambient/Rain3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Ambient/River.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Ambient/Storm.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Ambient/Wave.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Ambient/WaveFar.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Ambient/Wind.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Ambient/Wind2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Bonus/Bonus.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Bonus/Bonus2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Bonus/Bonus3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Bonus/Coin.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Bonus/Coin2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Bonus/Coin3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Bonus/Gold1.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Bonus/Gold2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Bonus/PowerUp1.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Bonus/PowerUp2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Creature/Bird.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Creature/Dog.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Creature/Duck.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Creature/Wings.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Creature/Wings2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Bubble.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Bubble2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Explosion.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Explosion2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Explosion3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Explosion4.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Explosion5.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Explosion6.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Fire.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Fire2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Fire3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Fireball.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Fireball2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Grass.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Grass2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Water1.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Water10.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Water2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Water3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Water4.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Water5.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Water6.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Water7.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Water8.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/Water9.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Elemental/WaterDrop.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Hit & Impact/Hit1.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Hit & Impact/Hit2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Hit & Impact/Hit3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Hit & Impact/Hit5.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Hit & Impact/Hit6.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Hit & Impact/Hit7.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Hit & Impact/Hit8.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Hit & Impact/Hit9.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Hit & Impact/Impact.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Hit & Impact/Impact2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Hit & Impact/Impact3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Hit & Impact/Impact4.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Hit & Impact/Impact5.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Jump & Bounce/Bounce.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Jump & Bounce/Bounce2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Jump & Bounce/Bounce3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Jump & Bounce/Bounce4.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Jump & Bounce/Bounce5.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Jump & Bounce/Jump.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Jump & Bounce/Jump2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Jump & Bounce/Jump3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Magic & Skill/Fx.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Magic & Skill/Heal.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Magic & Skill/Heal2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Magic & Skill/Heal3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Magic & Skill/Magic1.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Magic & Skill/Magic2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Magic & Skill/Magic3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Magic & Skill/Magic4.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Magic & Skill/Magic5.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Magic & Skill/Spirit.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Magic & Skill/Strange.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Accept.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Accept2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Accept3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Accept4.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Accept5.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Accept6.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Accept7.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Accept8.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Accept9.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Cancel.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Cancel2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Menu10.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Menu11.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Menu12.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Menu5.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Menu6.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Menu8.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Move1.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Move2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Move3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Move4.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Move5.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Move6.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Move7.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Menu/Move8.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Voice/Voice1.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Voice/Voice10.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Voice/Voice2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Voice/Voice3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Voice/Voice4.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Voice/Voice5.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Voice/Voice6.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Voice/Voice7.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Voice/Voice8.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Voice/Voice9.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Whoosh & Slash/Launch.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Whoosh & Slash/Slash.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Whoosh & Slash/Slash2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Whoosh & Slash/Slash3.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Whoosh & Slash/Slash4.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Whoosh & Slash/Slash5.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Whoosh & Slash/Sword2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Whoosh & Slash/Whoosh.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Whoosh & Slash/Whoosh2.wav,wav
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/Conveyor Belt/Left.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/Conveyor Belt/Middle.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/Conveyor Belt/Right.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/Flag/FlagBlack16x16.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/Flag/FlagBlue16x16.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/Flag/FlagBrown16x16.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/Flag/FlagGray16x16.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/Flag/FlagGreen16x16.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/Flag/FlagRed16x16.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/Flag/FlagWhite16x16.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/Flag/FlagYellow16x16.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/Flower/SpriteSheet16x16.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/MillPropeller/MillPropeller_A_64x64.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/MillPropeller/MillPropeller_B_64x64.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/Plant/SpriteSheet16x16.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/QuickSand/QuickSand32x32.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/Water Ripples/SpriteSheet16x16.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/Waterfall/BottomSheet16x16.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/Waterfall/MiddleSheet16x16.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/Waterfall/TopSheet16x16.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/WaterMill/Watermill_A_34x36.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Animated/WaterMill/Watermill_B_34x36.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/Interior/Elements.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/Interior/TilesetInterior.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/Interior/TilesetInteriorFloor.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/Interior/TilesetWallSimple.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/Pipes.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDesert.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetElement.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetField.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorB.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorDetail.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetHole.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetHouse.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetLogic.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetRelief.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetReliefDetail.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetTowers.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetVillageAbandoned.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Vehicles/Boat.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Vehicles/Crane.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Vehicles/FishNet.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Vehicles/FishNetFull.png,png
+res://assets/Ninja Adventure - Asset Pack/Backgrounds/Vehicles/Sail.png,png
+res://assets/Ninja Adventure - Asset Pack/Example 5 ( Old Version).png,png
+res://assets/Ninja Adventure - Asset Pack/FX/AllPreview.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Elemental/Explosion/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Elemental/Flam/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Elemental/Ice/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Elemental/Ice/SpriteSheetB.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Elemental/Ice/SpriteSheetFlake.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Elemental/Plant/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Elemental/Plant/SpriteSheetB.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Elemental/Rock/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Elemental/Rock/SpriteSheetB.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Elemental/RockSpike/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Elemental/Thunder/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Elemental/Water/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Elemental/WaterPillar/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Environment/Fog.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Environment/Raylight.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Magic/Aura/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Magic/Boost/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Magic/Circle/SpriteSheetOrange.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Magic/Circle/SpriteSheetSpark.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Magic/Circle/SpriteSheetSpark2.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Magic/Circle/SpriteSheetWhite.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Magic/Shield/SpriteSheetBlue.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Magic/Shield/SpriteSheetYellow.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Magic/Spark/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Magic/Spirit/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Magic/Spirit/SpriteSheetBlue.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Magic/Spirit/SpriteSheetDouble.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Particle/AllPreview.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Particle/Bamboo.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Particle/Clouds.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Particle/Fire.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Particle/Grass.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Particle/Leaf.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Particle/LeafPink.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Particle/Rain.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Particle/RainOnFloor.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Particle/Rock.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Particle/RockGray.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Particle/Snow.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Particle/Spark.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Particle/Vase.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Particle/Wood.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Projectile/AllPreview.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Projectile/Arrow.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Projectile/BigEnergyBall.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Projectile/BigKunai.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Projectile/BigShuriken.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Projectile/CanonBall.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Projectile/EnergyBall.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Projectile/Fireball.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Projectile/IceSpike.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Projectile/Kunai/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Projectile/Kunai.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Projectile/PlantSpike.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Projectile/Shuriken/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Projectile/Shuriken.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Projectile/ShurikenMagic.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Projectile/SpriteSheetRock.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/SlashFx/CircularSlash/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/SlashFx/Claw/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/SlashFx/ClawDouble/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/SlashFx/Cut/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/SlashFx/Slash/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/SlashFx/SlashCurved/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/SlashFx/SlashDouble/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/SlashFx/SlashDoubleCurved/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Smoke/Smoke/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/FX/Smoke/SmokeCircular/SpriteSheet.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Action/Hit.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Action/Interact.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/AllPreview.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/Beaf.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/Calamari.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/Fish.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/FortuneCookie.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/Honey.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/Meat.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/Noodle.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/Nut.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/Nut2.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/Octopus.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/Onigiri.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/Seed1.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/Seed2.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/Seed3.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/SeedBig1.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/SeedBig2.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/SeedBig3.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/SeedLarge.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/SeedLargeWhite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/Shrimp.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/Sushi.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/Sushi2.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/TeaLeaf.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Food/Yakitori.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Object/Bag.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Object/Book.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Object/CrateEmpty.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Object/Dice 20.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Object/Dice 4.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Object/Dice 6.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Object/Dice 8.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Object/Gourd.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Object/Hourglass.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Object/MoneyBag.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Object/PanFlute.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Other/Letter.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Other/Letter2.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Other/Letter3.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Other/Stamp.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Potion/EmptyPot.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Potion/Heart.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Potion/LifePot.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Potion/Medipack.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Potion/MilkPot.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Potion/WaterPot.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Projectile/Arrow.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Projectile/Bomb.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Projectile/Caltrop.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Projectile/CrateDynamite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Projectile/Dynamite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Projectile/Kunai.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Projectile/Shuriken.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Resource/BarCopper.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Resource/BarGold.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Resource/BarIron.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Resource/BarMithril.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Resource/BarPurple.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Resource/BarSilver.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Resource/Branch.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Resource/feather.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Resource/GemGreen.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Resource/GemPurple.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Resource/GemRed.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Resource/GemYellow.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Resource/Grass.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Resource/Rock.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Resource/Water.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Scroll/Scroll.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Scroll/ScrollEmpty.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Scroll/ScrollFire.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Scroll/ScrollIce.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Scroll/ScrollPlant.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Scroll/ScrollRock.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Scroll/ScrollThunder.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Tool/Anvil.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Tool/Axe.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Tool/Hammer.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Tool/Hoe.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Tool/Pickaxe.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Tool/Shovel.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Tool/Sickle.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Tool/WateringCan.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Treasure/BigTreasureChest.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Treasure/Coin2.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Treasure/GoldCoin.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Treasure/GoldCup.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Treasure/GoldKey.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Treasure/LittleTreasureChest.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Treasure/SilverCoin.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Treasure/SilverCup.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Treasure/SilverKey.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/WeaponPreview2.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Axe/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Axe/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/AxeTool/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/AxeTool/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/BigSword/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/BigSword/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Bone/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Bone/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Book/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Book/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Bow/Arrow.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Bow/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Bow2/Arrow.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Bow2/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Club/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Club/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Fishing Rod/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Fork/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Fork/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Hammer/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Hammer/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Katana/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Katana/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Lance/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Lance/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Lance2/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Lance2/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/MagicWand/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/MagicWand/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Ninjaku/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Ninjaku/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Pickaxe/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Pickaxe/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Rapier/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Rapier/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Sai/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Sai/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Stick/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Stick/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Sword/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Sword/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Sword2/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Sword2/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Whip/Sprite.png,png
+res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Whip/SpriteInHand.png,png
+res://assets/Ninja Adventure - Asset Pack/MusicCover.png,png
+res://assets/Ninja Adventure - Asset Pack/Palette.png,png
+res://assets/Ninja Adventure - Asset Pack/preview-part-1.png,png
+res://assets/Ninja Adventure - Asset Pack/preview-part-2.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Arrow.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Dialog/ChoiceBox.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Dialog/DialogBox.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Dialog/DialogBoxFaceset.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Dialog/DialogInfo.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Dialog/DialogueBoxSimple.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Dialog/FacesetBox.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Dialog/NoButton.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Dialog/YesButton.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote1.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote10.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote11.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote12.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote13.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote14.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote15.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote16.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote17.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote18.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote19.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote2.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote20.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote21.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote22.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote23.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote24.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote25.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote26.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote27.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote28.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote29.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote3.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote30.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote4.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote5.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote6.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote7.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote8.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Emote/emote9.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Font/font24x30.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Font/font8x8.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonA/Disabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonA/Hovered.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonA/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonA/Pressed.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonB/Disabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonB/Hovered.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonB/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonB/Pressed.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonDown.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonLB.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonLeft.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonLT.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonMinus.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonPlus.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonRB.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonRight.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonRT.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonUp.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonX/Disabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonX/Hovered.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonX/Idle.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonX/Pressed.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonY/ButtonY.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonY/Disabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonY/Hovered.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/ButtonY/Pressed.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/DPad.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/DPadDown.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/DPadLeft.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/DPadRight.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/DPadUp.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/JoystickLeft.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/JoystickLeftPressed.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/JoystickRight.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/JoystickRightPressed.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/Select.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Gamepad/Start.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/IconGamepad.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/IconKeyboard.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/IconMouse.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/Key0.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/Key1.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/Key2.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/Key3.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/Key4.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/Key5.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/Key6.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/Key7.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/Key8.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/Key9.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyA.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyAlt.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyB.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyC.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyCtrl.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyD.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyDelete.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyDown.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyE.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyEnter.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyEscape.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyF.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyF1.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyF10.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyF11.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyF12.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyF2.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyF3.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyF4.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyF5.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyF6.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyF7.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyF8.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyF9.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyG.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyH.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyI.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyJ.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyK.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyL.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyLeft.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyM.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyN.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyO.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyP.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyQ.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyR.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyRight.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyS.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyShift.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeySpace.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyT.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyTab.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyU.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyUp.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyV.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyW.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyX.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyY.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Keyboard/KeyZ.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Mouse/Mouse.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Mouse/MouseButtonLeft.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Mouse/MouseButtonMiddle.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Mouse/MouseButtonRight.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Mouse/MouseDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Mouse/MouseWheelDown.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Mouse/MouseWheelUp.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Preview.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Input/Tuto.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Heart.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Heart2.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Heart3.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/IconHeart.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/LifeBarMiniProgress.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/LifeBarMiniUnder.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Rectangle/Ammokunai.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Rectangle/AmmoSkill.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Rectangle/AmmoSpecial.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Rectangle/BackgroundBag.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Rectangle/BackgroundBamboo.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Rectangle/BackgroundBottle.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Rectangle/BackgroundScroll.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Rectangle/BackgroundWood.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Rectangle/Preview.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Rectangle/ProgressHealth.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Rectangle/ProgressWhite.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/BackgroundBamboo.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/BackgroundFlask.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/BackgroundIron.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/BackgroundIron2.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/BackgroundMetal.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/BackgroundRed.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/BackgroundWood.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/Over.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/Preview.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/ProgressBlack.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/ProgressGreen.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/ProgressHealth.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/ProgressMana.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/ProgressPurple.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/ProgressWhite.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/ProgressYellow.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/Amulet.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/AmuletDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/Armor.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/ArmorDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/Arrow.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/ArrowDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/Boot.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/BootDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/Guard.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/GuardDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/Helmet.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/HelmetDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/Hook.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/HookDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/Kunai.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/KunaiDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/Money.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/MoneyDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/Ring.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/RingDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/Scroll.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/ScrollDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/Shuriken.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Items & Weapon/ShurikenDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/Cook.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/CookDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/Dish.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/DishDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/Harvest.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/HarvestDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/Interact.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/InteractDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/Mine.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/MineDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/Plant.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/PlantDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/Potion.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/PotionDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/Punch.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/PunchDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/Repair.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/RepairDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/Sing.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/SingDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/Talk.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/TalkDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/Water.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Job & Action/WaterDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Meteo/Moon.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Meteo/MoonDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Meteo/Rain.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Meteo/RainDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Meteo/Snow.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Meteo/SnowDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Meteo/Sun.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Meteo/SunDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Preview.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/Alchemy.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/AlchemyDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/AttackUpgrade.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/AttackUpgradeDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookDarkness.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookDarknessDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookDeath.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookDeathDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookFire.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookFireDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookIce.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookIceDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookLight.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookLightDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookPlant.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookPlantDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookRock.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookRockDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookThunder.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookThunderDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookWind.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/BookWindDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/Camouflage.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/CamouflageDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/Counter.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/CounterDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/Cut.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/CutDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/Death.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/DeathDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/DefenseUpgrade.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/DefenseUpgradeDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/Downgrade.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/DowngradeDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/Explosion.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/ExplosionDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/Fireball.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/FireballDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/Heal.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/HealDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/LuckUpgrade.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/LuckUpgradeDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/MagicWeapon.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/MagicWeaponDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/Mist.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/MistDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/Necromancy.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/NecromancyDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/OrbDarkness.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/OrbDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/OrbFire.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/OrbLight.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/OrbPlant.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/OrbWater.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/Permutation.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/PermutationDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/RockSpike.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/RockSpikeDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/Upgrade.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/UpgradeDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/Vision.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/VisionDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/WaterCanon.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Skill Icon/Spell/WaterCanonDisabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/preview.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/arrow_left.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/arrow_left_hover.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/arrow_right.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/arrow_right_hover.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/button_checked.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/button_checked_disabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/button_disabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/button_hover.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/button_normal.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/button_pressed.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/button_unchecked.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/button_unchecked_disabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/checked.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/checked_disabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/h_slidder_grabber.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/h_slidder_grabber_disabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/h_slidder_grabber_hover.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/inventory_cell.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/nine_path_bg.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/nine_path_bg_2.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/nine_path_focus.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/nine_path_panel.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/nine_path_panel_2.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/nine_path_panel_3.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/nine_path_panel_disabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/nine_path_panel_interior.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/radio_checked.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/radio_checked_disabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/radio_unchecked.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/radio_unchecked_disabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/slider_progress.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/slider_progress_hover.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/tab.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/tab_disabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/tab_hover.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/tab_selected.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/tab_unselected.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/unchecked.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/unchecked_disabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/v_slidder_grabber.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/v_slidder_grabber_disabled.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Theme Wood/v_slidder_grabber_hover.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeBamboo/nine_path_panel.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeBocal/nine_path_panel.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeBubble/nine_path_panel.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeDark/nine_path_panel.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeMap/nine_path_panel.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeMetal/nine_path_panel.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeMetal2/nine_path_panel.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeMetal3/nine_path_panel.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeRed/nine_path_panel.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeWood2/nine_path_panel.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeWood3/nine_path_panel.png,png
+res://assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeWood4/nine_path_panel.png,png

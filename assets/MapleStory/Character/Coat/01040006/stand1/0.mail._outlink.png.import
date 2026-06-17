@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://q8ge8pg812nu"
-path="res://.godot/imported/stand1.0.mail._outlink.png-4c5f458e849cded4a828299c46eae5d1.ctex"
+path="res://.godot/imported/0.mail._outlink.png-99b55b6b7f48673d78d76c5c9fa8fd34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/MapleStory/Character/Coat/01040006/stand1.0.mail._outlink.png"
-dest_files=["res://.godot/imported/stand1.0.mail._outlink.png-4c5f458e849cded4a828299c46eae5d1.ctex"]
+source_file="res://assets/MapleStory/Character/Coat/01040006/stand1/0.mail._outlink.png"
+dest_files=["res://.godot/imported/0.mail._outlink.png-99b55b6b7f48673d78d76c5c9fa8fd34.ctex"]
 
 [params]
 
