@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="zmap" format=3 uid="uid://brjkphtt8mjd2"]
+
+[ext_resource type="Script" uid="uid://mhi5bhykj3vm" path="res://resources/zmap.gd" id="1_63lpt"]
+
+[resource]
+script = ExtResource("1_63lpt")
