@@ -62,3 +62,4 @@ position = Vector2(-177, -174)
 [node name="树" parent="Entities" unique_id=95003129 instance=ExtResource("11_blune")]
 
 [node name="Foreground" type="Node2D" parent="." unique_id=908692738 groups=["foreground_layer"]]
+z_as_relative = false
