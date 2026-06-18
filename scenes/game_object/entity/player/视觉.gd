@@ -24,6 +24,6 @@ func _ready() -> void:
 				continue
 			layer = zmap.Layer.values()[idx]
 
-		var idx := zmap_file.get_layer_index(layer)
+		var layer_idx := zmap_file.get_layer_index(layer)
 		# index 越小 z_index 越大，用 total_layers - idx 实现反序
-		child.z_index = total_layers - idx
+		child.z_index = total_layers - layer_idx
