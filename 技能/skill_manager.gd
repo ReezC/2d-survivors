@@ -8,6 +8,13 @@ class_name SkillManager
 var 当前锁定目标: Node2D = null
 var scan_timer: Timer = null
 
+## 预编译表达式缓存
+## key: 表达式 JSON 文本的 hash → { "float": Callable, "cond": Callable }
+## 同一个 JSON 配置只需编译一次
+static var _compiled_float_cache: Dictionary = {}
+static var _compiled_cond_cache: Dictionary = {}
+static var _compiler := ExprCompiler.new()
+
 enum AI类型枚举 {
 	无,
 	Player技能AI,
@@ -35,6 +42,7 @@ func 初始化() -> void:
 			pass
 	
 	# 初始化技能
+	预编译所有技能()
 	for skill in skills.get_children():
 		var skill_instance = skill as 技能实例
 		skill_instance.初始化()
@@ -228,126 +236,70 @@ func 从多目标中获取最近的目标(targets:Array)->Node2D:
 	return 最近目标
 #endregion
 
-#region 数值与条件解析器
+#region 预编译表达式（新）
+## 预编译 FloatValue → Callable（带缓存）
+func 编译数值(值配置: Dictionary) -> Callable:
+	if 值配置 == null or 值配置.is_empty():
+		return func(_ctx: Dictionary) -> float: return 0.0
+	var key = 值配置.hash()
+	if _compiled_float_cache.has(key):
+		return _compiled_float_cache[key]
+	var compiled = _compiler.compile_float_value(值配置)
+	_compiled_float_cache[key] = compiled
+	return compiled
+
+## 预编译 Condition → Callable（带缓存）
+func 编译条件(条件配置: Dictionary) -> Callable:
+	if 条件配置 == null or 条件配置.is_empty():
+		return func(_ctx: Dictionary) -> bool: return true
+	var key = 条件配置.hash()
+	if _compiled_cond_cache.has(key):
+		return _compiled_cond_cache[key]
+	var compiled = _compiler.compile_condition(条件配置)
+	_compiled_cond_cache[key] = compiled
+	return compiled
+
+## 使用预编译的 FloatValue 求值
+func 求值数值(compiled: Callable, source_buff: BuffInstance = null) -> float:
+	var ctx = _构建上下文(source_buff)
+	return compiled.call(ctx)
+
+## 使用预编译的 Condition 求值
+func 求值条件(compiled: Callable, source_buff: BuffInstance = null) -> bool:
+	var ctx = _构建上下文(source_buff)
+	return compiled.call(ctx)
+
+func _构建上下文(source_buff: BuffInstance = null) -> Dictionary:
+	var ctx := {
+		"buff_instance": source_buff,
+		"skill_manager": self,
+		"caster": source_buff.施法者 if source_buff else null,
+		"current_target": source_buff.当前目标 if source_buff else null,
+		"blackboard": source_buff.BlackBoard if source_buff else {},
+		"random": func() -> int: return randi() % 100 + 1,
+	}
+	return ctx
+
+## 初始化时预编译所有技能中的表达式
+func 预编译所有技能() -> void:
+	for skill in skills.get_children():
+		var si = skill as 技能实例
+		if si == null:
+			continue
+		# 预编译技能逻辑中的所有表达式
+		si.预编译表达式()
+#endregion
+
+#region 数值与条件解析器（旧版，保留兼容；内部会尝试走预编译缓存）
 func _解析数值(值配置:Dictionary, source_buff:BuffInstance=null) -> float:
-	var 类型 = 值配置.get("$type").split(".")[-1]
-	match 类型:
-		"Const":
-			var v = 值配置.get("value")
-			return float(v) if v != null else 0.0
-		"Expression":
-			var expr = 值配置.get("expression", "0.0")
-			# 这里可以使用更复杂的表达式解析器
-			return Expression.new().execute(expr)
-		"Add":
-			var values = 值配置.get("values", [])
-			var 总和: float = 0.0
-			for v in values:
-				总和 += _解析数值(v, source_buff)
-			return 总和
-		"Minus":
-			var value1 = 值配置.get("value1", {})
-			var value2 = 值配置.get("value2", {})
-			return _解析数值(value1, source_buff) - _解析数值(value2, source_buff)
-		"Multiply":
-			var values = 值配置.get("values", [])
-			var 积: float = 1.0
-			for v in values:
-				积 *= _解析数值(v, source_buff)
-			return 积
-		"Divide":
-			var 被除数 = 值配置.get("value1", {})
-			var 除数 = 值配置.get("value2", {})
-			var 除数值 = _解析数值(除数, source_buff)
-			if 除数值 != 0.0:
-				return _解析数值(被除数, source_buff) / 除数值
-			else:
-				push_error("[color=red]除数不能为零[/color]")
-				return 0.0
-		"Int":
-			return float(int(_解析数值(值配置.get("value", {}), source_buff)))
-		"ByActor":
-			if source_buff == null:
-				push_error("[color=red]无法获取ByActor数值[/color]")
-				return 0.0
-			var actorType = 值配置.get("actorType", "Caster")
-			var actor_node: Node = null
-			match actorType:
-				"Caster":
-					actor_node = source_buff.施法者
-				"CurentTarget":
-					actor_node = source_buff.当前目标
-				_:
-					push_error("[color=red]未知的ByActor actorType: %s[/color]" % actorType)
-					return 0.0
-			return source_buff._解析数值_按角色(actor_node, 值配置.get("value"))
-		_:
-			push_error("[color=red]未知的数值类型: %s[/color]" % 类型)
-			return 0.0
+	# 尝试走预编译路径
+	var compiled = 编译数值(值配置)
+	var ctx = _构建上下文(source_buff)
+	return compiled.call(ctx)
 
 func _解析条件(条件配置:Dictionary, source_buff:BuffInstance = null)->bool:
-	var 类型 = 条件配置.get("$type").split(".")[-1]
-	match 类型:
-		"Bool":
-			return 条件配置.get("value", false)
-		"expression":
-			var expr = 条件配置.get("expression", "false")
-			# 这里可以使用更复杂的表达式解析器
-			return Expression.new().execute(expr)
-		"Chance":
-			var 几率百分比 = 条件配置.get("chance", 0.0)
-			var 几率百分比加成 = 条件配置.get("addChances",[])
-			for 加成 in 几率百分比加成:
-				几率百分比 += _解析数值(加成, source_buff)
-			var 随机值 = randi() % 100 + 1
-			return 随机值 < 几率百分比
-		"Gte":
-			var value1 = 条件配置.get("value1", {})
-			var value2 = 条件配置.get("value2", {})
-			return _解析数值(value1, source_buff) >= _解析数值(value2, source_buff)
-		"Lte":
-			var value1 = 条件配置.get("value1", {})
-			var value2 = 条件配置.get("value2", {})
-			return _解析数值(value1, source_buff) <= _解析数值(value2, source_buff)
-		"Equal":
-			var value1 = 条件配置.get("value1", {})
-			var value2 = 条件配置.get("value2", {})
-			return _解析数值(value1, source_buff) == _解析数值(value2, source_buff)
-		"And":
-			var conditions = 条件配置.get("conditions", [])
-			for cond in conditions:
-				if not _解析条件(cond, source_buff):
-					return false
-			return true
-		"Or":
-			var conditions = 条件配置.get("conditions", [])
-			for cond in conditions:
-				if _解析条件(cond, source_buff):
-					return true
-			return false
-		"Not":
-			var condition = 条件配置.get("condition", {})
-			return not _解析条件(condition, source_buff)
-		"ByActor":
-			if source_buff == null:
-				push_error("[color=red]无法获取ByActor条件[/color]")
-				return false
-			var actorType = 条件配置.get("actorType", "Caster")
-			var actor_condition = 条件配置.get("condition")
-			var actor_node: Node = null
-			match actorType:
-				"Caster":
-					actor_node = source_buff.施法者
-				"CurentTarget":
-					actor_node = source_buff.当前目标
-				_:
-					push_error("[color=red]未知的ByActor actorType: %s[/color]" % actorType)
-					return false
-			if actor_node == null:
-				push_error("[color=red]ByActor 未找到对应的角色节点[/color]")
-				return false
-			return source_buff._解析条件_按角色(actor_node, actor_condition)
-		_:
-			push_error("[color=red]未知的条件类型: %s[/color]" % 类型)
-			return false
+	# 尝试走预编译路径
+	var compiled = 编译条件(条件配置)
+	var ctx = _构建上下文(source_buff)
+	return compiled.call(ctx)
 #endregion

@@ -32,6 +32,17 @@ enum 技能状态 {
 
 var 当前状态: 技能状态 = 技能状态.准备就绪 : set  = 设置状态
 
+## 预编译的表达式
+var _compiled_cd: Callable           ## 预编译的 CD 表达式
+var _compiled_trigger_range: Callable  ## 预编译的触发范围表达式
+
+## 预编译该技能中的所有表达式（由 SkillManager.预编译所有技能 调用）
+func 预编译表达式() -> void:
+	if 技能本体数据.技能逻辑.is_empty():
+		return
+	_compiled_cd = skill_manager.编译数值(技能本体数据.获取技能CD() if typeof(技能本体数据.获取技能CD()) == TYPE_DICTIONARY else {"$type": "skillconfig.FloatValue.Const", "value": 技能本体数据.获取技能CD()})
+	_compiled_trigger_range = skill_manager.编译数值(技能本体数据.获取技能触发范围() if typeof(技能本体数据.获取技能触发范围()) == TYPE_DICTIONARY else {"$type": "skillconfig.FloatValue.Const", "value": 技能本体数据.获取技能触发范围()})
+
 	
 	
 func 初始化() -> void:
@@ -39,17 +50,25 @@ func 初始化() -> void:
 
 	技能本体数据.解析技能配置()
 	技能类型 = 技能本体数据.技能类型
-	# 初始化技能冷却
+	# 初始化技能冷却（优先使用预编译表达式）
+	if _compiled_cd == null:
+		预编译表达式()
 	var 冷却时间配置 = 技能本体数据.获取技能CD()
 	if typeof(冷却时间配置) == TYPE_DICTIONARY:
-		冷却时间 = max(0,skill_manager._解析数值(冷却时间配置))
+		if _compiled_cd:
+			冷却时间 = max(0, skill_manager.求值数值(_compiled_cd))
+		else:
+			冷却时间 = max(0, skill_manager._解析数值(冷却时间配置))
 	else:
 		冷却时间 = float(冷却时间配置) 
 
 	# 触发范围
 	var 触发范围配置 = 技能本体数据.获取技能触发范围()
 	if typeof(触发范围配置) == TYPE_DICTIONARY:
-		技能触发范围 = max(0,skill_manager._解析数值(触发范围配置))
+		if _compiled_trigger_range:
+			技能触发范围 = max(0, skill_manager.求值数值(_compiled_trigger_range))
+		else:
+			技能触发范围 = max(0, skill_manager._解析数值(触发范围配置))
 	else:
 		技能触发范围 = float(触发范围配置)		
 	
@@ -77,9 +96,12 @@ func 初始化() -> void:
 
 func 获取技能触发范围() -> float:
 	if 技能本体数据.技能逻辑.has("skillTriggerRange"):
-		技能触发范围 = skill_manager._解析数值(技能本体数据.技能逻辑.get("skillTriggerRange"))
+		if _compiled_trigger_range:
+			技能触发范围 = skill_manager.求值数值(_compiled_trigger_range)
+		else:
+			技能触发范围 = skill_manager._解析数值(技能本体数据.技能逻辑.get("skillTriggerRange"))
 	if 技能触发范围 <= 0.0:
-		push_error("[color=red]技能 %s 的触发范围配置错误，必须大于0，已强制设置为1.0[/color]" % 技能名称)
+		push_error("[color=red]技能 %s 的触发范围配置错误，必须大于0，已强制设置为0.0[/color]" % 技能名称)
 		技能触发范围 = 0.0
 	return 技能触发范围
 
@@ -100,7 +122,8 @@ func cast() -> void:
 			技能进入冷却()
 			# 播放技能动画
 			if 动画名称 != null:
-				var 技能动画持续时间 = skill_manager._解析数值(技能本体数据.技能逻辑.get("buff").get("duration"))
+				var dur_compiled = skill_manager.编译数值(技能本体数据.技能逻辑.get("buff").get("duration", {}))
+				var 技能动画持续时间 = skill_manager.求值数值(dur_compiled)
 				SkillManager.播放技能动画(施法者, 动画名称,技能动画持续时间)
 		技能数据.技能类型枚举.被动技能:
 			emit_signal("技能释放完成")

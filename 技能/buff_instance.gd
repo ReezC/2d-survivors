@@ -17,6 +17,12 @@ var 当前目标: Node2D = null
 
 var skill_manager: Node
 
+## 预编译的表达式（在 _init 中填充）
+var _compiled_duration: Callable   ## func(ctx) -> float (毫秒)
+var _compiled_max_stack: Callable  ## func(ctx) -> float
+var _compiled_conditions: Dictionary = {}  ## hash → Callable, 按需编译缓存
+var _compiled_values: Dictionary = {}      ## hash → Callable, 按需编译缓存
+
 signal buff开始
 signal buff结束
 
@@ -35,8 +41,12 @@ func _init(_buff_data: Dictionary, _施法者: Node,_parent_buff:BuffInstance = 
 	skill_manager = 施法者.skill_manager
 	parent_buff = _parent_buff if _parent_buff != null else self
 	
+	# 预编译 duration 和 maxStack 表达式
+	_compiled_duration = skill_manager.编译数值(buff_data.get("duration", {}))
+	_compiled_max_stack = skill_manager.编译数值(buff_data.get("maxStack", {}))
+	
 	# TODO：叠层逻辑在此时处理
-	最大层数 = max(1, int(skill_manager._解析数值(buff_data.get("maxStack"),self)))
+	最大层数 = max(1, int(_快速求值(_compiled_max_stack)))
 	var 叠加计时类型配置 = buff_data.get("stackType")
 	match 叠加计时类型配置:
 		"none":
@@ -65,7 +75,7 @@ func on_buff_start() -> void:
 	emit_signal("buff开始")
 	# buff开始时的逻辑
 	当前目标 = parent_buff.施法者 as Node2D if parent_buff != null else null
-	var 配置的持续时间 = skill_manager._解析数值(buff_data.get("duration"),self) / 1000.0
+	var 配置的持续时间 = _快速求值(_compiled_duration) / 1000.0
 	if 配置的持续时间 < 0:
 		持续时间 = INF
 	else:
@@ -112,7 +122,8 @@ func buff_excute(buff_logic_data: Dictionary) -> void:
 				buff_excute(logic)
 
 		"ActionOverTime":
-			var interval =skill_manager. _解析数值(buff_logic_data.get("interval"),self) / 1000.0
+			var interval_compiled = skill_manager.编译数值(buff_logic_data.get("interval", {}))
+			var interval = _快速求值(interval_compiled) / 1000.0
 			if interval <= 0.0:
 				push_error("[color=red]ActionOverTime 的 interval 必须大于0[/color]")
 				return
@@ -128,11 +139,13 @@ func buff_excute(buff_logic_data: Dictionary) -> void:
 
 		"ActionTimeline":
 			var actionOnTimeList = buff_logic_data.get("actionOnTimeList", [])
-			var timeMultiplier = skill_manager._解析数值(buff_logic_data.get("addTimeMultiplierPercent"),self)
+			var timeMultiplier_compiled = skill_manager.编译数值(buff_logic_data.get("addTimeMultiplierPercent", {}))
+			var timeMultiplier = _快速求值(timeMultiplier_compiled)
 			if timeMultiplier <= -1.0: # 攻速小于0:时间轴不会开始
 				return
 			for actionOnTime in actionOnTimeList:
-				var time = skill_manager._解析数值(actionOnTime.get("time"),self) / 1000.0
+				var time_compiled = skill_manager.编译数值(actionOnTime.get("time", {}))
+				var time = _快速求值(time_compiled) / 1000.0
 				var action = actionOnTime.get("action")
 				if time <= 0.0:
 					skillAction_execute(action)
@@ -159,10 +172,11 @@ func skillAction_execute(action: Dictionary) -> void:
 			for act in actions:
 				skillAction_execute(act)
 		"ActionIfElse":
-			var condition = action.get("condition")
+			var condition = action.get("condition", {})
 			var actionTrue_list = action.get("actionTrue", [])
 			var actionFalses_list = action.get("actionFalse", [])
-			if skill_manager._解析条件(condition):
+			var cond_compiled = skill_manager.编译条件(condition)
+			if _快速求值条件(cond_compiled):
 				for act in actionTrue_list:
 					skillAction_execute(act)
 			else:
@@ -179,7 +193,8 @@ func skillAction_execute(action: Dictionary) -> void:
 		"CreateObj": # 使用预制的hitbox，这里不处理collisionshape
 			var obj_id = int(action.get("id"))
 			var obj_scene_path = skill_manager.子物体场景路径 + "/" + str(obj_id) + ".tscn" as String
-			var obj_duration = skill_manager._解析数值(action.get("duration"),self) / 1000.0
+			var obj_duration_compiled = skill_manager.编译数值(action.get("duration", {}))
+			var obj_duration = _快速求值(obj_duration_compiled) / 1000.0
 			var obj_movement_config = action.get("movement")
 			var obj_instance = load(obj_scene_path).instantiate() as 子物体
 			obj_instance.global_position = 施法者.global_position
@@ -199,7 +214,7 @@ func skillAction_execute(action: Dictionary) -> void:
 			var collisionMask = hitbox_collision_config.get("collisionMask", [])
 			var disableOnSourceDie = hitbox_collision_config.get("disableOnSourceDie", false)
 			## 碰撞重置间隔，单位毫秒。若此处配置>0，则hitbox在碰撞后保持关闭此时间后才重新启用
-			var collideResetInterval = skill_manager._解析数值(hitbox_collision_config.get("collideResetInterval"),self) / 1000.0
+			var collideResetInterval = _快速求值(skill_manager.编译数值(hitbox_collision_config.get("collideResetInterval", {}))) / 1000.0
 			if collisionLayer.size() > 0:
 				obj_instance.get_node("HitboxComponent").collision_layer = 0
 				for layer in collisionLayer:
@@ -216,7 +231,8 @@ func skillAction_execute(action: Dictionary) -> void:
 
 		"CreateHitbox":
 			var obj_scene_path = skill_manager.子物体场景路径 + "/子物体.tscn" as String
-			var obj_duration = skill_manager._解析数值(action.get("duration"),self) / 1000.0
+			var obj_duration_compiled = skill_manager.编译数值(action.get("duration", {}))
+			var obj_duration = _快速求值(obj_duration_compiled) / 1000.0
 			var obj_movement_config = action.get("movement")
 			var obj_instance = load(obj_scene_path).instantiate() as 子物体
 			obj_instance.global_position = 施法者.global_position
@@ -231,14 +247,14 @@ func skillAction_execute(action: Dictionary) -> void:
 			elif obj_duration == 0.0:
 				return # 持续时间为0则不创建hitbox
 
-			var hitbox_half_width = skill_manager._解析数值(action.get("halfWidth"),self)
-			var hitbox_half_height = skill_manager._解析数值(action.get("halfHeight"),self)
+			var hitbox_half_width = _快速求值(skill_manager.编译数值(action.get("halfWidth", {})))
+			var hitbox_half_height = _快速求值(skill_manager.编译数值(action.get("halfHeight", {})))
 			var hitbox_collision_config = action.get("hitboxCollision")
 			var collisionLayer = hitbox_collision_config.get("collisionLayer", [])
 			var collisionMask = hitbox_collision_config.get("collisionMask", [])
 			var disableOnSourceDie = hitbox_collision_config.get("disableOnSourceDie", false)
 			## 碰撞重置间隔，单位毫秒。若此处配置>0，则hitbox在碰撞后保持关闭此时间后才重新启用
-			var collideResetInterval = skill_manager._解析数值(hitbox_collision_config.get("collideResetInterval"),self) / 1000.0
+			var collideResetInterval = _快速求值(skill_manager.编译数值(hitbox_collision_config.get("collideResetInterval", {}))) / 1000.0
 			if collisionLayer.size() > 0:
 				obj_instance.get_node("HitboxComponent").collision_layer = 0
 				for layer in collisionLayer:
@@ -272,10 +288,10 @@ func create_obj(_obj_instance,_obj_movement_config,_obj_duration_timer=null) -> 
 			var line_obj_direction = 当前目标.global_position.direction_to(施法者.global_position) * -1
 			var toTarget = _obj_movement_config.get("toTarget")
 			if not toTarget:
-				var directX = skill_manager._解析数值(_obj_movement_config.get("directionX"),self)
-				var directY = skill_manager._解析数值(_obj_movement_config.get("directionY"),self)
+				var directX = _快速求值(skill_manager.编译数值(_obj_movement_config.get("directionX", {})))
+				var directY = _快速求值(skill_manager.编译数值(_obj_movement_config.get("directionY", {})))
 				line_obj_direction = Vector2(directX, directY).normalized().rotated(Vector2.DOWN.angle()).rotated(施法者.facingDirection.angle())
-			var speed = skill_manager._解析数值(_obj_movement_config.get("speed"),self)
+			var speed = _快速求值(skill_manager.编译数值(_obj_movement_config.get("speed", {})))
 			_obj_instance.obj_process = func(delta: float) -> void:
 				_obj_instance.global_position += line_obj_direction * speed * delta
 
@@ -316,8 +332,8 @@ func target_selector_result(target_selector_config: Dictionary) -> Array:
 		"caster":
 			return [施法者]
 		"circleArea":
-			var radius = skill_manager._解析数值(target_selector_config.get("radius"),self)
-			var fowardAngle = skill_manager._解析数值(target_selector_config.get("fowardAngle"),self)
+			var radius = _快速求值(skill_manager.编译数值(target_selector_config.get("radius", {})))
+			var fowardAngle = _快速求值(skill_manager.编译数值(target_selector_config.get("fowardAngle", {})))
 			return skill_manager.get_target_in_circle_area(
 				施法者.global_position,
 				施法者.facingDirection,
@@ -334,8 +350,24 @@ func target_selector_result(target_selector_config: Dictionary) -> Array:
 
 #endregion
 
+## 构建上下文并调用预编译的 Callable
+func _构建上下文() -> Dictionary:
+	return {
+		"buff_instance": self,
+		"skill_manager": skill_manager,
+		"caster": 施法者,
+		"current_target": 当前目标,
+		"blackboard": BlackBoard,
+		"random": func() -> int: return randi() % 100 + 1,
+	}
 
-#region buff上下文值解析
+func _快速求值(compiled: Callable) -> float:
+	return compiled.call(_构建上下文())
+
+func _快速求值条件(compiled: Callable) -> bool:
+	return compiled.call(_构建上下文())
+
+#region buff上下文值解析（旧版，保留兼容）
 
 func _解析条件_按角色(角色: Node, 条件配置: Dictionary) -> bool:
 	var 类型 = 条件配置.get("$type").split(".")[-1]
