@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bvl00h3aiw251" path="res://assets/MapleStory/Character/00002000/stand1/1.body._outlink.png" id="2_bjto6"]
 [ext_resource type="Texture2D" uid="uid://g8uv6tg7l4bt" path="res://assets/MapleStory/Character/00002000/stand1/2.body._outlink.png" id="3_bu8yy"]
 [ext_resource type="Script" uid="uid://cx56yjoedwvb6" path="res://scenes/game_object/visual_item/visual_item.gd" id="4_bjto6"]
-[ext_resource type="Resource" uid="uid://lujdjsp2djsj" path="res://resources/visual_img/00002000.tres" id="5_bu8yy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bdaga"]
 animations = [{
@@ -29,4 +28,4 @@ animation = &"stand1"
 centered = false
 offset = Vector2(-16, -31)
 script = ExtResource("4_bjto6")
-img_resource = ExtResource("5_bu8yy")
+"动画帧配置文件" = "res://config/_animconfig_animconfig/00002000.json"

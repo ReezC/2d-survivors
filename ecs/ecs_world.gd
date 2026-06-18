@@ -42,7 +42,19 @@ func register_unit_skills(unit: Node, skill_data_list: Array) -> void:
 
 ## 销毁 Entity（Unit 死亡时调用）
 func destroy_entity(entity_id: int) -> void:
+	var unit_name = _get_entity_name(entity_id)
 	if subobject_system:
-		subobject_system.cleanup_entity_objects(entity_id)
+		var cleaned = subobject_system.cleanup_entity_objects(entity_id)
+		if cleaned > 0:
+			GMLogger.log_ecs("[%s] 清理 %d 个子物体" % [unit_name, cleaned])
 	if entity_manager:
 		entity_manager.destroy_entity(entity_id)
+	GMLogger.log_ecs("[%s] 实体已加入销毁队列" % unit_name)
+
+func _get_entity_name(entity_id: int) -> String:
+	var unit = entity_manager.get_unit(entity_id)
+	if unit == null:
+		return "entity=%d" % entity_id
+	if unit.has_method("get") and "unit_name" in unit:
+		return "%s (entity=%d)" % [unit.unit_name, entity_id]
+	return "%s (entity=%d)" % [unit.name, entity_id]

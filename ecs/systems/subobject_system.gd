@@ -251,14 +251,17 @@ func _快速求值(buff: BuffComponentData, compiled: Callable) -> float:
 	}
 	return compiled.call(ctx)
 
-## 清理某个 Entity 的所有子物体
-func cleanup_entity_objects(entity_id: int) -> void:
+## 清理某个 Entity 的所有子物体，返回清理的数量
+func cleanup_entity_objects(entity_id: int) -> int:
+	var cleaned: int = 0
 	for i in range(_active_objects.size() - 1, -1, -1):
 		if _active_objects[i].owner_entity == entity_id:
 			var node = _active_objects[i].node
 			if is_instance_valid(node):
 				node.queue_free()
 			_active_objects.remove_at(i)
+			cleaned += 1
+	return cleaned
 
 ## 清理所有子物体
 func cleanup_all() -> void:

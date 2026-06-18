@@ -3,12 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://dcslmpa4nca4m" path="res://scenes/game_object/entity/单位.tscn" id="1_0fi5m"]
 [ext_resource type="Script" uid="uid://do5hd8rrnom2q" path="res://scenes/game_object/entity/player/player.gd" id="2_ctfnk"]
 [ext_resource type="Texture2D" uid="uid://dtkeg5q6jrmpp" path="res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/Faceset.png" id="3_lnpja"]
+[ext_resource type="Script" uid="uid://dqnc61hq410i5" path="res://scenes/game_object/entity/player/character_body.gd" id="4_aaojh"]
 [ext_resource type="Texture2D" uid="uid://c5i4bpno8yx14" path="res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/SeparateAnim/Walk.png" id="4_ktm2w"]
 [ext_resource type="Texture2D" uid="uid://df5avkenr6r6y" path="res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/SeparateAnim/Dead.png" id="5_wbw41"]
 [ext_resource type="Texture2D" uid="uid://8shdsepgwthh" path="res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/SeparateAnim/Special2.png" id="6_r34m6"]
 [ext_resource type="PackedScene" uid="uid://brfwspl65yfam" path="res://scenes/fx/fx_common_magic_spark.tscn" id="8_bdaga"]
 [ext_resource type="Script" uid="uid://bjvqbui703u8x" path="res://resources/单位属性/单位属性集.gd" id="9_bdaga"]
-[ext_resource type="PackedScene" uid="uid://b6bllmix34ryp" path="res://scenes/game_object/visual_item/0002000.tscn" id="9_m33e8"]
+[ext_resource type="PackedScene" uid="uid://b6bllmix34ryp" path="res://scenes/game_object/visual_item/默认身体_00002000.tscn" id="9_m33e8"]
 [ext_resource type="Script" uid="uid://c218ra1pf7xxj" path="res://resources/单位属性/单位属性.gd" id="10_uo5vx"]
 [ext_resource type="Script" uid="uid://bd83jqryqem3b" path="res://resources/单位属性/生命_单位属性.gd" id="11_5eaic"]
 [ext_resource type="Script" uid="uid://cx56yjoedwvb6" path="res://scenes/game_object/visual_item/visual_item.gd" id="11_brsp2"]
@@ -18,25 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://bss0tuqlul3nw" path="res://assets/MapleStory/Character/00002000/stand1/1.arm._outlink.png" id="12_hdd6p"]
 [ext_resource type="Texture2D" uid="uid://bvchrdstqumh0" path="res://assets/MapleStory/Character/00012000/front/humanEar/humanEar._outlink.png" id="12_ill25"]
 [ext_resource type="PackedScene" uid="uid://civjubkgk82lq" path="res://技能/技能实例.tscn" id="12_lnpja"]
-[ext_resource type="Texture2D" uid="uid://ds6eyjm8otqca" path="res://assets/MapleStory/Character/Hair/00030000/stand1/default.hairOverHead._outlink.png" id="12_o6rgh"]
 [ext_resource type="Resource" uid="uid://y6jywnhexlo6" path="res://技能/技能数据/手里剑投掷.tres" id="13_00o66"]
-[ext_resource type="Texture2D" uid="uid://mk57sk58p7h7" path="res://assets/MapleStory/Character/Hair/00030000/stand1/default.hair._outlink.png" id="13_36wm1"]
 [ext_resource type="Texture2D" uid="uid://blbd4dn0qfryy" path="res://assets/Ninja Adventure - Asset Pack/Items/Object/Dice 20.png" id="13_fpvc5"]
 [ext_resource type="Texture2D" uid="uid://orm8ye72r5yr" path="res://assets/MapleStory/Character/00002000/stand1/2.arm._outlink.png" id="13_ill25"]
-[ext_resource type="Texture2D" uid="uid://drc5updlnhyf1" path="res://assets/MapleStory/Character/Hair/00030000/stand1/default.hairShade.0._outlink.png" id="14_36wm1"]
-[ext_resource type="Texture2D" uid="uid://crwhc0k2wrfpv" path="res://assets/MapleStory/Character/Face/00020000/default/default.face._outlink.png" id="15_03xhi"]
-[ext_resource type="Texture2D" uid="uid://q8ge8pg812nu" path="res://assets/MapleStory/Character/Coat/01040006/stand1/0.mail._outlink.png" id="20_6lnlc"]
-[ext_resource type="Texture2D" uid="uid://7pbmnkb3oj3x" path="res://assets/MapleStory/Character/Weapon/01302000/stand1/0.weapon._outlink.png" id="20_brsp2"]
-[ext_resource type="Texture2D" uid="uid://dxggwoksdfimp" path="res://assets/MapleStory/Character/Coat/01040006/stand1/1.mail._outlink.png" id="21_58jef"]
-[ext_resource type="Texture2D" uid="uid://bwrr6es115imc" path="res://assets/MapleStory/Character/Coat/01040006/stand1/2.mail._outlink.png" id="22_70y8a"]
-[ext_resource type="Texture2D" uid="uid://bc2a6k0u5s8jd" path="res://assets/MapleStory/Character/Pants/01060002/stand1/0.pants._outlink.png" id="23_3dole"]
-[ext_resource type="Texture2D" uid="uid://dwq684for2ub8" path="res://assets/MapleStory/Character/Pants/01060002/stand1/1.pants._outlink.png" id="24_hqi0v"]
-[ext_resource type="Texture2D" uid="uid://32fa85ew5ok" path="res://assets/MapleStory/Character/Pants/01060002/stand1/2.pants._outlink.png" id="25_amdm2"]
 [ext_resource type="Script" uid="uid://bx2lepkdo0wic" path="res://scenes/game_object/entity/player/视觉.gd" id="25_if0ut"]
 [ext_resource type="Resource" uid="uid://brjkphtt8mjd2" path="res://resources/zmap.tres" id="26_4klt5"]
-[ext_resource type="Texture2D" uid="uid://cqhwbi4b4873e" path="res://assets/MapleStory/Character/Shoes/01072005/stand1/0.shoes._outlink.png" id="26_m33e8"]
-[ext_resource type="Texture2D" uid="uid://ng1u0rb0o4gk" path="res://assets/MapleStory/Character/Shoes/01072005/stand1/1.shoes._outlink.png" id="27_brsp2"]
-[ext_resource type="Texture2D" uid="uid://brltgrsa3ahfx" path="res://assets/MapleStory/Character/Shoes/01072005/stand1/2.shoes._outlink.png" id="28_if0ut"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1iqai"]
 atlas = ExtResource("4_ktm2w")
@@ -257,50 +244,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_03xhi"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_o6rgh")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_gh5no"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("13_36wm1")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ru67c"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("14_36wm1")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_36wm1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("15_03xhi")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_ill25"]
 animations = [{
 "frames": [{
@@ -323,68 +266,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("13_ill25")
-}],
-"loop": false,
-"name": &"stand1",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6lnlc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("20_6lnlc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_58jef")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_70y8a")
-}],
-"loop": false,
-"name": &"stand1",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_m33e8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("23_3dole")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_hqi0v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_amdm2")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_3dole"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("26_m33e8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_brsp2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_if0ut")
-}],
-"loop": false,
-"name": &"stand1",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_brsp2"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("20_brsp2")
 }],
 "loop": false,
 "name": &"stand1",
@@ -917,7 +798,7 @@ metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aaojh"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_brsp2"]
+[sub_resource type="Resource" id="Resource_o6rgh"]
 resource_local_to_scene = true
 resource_name = "移动速度"
 script = ExtResource("10_uo5vx")
@@ -944,10 +825,10 @@ script = ExtResource("10_uo5vx")
 "属性类型" = 8
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
-[sub_resource type="Resource" id="Resource_if0ut"]
+[sub_resource type="Resource" id="Resource_36wm1"]
 resource_local_to_scene = true
 script = ExtResource("9_bdaga")
-"属性们" = Array[ExtResource("10_uo5vx")]([SubResource("Resource_sbb84"), SubResource("Resource_ye6iw"), SubResource("Resource_cll8x"), SubResource("Resource_7lulo"), SubResource("Resource_6u3n4"), SubResource("Resource_kjcqk"), SubResource("Resource_8u6q2"), SubResource("Resource_u0jmy"), SubResource("Resource_72gil"), SubResource("Resource_brsp2"), SubResource("Resource_vrs21"), SubResource("Resource_3rkqf")])
+"属性们" = Array[ExtResource("10_uo5vx")]([SubResource("Resource_sbb84"), SubResource("Resource_ye6iw"), SubResource("Resource_cll8x"), SubResource("Resource_7lulo"), SubResource("Resource_6u3n4"), SubResource("Resource_kjcqk"), SubResource("Resource_8u6q2"), SubResource("Resource_u0jmy"), SubResource("Resource_72gil"), SubResource("Resource_o6rgh"), SubResource("Resource_vrs21"), SubResource("Resource_3rkqf")])
 metadata/_custom_type_script = "uid://bjvqbui703u8x"
 
 [node name="树" unique_id=1265436225 groups=["player"] instance=ExtResource("1_0fi5m")]
@@ -957,67 +838,31 @@ script = ExtResource("2_ctfnk")
 "单位名称" = "树"
 icon = ExtResource("3_lnpja")
 
-[node name="body" parent="." index="0" unique_id=2092363739]
-remote_path = NodePath("../视觉/body")
+[node name="body" parent="." index="0" unique_id=1321867716]
+script = ExtResource("4_aaojh")
+"角色身体配置" = "res://config/_animconfig_animconfig/00002000.json"
+"角色头部配置" = "res://config/_animconfig_animconfig/00012000.json"
 
 [node name="neck" type="Node2D" parent="body" index="0" unique_id=2054185260]
 position = Vector2(-4, -32)
 
-[node name="head" type="RemoteTransform2D" parent="body/neck" index="0" unique_id=1892951484]
+[node name="brow" type="Node2D" parent="body/neck" index="0" unique_id=1973056068]
+position = Vector2(-4, -20)
+
+[node name="head" type="Node2D" parent="body/neck" index="1" unique_id=1034139328]
 position = Vector2(0, -15)
-remote_path = NodePath("../../../视觉/head")
 
-[node name="brow" type="Node2D" parent="body/neck/head" index="0" unique_id=1973056068]
-position = Vector2(-4, -5)
-
-[node name="hairOverHead" type="RemoteTransform2D" parent="body/neck/head/brow" index="0" unique_id=909666379]
-remote_path = NodePath("../../../../../视觉/hairOverHead")
-
-[node name="hair" type="RemoteTransform2D" parent="body/neck/head/brow" index="1" unique_id=1174684549]
-remote_path = NodePath("../../../../../视觉/hair")
-
-[node name="hairShade" type="RemoteTransform2D" parent="body/neck/head/brow" index="2" unique_id=1537472073]
-remote_path = NodePath("../../../../../视觉/hairShade")
-
-[node name="face" type="RemoteTransform2D" parent="body/neck/head/brow" index="3" unique_id=979421031]
-position = Vector2(1, 12)
-remote_path = NodePath("../../../../../视觉/face")
-
-[node name="earBelowHead" type="Node2D" parent="body/neck/head" index="1" unique_id=1747336147]
+[node name="earBelowHead" type="Node2D" parent="body/neck/head" index="0" unique_id=1747336147]
 position = Vector2(-17, 9)
 
-[node name="earOverHead" type="Node2D" parent="body/neck/head" index="2" unique_id=1458991283]
+[node name="earOverHead" type="Node2D" parent="body/neck/head" index="1" unique_id=1458991283]
 position = Vector2(15, 10)
-
-[node name="ear" type="RemoteTransform2D" parent="body/neck" index="1" unique_id=694100437]
-position = Vector2(0, -15)
-remote_path = NodePath("../../../视觉/ear")
 
 [node name="navel" type="Node2D" parent="body" index="1" unique_id=50764788]
 position = Vector2(-8, -21)
 
-[node name="arm" type="RemoteTransform2D" parent="body/navel" index="0" unique_id=639493652]
-position = Vector2(13, 1)
-remote_path = NodePath("../../../视觉/arm")
-
-[node name="hand" type="Node2D" parent="body/navel/arm" index="0" unique_id=1294206046]
-position = Vector2(-1, 5)
-
-[node name="weapon" type="RemoteTransform2D" parent="body/navel/arm/hand" index="0" unique_id=1097019677]
-position = Vector2(-6, 5)
-remote_path = NodePath("../../../../../视觉/weapon")
-
-[node name="mail" type="RemoteTransform2D" parent="body/navel" index="1" unique_id=764701634]
-position = Vector2(8, -1)
-remote_path = NodePath("../../../视觉/mail")
-
-[node name="pants" type="RemoteTransform2D" parent="body/navel" index="2" unique_id=146500145]
-position = Vector2(5, 6)
-remote_path = NodePath("../../../视觉/pants")
-
-[node name="shoes" type="RemoteTransform2D" parent="body/navel" index="3" unique_id=820155527]
-position = Vector2(3, 19)
-remote_path = NodePath("../../../视觉/shoes")
+[node name="hand" type="Node2D" parent="body/navel" index="0" unique_id=1294206046]
+position = Vector2(12, 6)
 
 [node name="视觉" parent="." index="1" unique_id=1456117193]
 script = ExtResource("25_if0ut")
@@ -1041,39 +886,7 @@ offset = Vector2(-18, -17)
 script = ExtResource("11_brsp2")
 now_z = 59
 
-[node name="hairOverHead" type="AnimatedSprite2D" parent="视觉" index="3" unique_id=1574754096]
-position = Vector2(-8, -52)
-sprite_frames = SubResource("SpriteFrames_03xhi")
-centered = false
-offset = Vector2(-15, -14)
-script = ExtResource("11_brsp2")
-now_z = 42
-
-[node name="hair" type="AnimatedSprite2D" parent="视觉" index="4" unique_id=1485121786]
-position = Vector2(-8, -52)
-sprite_frames = SubResource("SpriteFrames_gh5no")
-centered = false
-offset = Vector2(-14, -12)
-script = ExtResource("11_brsp2")
-now_z = 46
-
-[node name="hairShade" type="AnimatedSprite2D" parent="视觉" index="5" unique_id=1198546942]
-position = Vector2(-8, -52)
-sprite_frames = SubResource("SpriteFrames_ru67c")
-centered = false
-offset = Vector2(-13, -8)
-script = ExtResource("11_brsp2")
-now_z = 58
-
-[node name="face" type="AnimatedSprite2D" parent="视觉" index="6" unique_id=1475405669]
-position = Vector2(-7, -40)
-sprite_frames = SubResource("SpriteFrames_36wm1")
-centered = false
-offset = Vector2(-13, -8)
-script = ExtResource("11_brsp2")
-now_z = 55
-
-[node name="ear" type="AnimatedSprite2D" parent="视觉" index="7" unique_id=2034643006]
+[node name="ear" type="AnimatedSprite2D" parent="视觉" index="3" unique_id=2034643006]
 position = Vector2(-4, -47)
 sprite_frames = SubResource("SpriteFrames_ill25")
 centered = false
@@ -1081,7 +894,7 @@ offset = Vector2(-19, 2)
 script = ExtResource("11_brsp2")
 now_z = 58
 
-[node name="arm" type="AnimatedSprite2D" parent="视觉" index="8" unique_id=202932716]
+[node name="arm" type="AnimatedSprite2D" parent="视觉" index="4" unique_id=202932716]
 position = Vector2(5, -20)
 sprite_frames = SubResource("SpriteFrames_uo5vx")
 animation = &"stand1"
@@ -1089,42 +902,6 @@ centered = false
 offset = Vector2(-5, -9)
 script = ExtResource("11_brsp2")
 now_z = 65
-
-[node name="mail" type="AnimatedSprite2D" parent="视觉" index="9" unique_id=1461416659]
-position = Vector2(0, -22)
-sprite_frames = SubResource("SpriteFrames_6lnlc")
-animation = &"stand1"
-frame_progress = 0.95338404
-centered = false
-offset = Vector2(-11, -9)
-script = ExtResource("11_brsp2")
-now_z = 95
-
-[node name="pants" type="AnimatedSprite2D" parent="视觉" index="10" unique_id=1837939029]
-position = Vector2(-3, -15)
-sprite_frames = SubResource("SpriteFrames_m33e8")
-centered = false
-offset = Vector2(-9, -6)
-script = ExtResource("11_brsp2")
-now_z = 92
-
-[node name="shoes" type="AnimatedSprite2D" parent="视觉" index="11" unique_id=744677141]
-position = Vector2(-5, -2)
-sprite_frames = SubResource("SpriteFrames_3dole")
-animation = &"stand1"
-centered = false
-offset = Vector2(-10, -5)
-script = ExtResource("11_brsp2")
-now_z = 93
-
-[node name="weapon" type="AnimatedSprite2D" parent="视觉" index="12" unique_id=1972578732]
-position = Vector2(-2, -10)
-sprite_frames = SubResource("SpriteFrames_brsp2")
-animation = &"stand1"
-centered = false
-offset = Vector2(-25, -7)
-script = ExtResource("11_brsp2")
-now_z = 67
 
 [node name="AnimationPlayer" parent="." index="2" unique_id=1786467140]
 libraries/ = SubResource("AnimationLibrary_1iqai")
@@ -1152,7 +929,7 @@ position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_wbw41")
 
 [node name="单位属性component" parent="." index="6" unique_id=176829961]
-"属性集" = SubResource("Resource_if0ut")
+"属性集" = SubResource("Resource_36wm1")
 
 [node name="SkillManager" parent="." index="7" unique_id=845903834]
 skill_ai = 1

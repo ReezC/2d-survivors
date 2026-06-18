@@ -37,11 +37,14 @@ func _process(_delta: float) -> void:
 		var mask: int = _entity_masks.get(eid, 0)
 		if mask == ECSComponentTypes.ComponentType.NONE:
 			continue
+		var comp_count: int = 0
 		for comp_name in _components:
 			if _components[comp_name].has(eid):
 				_components[comp_name].erase(eid)
+				comp_count += 1
 		_entity_masks.erase(eid)
 		_entity_to_unit.erase(eid)
+		GMLogger.log_ecs("[EntityManager] Entity %d 已销毁（清理 %d 个组件）" % [eid, comp_count])
 	_pending_destroy.clear()
 
 ## 为 Entity 添加一个 Component

@@ -22,10 +22,10 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameEvents="*res://scenes/aotuload/game_events.tscn"
-GMLogger="*res://scenes/aotuload/gm_logger.gd"
 VFX="*uid://ecyiymmaj3jv"
 EnvVFX="*uid://qomyut16hnoi"
 ECSWorld="*res://ecs/ecs_world.gd"
+GMLogger="*res://scenes/aotuload/gm_logger.gd"
 
 [debug]
 

@@ -2,17 +2,55 @@ extends Node
 
 @export var end_screen_scene: PackedScene
 
-# ---- GM 日志开关（编辑器勾选即可启用对应分类的日志打印）----
+## ============================================================================
+## GM 日志开关 — 编辑器勾选即可启用对应分类的日志打印
+## 
+## 使用方式：在编辑器中选中 Main 节点，Inspector 面板的 "GM 日志开关" 分组下勾选需要的分类即可。
+## 所有日志通过 GMLogger Autoload 统一输出，输出格式为 "[分类名] 日志内容"。
+## ============================================================================
+
 @export_group("GM 日志开关", "gm_")
+
+## 战斗伤害 — 伤害计算、命中检测、伤害数字等
+## 来源：伤害系统、Hitbox 碰撞处理
 @export var gm_战斗伤害:   bool = false
+
+## 敌人生成 — 怪物生成、波次控制、敌人数统计
+## 来源：敌人生成器、波次管理器
 @export var gm_敌人生成:   bool = false
+
+## 经验升级 — 经验获取、升级选择、属性成长
+## 来源：经验系统、升级界面
 @export var gm_经验升级:   bool = false
+
+## 技能系统 — 技能释放成功/失败、冷却开始/就绪、被动技能生效、拥有者死亡
+## 来源：SkillSystem（skill_system.gd）、SkillManager（skill_manager.gd）、AbilityController
+## 包含玩家和怪物双方的技能 AI 行为
 @export var gm_技能系统:   bool = false
+
+## Buff与子物体 — 底层 Buff 创建/执行/销毁、子物体生成（hitbox/弹幕）、技能时间线
+## 来源：BuffSystem（buff_system.gd）、SubObjectSystem（subobject_system.gd）
+## 与"技能系统"互补：技能系统关注技能层面，Buff与子物体关注具体执行细节
 @export var gm_Buff与子物体: bool = false
+
+## 对象池 — 对象池回收/扩展/重用
+## 来源：对象池管理器
 @export var gm_对象池:     bool = false
+
+## ECS — EntityManager 实体/组件的创建、销毁、查询
+## 来源：EntityManager（entity_manager.gd）
 @export var gm_ECS:        bool = false
+
+## 属性变化 — 属性变更（HP/攻击力/移速等）、治疗、死亡触发
+## 来源：属性组件、属性修改器
 @export var gm_属性变化:   bool = false
+
+## 输入移动 — 玩家输入方向、移动向量、输入设备切换
+## 来源：输入管理器、玩家移动控制器
 @export var gm_输入移动:   bool = false
+
+## 通用 — 其他未归类的杂项日志
+## 来源：各处零散日志
 @export var gm_通用:       bool = false
 
 

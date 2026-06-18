@@ -9,8 +9,9 @@
 [node name="单位" type="CharacterBody2D" unique_id=1080705466 groups=["entities_layer"]]
 collision_layer = 0
 script = ExtResource("1_flcbh")
+"单位名称" = null
 
-[node name="body" type="RemoteTransform2D" parent="." unique_id=2092363739]
+[node name="body" type="Node2D" parent="." unique_id=1321867716]
 
 [node name="视觉" type="Node2D" parent="." unique_id=1456117193]
 unique_name_in_owner = true

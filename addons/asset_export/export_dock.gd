@@ -148,7 +148,7 @@ func _on_select_asset_folder() -> void:
 func _on_select_output_file() -> void:
 	var dialog := EditorFileDialog.new()
 	dialog.file_mode = EditorFileDialog.FILE_MODE_SAVE_FILE
-	dialog.access = EditorFileDialog.ACCESS_RESOURCES
+	dialog.access = EditorFileDialog.ACCESS_FILESYSTEM
 	dialog.current_dir = output_path.get_base_dir()
 	dialog.current_file = output_path.get_file()
 	dialog.add_filter("*.csv", "CSV 文件")

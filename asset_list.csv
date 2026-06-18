@@ -1,4 +1,4 @@
-路径,类型
+ath,type
 path,type
 res://assets/2D Pixel Dungeon Asset Pack/character and tileset/demonstration.png,png
 res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Character.png,png
@@ -341,11 +341,19 @@ res://assets/MapleStory/Character/00002000/stand1/1.arm._outlink.png,png
 res://assets/MapleStory/Character/00002000/stand1/1.body._outlink.png,png
 res://assets/MapleStory/Character/00002000/stand1/2.arm._outlink.png,png
 res://assets/MapleStory/Character/00002000/stand1/2.body._outlink.png,png
+res://assets/MapleStory/Character/00002000/walk1/0.arm._outlink.png,png
+res://assets/MapleStory/Character/00002000/walk1/0.body._outlink.png,png
+res://assets/MapleStory/Character/00002000/walk1/1.arm._outlink.png,png
+res://assets/MapleStory/Character/00002000/walk1/1.body._outlink.png,png
+res://assets/MapleStory/Character/00002000/walk1/2.arm._outlink.png,png
+res://assets/MapleStory/Character/00002000/walk1/2.body._outlink.png,png
+res://assets/MapleStory/Character/00002000/walk1/3.arm._outlink.png,png
+res://assets/MapleStory/Character/00002000/walk1/3.body._outlink.png,png
 res://assets/MapleStory/Character/00012000/front/head/front.head._outlink.png,png
 res://assets/MapleStory/Character/00012000/front/humanEar/humanEar._outlink.png,png
-res://assets/MapleStory/Character/Coat/01040002/0.mail._outlink.png,png
-res://assets/MapleStory/Character/Coat/01040002/1.mail._outlink.png,png
-res://assets/MapleStory/Character/Coat/01040002/2.mail._outlink.png,png
+res://assets/MapleStory/Character/Coat/01040002/stand1/0.mail._outlink.png,png
+res://assets/MapleStory/Character/Coat/01040002/stand1/1.mail._outlink.png,png
+res://assets/MapleStory/Character/Coat/01040002/stand1/2.mail._outlink.png,png
 res://assets/MapleStory/Character/Coat/01040006/stand1/0.mail._outlink.png,png
 res://assets/MapleStory/Character/Coat/01040006/stand1/1.mail._outlink.png,png
 res://assets/MapleStory/Character/Coat/01040006/stand1/2.mail._outlink.png,png

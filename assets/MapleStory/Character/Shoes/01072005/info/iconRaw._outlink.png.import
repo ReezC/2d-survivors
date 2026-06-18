@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5tucv44aq5bc"
-path="res://.godot/imported/2.mail._outlink.png-7db23760a7b82525170cf5d56ff1cbf0.ctex"
+uid="uid://cxdt13cosc614"
+path="res://.godot/imported/iconRaw._outlink.png-683bdfde12173e0bb44b07ff8054dfeb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/MapleStory/Character/Coat/01040002/2.mail._outlink.png"
-dest_files=["res://.godot/imported/2.mail._outlink.png-7db23760a7b82525170cf5d56ff1cbf0.ctex"]
+source_file="res://assets/MapleStory/Character/Shoes/01072005/info/iconRaw._outlink.png"
+dest_files=["res://.godot/imported/iconRaw._outlink.png-683bdfde12173e0bb44b07ff8054dfeb.ctex"]
 
 [params]
 
