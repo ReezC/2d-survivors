@@ -12,7 +12,6 @@ func _ready() -> void:
 	print_rich("[color=ROYAL_BLUE]EnemyManager ready[/color]")
 	timer.timeout.connect(on_timer_timeout)
 	arena_time_manager.arena_difficulty_changed.connect(on_arena_difficulty_changed)
-	pass
 
 # 计算生成位置()
 func get_spawn_position(direction: Vector2 = Vector2.RIGHT.rotated(randf_range(0,TAU))) -> Vector2:
@@ -29,7 +28,6 @@ func get_spawn_position(direction: Vector2 = Vector2.RIGHT.rotated(randf_range(0
 	if check_position.is_empty() == false:
 		# 有碰撞，说明位置无效，重新计算生成位置
 		return get_spawn_position(direction.rotated(PI / 2)) # 旋转90度后重新计算
-		# return player.global_position
 
 	return spawn_position
 
@@ -48,9 +46,6 @@ func on_timer_timeout():
 	
 	entities_layer.add_child(enemy_instance)
 	enemy_instance.name = enemy_instance.单位名称
-
-	# print(enemy_instance.get_script())
-	# print(enemy_instance.get_class())
 
 	
 

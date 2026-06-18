@@ -6,40 +6,20 @@ var inputDirection:Vector2 = Vector2.ZERO
 var 平滑移速:Vector2 = Vector2.ZERO
 
 
-# var 已死亡: bool = false
-
-
 func _ready() -> void:
 	super._ready()
 
-func _physics_process(delta: float) -> void:
-	pass
-	# move_and_slide() 
-	
-
 func _process(delta: float) -> void:
-
-
 	# 输入映射到移动
 	player_move(delta)
 	set_anim()
-	# 平滑碰撞
-	move_and_slide() 
-	
-	# # 根据左右移动翻转精灵
-	# if inputDirection.x >.1:
-	# 	animated_sprite_2d.flip_h = false
-	# elif inputDirection.x<-.1:
-	# 	animated_sprite_2d.flip_h = true
+	move_and_slide()
 
 
 func player_move(delta: float) -> void:
 	inputDirection = Input.get_vector("move_left","move_right","move_up","move_down")
 	if 当前状态 != 角色状态.死亡:
-		if 当前状态 == 角色状态.释放技能:
-			# 释放技能时允许移动
-			pass
-		elif inputDirection != Vector2.ZERO:
+		if inputDirection != Vector2.ZERO:
 			当前状态 = 角色状态.移动
 		else:
 			当前状态 = 角色状态.待机
@@ -61,8 +41,6 @@ func set_anim() -> void:
 		角色状态.移动:
 			state_machine.travel("Run")
 			animation_tree.set("parameters/Run/blend_position", get_facing_direction())
-			# print(animated_sprite_2d.global_position)
-			# print(health_bar.global_position)
 
 		
 

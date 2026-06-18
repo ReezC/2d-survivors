@@ -19,6 +19,6 @@ func on_timer_timeout():
         return
     foreground_layer.add_child(axe_instance)
     axe_instance.global_position = player.global_position
-    axe_instance.hitbox_component.damage_amount = damage
+    axe_instance.hitbox_component.命中伤害 = damage
 
     

@@ -16,8 +16,5 @@ func tween_method(rotations: float) -> void:
 	var current_direction = Vector2.UP.rotated(rotations * TAU)
 
 	var player = get_tree().get_first_node_in_group("player") as Node2D
-	if player == null:
-		pass
-	else :
+	if player != null:
 		global_position = player.global_position + current_direction * rotation_radius
-	# rotation = current_direction.rotated(PI / 2).angle() # animation_player 里处理旋转把

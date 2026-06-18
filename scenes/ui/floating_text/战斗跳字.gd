@@ -51,9 +51,7 @@ func _tween_跳字(
 
 	# 计算position
 	if 当前进度 <= 位置开始驻留时的进度:
-		# var old_pos = self.global_position
 		self.global_position += 驻留位置相对偏移 * (get_process_delta_time() / 位置开始驻留时的进度 * 跳字时间)
-		# print("delta_pos:", self.global_position - old_pos)
 	else:
 		self.global_position += 驻留后的位置偏移 * (get_process_delta_time() / (1.0 - 位置开始驻留时的进度) * 跳字时间)
 
@@ -74,14 +72,3 @@ func _tween_跳字(
 	if 当前进度 >= 渐隐开始时间比例:
 		var 渐隐进度 = (当前进度 - 渐隐开始时间比例) / (渐隐结束时间比例 - 渐隐开始时间比例)
 		self.modulate.a = lerp(1.0, 0.0, 渐隐进度)
-
-
-
-# # 运行场景时，点击鼠标左键播放效果
-# func _input(event):
-# 	if event is InputEventMouseButton:
-# 		if event.button_index == MOUSE_BUTTON_LEFT:
-# 			if event.pressed:
-# 				设置跳字内容("999999", Color.RED)
-# 			else:
-# 				pass

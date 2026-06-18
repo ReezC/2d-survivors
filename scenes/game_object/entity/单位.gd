@@ -10,6 +10,7 @@ class_name Unit
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
 
 @onready var skill_manager: SkillManager = $SkillManager
+## 以下已迁移到 ECS，保留兼容引用
 @onready var skills: Node = $SkillManager/Skills
 @onready var buffs: Node = $SkillManager/Buffs
 
@@ -83,7 +84,20 @@ func _on_hurtbox_component_被击中(hitbox: HitboxComponent) -> void:
 		# 判定伤害事件
 		var 格挡率 = attribute_component.获取属性值("格挡率")
 		var 闪避率 = attribute_component.获取属性值("闪避率")
-		var 暴击率 = hitbox.source.attribute_component.获取属性值("暴击率")
+		# 通过 entity 或 source node 获取施法者的暴击率
+		var source_attr = null
+		if hitbox._entity_manager and hitbox.source_entity > 0:
+			source_attr = hitbox._entity_manager.get_component(hitbox.source_entity, ECSComponentTypes.ComponentType.ATTRIBUTE)
+		var 暴击率: float = 0.0
+		var 暴击伤害倍率: float = 0.0
+		if source_attr and source_attr.has_method("获取属性值"):
+			暴击率 = source_attr.获取属性值("暴击率")
+			暴击伤害倍率 = source_attr.获取属性值("暴击伤害倍率")
+		else:
+			var src = hitbox.get_source_node()
+			if src and "attribute_component" in src:
+				暴击率 = src.attribute_component.获取属性值("暴击率")
+				暴击伤害倍率 = src.attribute_component.获取属性值("暴击伤害倍率")
 		var 总概率 = 格挡率 + 闪避率 + 暴击率
 		var 判定随机数 = randf() * 1.0 if 总概率 < 1.0 else randf() * 总概率
 
@@ -112,8 +126,7 @@ func _on_hurtbox_component_被击中(hitbox: HitboxComponent) -> void:
 
 		elif 判定随机数 < 闪避率 + 格挡率 + 暴击率:
 			# 暴击成功
-			var 暴击时额外伤害倍率 = hitbox.source.attribute_component.获取属性值("暴击伤害倍率")
-			var 实际伤害 = hitbox.命中伤害 * (1.0 + 暴击时额外伤害倍率)
+			var 实际伤害 = hitbox.命中伤害 * (1.0 + 暴击伤害倍率)
 			attribute_component.受到伤害(实际伤害)
 			
 			if "player" in self.get_groups():

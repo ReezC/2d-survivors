@@ -24,6 +24,7 @@ config/icon="res://icon.svg"
 GameEvents="*res://scenes/aotuload/game_events.tscn"
 VFX="*uid://ecyiymmaj3jv"
 EnvVFX="*uid://qomyut16hnoi"
+ECSWorld="*res://ecs/ecs_world.gd"
 
 [debug]
 

@@ -49,18 +49,7 @@ func center_window(size: Vector2i):
 
 # 更新UI缩放
 func update_ui_scaling(new_size: Vector2i):
-	#var base_resolution = Vector2(
-		#ProjectSettings.get_setting("display/window/size/viewport_width"),
-		#ProjectSettings.get_setting("display/window/size/viewport_height")
-	#)
-	#
-	#var scale_factor = min(new_size.x / base_resolution.x, new_size.y / base_resolution.y)
-	#
-	## 更新所有CanvasLayer节点
-	#for child in get_tree().root.get_children():
-		#if child is CanvasLayer:
-			#child.scale = Vector2(scale_factor, scale_factor)
-	pass	
+	pass  # TODO: 根据 new_size 实现 UI 缩放逻辑	
 
 # 更新游戏内容缩放
 func update_game_scaling(new_size: Vector2i):
@@ -71,18 +60,6 @@ func update_game_scaling(new_size: Vector2i):
 	var window = get_tree().root
 	window.size = new_size
 	window.content_scale_size = new_size
-	
-	# # 2D游戏：调整Camera2D缩放
-	# var cameras = get_tree().get_nodes_in_group("camera")
-	# for camera in cameras:
-	# 	if camera is Camera2D:
-	# 		var aspect_ratio = new_size.x / new_size.y
-	# 		var base_aspect = base_resolution.x / base_resolution.y
-			
-	# 		if aspect_ratio > base_aspect:
-	# 			camera.zoom = Vector2(1, 1) * (new_size.y / base_resolution.y)
-	# 		else:
-	# 			camera.zoom = Vector2(1, 1) * (new_size.x / base_resolution.x)
 
 
 

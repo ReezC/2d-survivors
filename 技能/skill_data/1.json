@@ -73,7 +73,8 @@
 		}
 	},
 	"CD":{
-		"$type":"skillconfig.FloatValue.Add"
+		"$type":"skillconfig.FloatValue.Const",
+		"value":3000.0
 	},
 	"skillTriggerRange":{
 		"$type":"skillconfig.FloatValue.Const",

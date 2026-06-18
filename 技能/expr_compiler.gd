@@ -70,8 +70,8 @@ func compile_float_value(config: Dictionary) -> Callable:
 				var divisor = c2.call(ctx)
 				if divisor != 0.0:
 					return c1.call(ctx) / divisor
-				push_error("[ExprCompiler] 除数为零")
-				return 0.0
+				push_warning("[ExprCompiler] 除数为零，返回 1.0")
+				return 1.0
 
 		"Int":
 			var c = compile_float_value(config.get("value", {}))

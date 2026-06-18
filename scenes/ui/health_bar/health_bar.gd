@@ -43,7 +43,6 @@ var 渐隐初始透明度: float = 1.0
 func _ready() -> void:
 	# 设置主血条样式
 	var 背景_style = progress_bar.get_theme_stylebox("background").duplicate()
-	# 背景_style.bg_color = 背景颜色
 	
 	var 填充_style = progress_bar.get_theme_stylebox("fill").duplicate()
 	填充_style.bg_color = 填充颜色
@@ -59,8 +58,6 @@ func _ready() -> void:
 	progress_bar.add_theme_stylebox_override("fill", 填充_style)
 	damage_bar.add_theme_stylebox_override("background", 伤害背景_style)
 	damage_bar.add_theme_stylebox_override("fill", 伤害填充_style)
-	# 伤害背景_style.bg_color = Color.TRANSPARENT  # 透明背景
-
 	
 	
 	# 初始化数值

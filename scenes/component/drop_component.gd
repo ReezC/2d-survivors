@@ -5,7 +5,6 @@ extends Node
 @export var item_scene: PackedScene
 
 func _ready() -> void:
-	#(health_component as HealthComponent).died.connect(on_owner_died)
 	pass
 
 func on_owner_died() -> void:

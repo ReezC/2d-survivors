@@ -3,13 +3,23 @@ class_name HitboxComponent
 
 var 命中伤害: float = 0.0
 var disable_on_source_die: bool = false
-@export var source:Node2D = null # 源对象，可能不是owner
+## 施法者 entity ID（替代原来的 source Node2D 引用）
+var source_entity: int = -1
+## EntityManager 引用（由 SubObjectSystem 注入）
+var _entity_manager: EntityManager = null
 @export var collide_reset_interval: float = 0.0 # 碰撞重置间隔，单位秒。若>0，则hitbox在碰撞后保持关闭此时间后才重新启用
 
+## 获取施法者 Node（仅在需要访问场景树时使用）
+func get_source_node() -> Node2D:
+	if _entity_manager and source_entity > 0:
+		return _entity_manager.get_unit(source_entity) as Node2D
+	return null
+
 func _ready() -> void:
-	if source != null and disable_on_source_die:
-		if source.has_signal("死亡"):
-			source.connect("死亡", Callable(self, "disable"))
+	if disable_on_source_die:
+		var src = get_source_node()
+		if src and src.has_signal("死亡"):
+			src.connect("死亡", Callable(self, "disable"))
 
 signal 击中目标(target:HurtboxComponent)
 
@@ -25,13 +35,29 @@ func disable() -> void:
 
 func 检查可用性() -> bool:
 	if disable_on_source_die:
-		if source == null:
+		var src = get_source_node()
+		if src == null:
 			disable()
 			return false
-		if source.get("当前状态") == source.角色状态.死亡:
-			disable()
-			return false
-	命中伤害 = source.attribute_component.获取属性值("攻击力") 
+		if src.has_method("get") and "当前状态" in src and "角色状态" in src:
+			if src.当前状态 == src.角色状态.死亡:
+				disable()
+				return false
+	
+	# 通过 entity 读取攻击力属性
+	if _entity_manager and source_entity > 0:
+		var attr_comp = _entity_manager.get_component(source_entity, ECSComponentTypes.ComponentType.ATTRIBUTE)
+		if attr_comp and attr_comp.has_method("获取属性值"):
+			命中伤害 = attr_comp.获取属性值("攻击力")
+		else:
+			var src_node = get_source_node()
+			if src_node and "attribute_component" in src_node:
+				命中伤害 = src_node.attribute_component.获取属性值("攻击力")
+	else:
+		var src_node = get_source_node()
+		if src_node and "attribute_component" in src_node:
+			命中伤害 = src_node.attribute_component.获取属性值("攻击力")
+	
 	return true
 
 func _on_area_entered(area: Area2D) -> void:
@@ -39,9 +65,9 @@ func _on_area_entered(area: Area2D) -> void:
 		return
 	if area is HurtboxComponent:
 		emit_signal("击中目标", area as HurtboxComponent)
-		# 仅打印玩家的击中信息
-		if source.is_in_group("player"):
-			print("%s 击中 %s" % [source.name, (area as HurtboxComponent).owner.name])
+		var src = get_source_node()
+		if src and src.is_in_group("player"):
+			print("%s 击中 %s" % [src.name, (area as HurtboxComponent).owner.name])
 		# 处理命中后逻辑
 		if collide_reset_interval > 0.0:
 			disable()

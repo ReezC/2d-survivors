@@ -36,13 +36,11 @@ func on_timer_timeout():
 	var ability_instance = ability.instantiate() as Node2D
 	var foreground_layer = get_tree().get_first_node_in_group("foreground_layer") as Node2D
 	foreground_layer.add_child(ability_instance)
-	ability_instance.hitbox_component.damage_amount = damage_amount
+	ability_instance.hitbox_component.命中伤害 = damage_amount
 	ability_instance.global_position = enemies[0].global_position
-	#ability_instance.global_position = player.global_position
 
 	# 判断是否需要水平翻转
 	var enemy_direction = (enemies[0].global_position - player.global_position).normalized()
-	# ability_instance.rotation = enemy_direction.angle()
 	if enemy_direction.x < 0:
 		ability_instance.scale.x = -abs(ability_instance.scale.x)
 	else:
@@ -57,6 +55,5 @@ func on_ability_upgrade_added(upgrade:AbilityUpgrade, current_upgrades:Dictionar
 	var wait_time_reduction = current_upgrades["小刀冷却时间"]["quantity"] * 0.5
 	$Timer.wait_time = max(0.1, base_wait_time / (1.0 + wait_time_reduction))
 	$Timer.start() # timer.wait_time修改后，重新启动计时器才能生效
-	# print("升级小刀冷却时间 = %.2f当前时间：%.2f" % [wait_time_reduction,$Timer.wait_time])
 	print_rich("[color=cyan]小刀冷却时间减少！当前冷却时间：%.2f 秒[/color]" % $Timer.wait_time)
 	

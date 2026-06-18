@@ -2,7 +2,6 @@ extends	Unit
 class_name	Enemy
 
 
-# var facingDirection:String = "Down"
 var animation2Play:String = "Idle"
 
 
@@ -23,9 +22,7 @@ func _process(delta: float) -> void:
 	if player == null:
 		return
 	var distance_to_player = (player.global_position - global_position).length()
-	# var distance_to_player = (get_tree().get_first_node_in_group("player").global_position - global_position).length()
 	var player_collision_radius = get_player_collision_radius()
-	# print("玩家碰撞半径: ", player_collision_radius)
 	# 如果距离小于碰撞半径相关的一个值，则停止移动
 	if distance_to_player < player_collision_radius:
 		move_direction = Vector2.ZERO
@@ -33,10 +30,7 @@ func _process(delta: float) -> void:
 
 
 	if 当前状态 != 角色状态.死亡:
-		if 当前状态 == 角色状态.释放技能:
-			# 释放技能时允许移动
-			pass
-		elif move_direction != Vector2.ZERO:
+		if move_direction != Vector2.ZERO:
 			当前状态 = 角色状态.移动
 		else:
 			当前状态 = 角色状态.待机
@@ -56,10 +50,8 @@ func set_anim() -> void:
 			state_machine.travel("Dead")
 		角色状态.释放技能:
 			state_machine.travel("Skill")
-			# animation_tree.set("parameters/Skill/blend_position", get_x_facing_direction())
 		角色状态.待机:
 			state_machine.travel("Idle")
-			# animation_tree.set("parameters/Idle/blend_position", facingDirection)
 		角色状态.移动:
 			state_machine.travel("Run")
 			animation_tree.set("parameters/Run/blend_position", facingDirection)
@@ -78,7 +70,6 @@ func get_move_direction():
 				var to_other = global_position - other_area.global_position
 				var distance = to_other.length()
 				if distance > 0:
-					# print(群体运动推动力)
 					desired_direction += 群体运动推动力 * to_other.normalized() / distance
 		return desired_direction.normalized() 
 	return Vector2.ZERO

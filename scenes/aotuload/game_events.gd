@@ -3,7 +3,6 @@ extends Node
 
 const 受击闪白material = preload("res://effects/受击闪白.tres")
 const 受击闪红material = preload("res://effects/受击闪红.tres")
-# const 战斗跳字场景 = preload("res://scenes/ui/floating_text/战斗跳字.tscn")
 
 signal experience_vial_collected(exp_amount: int)
 signal ability_upgrade_added(upgrade:AbilityUpgrade, current_upgrades:Dictionary)

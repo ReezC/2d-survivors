@@ -26,8 +26,5 @@ func increment_exp(num_exp: int) -> void:
 		else:
 			target_exp = target_exp + int(target_exp * 0.5)
 
-
-	print("经验+ %d. 当前经验: %d" % [num_exp, current_exp])
-
 func on_experience_vial_collected(exp_amount: int) -> void:
 	increment_exp(exp_amount)

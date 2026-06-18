@@ -18,5 +18,4 @@ func load_csv(path: String):
 	return line
 
 func _ready() -> void:
-	print(load_csv("res://resources/config_files/attribute.csv"))
 	pass
