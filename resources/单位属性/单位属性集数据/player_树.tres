@@ -25,7 +25,7 @@ script = ExtResource("3_ncaes")
 "属性类型" = 1
 "图标" = SubResource("CompressedTexture2D_uo5vx")
 "属性描述" = "多多益善~"
-"初始值" = 20.0
+"初始值" = 100.0
 metadata/_custom_type_script = "uid://cocpxte7moiwt"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c8o2f"]
@@ -115,7 +115,7 @@ script = ExtResource("2_bc0tf")
 "属性类型" = 11
 "图标" = SubResource("CompressedTexture2D_aaojh")
 "属性描述" = "移动速度就是移动的速度"
-"初始值" = 50.0
+"初始值" = 100.0
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ye6iw"]

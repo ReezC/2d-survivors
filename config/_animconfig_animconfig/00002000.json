@@ -1,391 +1,396 @@
 {
-	"$type": "animconfig.animconfig",
-	"id": "00002000",
-	"name": "默认身体",
-	"islot": "Bd",
-	"vslot": [
+	"$type":"animconfig.animconfig",
+	"id":"00002000",
+	"name":"默认身体",
+	"info":{
+		"$type":"animconfig.info",
+		"icon":{
+			"$type":"animconfig.spriteWithOrigin"
+		},
+		"iconRaw":{
+			"$type":"animconfig.spriteWithOrigin"
+		}
+	},
+	"islot":"Bd",
+	"vslot":[
 		"Bd"
 	],
-	"animCfg": [
+	"animCfg":[
 		{
-			"$type": "animconfig.AnimConfigData",
-			"name": "stand1",
-			"frames": [
+			"$type":"animconfig.AnimConfigData",
+			"name":"stand1",
+			"frames":[
 				{
-					"$type": "animconfig.AnimFrame",
-					"$note": "note：0",
-					"$fold": true,
-					"spritecfg": [
+					"$type":"animconfig.AnimFrame",
+					"$note":"note：0",
+					"spritecfg":[
 						{
-							"$type": "animconfig.SpriteConfigData.Sprite",
-							"name": "body",
-							"spriteDir": "res://assets/MapleStory/Character/00002000/stand1/0.body._outlink.png",
-							"origin_x": 16.0,
-							"origin_y": 31.0,
-							"map": [
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"body",
+							"spriteDir":"res://assets/MapleStory/Character/00002000/stand1/0.body._outlink.png",
+							"origin_x":16.0,
+							"origin_y":31.0,
+							"map":[
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "neck",
-									"offset_x": -4.0,
-									"offset_y": -32.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"neck",
+									"offset_x":-4.0,
+									"offset_y":-32.0
 								},
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "navel",
-									"offset_x": -8.0,
-									"offset_y": -21.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"navel",
+									"offset_x":-8.0,
+									"offset_y":-21.0
 								}
 							],
-							"z": "body"
+							"z":"body"
 						},
 						{
-							"$type": "animconfig.SpriteConfigData.Sprite",
-							"name": "arm",
-							"spriteDir": "res://assets/MapleStory/Character/00002000/stand1/0.arm._outlink.png",
-							"origin_x": 5.0,
-							"origin_y": 9.0,
-							"map": [
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"arm",
+							"spriteDir":"res://assets/MapleStory/Character/00002000/stand1/0.arm._outlink.png",
+							"origin_x":5.0,
+							"origin_y":9.0,
+							"map":[
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "navel",
-									"offset_x": -13.0,
-									"offset_y": -1.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"navel",
+									"offset_x":-13.0,
+									"offset_y":-1.0
 								},
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "hand",
-									"offset_x": -1.0,
-									"offset_y": 5.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"hand",
+									"offset_x":-1.0,
+									"offset_y":5.0
 								}
 							],
-							"z": "arm"
+							"z":"arm"
 						}
 					],
-					"face": 1,
-					"delay": 500
+					"face":1,
+					"delay":500
 				},
 				{
-					"$type": "animconfig.AnimFrame",
-					"$note": "note：1",
-					"$fold": true,
-					"spritecfg": [
+					"$type":"animconfig.AnimFrame",
+					"$note":"note：1",
+					"spritecfg":[
 						{
-							"$type": "animconfig.SpriteConfigData.Sprite",
-							"name": "body",
-							"spriteDir": "res://assets/MapleStory/Character/00002000/stand1/1.body._outlink.png",
-							"origin_x": 17.0,
-							"origin_y": 31.0,
-							"map": [
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"body",
+							"spriteDir":"res://assets/MapleStory/Character/00002000/stand1/1.body._outlink.png",
+							"origin_x":17.0,
+							"origin_y":31.0,
+							"map":[
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "neck",
-									"offset_x": -4.0,
-									"offset_y": -32.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"neck",
+									"offset_x":-4.0,
+									"offset_y":-32.0
 								},
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "navel",
-									"offset_x": -7.0,
-									"offset_y": -20.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"navel",
+									"offset_x":-7.0,
+									"offset_y":-20.0
 								}
 							],
-							"z": "body"
+							"z":"body"
 						},
 						{
-							"$type": "animconfig.SpriteConfigData.Sprite",
-							"name": "arm",
-							"spriteDir": "res://assets/MapleStory/Character/00002000/stand1/1.arm._outlink.png",
-							"origin_x": 5.0,
-							"origin_y": 9.0,
-							"map": [
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"arm",
+							"spriteDir":"res://assets/MapleStory/Character/00002000/stand1/1.arm._outlink.png",
+							"origin_x":5.0,
+							"origin_y":9.0,
+							"map":[
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "navel",
-									"offset_x": -13.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"navel",
+									"offset_x":-13.0
 								},
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "hand",
-									"offset_x": -1.0,
-									"offset_y": 5.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"hand",
+									"offset_x":-1.0,
+									"offset_y":5.0
 								}
 							],
-							"z": "arm"
+							"z":"arm"
 						}
 					],
-					"face": 1,
-					"delay": 500
+					"face":1,
+					"delay":500
 				},
 				{
-					"$type": "animconfig.AnimFrame",
-					"$note": "note：2",
-					"$fold": true,
-					"spritecfg": [
+					"$type":"animconfig.AnimFrame",
+					"$note":"note：2",
+					"spritecfg":[
 						{
-							"$type": "animconfig.SpriteConfigData.Sprite",
-							"name": "body",
-							"spriteDir": "res://assets/MapleStory/Character/00002000/stand1/2.body._outlink.png",
-							"origin_x": 18.0,
-							"origin_y": 31.0,
-							"map": [
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"body",
+							"spriteDir":"res://assets/MapleStory/Character/00002000/stand1/2.body._outlink.png",
+							"origin_x":18.0,
+							"origin_y":31.0,
+							"map":[
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "neck",
-									"offset_x": -4.0,
-									"offset_y": -32.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"neck",
+									"offset_x":-4.0,
+									"offset_y":-32.0
 								},
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "navel",
-									"offset_x": -6.0,
-									"offset_y": -21.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"navel",
+									"offset_x":-6.0,
+									"offset_y":-21.0
 								}
 							],
-							"z": "body"
+							"z":"body"
 						},
 						{
-							"$type": "animconfig.SpriteConfigData.Sprite",
-							"name": "arm",
-							"spriteDir": "res://assets/MapleStory/Character/00002000/stand1/2.arm._outlink.png",
-							"origin_x": 6.0,
-							"origin_y": 9.0,
-							"map": [
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"arm",
+							"spriteDir":"res://assets/MapleStory/Character/00002000/stand1/2.arm._outlink.png",
+							"origin_x":6.0,
+							"origin_y":9.0,
+							"map":[
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "navel",
-									"offset_x": -13.0,
-									"offset_y": 1.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"navel",
+									"offset_x":-13.0,
+									"offset_y":-1.0
 								},
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "hand",
-									"offset_x": -1.0,
-									"offset_y": 5.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"hand",
+									"offset_x":-1.0,
+									"offset_y":5.0
 								}
 							],
-							"z": "arm"
+							"z":"arm"
 						}
 					],
-					"face": 1,
-					"delay": 500
+					"face":1,
+					"delay":500
 				}
 			]
 		},
 		{
-			"$type": "animconfig.AnimConfigData",
-			"name": "walk1",
-			"frames": [
+			"$type":"animconfig.AnimConfigData",
+			"$fold":true,
+			"name":"walk1",
+			"frames":[
 				{
-					"$type": "animconfig.AnimFrame",
-					"$note": "note：0",
-					"$fold": true,
-					"spritecfg": [
+					"$type":"animconfig.AnimFrame",
+					"$note":"note：0",
+					"spritecfg":[
 						{
-							"$type": "animconfig.SpriteConfigData.Sprite",
-							"name": "body",
-							"spriteDir": "res://assets/MapleStory/Character/00002000/walk1/0.body._outlink.png",
-							"origin_x": 19.0,
-							"origin_y": 32.0,
-							"map": [
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"body",
+							"spriteDir":"res://assets/MapleStory/Character/00002000/walk1/0.body._outlink.png",
+							"origin_x":19.0,
+							"origin_y":32.0,
+							"map":[
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "neck",
-									"offset_x": -4.0,
-									"offset_y": -32.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"neck",
+									"offset_x":-4.0,
+									"offset_y":-32.0
 								},
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "navel",
-									"offset_x": -6.0,
-									"offset_y": -20.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"navel",
+									"offset_x":-6.0,
+									"offset_y":-20.0
 								}
 							],
-							"z": "body"
+							"z":"body"
 						},
 						{
-							"$type": "animconfig.SpriteConfigData.Sprite",
-							"name": "arm",
-							"spriteDir": "res://assets/MapleStory/Character/00002000/walk1/0.arm._outlink.png",
-							"origin_x": 6.0,
-							"origin_y": 8.0,
-							"map": [
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"arm",
+							"spriteDir":"res://assets/MapleStory/Character/00002000/walk1/0.arm._outlink.png",
+							"origin_x":6.0,
+							"origin_y":8.0,
+							"map":[
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "navel",
-									"offset_x": -12.0,
-									"offset_y": 2.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"navel",
+									"offset_x":-12.0,
+									"offset_y":2.0
 								},
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "hand",
-									"offset_x": 1.0,
-									"offset_y": 5.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"hand",
+									"offset_x":1.0,
+									"offset_y":5.0
 								}
 							],
-							"z": "arm"
+							"z":"arm"
 						}
 					],
-					"face": 1,
-					"delay": 180
+					"face":1,
+					"delay":180
 				},
 				{
-					"$type": "animconfig.AnimFrame",
-					"$note": "note：1",
-					"$fold": true,
-					"spritecfg": [
+					"$type":"animconfig.AnimFrame",
+					"$note":"note：1",
+					"$fold":true,
+					"spritecfg":[
 						{
-							"$type": "animconfig.SpriteConfigData.Sprite",
-							"name": "body",
-							"spriteDir": "res://assets/MapleStory/Character/00002000/walk1/1.body._outlink.png",
-							"origin_x": 16.0,
-							"origin_y": 32.0,
-							"map": [
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"body",
+							"spriteDir":"res://assets/MapleStory/Character/00002000/walk1/1.body._outlink.png",
+							"origin_x":16.0,
+							"origin_y":32.0,
+							"map":[
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "neck",
-									"offset_x": -4.0,
-									"offset_y": -31.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"neck",
+									"offset_x":-4.0,
+									"offset_y":-31.0
 								},
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "navel",
-									"offset_x": -6.0,
-									"offset_y": -20.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"navel",
+									"offset_x":-6.0,
+									"offset_y":-20.0
 								}
 							],
-							"z": "body"
+							"z":"body"
 						},
 						{
-							"$type": "animconfig.SpriteConfigData.Sprite",
-							"name": "arm",
-							"spriteDir": "res://assets/MapleStory/Character/00002000/walk1/1.arm._outlink.png",
-							"origin_x": 6.0,
-							"origin_y": 9.0,
-							"map": [
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"arm",
+							"spriteDir":"res://assets/MapleStory/Character/00002000/walk1/1.arm._outlink.png",
+							"origin_x":6.0,
+							"origin_y":9.0,
+							"map":[
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "navel",
-									"offset_x": -6.0,
-									"offset_y": -1.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"navel",
+									"offset_x":-6.0,
+									"offset_y":-1.0
 								},
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "hand",
-									"offset_x": -2.0,
-									"offset_y": 5.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"hand",
+									"offset_x":-2.0,
+									"offset_y":5.0
 								}
 							],
-							"z": "arm"
+							"z":"arm"
 						}
 					],
-					"face": 1,
-					"delay": 180
+					"face":1,
+					"delay":180
 				},
 				{
-					"$type": "animconfig.AnimFrame",
-					"$note": "note：2",
-					"$fold": true,
-					"spritecfg": [
+					"$type":"animconfig.AnimFrame",
+					"$note":"note：2",
+					"spritecfg":[
 						{
-							"$type": "animconfig.SpriteConfigData.Sprite",
-							"name": "body",
-							"spriteDir": "res://assets/MapleStory/Character/00002000/walk1/2.body._outlink.png",
-							"origin_x": 19.0,
-							"origin_y": 32.0,
-							"map": [
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"body",
+							"spriteDir":"res://assets/MapleStory/Character/00002000/walk1/2.body._outlink.png",
+							"origin_x":19.0,
+							"origin_y":32.0,
+							"map":[
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "neck",
-									"offset_x": -4.0,
-									"offset_y": -32.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"neck",
+									"offset_x":-4.0,
+									"offset_y":-32.0
 								},
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "navel",
-									"offset_x": -6.0,
-									"offset_y": -20.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"navel",
+									"offset_x":-6.0,
+									"offset_y":-20.0
 								}
 							],
-							"z": "body"
+							"z":"body"
 						},
 						{
-							"$type": "animconfig.SpriteConfigData.Sprite",
-							"name": "arm",
-							"spriteDir": "res://assets/MapleStory/Character/00002000/walk1/2.arm._outlink.png",
-							"origin_x": 6.0,
-							"origin_y": 8.0,
-							"map": [
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"arm",
+							"spriteDir":"res://assets/MapleStory/Character/00002000/walk1/2.arm._outlink.png",
+							"origin_x":6.0,
+							"origin_y":8.0,
+							"map":[
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "navel",
-									"offset_x": -12.0,
-									"offset_y": 2.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"navel",
+									"offset_x":-12.0,
+									"offset_y":2.0
 								},
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "hand",
-									"offset_x": 1.0,
-									"offset_y": 6.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"hand",
+									"offset_x":1.0,
+									"offset_y":6.0
 								}
 							],
-							"z": "arm"
+							"z":"arm"
 						}
 					],
-					"face": 1,
-					"delay": 180
+					"face":1,
+					"delay":180
 				},
 				{
-					"$type": "animconfig.AnimFrame",
-					"$note": "note：3",
-					"$fold": true,
-					"spritecfg": [
+					"$type":"animconfig.AnimFrame",
+					"$note":"note：3",
+					"$fold":true,
+					"spritecfg":[
 						{
-							"$type": "animconfig.SpriteConfigData.Sprite",
-							"name": "body",
-							"spriteDir": "res://assets/MapleStory/Character/00002000/walk1/3.body._outlink.png",
-							"origin_x": 21.0,
-							"origin_y": 31.0,
-							"map": [
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"body",
+							"spriteDir":"res://assets/MapleStory/Character/00002000/walk1/3.body._outlink.png",
+							"origin_x":21.0,
+							"origin_y":31.0,
+							"map":[
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "neck",
-									"offset_x": -4.0,
-									"offset_y": -31.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"neck",
+									"offset_x":-4.0,
+									"offset_y":-31.0
 								},
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "navel",
-									"offset_x": -6.0,
-									"offset_y": -18.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"navel",
+									"offset_x":-6.0,
+									"offset_y":-18.0
 								}
 							],
-							"z": "body"
+							"z":"body"
 						},
 						{
-							"$type": "animconfig.SpriteConfigData.Sprite",
-							"name": "arm",
-							"spriteDir": "res://assets/MapleStory/Character/00002000/walk1/3.arm._outlink.png",
-							"origin_x": 7.0,
-							"origin_y": 7.0,
-							"map": [
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"arm",
+							"spriteDir":"res://assets/MapleStory/Character/00002000/walk1/3.arm._outlink.png",
+							"origin_x":7.0,
+							"origin_y":7.0,
+							"map":[
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "navel",
-									"offset_x": -13.0,
-									"offset_y": 4.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"navel",
+									"offset_x":-13.0,
+									"offset_y":4.0
 								},
 								{
-									"$type": "animconfig.SkelectonMap",
-									"bone": "hand",
-									"offset_x": 3.0,
-									"offset_y": 5.0
+									"$type":"animconfig.SkelectonMap",
+									"bone":"hand",
+									"offset_x":3.0,
+									"offset_y":5.0
 								}
 							],
-							"z": "arm"
+							"z":"arm"
 						}
 					],
-					"face": 1,
-					"delay": 180
+					"face":1,
+					"delay":180
 				}
 			]
 		}
