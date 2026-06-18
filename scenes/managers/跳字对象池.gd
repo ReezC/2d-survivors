@@ -87,7 +87,7 @@ func 获取跳字() -> Node:
 	if 自动扩展 and 使用中对象字典.size() < 最大池大小:
 		var 新跳字 = 创建跳字实例()
 		新跳字.visible = true
-		print("对象池扩展，创建新跳字")
+		GMLogger.log_pool("对象池扩展，创建新跳字")
 		return 新跳字
 	
 	return 复用旧跳字()
@@ -108,7 +108,7 @@ func 复用旧跳字() -> Node:
 	var 旧跳字 = 最早键值
 	回收跳字(旧跳字)
 	旧跳字.visible = true
-	print("复用旧跳字")
+	GMLogger.log_pool("复用旧跳字")
 	return 旧跳字
 
 # 跳字基础 z_index，需远大于纸娃娃系统的最大 z_index（189），确保始终显示在最前

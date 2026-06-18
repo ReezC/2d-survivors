@@ -33,6 +33,15 @@ var buff_system: BuffSystem = null
 ## SubObjectSystem 引用（用于创建子物体）
 var subobject_system: SubObjectSystem = null
 
+## 获取技能拥有者的可读名称
+func _owner_name(entity_id: int) -> String:
+	var unit = entity_manager.get_unit(entity_id)
+	if unit == null:
+		return "entity=%d" % entity_id
+	if unit.has_method("get") and "unit_name" in unit:
+		return "%s (entity=%d)" % [unit.unit_name, entity_id]
+	return "%s (entity=%d)" % [unit.name, entity_id]
+
 func _init(em: EntityManager) -> void:
 	super._init(em)
 
@@ -100,7 +109,7 @@ func _create_skill_component(skill_res: 技能数据, caster: Node, eid: int) ->
 	
 	# 被动技能直接释放
 	if scd.技能类型 == 技能数据.技能类型枚举.被动技能:
-		print_rich("[color=green][SkillSystem] 释放被动技能: %s (id=%d) for entity=%d[/color]" % [scd.技能名称, scd.id, eid])
+		GMLogger.log_skill("[%s] 被动技能生效: %s (id=%d)" % [_owner_name(eid), scd.技能名称, scd.id])
 		_cast_skill_internal(eid, scd)
 	
 	return scd
@@ -271,6 +280,7 @@ func _update_cooldowns(delta: float) -> void:
 				if scd.cd_remaining <= 0.0:
 					scd.cd_remaining = 0.0
 					scd.当前状态 = SkillComponentData.技能状态.准备就绪
+					GMLogger.log_skill("[%s] 技能就绪: %s (id=%d)" % [_owner_name(eid), scd.技能名称, scd.id])
 
 func _get_nearest_target(owner_node: Node2D, targets: Array) -> Node2D:
 	var nearest: Node2D = null
@@ -302,13 +312,16 @@ func 释放技能(entity_id: int, 技能ID: int) -> void:
 func _cast_skill_internal(entity_id: int, scd: SkillComponentData) -> void:
 	var skill_buff_data = scd.skill_logic_data.get("buff", null)
 	if skill_buff_data == null or skill_buff_data.is_empty():
+		GMLogger.log_skill("[%s] 技能释放失败: %s (id=%d) — 无 buff 数据" % [_owner_name(entity_id), scd.技能名称, scd.id])
 		return
 	
 	# 通过 BuffSystem 创建 Buff（不再传递 caster Node）
 	if buff_system:
+		GMLogger.log_skill("[%s] 技能释放: %s (id=%d)" % [_owner_name(entity_id), scd.技能名称, scd.id])
 		buff_system.create_buff(skill_buff_data, entity_id, -1)
 	else:
 		push_error("[SkillSystem] buff_system 未设置，无法创建 Buff！")
+		GMLogger.log_skill("[%s] 技能释放失败: %s (id=%d) — buff_system 未设置" % [_owner_name(entity_id), scd.技能名称, scd.id])
 	
 	match scd.技能类型:
 		技能数据.技能类型枚举.主动技能:
@@ -316,6 +329,7 @@ func _cast_skill_internal(entity_id: int, scd: SkillComponentData) -> void:
 			if scd.冷却时间 > 0.0:
 				scd.当前状态 = SkillComponentData.技能状态.冷却中
 				scd.cd_remaining = scd.冷却时间
+				GMLogger.log_skill("[%s] 技能进入冷却: %s (id=%d), CD=%.2fs" % [_owner_name(entity_id), scd.技能名称, scd.id, scd.冷却时间])
 			else:
 				scd.当前状态 = SkillComponentData.技能状态.准备就绪
 			

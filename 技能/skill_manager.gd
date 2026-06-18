@@ -50,7 +50,7 @@ func _on_单位_死亡() -> void:
 	var eid = ECSWorld.entity_manager.get_entity_id(owner)
 	if eid != -1:
 		ECSWorld.destroy_entity(eid)
-	print_rich("[color=red]%s 的技能管理器检测到拥有者死亡[/color]" % owner.name)
+	GMLogger.log_skill("[%s] 技能管理器检测到拥有者死亡" % owner.name)
 
 
 ## 释放技能（委托给 ECS）

@@ -150,7 +150,7 @@ func _on_hurtbox_component_被击中(hitbox: HitboxComponent) -> void:
 func die() -> void:
 	当前状态 = 角色状态.死亡
 	死亡.emit()
-	print("%s 死亡" % name)
+	GMLogger.log_attr("%s 死亡" % name)
 	# 添加死亡倒计时，3秒后删除节点
 	await get_tree().create_timer(3.0).timeout
 	self.queue_free()

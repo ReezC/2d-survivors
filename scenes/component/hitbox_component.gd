@@ -67,7 +67,7 @@ func _on_area_entered(area: Area2D) -> void:
 		emit_signal("击中目标", area as HurtboxComponent)
 		var src = get_source_node()
 		if src and src.is_in_group("player"):
-			print("%s 击中 %s" % [src.name, (area as HurtboxComponent).owner.name])
+			GMLogger.log_damage("%s 击中 %s" % [src.name, (area as HurtboxComponent).owner.name])
 		# 处理命中后逻辑
 		if collide_reset_interval > 0.0:
 			disable()

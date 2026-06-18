@@ -14,4 +14,4 @@ func _on_area_entered(area: Area2D) -> void:
 			var hitbox = area as HitboxComponent
 			var src = hitbox.get_source_node()
 			var src_name = src.name if src else "未知"
-			print("%s 被 %s 击中" % [owner.name, src_name])
+			GMLogger.log_damage("%s 被 %s 击中" % [owner.name, src_name])

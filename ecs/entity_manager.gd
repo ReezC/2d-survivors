@@ -100,10 +100,10 @@ func is_alive(entity_id: int) -> bool:
 ## 调试打印 Entity 信息
 func debug_print_entity(entity_id: int) -> void:
 	if not _entity_masks.has(entity_id):
-		print("[EntityManager] Entity %d 不存在" % entity_id)
+		GMLogger.log_ecs("[EntityManager] Entity %d 不存在" % entity_id)
 		return
 	var mask: int = _entity_masks[entity_id]
-	print("[EntityManager] Entity %d 掩码: %d" % [entity_id, mask])
+	GMLogger.log_ecs("[EntityManager] Entity %d 掩码: %d" % [entity_id, mask])
 	for comp_name in _components:
 		if _components[comp_name].has(entity_id):
-			print("  └─ %s: %s" % [comp_name, _components[comp_name][entity_id]])
+			GMLogger.log_ecs("  └─ %s: %s" % [comp_name, _components[comp_name][entity_id]])

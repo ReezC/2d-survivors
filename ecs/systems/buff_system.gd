@@ -78,17 +78,17 @@ func _on_buff_start(entity_id: int, buff: BuffComponentData) -> void:
 	var 配置的持续时间 = _快速求值(buff, buff._compiled_duration) / 1000.0
 	if 配置的持续时间 < 0:
 		buff.duration = INF
-		print_rich("[color=cyan][BuffSystem] buff '%s' duration=-1 → INF[/color]" % buff.buff_name)
+		GMLogger.log_buff("buff '%s' duration=-1 → INF" % buff.buff_name)
 	else:
 		buff.duration = 配置的持续时间
 	
 	# 执行 buff 逻辑（无论持续时间多少，逻辑都要执行）
 	var buff_logic_data = buff.buff_data.get("buffLogic")
 	if buff_logic_data:
-		print_rich("[color=cyan][BuffSystem] 执行 buff 逻辑: %s[/color]" % buff_logic_data.get("$type", "?"))
+		GMLogger.log_buff("执行 buff 逻辑: %s" % buff_logic_data.get("$type", "?"))
 		_buff_execute(entity_id, buff, buff_logic_data)
 	else:
-		print_rich("[color=yellow][BuffSystem] buff '%s' 没有 buffLogic![/color]" % buff.buff_name)
+		GMLogger.log_buff("buff '%s' 没有 buffLogic!" % buff.buff_name)
 	
 	if buff.duration == 0.0:
 		_on_buff_end(entity_id, buff)
@@ -171,7 +171,7 @@ func _buff_execute(entity_id: int, buff: BuffComponentData, logic_data: Dictiona
 			var actionOnTimeList = logic_data.get("actionOnTimeList", [])
 			var timeMultiplier_compiled = skill_system._编译数值(logic_data.get("addTimeMultiplierPercent", {}))
 			var timeMultiplier = _快速求值(buff, timeMultiplier_compiled)
-			print_rich("[color=yellow][BuffSystem] ActionTimeline: timeMultiplier=%f, entries=%d[/color]" % [timeMultiplier, actionOnTimeList.size()])
+			GMLogger.log_buff("ActionTimeline: timeMultiplier=%f, entries=%d" % [timeMultiplier, actionOnTimeList.size()])
 			if timeMultiplier < -1.0:
 				return
 			buff._action_timeline_time_multiplier = timeMultiplier
@@ -189,7 +189,7 @@ func _buff_execute(entity_id: int, buff: BuffComponentData, logic_data: Dictiona
 					"_remaining": time_sec * (1 + timeMultiplier)
 				})
 		_:
-			print_rich("[color=red]未知的buff逻辑类型: %s[/color]" % logic_data.get("$type"))
+			GMLogger.log_buff("未知的buff逻辑类型: %s" % logic_data.get("$type"))
 
 #endregion
 
@@ -266,9 +266,9 @@ func _skillAction_execute(entity_id: int, buff: BuffComponentData, action: Dicti
 			var obj_scene_path = skill_system.子物体场景路径 + "/子物体.tscn"
 			var obj_duration_compiled = skill_system._编译数值(action.get("duration", {}))
 			var obj_duration = _快速求值(buff, obj_duration_compiled) / 1000.0
-			print_rich("[color=cyan][BuffSystem] CreateHitbox: duration=%.3f, scene=%s[/color]" % [obj_duration, obj_scene_path])
+			GMLogger.log_buff("CreateHitbox: duration=%.3f, scene=%s" % [obj_duration, obj_scene_path])
 			if obj_duration == 0.0:
-				print_rich("[color=red][BuffSystem] CreateHitbox: duration==0, 跳过![/color]")
+				GMLogger.log_buff("CreateHitbox: duration==0, 跳过!")
 				return
 			
 			var obj_movement_config = action.get("movement")
@@ -289,7 +289,7 @@ func _skillAction_execute(entity_id: int, buff: BuffComponentData, action: Dicti
 			)
 		
 		_:
-			print_rich("[color=red]未知的技能行为类型: %s[/color]" % action.get("$type"))
+			GMLogger.log_buff("未知的技能行为类型: %s" % action.get("$type"))
 
 #endregion
 

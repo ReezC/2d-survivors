@@ -55,5 +55,5 @@ func on_ability_upgrade_added(upgrade:AbilityUpgrade, current_upgrades:Dictionar
 	var wait_time_reduction = current_upgrades["小刀冷却时间"]["quantity"] * 0.5
 	$Timer.wait_time = max(0.1, base_wait_time / (1.0 + wait_time_reduction))
 	$Timer.start() # timer.wait_time修改后，重新启动计时器才能生效
-	print_rich("[color=cyan]小刀冷却时间减少！当前冷却时间：%.2f 秒[/color]" % $Timer.wait_time)
+	GMLogger.log_skill("[%s] 小刀冷却时间减少！当前冷却时间：%.2f 秒" % [get_parent().name, $Timer.wait_time])
 	

@@ -17,6 +17,8 @@
 [node name="Main" type="Node" unique_id=1048921097]
 script = ExtResource("1_a8run")
 end_screen_scene = ExtResource("2_ouso4")
+"gm_技能系统" = true
+gm_ECS = true
 
 [node name="ArenaTimeUI" parent="." unique_id=1797388071 node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("1_ow5a4")]
 arena_time_manager = NodePath("../ArenaTimeManager")

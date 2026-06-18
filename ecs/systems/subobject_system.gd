@@ -139,7 +139,7 @@ func spawn_hitbox(
 	obj_instance.set_physics_process(true)
 	obj_instance.name = "HitboxObj"
 	
-	print_rich("[color=green][SubObjectSystem] spawn_hitbox 完成: pos=(%.1f,%.1f), dur=%.3f, size=(%.1f,%.1f), total=%d[/color]" % [position.x, position.y, duration, half_extents.x, half_extents.y, _active_objects.size()])
+	GMLogger.log_buff("spawn_hitbox 完成: pos=(%.1f,%.1f), dur=%.3f, size=(%.1f,%.1f), total=%d" % [position.x, position.y, duration, half_extents.x, half_extents.y, _active_objects.size()])
 	
 	return obj_instance
 

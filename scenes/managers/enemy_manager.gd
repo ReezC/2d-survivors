@@ -9,7 +9,7 @@ const SPAWN_RADIUS = 375
 
 
 func _ready() -> void:
-	print_rich("[color=ROYAL_BLUE]EnemyManager ready[/color]")
+	GMLogger.log_enemy("EnemyManager ready")
 	timer.timeout.connect(on_timer_timeout)
 	arena_time_manager.arena_difficulty_changed.connect(on_arena_difficulty_changed)
 
@@ -53,4 +53,4 @@ func on_arena_difficulty_changed(now_difficulty: int) -> void:
 	# 根据难度变化调整生成速率
 	var last_wait_time = timer.wait_time
 	timer.wait_time = last_wait_time / (1.0 + now_difficulty * 0.2)
-	print_rich("[color=ROYAL_BLUE]怪物变强了！当前难度：%d ：怪物生成速率：%.2f[/color]" % [now_difficulty, timer.wait_time])
+	GMLogger.log_enemy("怪物变强了！当前难度：%d ：怪物生成速率：%.2f" % [now_difficulty, timer.wait_time])

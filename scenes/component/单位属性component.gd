@@ -39,7 +39,7 @@ func 受到伤害(伤害值:float) -> void:
 
 	var 剩余生命值 = 获取属性值("生命值")
 	var 生命上限 = 获取属性值("生命上限")
-	print("%s 受到 %d 点伤害，剩余生命： %s/%s" % [owner.name, 伤害值, 剩余生命值, 生命上限])
+	GMLogger.log_attr("%s 受到 %d 点伤害，剩余生命： %s/%s" % [owner.name, 伤害值, 剩余生命值, 生命上限])
 	
 	Callable(检查死亡).call_deferred()
 
@@ -51,13 +51,13 @@ func 受到治疗(治疗值:float) -> void:
 
 	var 剩余生命值 = 获取属性值("生命值")
 	var 生命上限 = 获取属性值("生命上限")
-	print("%s 受到 %d 点治疗，当前生命： %s/%s" % [owner.name, 治疗值, 剩余生命值, 生命上限])
+	GMLogger.log_attr("%s 受到 %d 点治疗，当前生命： %s/%s" % [owner.name, 治疗值, 剩余生命值, 生命上限])
 
 func 检查死亡() -> bool:
 	var 当前生命值 = 获取属性值("生命值")
 	if 当前生命值 == 0:
 		生命值归零.emit()
-		print("%s 生命值归零" % owner.name)
+		GMLogger.log_attr("%s 生命值归零" % owner.name)
 		owner.die()
 		return true
 	return false
