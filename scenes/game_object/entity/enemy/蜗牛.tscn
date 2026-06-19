@@ -8,10 +8,8 @@
 [ext_resource type="Script" uid="uid://bjvqbui703u8x" path="res://resources/单位属性/单位属性集.gd" id="5_gudbt"]
 [ext_resource type="Script" uid="uid://c218ra1pf7xxj" path="res://resources/单位属性/单位属性.gd" id="6_1gl80"]
 [ext_resource type="Texture2D" uid="uid://vmh6eufofbsh" path="res://assets/MapleStory/Mob/0100100/die1/2._outlink.png" id="6_bps27"]
-[ext_resource type="PackedScene" uid="uid://civjubkgk82lq" path="res://技能/技能实例.tscn" id="7_dlhfe"]
 [ext_resource type="Texture2D" uid="uid://d15g0o7eulbrb" path="res://assets/MapleStory/Mob/0100100/die1/3._outlink.png" id="7_mxnud"]
 [ext_resource type="Script" uid="uid://bd83jqryqem3b" path="res://resources/单位属性/生命_单位属性.gd" id="7_y4r7x"]
-[ext_resource type="Resource" uid="uid://cjn15na4ncwr2" path="res://技能/技能数据/有毒外皮.tres" id="8_4re02"]
 [ext_resource type="Texture2D" uid="uid://dcwso5edf3ov" path="res://assets/MapleStory/Mob/0100100/die1/4._outlink.png" id="8_24vjl"]
 [ext_resource type="Script" uid="uid://cocpxte7moiwt" path="res://resources/单位属性/最大生命值_单位属性.gd" id="8_cxwhy"]
 [ext_resource type="Texture2D" uid="uid://blbd4dn0qfryy" path="res://assets/Ninja Adventure - Asset Pack/Items/Object/Dice 20.png" id="9_iwx7t"]
@@ -806,9 +804,6 @@ shape = SubResource("RectangleShape2D_dlhfe")
 
 [node name="单位属性component" parent="." index="9" unique_id=176829961]
 "属性集" = SubResource("Resource_0i857")
-
-[node name="技能实例" parent="SkillManager/Skills" parent_id_path=PackedInt32Array(1829939027) index="0" unique_id=1136777421 instance=ExtResource("7_dlhfe")]
-"技能本体数据" = ExtResource("8_4re02")
 
 [node name="HealthBar" parent="." index="11" unique_id=517147532]
 offset_left = -20.0

@@ -66,7 +66,8 @@ func _ready() -> void:
 	skill_manager.初始化()
 
 func 设置受击闪白material(闪白material:ShaderMaterial) -> void:
-	animated_sprite_2d.material = 闪白material
+	# 对视觉节点下所有子节点设置闪白材质（包括纸娃娃系统创建的精灵）
+	_apply_material_to_all_sprites(闪白material)
 	if 受击闪白效果timer.is_stopped():
 		受击闪白效果timer.start()
 	
@@ -156,7 +157,18 @@ func die() -> void:
 	self.queue_free()
 
 func _on_受击闪白效果timer_timeout() -> void:
-	animated_sprite_2d.material = null
+	# 恢复视觉节点下所有子节点的材质
+	_apply_material_to_all_sprites(null)
+
+## 递归遍历视觉节点树，对所有 Sprite2D/AnimatedSprite2D 设置材质
+func _apply_material_to_all_sprites(mat: ShaderMaterial) -> void:
+	_apply_material_recursive(视觉, mat)
+
+func _apply_material_recursive(node: Node, mat: ShaderMaterial) -> void:
+	if node is AnimatedSprite2D or node is Sprite2D:
+		node.material = mat
+	for child in node.get_children():
+		_apply_material_recursive(child, mat)
 
 func 计算碰撞相交位置(hitbox:HitboxComponent,hurtbox:HurtboxComponent) ->Vector2:
 	var hitbox_shape = hitbox.get_node("CollisionShape2D")
