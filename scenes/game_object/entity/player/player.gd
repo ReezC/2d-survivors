@@ -47,19 +47,19 @@ func set_anim() -> void:
 			角色状态.移动:
 				character_body.set_animation_state(1)
 
-	# ---- 旧 AnimationTree（待纸娃娃完全接管后移除） ----
-	match 当前状态:
-		角色状态.死亡:
-			state_machine.travel("Dead")
-		角色状态.释放技能:
-			state_machine.travel("Skill")
-			animation_tree.set("parameters/Skill/blend_position", get_x_facing_direction())
-		角色状态.待机:
-			state_machine.travel("Idle")
-			animation_tree.set("parameters/Idle/blend_position", get_facing_direction())
-		角色状态.移动:
-			state_machine.travel("Run")
-			animation_tree.set("parameters/Run/blend_position", get_facing_direction())
+	# # ---- 旧 AnimationTree（待纸娃娃完全接管后移除） ----
+	# match 当前状态:
+	# 	角色状态.死亡:
+	# 		state_machine.travel("Dead")
+	# 	角色状态.释放技能:
+	# 		state_machine.travel("Skill")
+	# 		animation_tree.set("parameters/Skill/blend_position", get_x_facing_direction())
+	# 	角色状态.待机:
+	# 		state_machine.travel("Idle")
+	# 		animation_tree.set("parameters/Idle/blend_position", get_facing_direction())
+	# 	角色状态.移动:
+	# 		state_machine.travel("Run")
+	# 		animation_tree.set("parameters/Run/blend_position", get_facing_direction())
 
 		
 

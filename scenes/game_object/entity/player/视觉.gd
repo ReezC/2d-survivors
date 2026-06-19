@@ -28,7 +28,7 @@ func reorder_children_by_zmap() -> void:
 		else:
 			var idx := zmap_file.get_layer_index_by_name(child.name)
 			if idx == -1:
-				push_warning("子节点 '%s' 未在 zmap.Layer 枚举中找到，且没有 z 属性" % child.name)
+				# push_warning("子节点 '%s' 未在 zmap.Layer 枚举中找到，且没有 z 属性" % child.name)
 				continue
 			layer = zmap.Layer.values()[idx]
 
