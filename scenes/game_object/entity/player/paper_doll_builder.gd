@@ -24,6 +24,9 @@ var _sprite_nodes: Dictionary = {}
 ## 骨骼节点映射 {bone_name: Node2D}
 var _bone_nodes: Dictionary = {}
 
+## 脏标记：是否有新的子节点加入，需要重新排序
+var _children_dirty: bool = false
+
 
 func build(character: Node2D) -> void:
 	_character = character
@@ -65,10 +68,10 @@ func add_part_config(json_path: String) -> void:
 	_part_configs[config_id] = data
 	# print("[Builder] 加载配置: id=%s, name=%s" % [config_id, config_name])
 
-	# 3. 收集所有帧中出现的 sprite 名称，为每个创建 VisualItemPart
-	var sprite_names := _collect_sprite_names(data)
-	# print("[Builder]   收集到 sprite: %s" % str(sprite_names))
-	for sname in sprite_names:
+	# 3. 收集所有帧中出现的 sprite 名称和 z 层级，为每个创建 VisualItemPart
+	var sprite_info := _collect_sprite_info(data)  # {sprite_name: z_layer}
+	# print("[Builder]   收集到 sprite: %s" % str(sprite_info.keys()))
+	for sname in sprite_info:
 		if _sprite_nodes.has(sname):
 			# print("[Builder]   sprite '%s' 已存在，跳过创建" % sname)
 			continue  # 同名 sprite 只创建一次（多个部件可能引用同一骨骼）
@@ -80,7 +83,7 @@ func add_part_config(json_path: String) -> void:
 		sprite_node.script = VISUAL_ITEM_PART_SCRIPT
 		# 设置 VisualItemPart 属性
 		sprite_node.part_name = sname
-		sprite_node.z = _get_z_layer_from_data(data, sname)
+		sprite_node.z = sprite_info[sname]
 		# 创建 VisualItem 数据资源
 		var vi := VisualItem.new()
 		vi.id = data["id"]
@@ -97,13 +100,13 @@ func add_part_config(json_path: String) -> void:
 	# 5. 从第一帧的骨骼映射构建初始骨骼树
 	_build_initial_skeleton(data)
 
-	# 6. 按 zmap 重新排序子节点顺序（新子节点已加入）
-	_reorder_visual_children()
+	# 6. 标记需要重新排序（延迟到 build_finish 一次性执行）
+	_children_dirty = true
 
 
 func _acquire_zmap_from_visual() -> void:
 	"""从 视觉 节点获取 zmap 引用（zmap 归 视觉.gd 管理）"""
-	if _visual_parent and _visual_parent.has_method("get") and "zmap_file" in _visual_parent:
+	if _visual_parent and "zmap_file" in _visual_parent:
 		_zmap = _visual_parent.zmap_file
 
 
@@ -113,32 +116,31 @@ func _reorder_visual_children() -> void:
 		_visual_parent.reorder_children_by_zmap()
 
 
-func _get_z_layer_from_data(data: Dictionary, sprite_name: String) -> zmap.Layer:
-	"""从配置数据中查找 sprite 的 z 层级，遍历所有动画帧直到找到匹配的 Sprite"""
-	for anim_cfg in data.get("animCfg", []):
-		for frame in anim_cfg.get("frames", []):
-			for sprite_cfg in frame.get("spritecfg", []):
-				if sprite_cfg.get("$type", "").ends_with(".Sprite") and sprite_cfg.get("name") == sprite_name:
-					var z_name: String = sprite_cfg.get("z", "")
-					if _zmap:
-						var idx: int = _zmap.get_layer_index_by_name(z_name)
-						if idx >= 0:
-							return zmap.Layer.values()[idx]
-	return zmap.Layer.body
+func finish_children_sort() -> void:
+	"""在所有配置加载完毕后，一次性排序子节点（由 Animator.build_finish 调用）"""
+	if _children_dirty:
+		_children_dirty = false
+		_reorder_visual_children()
 
 
-func _collect_sprite_names(data: Dictionary) -> Array[String]:
-	"""收集配置中所有独特的 sprite name"""
-	var names: Array[String] = []
+func _collect_sprite_info(data: Dictionary) -> Dictionary:
+	"""一次遍历收集所有 sprite name → z_layer 映射"""
+	var info: Dictionary = {}
 	for anim_cfg in data.get("animCfg", []):
 		for frame in anim_cfg.get("frames", []):
 			for sprite_cfg in frame.get("spritecfg", []):
 				var stype = sprite_cfg.get("$type", "")
 				if stype.ends_with(".Sprite"):
 					var sname: String = sprite_cfg.get("name", "")
-					if sname not in names:
-						names.append(sname)
-	return names
+					if not info.has(sname):
+						var z_name: String = sprite_cfg.get("z", "")
+						var layer: zmap.Layer = zmap.Layer.body
+						if _zmap:
+							var idx: int = _zmap.get_layer_index_by_name(z_name)
+							if idx >= 0:
+								layer = zmap.Layer.values()[idx]
+						info[sname] = layer
+	return info
 
 
 func _build_sprite_frames_for_config(data: Dictionary) -> void:
@@ -229,7 +231,7 @@ func _build_initial_skeleton(data: Dictionary) -> void:
 
 func _create_bones_from_sprite_cfg(sprite_cfg: Dictionary) -> void:
 	"""从单个 Sprite 配置创建其 map 中不存在的骨骼"""
-	var sprite_pos := _compute_sprite_position(sprite_cfg)
+	var sprite_pos := compute_sprite_position(sprite_cfg)
 
 	for bone_map in sprite_cfg.get("map", []):
 		var bone_name: String = bone_map.get("bone", "")
@@ -296,8 +298,8 @@ func get_body_bone() -> Node2D:
 	return _body_bone
 
 
-func _compute_sprite_position(sprite_cfg: Dictionary) -> Vector2:
-	"""计算精灵节点在 视觉 容器下的 position
+func compute_sprite_position(sprite_cfg: Dictionary) -> Vector2:
+	"""计算精灵节点在 视觉 容器下的 position（公开方法，供 Animator 调用）
 	
 	规则：精灵 position = 最后一个已存在骨骼的全局位置 - 该骨骼在当前 sprite map 中的 offset
 	如果 map 中所有骨骼都不存在 → position = (0,0)（绑定到 body）
@@ -380,7 +382,7 @@ func _apply_frame_visuals(data: Dictionary, anim_index: int, frame_index: int) -
 			sprite_node.offset = Vector2(-origin_x, -origin_y)
 
 			# position = 骨骼链末端的全局位置
-			sprite_node.position = _compute_sprite_position(sprite_cfg)
+			sprite_node.position = compute_sprite_position(sprite_cfg)
 
 			# 切换动画
 			if sprite_node.sprite_frames and sprite_node.sprite_frames.has_animation(anim_name):

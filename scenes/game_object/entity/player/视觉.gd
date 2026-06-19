@@ -1,5 +1,7 @@
 extends Node2D
 
+const VisualItemPart := preload("res://scenes/game_object/visual_item/visual_item_part.gd")
+
 @export var zmap_file: zmap
 
 
@@ -21,7 +23,7 @@ func reorder_children_by_zmap() -> void:
 	var child_layers: Array[Dictionary] = []
 	for child in get_children():
 		var layer: zmap.Layer
-		if child.has_method("get") and "z" in child:
+		if child is VisualItemPart:
 			layer = child.z
 		else:
 			var idx := zmap_file.get_layer_index_by_name(child.name)
