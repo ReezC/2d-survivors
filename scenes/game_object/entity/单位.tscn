@@ -9,7 +9,6 @@
 [node name="单位" type="CharacterBody2D" unique_id=1080705466 groups=["entities_layer"]]
 collision_layer = 0
 script = ExtResource("1_flcbh")
-"单位名称" = null
 
 [node name="body" type="Node2D" parent="." unique_id=1321867716]
 
@@ -31,10 +30,6 @@ collision_mask = 0
 [node name="单位属性component" parent="." unique_id=176829961 instance=ExtResource("2_hl4j3")]
 
 [node name="SkillManager" parent="." unique_id=845903834 instance=ExtResource("8_7jolj")]
-
-[node name="Skills" type="Node" parent="SkillManager" unique_id=1829939027]
-
-[node name="Buffs" type="Node" parent="SkillManager" unique_id=1419141237]
 
 [node name="HealthBar" parent="." unique_id=517147532 instance=ExtResource("4_rxq2h")]
 offset_left = -16.0

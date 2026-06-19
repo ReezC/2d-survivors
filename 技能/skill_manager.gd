@@ -3,7 +3,6 @@ class_name SkillManager
 
 ## ECS 桥接层
 ## 保留此节点以兼容现有 .tscn 引用，但实际逻辑委托给 ECSWorld
-## 技能数据仍然从场景中 Skills 子节点读取，然后注册到 ECS
 
 @export_dir var 子物体场景路径
 
@@ -14,6 +13,7 @@ enum AI类型枚举 {
 }
 
 @export var skill_ai: AI类型枚举
+@export var 初始技能: Array[技能数据] = []
 
 ## 预编译表达式缓存（保留兼容旧代码）
 static var _compiled_float_cache: Dictionary = {}
@@ -33,17 +33,13 @@ func 初始化() -> void:
 		ECSWorld.skill_system.skill_ai = skill_ai
 	if 子物体场景路径 != "":
 		ECSWorld.skill_system.子物体场景路径 = 子物体场景路径
-	
-	# 从场景中 Skills 子节点读取技能数据并注册到 ECS
-	var skills_node = get_node_or_null("Skills")
-	if skills_node:
-		var skill_data_list: Array[技能数据] = []
-		for skill in skills_node.get_children():
-			var skill_instance = skill as 技能实例
-			if skill_instance and skill_instance.技能本体数据:
-				skill_data_list.append(skill_instance.技能本体数据)
-		ECSWorld.register_unit_skills(owner, skill_data_list)
 
+	# 读取初始技能数据并注册到 ECS
+	if 初始技能.size() > 0:
+		ECSWorld.register_unit_skills(owner, 初始技能)
+	
+	# 激活已注册的被动技能
+	ECSWorld.skill_system.初始化技能()
 
 # 拥有者死亡时，销毁 buff 实例
 func _on_单位_死亡() -> void:

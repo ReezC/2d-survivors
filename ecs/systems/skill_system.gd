@@ -341,7 +341,8 @@ func _cast_skill_internal(entity_id: int, scd: SkillComponentData) -> void:
 					var 动画持续时间 = _求值数值(dur_compiled, null, caster)
 					_播放技能动画(caster, scd.动画名称, 动画持续时间)
 		技能数据.技能类型枚举.被动技能:
-			pass
+			# 被动技能 Buff 已创建，标记为已生效防止重复释放
+			scd.当前状态 = SkillComponentData.技能状态.已生效
 
 static func _播放技能动画(who: Node2D, 动画名称: String, 技能动画持续时间: float) -> void:
 	if not is_instance_valid(who):

@@ -25,21 +25,11 @@
 						"$type":"skillconfig.FloatValue.Const"
 					},
 					"action":{
-						"$type":"skillconfig.SkillAction.CreateHitbox",
+						"$type":"skillconfig.SkillAction.ActivePreHitbox",
+						"HitboxName":"TouchHitbox",
 						"duration":{
 							"$type":"skillconfig.FloatValue.Const",
 							"value":-1.0
-						},
-						"movement":{
-							"$type":"skillconfig.SubObjMovement.Bind"
-						},
-						"halfWidth":{
-							"$type":"skillconfig.FloatValue.Const",
-							"value":7.0
-						},
-						"halfHeight":{
-							"$type":"skillconfig.FloatValue.Const",
-							"value":6.0
 						},
 						"hitboxCollision":{
 							"$type":"skillconfig.HitboxCollision",
@@ -52,7 +42,7 @@
 							"disableOnSourceDie":true,
 							"collideResetInterval":{
 								"$type":"skillconfig.FloatValue.Const",
-								"value":500.0
+								"value":1000.0
 							},
 							"collideAction":{
 								"$type":"skillconfig.SkillAction.Damage"

@@ -17,6 +17,7 @@
 [node name="Main" type="Node" unique_id=1048921097]
 script = ExtResource("1_a8run")
 end_screen_scene = ExtResource("2_ouso4")
+"gm_技能系统" = true
 
 [node name="ArenaTimeUI" parent="." unique_id=1797388071 node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("1_ow5a4")]
 arena_time_manager = NodePath("../ArenaTimeManager")
@@ -51,6 +52,9 @@ tile_set = ExtResource("1_iuonh")
 y_sort_enabled = true
 
 [node name="树" parent="Entities" unique_id=95003129 instance=ExtResource("11_blune")]
+
+[node name="蜗牛" parent="Entities" unique_id=192549199 instance=ExtResource("11_th5th")]
+position = Vector2(-112, 76)
 
 [node name="Foreground" type="Node2D" parent="." unique_id=908692738 groups=["foreground_layer"]]
 z_as_relative = false

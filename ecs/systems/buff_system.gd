@@ -97,6 +97,14 @@ func _on_buff_start(entity_id: int, buff: BuffComponentData) -> void:
 func _on_buff_end(entity_id: int, buff: BuffComponentData) -> void:
 	buff.is_active = false
 	
+	# 禁用此 buff 激活的所有预置 Hitbox
+	for hitbox_info in buff._active_pre_hitbox_nodes:
+		var hb = hitbox_info.get("node")
+		if is_instance_valid(hb):
+			hb.disable()
+			GMLogger.log_buff("ActivePreHitbox: 已禁用 %s" % hitbox_info.get("name", "?"))
+	buff._active_pre_hitbox_nodes.clear()
+	
 	# 处理 PlayAnimation 状态恢复
 	if buff._is_play_animation:
 		var caster = entity_manager.get_unit(entity_id)
@@ -227,6 +235,9 @@ func _skillAction_execute(entity_id: int, buff: BuffComponentData, action: Dicti
 					if target is Area2D and is_instance_valid(target.owner) and target.owner != target:
 						actual_target = target.owner
 					buff.current_target_entity = entity_manager.get_entity_id(actual_target)
+					# 存入目标位置到 blackboard，用于子 Action（如 CreateObj）在目标未注册 ECS 时仍能获取方向
+					if actual_target is Node2D:
+						buff.blackboard["_action_target_position"] = actual_target.global_position
 				_skillAction_execute(entity_id, buff, inner_action)
 		
 		"CreateObj":
@@ -288,8 +299,82 @@ func _skillAction_execute(entity_id: int, buff: BuffComponentData, action: Dicti
 				Vector2(hitbox_half_width, hitbox_half_height)
 			)
 		
+		"ActivePreHitbox":
+			if skill_system == null or subobject_system == null:
+				push_error("[BuffSystem] ActivePreHitbox: skill_system=%s, subobject_system=%s" % [skill_system, subobject_system])
+				return
+			var caster = entity_manager.get_unit(entity_id)
+			if caster == null:
+				push_error("[BuffSystem] ActivePreHitbox: caster 为空")
+				return
+			
+			var hitbox_name = action.get("HitboxName", "TouchHitbox")
+			var hitbox_node = caster.get_node_or_null(hitbox_name)
+			if hitbox_node == null or not (hitbox_node is HitboxComponent):
+				push_error("[BuffSystem] ActivePreHitbox: 在 %s 上找不到 HitboxComponent '%s'" % [caster.name, hitbox_name])
+				return
+			
+			var hitbox = hitbox_node as HitboxComponent
+			var hitbox_collision_config = action.get("hitboxCollision", {})
+			_configure_pre_hitbox(hitbox, hitbox_collision_config, buff, entity_id)
+			
+			# 启用 hitbox
+			hitbox.enable()
+			GMLogger.log_buff("ActivePreHitbox: 已激活 %s 上的 '%s'" % [caster.name, hitbox_name])
+			
+			# 记录以便 buff 结束时清理
+			buff._active_pre_hitbox_nodes.append({"node": hitbox, "name": hitbox_name})
+		
 		_:
 			GMLogger.log_buff("未知的技能行为类型: %s" % action.get("$type"))
+
+#endregion
+
+#region ActivePreHitbox 配置
+
+## 配置预置 HitboxComponent 的碰撞参数
+func _configure_pre_hitbox(hitbox: HitboxComponent, collision_config: Dictionary, buff: BuffComponentData, entity_id: int) -> void:
+	if collision_config.is_empty():
+		return
+	
+	# 设置 source_entity 和 entity_manager
+	hitbox.source_entity = entity_id
+	hitbox._entity_manager = entity_manager
+	
+	# 碰撞层
+	var collisionLayer = collision_config.get("collisionLayer", [])
+	if collisionLayer.size() > 0:
+		hitbox.collision_layer = 0
+		for layer in collisionLayer:
+			hitbox.collision_layer |= int(layer)
+	
+	# 碰撞掩码
+	var collisionMask = collision_config.get("collisionMask", [])
+	if collisionMask.size() > 0:
+		hitbox.collision_mask = 0
+		for mask in collisionMask:
+			hitbox.collision_mask |= int(mask)
+	
+	# 碰撞重置间隔
+	var collideResetInterval = 0.0
+	if skill_system:
+		var interval_compiled = skill_system._编译数值(collision_config.get("collideResetInterval", {}))
+		collideResetInterval = _快速求值(buff, interval_compiled) / 1000.0
+	hitbox.collide_reset_interval = collideResetInterval
+	
+	# disableOnSourceDie
+	var disableOnSourceDie = collision_config.get("disableOnSourceDie", false)
+	hitbox.disable_on_source_die = disableOnSourceDie
+	if disableOnSourceDie:
+		var caster = entity_manager.get_unit(entity_id)
+		if caster and caster.has_signal("死亡"):
+			if not caster.死亡.is_connected(Callable(hitbox, "disable")):
+				caster.死亡.connect(Callable(hitbox, "disable"))
+	
+	# collideAction
+	var collideAction = collision_config.get("collideAction", {})
+	if not collideAction.is_empty():
+		hitbox.collide_action = collideAction
 
 #endregion
 

@@ -56,7 +56,7 @@ func set_anim() -> void:
 			state_machine.travel("stand")
 		角色状态.移动:
 			state_machine.travel("move")
-			animation_tree.set("parameters/Run/blend_position", facingDirection)
+			animation_tree.set("parameters/move/blend_position", facingDirection)
 
 
 

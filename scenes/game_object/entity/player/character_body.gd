@@ -50,7 +50,40 @@ func set_animation_state(state: int) -> void:
 		animator.set_animation_by_state(state)
 
 
+# 存储碰撞形状的原始位置（首次记录后不再改变），用于翻转时计算新位置
+var _original_collision_positions: Dictionary = {}
+
+
 func set_face_direction(direction: int) -> void:
 	"""设置角色朝向：1=右, -1=左"""
 	if animator:
 		animator.set_face_direction(direction)
+	_flip_collision_shapes(direction)
+
+
+func _flip_collision_shapes(direction: int) -> void:
+	"""同步翻转碰撞形状的 x 位置，匹配视觉镜像翻转
+	由于视觉通过 scale.x=-1 以 x=0 为轴镜像，碰撞形状也需要将 x 位置镜像
+	"""
+	var player_root := get_parent()
+	if player_root == null:
+		return
+
+	# 翻转移动碰撞
+	_flip_one_collision(player_root.get_node_or_null("移动碰撞"), direction)
+
+	# 翻转 HurtboxComponent 内的 CollisionShape2D
+	var hurtbox := player_root.get_node_or_null("HurtboxComponent")
+	if hurtbox:
+		_flip_one_collision(hurtbox.get_node_or_null("CollisionShape2D"), direction)
+
+
+func _flip_one_collision(shape: CollisionShape2D, direction: int) -> void:
+	if shape == null:
+		return
+	var key := str(shape.get_path())
+	# 首次记录原始位置，后续取反计算
+	if key not in _original_collision_positions:
+		_original_collision_positions[key] = shape.position
+	var orig := _original_collision_positions[key] as Vector2
+	shape.position.x = abs(orig.x) * direction

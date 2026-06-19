@@ -7,6 +7,7 @@ class_name SkillComponentData
 enum 技能状态 {
 	准备就绪,
 	冷却中,
+	已生效,    ## 被动技能 Buff 已创建，防止重复释放
 }
 
 var id: int = 0

@@ -12,7 +12,9 @@ var _entity_manager: EntityManager = null
 ## 碰撞后执行的动作配置（由技能配置决定）
 ## 当不为空时，碰撞后不再默认走伤害流程，而是执行配置的动作
 ## 例如: {"$type": "skillconfig.SkillAction.Damage"}
-var collide_action: Dictionary = {} 
+var collide_action: Dictionary = {}
+## 正在运行的碰撞重置计时器（用于 disable 时取消）
+var _pending_reset_timer: Timer = null 
 
 ## 获取施法者 Node（仅在需要访问场景树时使用）
 func get_source_node() -> Node2D:
@@ -34,6 +36,11 @@ func enable() -> void:
 	set_deferred("monitorable", true)
 	
 func disable() -> void:
+	# 取消正在运行的碰撞重置计时器
+	if _pending_reset_timer:
+		_pending_reset_timer.stop()
+		_pending_reset_timer.queue_free()
+		_pending_reset_timer = null
 	set_deferred("monitoring", false)
 	set_deferred("monitorable", false)
 
@@ -76,13 +83,19 @@ func _on_area_entered(area: Area2D) -> void:
 			GMLogger.log_damage("%s 击中 %s" % [src.name, (area as HurtboxComponent).owner.name])
 		# 处理命中后逻辑
 		if collide_reset_interval > 0.0:
+			# 停止之前可能残留的重置计时器（如同一帧多次碰撞）
+			if _pending_reset_timer:
+				_pending_reset_timer.stop()
+				_pending_reset_timer.queue_free()
 			disable()
 			var reset_timer = Timer.new()
 			reset_timer.wait_time = collide_reset_interval
 			reset_timer.one_shot = true
+			_pending_reset_timer = reset_timer
 			reset_timer.timeout.connect(func():
 				enable()
 				reset_timer.queue_free()
+				_pending_reset_timer = null
 			)
 			add_child(reset_timer)
 			reset_timer.start()

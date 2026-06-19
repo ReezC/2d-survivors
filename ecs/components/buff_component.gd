@@ -48,3 +48,7 @@ var _action_timeline_time_multiplier: float = 0.0
 
 ## PlayAnimation 状态标记
 var _is_play_animation: bool = false
+
+## ActivePreHitbox 激活的预置 Hitbox 列表，buff 结束时需要禁用
+## 每项为 { "node": HitboxComponent, "name": String }
+var _active_pre_hitbox_nodes: Array[Dictionary] = []

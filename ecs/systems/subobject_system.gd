@@ -194,7 +194,11 @@ func _configure_movement(obj: 子物体, movement_config: Dictionary, caster_ent
 	match movement_type:
 		"Line":
 			var current_target = entity_manager.get_unit(buff.current_target_entity) if buff else caster
-			var line_obj_direction = current_target.global_position.direction_to(caster.global_position) * -1 if current_target else Vector2.RIGHT
+			# 如果目标未注册 ECS（如敌人没有 SkillManager），从 blackboard 获取目标位置
+			var target_pos = current_target.global_position if current_target else null
+			if target_pos == null and buff and buff.blackboard.has("_action_target_position"):
+				target_pos = buff.blackboard["_action_target_position"]
+			var line_obj_direction = caster.global_position.direction_to(target_pos) if target_pos else Vector2.RIGHT
 			
 			var toTarget = movement_config.get("toTarget")
 			if not toTarget:

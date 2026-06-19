@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://cmi1yn53ashpj" path="res://assets/MapleStory/Mob/0100100/move/4._outlink.png" id="18_p4x00"]
 [ext_resource type="Texture2D" uid="uid://d1ow70uyx3q6m" path="res://assets/MapleStory/Mob/0100100/stand/0._outlink.png" id="19_kke0s"]
 [ext_resource type="PackedScene" uid="uid://cqkh2idk0bmgo" path="res://scenes/component/hitbox_component.tscn" id="20_384uj"]
+[ext_resource type="Script" uid="uid://cf5tsjb2i13c0" path="res://技能/技能数据.gd" id="25_mjmsu"]
+[ext_resource type="Resource" uid="uid://cjn15na4ncwr2" path="res://技能/技能数据/接触伤害.tres" id="26_r8v5t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wikua"]
 animations = [{
@@ -95,6 +97,45 @@ animations = [{
 "name": &"stand",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_8i7s1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("视觉/AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HurtboxComponent/CollisionShape2D:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(14, 12)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HurtboxComponent/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -6)]
+}
 
 [sub_resource type="Animation" id="Animation_mxnud"]
 resource_name = "die1"
@@ -262,6 +303,30 @@ tracks/6/keys = {
 "update": 1,
 "values": [Vector2(-10, -27)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HurtboxComponent/CollisionShape2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, -16.5)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("HurtboxComponent/CollisionShape2D:shape:size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(43, 33)]
+}
 
 [sub_resource type="Animation" id="Animation_384uj"]
 resource_name = "move"
@@ -352,6 +417,30 @@ tracks/6/keys = {
 "update": 1,
 "values": [Vector2(-13, -24), Vector2(-12, -24), Vector2(-12, -24), Vector2(-10, -24), Vector2(-9, -24)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HurtboxComponent/CollisionShape2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54, 0.72),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0.5, -13), Vector2(1, -12.5), Vector2(1, -12.5), Vector2(1, -12), Vector2(0.5, -12)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("HurtboxComponent/CollisionShape2D:shape:size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54, 0.72),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(37, 26), Vector2(36, 25), Vector2(36, 25), Vector2(36, 24), Vector2(37, 24)]
+}
 
 [sub_resource type="Animation" id="Animation_86y5i"]
 resource_name = "stand"
@@ -441,9 +530,34 @@ tracks/6/keys = {
 "update": 1,
 "values": [Vector2(-13, -24)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HurtboxComponent/CollisionShape2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.5, -13)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("HurtboxComponent/CollisionShape2D:shape:size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(37, 26)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kntx2"]
 _data = {
+&"RESET": SubResource("Animation_8i7s1"),
 &"die1": SubResource("Animation_mxnud"),
 &"hit1": SubResource("Animation_bps27"),
 &"move": SubResource("Animation_384uj"),
@@ -451,7 +565,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2vcqf"]
-radius = 30.0
+radius = 39.5
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cxwhy"]
 animation = &"die1"
@@ -496,10 +610,10 @@ states/stand/position = Vector2(342, 166)
 graph_offset = Vector2(56.757965, 34)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_au3mk"]
-radius = 6.0
+radius = 14.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3xd07"]
-size = Vector2(0, 0)
+size = Vector2(43, 33)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dlhfe"]
 size = Vector2(14, 12)
@@ -605,7 +719,7 @@ metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aaojh"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_s235s"]
+[sub_resource type="Resource" id="Resource_0i857"]
 resource_local_to_scene = true
 resource_name = "移动速度"
 script = ExtResource("6_1gl80")
@@ -632,10 +746,10 @@ script = ExtResource("6_1gl80")
 "属性类型" = 8
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
-[sub_resource type="Resource" id="Resource_mjmsu"]
+[sub_resource type="Resource" id="Resource_vh31p"]
 resource_local_to_scene = true
 script = ExtResource("5_gudbt")
-"属性们" = Array[ExtResource("6_1gl80")]([SubResource("Resource_px4vd"), SubResource("Resource_ao34u"), SubResource("Resource_icuh5"), SubResource("Resource_t1qiv"), SubResource("Resource_fwjf5"), SubResource("Resource_k7f8g"), SubResource("Resource_km1hd"), SubResource("Resource_rx7p4"), SubResource("Resource_4i822"), SubResource("Resource_s235s"), SubResource("Resource_055q7"), SubResource("Resource_uuiht")])
+"属性们" = Array[ExtResource("6_1gl80")]([SubResource("Resource_px4vd"), SubResource("Resource_ao34u"), SubResource("Resource_icuh5"), SubResource("Resource_t1qiv"), SubResource("Resource_fwjf5"), SubResource("Resource_k7f8g"), SubResource("Resource_km1hd"), SubResource("Resource_rx7p4"), SubResource("Resource_4i822"), SubResource("Resource_0i857"), SubResource("Resource_055q7"), SubResource("Resource_uuiht")])
 metadata/_custom_type_script = "uid://bjvqbui703u8x"
 
 [node name="蜗牛" unique_id=192549199 groups=["enemy"] instance=ExtResource("1_au3mk")]
@@ -676,10 +790,10 @@ active = false
 tree_root = SubResource("AnimationNodeStateMachine_4re02")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/move/blend_position = Vector2(0.34134614, -0.44000006)
+parameters/move/blend_position = Vector2(0.9969766, 0.002070427)
 
 [node name="移动碰撞" parent="." index="6" unique_id=288392247]
-position = Vector2(0, -5)
+position = Vector2(5, -5)
 shape = SubResource("CircleShape2D_au3mk")
 debug_color = Color(0.7024835, 0.4852388, 0.16611946, 0.41960785)
 
@@ -689,6 +803,7 @@ collision_mask = 16
 collide_reset_interval = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TouchHitbox" index="0" unique_id=1829707185]
+position = Vector2(0.5, -16.5)
 shape = SubResource("RectangleShape2D_3xd07")
 debug_color = Color(1.2032688e-06, 0.329946, 0.3898688, 0.41960785)
 
@@ -701,7 +816,10 @@ position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_dlhfe")
 
 [node name="单位属性component" parent="." index="9" unique_id=176829961]
-"属性集" = SubResource("Resource_mjmsu")
+"属性集" = SubResource("Resource_vh31p")
+
+[node name="SkillManager" parent="." index="10" unique_id=845903834]
+"初始技能" = Array[ExtResource("25_mjmsu")]([ExtResource("26_r8v5t")])
 
 [node name="HealthBar" parent="." index="11" unique_id=517147532]
 offset_left = -20.0
