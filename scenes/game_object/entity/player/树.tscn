@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://do5hd8rrnom2q" path="res://scenes/game_object/entity/player/player.gd" id="2_ctfnk"]
 [ext_resource type="Texture2D" uid="uid://dtkeg5q6jrmpp" path="res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/Faceset.png" id="3_lnpja"]
 [ext_resource type="Script" uid="uid://dqnc61hq410i5" path="res://scenes/game_object/entity/player/character_body.gd" id="4_aaojh"]
+[ext_resource type="Texture2D" uid="uid://nxbqh43g82t8" path="res://assets/MapleStory/Character/00002000/stand1/0.body._outlink.png" id="7_00o66"]
 [ext_resource type="Script" uid="uid://bjvqbui703u8x" path="res://resources/单位属性/单位属性集.gd" id="9_bdaga"]
 [ext_resource type="Script" uid="uid://c218ra1pf7xxj" path="res://resources/单位属性/单位属性.gd" id="10_uo5vx"]
 [ext_resource type="Script" uid="uid://bd83jqryqem3b" path="res://resources/单位属性/生命_单位属性.gd" id="11_5eaic"]
@@ -15,6 +16,15 @@
 [ext_resource type="Resource" uid="uid://brjkphtt8mjd2" path="res://resources/zmap.tres" id="26_4klt5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lnpja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_00o66")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_wbw41"]
 states/End/position = Vector2(523, 128)
@@ -180,8 +190,9 @@ script = ExtResource("25_if0ut")
 zmap_file = ExtResource("26_4klt5")
 
 [node name="AnimatedSprite2D" parent="视觉" index="0" unique_id=516307281]
-visible = false
 sprite_frames = SubResource("SpriteFrames_lnpja")
+centered = false
+offset = Vector2(-16, -31)
 
 [node name="AnimationTree" parent="." index="3" unique_id=1100281063]
 active = false

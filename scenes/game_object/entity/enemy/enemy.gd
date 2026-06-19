@@ -49,13 +49,13 @@ func _process(delta: float) -> void:
 func set_anim() -> void:
 	match 当前状态:
 		角色状态.死亡:
-			state_machine.travel("Dead")
+			state_machine.travel("die1")
 		角色状态.释放技能:
-			state_machine.travel("Skill")
+			state_machine.travel("skill")
 		角色状态.待机:
-			state_machine.travel("Idle")
+			state_machine.travel("stand")
 		角色状态.移动:
-			state_machine.travel("Run")
+			state_machine.travel("move")
 			animation_tree.set("parameters/Run/blend_position", facingDirection)
 
 

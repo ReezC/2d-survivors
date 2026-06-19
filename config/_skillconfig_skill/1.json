@@ -66,6 +66,9 @@
 						],
 						"collideResetInterval":{
 							"$type":"skillconfig.FloatValue.Const"
+						},
+						"collideAction":{
+							"$type":"skillconfig.SkillAction.Damage"
 						}
 					}
 				}

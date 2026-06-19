@@ -175,6 +175,11 @@ func _configure_hitbox(obj: 子物体, collision_config: Dictionary, buff: BuffC
 		hitbox.disable_on_source_die = disableOnSourceDie
 	if "collide_reset_interval" in hitbox:
 		hitbox.collide_reset_interval = collideResetInterval
+	
+	# 传递 collideAction 配置到 HitboxComponent
+	var collideAction = collision_config.get("collideAction", {})
+	if not collideAction.is_empty() and "collide_action" in hitbox:
+		hitbox.collide_action = collideAction
 
 ## 配置子物体运动
 func _configure_movement(obj: 子物体, movement_config: Dictionary, caster_entity: int, buff: BuffComponentData) -> void:

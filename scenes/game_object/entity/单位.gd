@@ -81,71 +81,88 @@ func 设置受击闪白material(闪白material:ShaderMaterial) -> void:
 ## 
 ## @param hitbox: HitboxComponent
 func _on_hurtbox_component_被击中(hitbox: HitboxComponent) -> void:
+	# 如果 hitbox 配置了 collideAction，根据配置执行对应逻辑
+	if not hitbox.collide_action.is_empty():
+		var action_type = hitbox.collide_action.get("$type", "").split(".")[-1]
+		match action_type:
+			"Damage":
+				_执行伤害判定(hitbox)
+			_:
+				push_error("[单位] 未知的 collideAction 类型: %s" % action_type)
+		return
+	
+	# 未配置 collideAction 时走默认伤害流程（兼容老式 ability controller）
 	if hitbox.命中伤害 > 0:
-		# 判定伤害事件
-		var 格挡率 = attribute_component.获取属性值("格挡率")
-		var 闪避率 = attribute_component.获取属性值("闪避率")
-		# 通过 entity 或 source node 获取施法者的暴击率
-		var source_attr = null
-		if hitbox._entity_manager and hitbox.source_entity > 0:
-			source_attr = hitbox._entity_manager.get_component(hitbox.source_entity, ECSComponentTypes.ComponentType.ATTRIBUTE)
-		var 暴击率: float = 0.0
-		var 暴击伤害倍率: float = 0.0
-		if source_attr and source_attr.has_method("获取属性值"):
-			暴击率 = source_attr.获取属性值("暴击率")
-			暴击伤害倍率 = source_attr.获取属性值("暴击伤害倍率")
-		else:
-			var src = hitbox.get_source_node()
-			if src and "attribute_component" in src:
-				暴击率 = src.attribute_component.获取属性值("暴击率")
-				暴击伤害倍率 = src.attribute_component.获取属性值("暴击伤害倍率")
-		var 总概率 = 格挡率 + 闪避率 + 暴击率
-		var 判定随机数 = randf() * 1.0 if 总概率 < 1.0 else randf() * 总概率
+		_执行伤害判定(hitbox)
 
-		if 判定随机数 < 闪避率:
-			# 闪避成功
-			if "player" in self.get_groups():
-				# 玩家闪避，显示绿色跳字
-				GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "闪避", 跳字对象池.跳字类型枚举.玩家闪避, 1)
-			elif "enemy" in self.get_groups():
-				# 非玩家单位闪避，显示怪物闪避跳字
-				GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "闪避", 跳字对象池.跳字类型枚举.怪物闪避, 1)
-		elif 判定随机数 < 闪避率 + 格挡率:
-			# 格挡成功
-			var 格挡伤害减免 = attribute_component.获取属性值("格挡伤害减免")
-			var 实际伤害 = hitbox.命中伤害 * (1.0 - 格挡伤害减免)
-			attribute_component.受到伤害(实际伤害)
-			
-			if "player" in self.get_groups():
-				# 玩家受到格挡伤害，显示蓝色跳字
-				GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % 实际伤害, 跳字对象池.跳字类型枚举.玩家格挡后的伤害, 1)
-				# 设置受击闪白material(GameEvents.受击闪白material)
-			elif "enemy" in self.get_groups():
-				# 非玩家单位受到格挡伤害，显示怪物格挡跳字
-				GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % 实际伤害, 跳字对象池.跳字类型枚举.怪物格挡后的伤害, 1)
-				# 设置受击闪白material(GameEvents.受击闪白material)
+## 执行伤害判定（归一圆桌算法）
+func _执行伤害判定(hitbox: HitboxComponent) -> void:
+	if hitbox.命中伤害 <= 0:
+		return
+	# 判定伤害事件
+	var 格挡率 = attribute_component.获取属性值("格挡率")
+	var 闪避率 = attribute_component.获取属性值("闪避率")
+	# 通过 entity 或 source node 获取施法者的暴击率
+	var source_attr = null
+	if hitbox._entity_manager and hitbox.source_entity > 0:
+		source_attr = hitbox._entity_manager.get_component(hitbox.source_entity, ECSComponentTypes.ComponentType.ATTRIBUTE)
+	var 暴击率: float = 0.0
+	var 暴击伤害倍率: float = 0.0
+	if source_attr and source_attr.has_method("获取属性值"):
+		暴击率 = source_attr.获取属性值("暴击率")
+		暴击伤害倍率 = source_attr.获取属性值("暴击伤害倍率")
+	else:
+		var src = hitbox.get_source_node()
+		if src and "attribute_component" in src:
+			暴击率 = src.attribute_component.获取属性值("暴击率")
+			暴击伤害倍率 = src.attribute_component.获取属性值("暴击伤害倍率")
+	var 总概率 = 格挡率 + 闪避率 + 暴击率
+	var 判定随机数 = randf() * 1.0 if 总概率 < 1.0 else randf() * 总概率
 
-		elif 判定随机数 < 闪避率 + 格挡率 + 暴击率:
-			# 暴击成功
-			var 实际伤害 = hitbox.命中伤害 * (1.0 + 暴击伤害倍率)
-			attribute_component.受到伤害(实际伤害)
-			
-			if "player" in self.get_groups():
-				GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "暴击%d!" % 实际伤害, 跳字对象池.跳字类型枚举.玩家受到的暴击伤害, 1)
-				设置受击闪白material(GameEvents.受击闪红material)
-			elif "enemy" in self.get_groups():
-				GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "暴击%d!" % 实际伤害, 跳字对象池.跳字类型枚举.怪物受到的暴击伤害, 1)
-				设置受击闪白material(GameEvents.受击闪白material)
-		else:
-			# 普通命中
-			attribute_component.受到伤害(hitbox.命中伤害)
-			
-			if "player" in self.get_groups():
-				GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % hitbox.命中伤害, 跳字对象池.跳字类型枚举.玩家受到的普通伤害, 1)
-				设置受击闪白material(GameEvents.受击闪红material)
-			elif "enemy" in self.get_groups():
-				GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % hitbox.命中伤害, 跳字对象池.跳字类型枚举.怪物受到的普通伤害, 0)
-				设置受击闪白material(GameEvents.受击闪白material)
+	if 判定随机数 < 闪避率:
+		# 闪避成功
+		if "player" in self.get_groups():
+			# 玩家闪避，显示绿色跳字
+			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "闪避", 跳字对象池.跳字类型枚举.玩家闪避, 1)
+		elif "enemy" in self.get_groups():
+			# 非玩家单位闪避，显示怪物闪避跳字
+			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "闪避", 跳字对象池.跳字类型枚举.怪物闪避, 1)
+	elif 判定随机数 < 闪避率 + 格挡率:
+		# 格挡成功
+		var 格挡伤害减免 = attribute_component.获取属性值("格挡伤害减免")
+		var 实际伤害 = hitbox.命中伤害 * (1.0 - 格挡伤害减免)
+		attribute_component.受到伤害(实际伤害)
+		
+		if "player" in self.get_groups():
+			# 玩家受到格挡伤害，显示蓝色跳字
+			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % 实际伤害, 跳字对象池.跳字类型枚举.玩家格挡后的伤害, 1)
+			# 设置受击闪白material(GameEvents.受击闪白material)
+		elif "enemy" in self.get_groups():
+			# 非玩家单位受到格挡伤害，显示怪物格挡跳字
+			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % 实际伤害, 跳字对象池.跳字类型枚举.怪物格挡后的伤害, 1)
+			# 设置受击闪白material(GameEvents.受击闪白material)
+
+	elif 判定随机数 < 闪避率 + 格挡率 + 暴击率:
+		# 暴击成功
+		var 实际伤害 = hitbox.命中伤害 * (1.0 + 暴击伤害倍率)
+		attribute_component.受到伤害(实际伤害)
+		
+		if "player" in self.get_groups():
+			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "暴击%d!" % 实际伤害, 跳字对象池.跳字类型枚举.玩家受到的暴击伤害, 1)
+			设置受击闪白material(GameEvents.受击闪红material)
+		elif "enemy" in self.get_groups():
+			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "暴击%d!" % 实际伤害, 跳字对象池.跳字类型枚举.怪物受到的暴击伤害, 1)
+			设置受击闪白material(GameEvents.受击闪白material)
+	else:
+		# 普通命中
+		attribute_component.受到伤害(hitbox.命中伤害)
+		
+		if "player" in self.get_groups():
+			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % hitbox.命中伤害, 跳字对象池.跳字类型枚举.玩家受到的普通伤害, 1)
+			设置受击闪白material(GameEvents.受击闪红material)
+		elif "enemy" in self.get_groups():
+			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % hitbox.命中伤害, 跳字对象池.跳字类型枚举.怪物受到的普通伤害, 0)
+			设置受击闪白material(GameEvents.受击闪白material)
 
 
 func die() -> void:

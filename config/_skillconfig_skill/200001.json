@@ -1,13 +1,13 @@
 {
 	"$type":"skillconfig.skill",
 	"id":200001,
-	"name":"有毒外皮",
+	"name":"接触伤害",
 	"blackBoard":{
 		"$type":"skillconfig.BlackBoard"
 	},
 	"buff":{
 		"$type":"skillconfig.OneBuff",
-		"name":"有毒外皮",
+		"name":"接触伤害",
 		"duration":{
 			"$type":"skillconfig.FloatValue.Const",
 			"value":-1.0
@@ -53,6 +53,9 @@
 							"collideResetInterval":{
 								"$type":"skillconfig.FloatValue.Const",
 								"value":500.0
+							},
+							"collideAction":{
+								"$type":"skillconfig.SkillAction.Damage"
 							}
 						}
 					}

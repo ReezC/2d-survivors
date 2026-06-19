@@ -8,7 +8,11 @@ var source_entity: int = -1
 ## EntityManager 引用（由 SubObjectSystem 注入）
 var _entity_manager: EntityManager = null
 ## 碰撞重置间隔，单位秒。若>0，则hitbox在碰撞后保持关闭此时间后才重新启用
-@export var collide_reset_interval: float = 0.0 
+@export var collide_reset_interval: float = 0.0
+## 碰撞后执行的动作配置（由技能配置决定）
+## 当不为空时，碰撞后不再默认走伤害流程，而是执行配置的动作
+## 例如: {"$type": "skillconfig.SkillAction.Damage"}
+var collide_action: Dictionary = {} 
 
 ## 获取施法者 Node（仅在需要访问场景树时使用）
 func get_source_node() -> Node2D:
@@ -46,6 +50,7 @@ func 检查可用性() -> bool:
 				return false
 	
 	# 通过 entity 读取攻击力属性
+	# TODO当前伤害只取攻击力属性，后续可扩展为技能伤害、元素伤害等多种类型
 	if _entity_manager and source_entity > 0:
 		var attr_comp = _entity_manager.get_component(source_entity, ECSComponentTypes.ComponentType.ATTRIBUTE)
 		if attr_comp and attr_comp.has_method("获取属性值"):
