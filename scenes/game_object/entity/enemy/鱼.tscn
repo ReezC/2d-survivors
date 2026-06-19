@@ -1,6 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://b5j74vhr70ov3"]
+[gd_scene format=3 uid="uid://b5j74vhr70ov3"]
 
-[ext_resource type="PackedScene" uid="uid://chf4tnhlupl8e" path="res://scenes/game_object/entity/enemy/绿史莱姆.tscn" id="1_gfbr7"]
+[ext_resource type="PackedScene" uid="uid://chf4tnhlupl8e" path="res://scenes/game_object/entity/enemy/蜗牛.tscn" id="1_gfbr7"]
 [ext_resource type="Resource" uid="uid://cehtmsnf4ytch" path="res://resources/units/enemies/stats_鱼.tres" id="2_gfbr7"]
 [ext_resource type="Texture2D" uid="uid://b067ocobqv1ut" path="res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Fish/SpriteSheet.png" id="3_lfcnk"]
 

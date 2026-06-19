@@ -1,0 +1,819 @@
+[gd_scene format=3 uid="uid://chf4tnhlupl8e"]
+
+[ext_resource type="PackedScene" uid="uid://dcslmpa4nca4m" path="res://scenes/game_object/entity/单位.tscn" id="1_au3mk"]
+[ext_resource type="Script" uid="uid://ehv06eqk1cx7" path="res://scenes/game_object/entity/enemy/enemy.gd" id="2_2vcqf"]
+[ext_resource type="Texture2D" uid="uid://cqktwr6fkrcht" path="res://assets/Ninja Adventure - Asset Pack/Actor/Monsters/Slime2/Faceset.png" id="3_4re02"]
+[ext_resource type="Texture2D" uid="uid://ehfof1126fl3" path="res://assets/MapleStory/Mob/0100100/die1/0._outlink.png" id="4_d37mg"]
+[ext_resource type="Texture2D" uid="uid://bf3uykbnh2f7h" path="res://assets/MapleStory/Mob/0100100/die1/1._outlink.png" id="5_384uj"]
+[ext_resource type="Script" uid="uid://bjvqbui703u8x" path="res://resources/单位属性/单位属性集.gd" id="5_gudbt"]
+[ext_resource type="Script" uid="uid://c218ra1pf7xxj" path="res://resources/单位属性/单位属性.gd" id="6_1gl80"]
+[ext_resource type="Texture2D" uid="uid://vmh6eufofbsh" path="res://assets/MapleStory/Mob/0100100/die1/2._outlink.png" id="6_bps27"]
+[ext_resource type="PackedScene" uid="uid://civjubkgk82lq" path="res://技能/技能实例.tscn" id="7_dlhfe"]
+[ext_resource type="Texture2D" uid="uid://d15g0o7eulbrb" path="res://assets/MapleStory/Mob/0100100/die1/3._outlink.png" id="7_mxnud"]
+[ext_resource type="Script" uid="uid://bd83jqryqem3b" path="res://resources/单位属性/生命_单位属性.gd" id="7_y4r7x"]
+[ext_resource type="Resource" uid="uid://cjn15na4ncwr2" path="res://技能/技能数据/有毒外皮.tres" id="8_4re02"]
+[ext_resource type="Texture2D" uid="uid://dcwso5edf3ov" path="res://assets/MapleStory/Mob/0100100/die1/4._outlink.png" id="8_24vjl"]
+[ext_resource type="Script" uid="uid://cocpxte7moiwt" path="res://resources/单位属性/最大生命值_单位属性.gd" id="8_cxwhy"]
+[ext_resource type="Texture2D" uid="uid://blbd4dn0qfryy" path="res://assets/Ninja Adventure - Asset Pack/Items/Object/Dice 20.png" id="9_iwx7t"]
+[ext_resource type="Texture2D" uid="uid://bjt6l2pk6jhim" path="res://assets/MapleStory/Mob/0100100/die1/5._outlink.png" id="9_o6wjm"]
+[ext_resource type="Texture2D" uid="uid://bihtacdn8a8sw" path="res://assets/MapleStory/Mob/0100100/die1/6._outlink.png" id="10_yfgtt"]
+[ext_resource type="Texture2D" uid="uid://ck0oxt5xcuifd" path="res://assets/MapleStory/Mob/0100100/die1/7._outlink.png" id="11_bywbi"]
+[ext_resource type="Texture2D" uid="uid://d32hdphh3p53y" path="res://assets/MapleStory/Mob/0100100/die1/8._outlink.png" id="12_xc8le"]
+[ext_resource type="Texture2D" uid="uid://c7d87e0yldbcy" path="res://assets/MapleStory/Mob/0100100/hit1/0._outlink.png" id="13_gxkgp"]
+[ext_resource type="Texture2D" uid="uid://cjw5x1bogohn4" path="res://assets/MapleStory/Mob/0100100/move/0._outlink.png" id="14_p3nhk"]
+[ext_resource type="Texture2D" uid="uid://d3lxaen38mcwm" path="res://assets/MapleStory/Mob/0100100/move/1._outlink.png" id="15_510k3"]
+[ext_resource type="Texture2D" uid="uid://cnmtfwq2i82ol" path="res://assets/MapleStory/Mob/0100100/move/2._outlink.png" id="16_yh4um"]
+[ext_resource type="Texture2D" uid="uid://cgalsq245sl33" path="res://assets/MapleStory/Mob/0100100/move/3._outlink.png" id="17_7ssor"]
+[ext_resource type="Texture2D" uid="uid://cmi1yn53ashpj" path="res://assets/MapleStory/Mob/0100100/move/4._outlink.png" id="18_p4x00"]
+[ext_resource type="Texture2D" uid="uid://d1ow70uyx3q6m" path="res://assets/MapleStory/Mob/0100100/stand/0._outlink.png" id="19_kke0s"]
+[ext_resource type="PackedScene" uid="uid://cqkh2idk0bmgo" path="res://scenes/component/hitbox_component.tscn" id="20_384uj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wikua"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_d37mg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_384uj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bps27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mxnud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_24vjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_o6wjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yfgtt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bywbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xc8le")
+}],
+"loop": 0,
+"name": &"die1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_gxkgp")
+}],
+"loop": 0,
+"name": &"hit1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_p3nhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_510k3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_yh4um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7ssor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_p4x00")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_kke0s")
+}],
+"loop": 1,
+"name": &"stand",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_5ra1p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("视觉/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Run_Up"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("视觉/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("视觉/AnimatedSprite2D:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("视觉/AnimatedSprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TouchHitBox/CollisionShape2D:shape:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(37, 26)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("head:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-13, -25)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TouchHitBox/CollisionShape2D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, -13)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("视觉/AnimatedSprite2D:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mxnud"]
+resource_name = "die1"
+length = 1.26
+step = 0.03
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("视觉/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"die1"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("视觉/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.59999996, 0.71999997, 0.84, 0.96),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("视觉/AnimatedSprite2D:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.59999996, 0.71999997, 0.84, 0.96),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-21, -33), Vector2(-22, -31), Vector2(-14, -24), Vector2(-14, -24), Vector2(-13, -23), Vector2(-13, -18), Vector2(-13, -14), Vector2(-13, -10), Vector2(-13, -6)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("视觉/AnimatedSprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.59999996, 0.71999997, 0.84, 0.96),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("head:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.59999996, 0.71999997, 0.84, 0.96),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-13, -24), Vector2(-13, -24), Vector2(-13, -24), Vector2(-13, -24), Vector2(-13, -24), Vector2(-13, -24), Vector2(-13, -24), Vector2(-13, -24), Vector2(-13, -24)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("视觉/AnimatedSprite2D:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.96, 1.26),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bps27"]
+resource_name = "hit1"
+length = 0.3
+loop_mode = 1
+step = 0.03
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("视觉/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hit1"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("视觉/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("视觉/AnimatedSprite2D:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-21, -33)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("视觉/AnimatedSprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TouchHitBox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.5, -16.5)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TouchHitBox/CollisionShape2D:shape:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(43, 33)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("head:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-10, -27)]
+}
+
+[sub_resource type="Animation" id="Animation_384uj"]
+resource_name = "move"
+length = 0.9
+loop_mode = 2
+step = 0.18
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("视觉/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"move"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("视觉/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54, 0.72),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("视觉/AnimatedSprite2D:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54, 0.72),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-18, -26), Vector2(-17, -25), Vector2(-17, -25), Vector2(-17, -24), Vector2(-18, -24)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("视觉/AnimatedSprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54, 0.72),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TouchHitBox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54, 0.72),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0.5, -13), Vector2(1, -12.5), Vector2(1, -12.5), Vector2(1, -12), Vector2(0.5, -12)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TouchHitBox/CollisionShape2D:shape:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54, 0.72),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(37, 26), Vector2(36, 25), Vector2(36, 25), Vector2(36, 24), Vector2(37, 24)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("head:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54, 0.72),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-13, -24), Vector2(-12, -24), Vector2(-12, -24), Vector2(-10, -24), Vector2(-9, -24)]
+}
+
+[sub_resource type="Animation" id="Animation_86y5i"]
+resource_name = "stand"
+loop_mode = 1
+step = 0.03
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("视觉/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"stand"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("视觉/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("视觉/AnimatedSprite2D:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-18, -26)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("视觉/AnimatedSprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TouchHitBox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.5, -13)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TouchHitBox/CollisionShape2D:shape:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(37, 26)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("head:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-13, -24)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kntx2"]
+_data = {
+&"RESET": SubResource("Animation_5ra1p"),
+&"die1": SubResource("Animation_mxnud"),
+&"hit1": SubResource("Animation_bps27"),
+&"move": SubResource("Animation_384uj"),
+&"stand": SubResource("Animation_86y5i")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2vcqf"]
+radius = 30.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cxwhy"]
+animation = &"die1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4re02"]
+animation = &"stand"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tabb3"]
+animation = &"move"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gudbt"]
+animation = &"move"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1gl80"]
+animation = &"move"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y4r7x"]
+animation = &"move"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_cxwhy"]
+blend_mode = 1
+blend_point_0/node = SubResource("AnimationNodeAnimation_tabb3")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_0/name = &"0"
+blend_point_1/node = SubResource("AnimationNodeAnimation_gudbt")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_1/name = &"1"
+blend_point_2/node = SubResource("AnimationNodeAnimation_1gl80")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_2/name = &"2"
+blend_point_3/node = SubResource("AnimationNodeAnimation_y4r7x")
+blend_point_3/pos = Vector2(1, 0)
+blend_point_3/name = &"3"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4re02"]
+states/Dead/node = SubResource("AnimationNodeAnimation_cxwhy")
+states/Dead/position = Vector2(459, 166)
+states/Idle/node = SubResource("AnimationNodeAnimation_4re02")
+states/Idle/position = Vector2(323, 166)
+states/Run/node = SubResource("AnimationNodeBlendSpace2D_cxwhy")
+states/Run/position = Vector2(459, 93)
+states/Skill/node = SubResource("AnimationNodeAnimation_cxwhy")
+states/Skill/position = Vector2(459, 250)
+graph_offset = Vector2(56.757965, 34)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_au3mk"]
+radius = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xd07"]
+size = Vector2(37, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlhfe"]
+size = Vector2(14, 12)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hdd6p"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_px4vd"]
+resource_name = "生命值"
+script = ExtResource("7_y4r7x")
+"图标" = SubResource("CompressedTexture2D_hdd6p")
+"属性描述" = "不要让它太小，一般情况来说"
+metadata/_custom_type_script = "uid://bd83jqryqem3b"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uo5vx"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_ao34u"]
+resource_name = "生命上限"
+script = ExtResource("8_cxwhy")
+"属性类型" = 1
+"图标" = SubResource("CompressedTexture2D_uo5vx")
+"属性描述" = "多多益善~"
+"初始值" = 15.0
+metadata/_custom_type_script = "uid://cocpxte7moiwt"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c8o2f"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_icuh5"]
+resource_name = "生命上限加成"
+script = ExtResource("6_1gl80")
+"属性类型" = 2
+"图标" = SubResource("CompressedTexture2D_c8o2f")
+"属性描述" = "按比例提高最大生命值"
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="Resource" id="Resource_t1qiv"]
+resource_name = "攻击力"
+script = ExtResource("6_1gl80")
+"属性类型" = 3
+"初始值" = 3.0
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wbw41"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_fwjf5"]
+resource_name = "攻击速度"
+script = ExtResource("6_1gl80")
+"属性类型" = 10
+"图标" = SubResource("CompressedTexture2D_wbw41")
+"属性描述" = "影响部分技能的释放速度"
+"初始值" = 1.0
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_00o66"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_k7f8g"]
+resource_name = "暴击率"
+script = ExtResource("6_1gl80")
+"属性类型" = 5
+"图标" = SubResource("CompressedTexture2D_00o66")
+"属性描述" = "造成暴击的几率"
+"初始值" = 0.05
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qmmqe"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_km1hd"]
+resource_name = "暴击伤害倍率"
+script = ExtResource("6_1gl80")
+"属性类型" = 6
+"图标" = SubResource("CompressedTexture2D_qmmqe")
+"属性描述" = "造成暴击时，伤害提高的比例"
+"初始值" = 0.5
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jipc3"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_rx7p4"]
+resource_name = "格挡率"
+script = ExtResource("6_1gl80")
+"属性类型" = 7
+"图标" = SubResource("CompressedTexture2D_jipc3")
+"属性描述" = "格挡伤害的几率"
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r34m6"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_4i822"]
+resource_name = "闪避率"
+script = ExtResource("6_1gl80")
+"属性类型" = 9
+"图标" = SubResource("CompressedTexture2D_r34m6")
+"属性描述" = "闪避伤害的几率"
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aaojh"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_r8v5t"]
+resource_local_to_scene = true
+resource_name = "移动速度"
+script = ExtResource("6_1gl80")
+"属性类型" = 11
+"图标" = SubResource("CompressedTexture2D_aaojh")
+"属性描述" = "移动速度就是移动的速度"
+"初始值" = 30.0
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ye6iw"]
+load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
+
+[sub_resource type="Resource" id="Resource_055q7"]
+resource_name = "冷却缩减"
+script = ExtResource("6_1gl80")
+"属性类型" = 12
+"图标" = SubResource("CompressedTexture2D_ye6iw")
+"属性描述" = "缩减技能冷却时间"
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="Resource" id="Resource_uuiht"]
+resource_name = "格挡伤害减免"
+script = ExtResource("6_1gl80")
+"属性类型" = 8
+metadata/_custom_type_script = "uid://c218ra1pf7xxj"
+
+[sub_resource type="Resource" id="Resource_0i857"]
+resource_local_to_scene = true
+script = ExtResource("5_gudbt")
+"属性们" = Array[ExtResource("6_1gl80")]([SubResource("Resource_px4vd"), SubResource("Resource_ao34u"), SubResource("Resource_icuh5"), SubResource("Resource_t1qiv"), SubResource("Resource_fwjf5"), SubResource("Resource_k7f8g"), SubResource("Resource_km1hd"), SubResource("Resource_rx7p4"), SubResource("Resource_4i822"), SubResource("Resource_r8v5t"), SubResource("Resource_055q7"), SubResource("Resource_uuiht")])
+metadata/_custom_type_script = "uid://bjvqbui703u8x"
+
+[node name="蜗牛" unique_id=192549199 groups=["enemy"] instance=ExtResource("1_au3mk")]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_2vcqf")
+"群体运动推动力" = 5.0
+"单位名称" = "史莱姆"
+icon = ExtResource("3_4re02")
+
+[node name="head" type="Node2D" parent="." index="1" unique_id=719836701]
+position = Vector2(-13, -25)
+
+[node name="视觉" parent="." index="2" unique_id=1456117193]
+position = Vector2(0, -1)
+
+[node name="AnimatedSprite2D" parent="视觉" index="0" unique_id=516307281]
+sprite_frames = SubResource("SpriteFrames_wikua")
+animation = &"Run_Up"
+centered = false
+
+[node name="AnimationPlayer" parent="." index="3" unique_id=1786467140]
+libraries/ = SubResource("AnimationLibrary_kntx2")
+autoplay = &"stand"
+
+[node name="视野区域" type="Area2D" parent="." index="4" unique_id=1928895033]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="视野区域" index="0" unique_id=443142276]
+position = Vector2(0.5, -13)
+shape = SubResource("CircleShape2D_2vcqf")
+debug_color = Color(0, 0.5764706, 0.6745098, 0.16862746)
+
+[node name="AnimationTree" parent="." index="5" unique_id=1100281063]
+tree_root = SubResource("AnimationNodeStateMachine_4re02")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Run/blend_position = Vector2(0.34134614, -0.44000006)
+
+[node name="移动碰撞" parent="." index="6" unique_id=288392247]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_au3mk")
+debug_color = Color(0.7024835, 0.4852388, 0.16611946, 0.41960785)
+
+[node name="TouchHitBox" parent="." index="7" unique_id=147013256 instance=ExtResource("20_384uj")]
+collision_layer = 128
+collision_mask = 16
+collide_reset_interval = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TouchHitBox" index="0" unique_id=1829707185]
+position = Vector2(0.5, -13)
+shape = SubResource("RectangleShape2D_3xd07")
+debug_color = Color(1.2032688e-06, 0.329946, 0.3898688, 0.41960785)
+
+[node name="HurtboxComponent" parent="." index="8" unique_id=581852039]
+collision_layer = 64
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0" unique_id=1757577476]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_dlhfe")
+
+[node name="单位属性component" parent="." index="9" unique_id=176829961]
+"属性集" = SubResource("Resource_0i857")
+
+[node name="技能实例" parent="SkillManager/Skills" parent_id_path=PackedInt32Array(1829939027) index="0" unique_id=1136777421 instance=ExtResource("7_dlhfe")]
+"技能本体数据" = ExtResource("8_4re02")
+
+[node name="HealthBar" parent="." index="11" unique_id=517147532]
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+offset_bottom = -36.0
+"背景颜色" = Color(0.27058825, 0.24705882, 0.18039216, 1)
+"填充颜色" = Color(0.33333334, 0.38431373, 0.3019608, 1)

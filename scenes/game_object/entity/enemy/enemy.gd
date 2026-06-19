@@ -2,7 +2,7 @@ extends	Unit
 class_name	Enemy
 
 
-var animation2Play:String = "Idle"
+var animation2Play:String = "stand"
 
 
 
@@ -18,6 +18,8 @@ var 禁止移动 :bool= false
 func _process(delta: float) -> void:
 	var move_direction = get_move_direction()
 	facingDirection = move_direction if move_direction != Vector2.ZERO else facingDirection
+	# 根据移动方向水平翻转精灵
+	animated_sprite_2d.flip_h = facingDirection.x > 0
 	var player = get_tree().get_first_node_in_group("player") as CharacterBody2D
 	if player == null:
 		return

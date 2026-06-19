@@ -7,7 +7,8 @@ var disable_on_source_die: bool = false
 var source_entity: int = -1
 ## EntityManager 引用（由 SubObjectSystem 注入）
 var _entity_manager: EntityManager = null
-@export var collide_reset_interval: float = 0.0 # 碰撞重置间隔，单位秒。若>0，则hitbox在碰撞后保持关闭此时间后才重新启用
+## 碰撞重置间隔，单位秒。若>0，则hitbox在碰撞后保持关闭此时间后才重新启用
+@export var collide_reset_interval: float = 0.0 
 
 ## 获取施法者 Node（仅在需要访问场景树时使用）
 func get_source_node() -> Node2D:
