@@ -2,24 +2,27 @@
 	"$type":"animconfig.animconfig",
 	"id":"01060002",
 	"name":"蓝牛仔短裤",
-	"info":{
-		"$type":"animconfig.info",
-		"icon":{
-			"$type":"animconfig.spriteWithOrigin",
-			"sprite":"res://assets/MapleStory/Character/Pants/01060002/info/icon._outlink.png",
-			"origin_x":-4.0,
-			"origin_y":23.0
-		},
-		"iconRaw":{
-			"$type":"animconfig.spriteWithOrigin",
-			"sprite":"res://assets/MapleStory/Character/Pants/01060002/info/iconRaw._outlink.png",
-			"origin_x":-4.0,
-			"origin_y":23.0
+	"addinfos":[
+		{
+			"$type":"animconfig.Info.ItemInfo",
+			"$fold":true,
+			"icon":{
+				"$type":"animconfig.spriteWithOrigin",
+				"sprite":"res://assets/MapleStory/Character/Pants/01060002/info/icon._outlink.png",
+				"origin_x":-4.0,
+				"origin_y":23.0
+			},
+			"iconRaw":{
+				"$type":"animconfig.spriteWithOrigin",
+				"sprite":"res://assets/MapleStory/Character/Pants/01060002/info/iconRaw._outlink.png",
+				"origin_x":-4.0,
+				"origin_y":23.0
+			},
+			"islot":"Pn",
+			"vslot":[
+				"Pn"
+			]
 		}
-	},
-	"islot":"Pn",
-	"vslot":[
-		"Pn"
 	],
 	"animCfg":[
 		{

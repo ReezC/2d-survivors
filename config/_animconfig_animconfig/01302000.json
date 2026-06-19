@@ -2,22 +2,25 @@
 	"$type":"animconfig.animconfig",
 	"id":"01302000",
 	"name":"剑",
-	"info":{
-		"$type":"animconfig.info",
-		"icon":{
-			"$type":"animconfig.spriteWithOrigin",
-			"sprite":"res://assets/MapleStory/Character/Weapon/01302000/info/icon._outlink.png",
-			"origin_y":30.0
-		},
-		"iconRaw":{
-			"$type":"animconfig.spriteWithOrigin",
-			"sprite":"res://assets/MapleStory/Character/Weapon/01302000/info/iconRaw._outlink.png",
-			"origin_y":30.0
+	"addinfos":[
+		{
+			"$type":"animconfig.Info.ItemInfo",
+			"$fold":true,
+			"icon":{
+				"$type":"animconfig.spriteWithOrigin",
+				"sprite":"res://assets/MapleStory/Character/Weapon/01302000/info/icon._outlink.png",
+				"origin_y":30.0
+			},
+			"iconRaw":{
+				"$type":"animconfig.spriteWithOrigin",
+				"sprite":"res://assets/MapleStory/Character/Weapon/01302000/info/iconRaw._outlink.png",
+				"origin_y":30.0
+			},
+			"islot":"Wp",
+			"vslot":[
+				"Wp"
+			]
 		}
-	},
-	"islot":"Wp",
-	"vslot":[
-		"Wp"
 	],
 	"animCfg":[
 		{

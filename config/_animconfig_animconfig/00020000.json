@@ -2,18 +2,21 @@
 	"$type":"animconfig.animconfig",
 	"id":"00020000",
 	"name":"最初冒险(萌)-男脸",
-	"info":{
-		"$type":"animconfig.info",
-		"icon":{
-			"$type":"animconfig.spriteWithOrigin"
-		},
-		"iconRaw":{
-			"$type":"animconfig.spriteWithOrigin"
+	"addinfos":[
+		{
+			"$type":"animconfig.Info.ItemInfo",
+			"$fold":true,
+			"icon":{
+				"$type":"animconfig.spriteWithOrigin"
+			},
+			"iconRaw":{
+				"$type":"animconfig.spriteWithOrigin"
+			},
+			"islot":"Fc",
+			"vslot":[
+				"Fc"
+			]
 		}
-	},
-	"islot":"Fc",
-	"vslot":[
-		"Fc"
 	],
 	"animCfg":[
 		{

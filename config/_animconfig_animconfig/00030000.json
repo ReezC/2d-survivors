@@ -2,26 +2,29 @@
 	"$type":"animconfig.animconfig",
 	"id":"00030000",
 	"name":"黑色短中分",
-	"info":{
-		"$type":"animconfig.info",
-		"icon":{
-			"$type":"animconfig.spriteWithOrigin"
-		},
-		"iconRaw":{
-			"$type":"animconfig.spriteWithOrigin"
+	"addinfos":[
+		{
+			"$type":"animconfig.Info.ItemInfo",
+			"$fold":true,
+			"icon":{
+				"$type":"animconfig.spriteWithOrigin"
+			},
+			"iconRaw":{
+				"$type":"animconfig.spriteWithOrigin"
+			},
+			"islot":"Hr",
+			"vslot":[
+				"H1",
+				"H2",
+				"H3",
+				"H4",
+				"H5",
+				"H6",
+				"Hf",
+				"Hs",
+				"Hb"
+			]
 		}
-	},
-	"islot":"Hr",
-	"vslot":[
-		"H1",
-		"H2",
-		"H3",
-		"H4",
-		"H5",
-		"H6",
-		"Hf",
-		"Hs",
-		"Hb"
 	],
 	"animCfg":[
 		{

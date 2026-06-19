@@ -2,24 +2,27 @@
 	"$type":"animconfig.animconfig",
 	"id":"01072005",
 	"name":"皮制凉鞋",
-	"info":{
-		"$type":"animconfig.info",
-		"icon":{
-			"$type":"animconfig.spriteWithOrigin",
-			"sprite":"res://assets/MapleStory/Character/Shoes/01072005/info/icon._outlink.png",
-			"origin_x":-3.0,
-			"origin_y":27.0
-		},
-		"iconRaw":{
-			"$type":"animconfig.spriteWithOrigin",
-			"sprite":"res://assets/MapleStory/Character/Shoes/01072005/info/iconRaw._outlink.png",
-			"origin_x":-4.0,
-			"origin_y":27.0
+	"addinfos":[
+		{
+			"$type":"animconfig.Info.ItemInfo",
+			"$fold":true,
+			"icon":{
+				"$type":"animconfig.spriteWithOrigin",
+				"sprite":"res://assets/MapleStory/Character/Shoes/01072005/info/icon._outlink.png",
+				"origin_x":-3.0,
+				"origin_y":27.0
+			},
+			"iconRaw":{
+				"$type":"animconfig.spriteWithOrigin",
+				"sprite":"res://assets/MapleStory/Character/Shoes/01072005/info/iconRaw._outlink.png",
+				"origin_x":-4.0,
+				"origin_y":27.0
+			},
+			"islot":"So",
+			"vslot":[
+				"So"
+			]
 		}
-	},
-	"islot":"So",
-	"vslot":[
-		"So"
 	],
 	"animCfg":[
 		{
