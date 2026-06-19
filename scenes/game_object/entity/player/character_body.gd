@@ -7,6 +7,7 @@ class_name CharacterBody
 
 @export_file("*.json") var 角色身体配置: String
 @export_file("*.json") var 角色头部配置: String
+@export_file("*.json") var 自定义视觉配置: Array[String] = [] 
 
 var animator: PaperDollAnimator
 var builder: PaperDollBuilder
@@ -22,7 +23,7 @@ func _ready() -> void:
 	animator.name = "PaperDollAnimator"
 	add_child(animator)
 
-	# 构建器（z_index 由 视觉.gd 在子节点添加后处理）
+	# 构建器（子节点渲染顺序由 视觉.gd 按 zmap 管理）
 	builder = animator._builder
 	builder.build(get_parent())
 
@@ -32,6 +33,11 @@ func _ready() -> void:
 	# 加载头部配置（如果指定了）
 	if not 角色头部配置.is_empty():
 		builder.add_part_config(角色头部配置)
+
+	# 加载自定义视觉配置（如武器、特效、披风等）
+	for custom_config in 自定义视觉配置:
+		if not custom_config.is_empty():
+			builder.add_part_config(custom_config)
 
 	animator.build_finish()
 

@@ -8,7 +8,7 @@ class_name EntityManager
 var _next_entity_id: int = 1
 var _components: Dictionary = {}  # { "SkillComponent": { entity_id: data }, ... }
 var _entity_masks: Dictionary = {}  # { entity_id: int bitmask }
-var _entity_to_unit: Dictionary = {}  # { entity_id: Node }  — 反向查找 Unit Node
+var _entity_to_unit: Dictionary = {}  # { entity_id: WeakRef }  — 反向查找 Unit Node（弱引用避免 freed instance）
 
 ## 待销毁的 entity 列表（延迟清理）
 var _pending_destroy: Array[int] = []
@@ -22,7 +22,7 @@ func create_entity(unit: Node = null) -> int:
 	_next_entity_id += 1
 	_entity_masks[eid] = ECSComponentTypes.ComponentType.NONE
 	if unit:
-		_entity_to_unit[eid] = unit
+		_entity_to_unit[eid] = weakref(unit)
 	return eid
 
 ## 销毁 Entity，清理其所有 Component
@@ -80,6 +80,8 @@ func query_entities(with_components: Array[int]) -> Array[int]:
 	if required_mask == 0:
 		return result
 	for eid in _entity_masks:
+		if eid in _pending_destroy:
+			continue
 		var mask: int = _entity_masks[eid]
 		if (mask & required_mask) == required_mask:
 			result.append(eid)
@@ -87,12 +89,20 @@ func query_entities(with_components: Array[int]) -> Array[int]:
 
 ## 获取 Entity 对应的 Unit Node
 func get_unit(entity_id: int) -> Node:
-	return _entity_to_unit.get(entity_id, null)
+	var ref: WeakRef = _entity_to_unit.get(entity_id, null)
+	if ref == null:
+		return null
+	var unit = ref.get_ref()
+	if unit == null:
+		_entity_to_unit.erase(entity_id)
+		return null
+	return unit
 
 ## 获取 Unit Node 对应的 Entity ID（通过反向查找）
 func get_entity_id(unit: Node) -> int:
 	for eid in _entity_to_unit:
-		if _entity_to_unit[eid] == unit:
+		var ref: WeakRef = _entity_to_unit[eid]
+		if ref.get_ref() == unit:
 			return eid
 	return -1
 

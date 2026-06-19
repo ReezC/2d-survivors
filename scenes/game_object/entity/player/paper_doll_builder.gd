@@ -27,8 +27,6 @@ var _bone_nodes: Dictionary = {}
 
 func build(character: Node2D) -> void:
 	_character = character
-	# zmap 引用从 视觉 节点获取，不在 Builder 层持有
-	_acquire_zmap_from_visual()
 
 	# 1. 确保 "视觉" 容器存在
 	_visual_parent = _character.get_node_or_null("视觉") as Node2D
@@ -36,6 +34,9 @@ func build(character: Node2D) -> void:
 		_visual_parent = Node2D.new()
 		_visual_parent.name = "视觉"
 		_character.add_child(_visual_parent)
+
+	# zmap 引用从 视觉 节点获取（必须在 _visual_parent 就绪之后）
+	_acquire_zmap_from_visual()
 
 	# 2. 创建 body 骨骼根节点
 	_body_bone = _character.get_node_or_null("body") as Node2D
@@ -60,12 +61,16 @@ func add_part_config(json_path: String) -> void:
 		return
 
 	var config_id: String = data["id"]
+	var config_name: String = data.get("name", "")
 	_part_configs[config_id] = data
+	# print("[Builder] 加载配置: id=%s, name=%s" % [config_id, config_name])
 
 	# 3. 收集所有帧中出现的 sprite 名称，为每个创建 VisualItemPart
 	var sprite_names := _collect_sprite_names(data)
+	# print("[Builder]   收集到 sprite: %s" % str(sprite_names))
 	for sname in sprite_names:
 		if _sprite_nodes.has(sname):
+			# print("[Builder]   sprite '%s' 已存在，跳过创建" % sname)
 			continue  # 同名 sprite 只创建一次（多个部件可能引用同一骨骼）
 
 		var node_name: String = sname + "_" + data.get("name", "") + "_" + data.get("id", "") 
@@ -84,6 +89,7 @@ func add_part_config(json_path: String) -> void:
 		sprite_node.source_item = vi
 		_visual_parent.add_child(sprite_node)
 		_sprite_nodes[sname] = sprite_node
+		# print("[Builder]   创建 sprite 节点: %s (name=%s)" % [sname, node_name])
 
 	# 4. 构建此部件的 SpriteFrames（收集所有动画的所有帧的纹理）
 	_build_sprite_frames_for_config(data)
@@ -91,8 +97,8 @@ func add_part_config(json_path: String) -> void:
 	# 5. 从第一帧的骨骼映射构建初始骨骼树
 	_build_initial_skeleton(data)
 
-	# 6. 通知 视觉 节点重新分配 z_index（新子节点已加入）
-	_refresh_z_index()
+	# 6. 按 zmap 重新排序子节点顺序（新子节点已加入）
+	_reorder_visual_children()
 
 
 func _acquire_zmap_from_visual() -> void:
@@ -101,33 +107,14 @@ func _acquire_zmap_from_visual() -> void:
 		_zmap = _visual_parent.zmap_file
 
 
-func _refresh_z_index() -> void:
-	"""触发 视觉 节点重新为所有子节点分配 z_index"""
-	if _visual_parent and _visual_parent.has_method("_ready"):
-		# 视觉.gd._ready 已经处理了 z_index 分配，
-		# 但新子节点是在 _ready 之后动态添加的，所以手动触发一次刷新
-		if _visual_parent.has_method("refresh_z_index"):
-			_visual_parent.refresh_z_index()
-		elif _visual_parent.has_method("get") and "zmap_file" in _visual_parent:
-			var zmap_file: zmap = _visual_parent.zmap_file
-			if zmap_file:
-				var total_layers: int = zmap_file.get_layer_count()
-				for child in _visual_parent.get_children():
-					var layer: zmap.Layer
-					if "z" in child:
-						layer = child.z
-					else:
-						var idx: int = zmap_file.get_layer_index_by_name(child.name)
-						if idx >= 0:
-							layer = zmap_file.Layer.values()[idx]
-						else:
-							continue
-					var layer_idx: int = zmap_file.get_layer_index(layer)
-					child.z_index = total_layers - layer_idx
+func _reorder_visual_children() -> void:
+	"""触发 视觉 节点按 zmap 重新排序子节点顺序"""
+	if _visual_parent and _visual_parent.has_method("reorder_children_by_zmap"):
+		_visual_parent.reorder_children_by_zmap()
 
 
 func _get_z_layer_from_data(data: Dictionary, sprite_name: String) -> zmap.Layer:
-	"""从配置数据中查找 sprite 的 z 层级"""
+	"""从配置数据中查找 sprite 的 z 层级，遍历所有动画帧直到找到匹配的 Sprite"""
 	for anim_cfg in data.get("animCfg", []):
 		for frame in anim_cfg.get("frames", []):
 			for sprite_cfg in frame.get("spritecfg", []):
@@ -137,9 +124,6 @@ func _get_z_layer_from_data(data: Dictionary, sprite_name: String) -> zmap.Layer
 						var idx: int = _zmap.get_layer_index_by_name(z_name)
 						if idx >= 0:
 							return zmap.Layer.values()[idx]
-					break
-			if true: break
-		if true: break
 	return zmap.Layer.body
 
 
@@ -159,6 +143,7 @@ func _collect_sprite_names(data: Dictionary) -> Array[String]:
 
 func _build_sprite_frames_for_config(data: Dictionary) -> void:
 	"""为此配置中每个 sprite 构建 SpriteFrames 资源"""
+	var config_id: String = data.get("id", "?")
 	for anim_cfg in data.get("animCfg", []):
 		var anim_name: String = anim_cfg.get("name", "")
 		var frames_array: Array = anim_cfg.get("frames", [])
@@ -179,19 +164,32 @@ func _build_sprite_frames_for_config(data: Dictionary) -> void:
 						sprite_textures[sname] = []
 					sprite_textures[sname].append(tex)
 
+		if sprite_textures.is_empty():
+			continue  # 此动画全是 FrameLink，跳过
+
+		# print("[Builder]   构建动画 '%s' (id=%s): %d 个 sprite" % [anim_name, config_id, sprite_textures.size()])
+
 		# 为每个 sprite 的 SpriteFrames 添加此动画
 		for sname in sprite_textures:
 			var sprite_node := _sprite_nodes.get(sname) as VisualItemPart
 			if sprite_node == null:
+				push_warning("PaperDollBuilder: sprite '%s' 不在 _sprite_nodes 中" % sname)
 				continue
 
 			var sf := sprite_node.sprite_frames
 			if sf == null:
 				sf = SpriteFrames.new()
 
-			# 检查动画是否已存在
+			# 如果动画已存在：
+			# - 帧数为 0 → AnimatedSprite2D 进入场景树时自动生成的幽灵动画，删除并重建
+			# - 帧数 > 0 → 由先加载的配置创建的有效动画，跳过以避免覆盖
 			if sf.has_animation(anim_name):
-				sf.remove_animation(anim_name)
+				if sf.get_frame_count(anim_name) == 0:
+					# print("[Builder]   动画 '%s' for sprite '%s' 为空（幽灵动画），重建" % [anim_name, sname])
+					sf.remove_animation(anim_name)
+				else:
+					# print("[Builder]   跳过已存在的动画 '%s' for sprite '%s'" % [anim_name, sname])
+					continue
 
 			sf.add_animation(anim_name)
 			sf.set_animation_loop(anim_name, true)
@@ -199,44 +197,83 @@ func _build_sprite_frames_for_config(data: Dictionary) -> void:
 				sf.add_frame(anim_name, tex, 1.0)
 
 			sprite_node.sprite_frames = sf
+			# print("[Builder]   创建动画 '%s' for sprite '%s', %d 帧" % [anim_name, sname, sprite_textures[sname].size()])
 
 
 func _build_initial_skeleton(data: Dictionary) -> void:
-	"""根据第一帧的骨骼映射创建初始骨骼树，并设置精灵 position"""
+	"""根据第一个包含真实 Sprite 的帧创建初始骨骼树，并设置精灵 position
+	
+	遍历所有动画帧找到第一个包含 .Sprite 或 .FrameLink 的帧来构建骨骼。
+	如果当前动画全是 FrameLink，会递归解析目标帧。
+	"""
 	var anim_cfgs: Array = data.get("animCfg", [])
 	if anim_cfgs.is_empty():
 		return
+
+	# 在 anim_cfgs[0] 的第一帧中查找 Sprite 来创建骨骼
+	# 支持直接 Sprite 和 FrameLink 两种情况
 	var frames: Array = anim_cfgs[0].get("frames", [])
 	if frames.is_empty():
 		return
 
 	for sprite_cfg in frames[0].get("spritecfg", []):
 		var stype = sprite_cfg.get("$type", "")
-		if not stype.ends_with(".Sprite"):
-			continue
-
-		# 计算精灵 position（基于当前已创建的骨骼）
-		var sprite_pos := _compute_sprite_position(sprite_cfg)
-
-		# 创建不存在的骨骼：骨骼 position = 精灵 position + 该骨骼的 offset
-		for bone_map in sprite_cfg.get("map", []):
-			var bone_name: String = bone_map.get("bone", "")
-			var off_x: float = bone_map.get("offset_x", 0.0)
-			var off_y: float = bone_map.get("offset_y", 0.0)
-			var offset := Vector2(off_x, off_y)
-
-			var bone_node := _bone_nodes.get(bone_name) as Node2D
-
-			if bone_node == null:
-				# 骨骼不存在 → 在 body 下创建
-				bone_node = Node2D.new()
-				bone_node.name = bone_name
-				_body_bone.add_child(bone_node)
-				bone_node.position = sprite_pos + offset
-				_bone_nodes[bone_name] = bone_node
+		if stype.ends_with(".Sprite"):
+			_create_bones_from_sprite_cfg(sprite_cfg)
+		elif stype.ends_with(".FrameLink"):
+			_create_bones_from_framelink(sprite_cfg)
 
 	# 初始帧就应用一帧（设置 offset 和动画）
 	_apply_frame_visuals(data, 0, 0)
+
+
+func _create_bones_from_sprite_cfg(sprite_cfg: Dictionary) -> void:
+	"""从单个 Sprite 配置创建其 map 中不存在的骨骼"""
+	var sprite_pos := _compute_sprite_position(sprite_cfg)
+
+	for bone_map in sprite_cfg.get("map", []):
+		var bone_name: String = bone_map.get("bone", "")
+		var off_x: float = bone_map.get("offset_x", 0.0)
+		var off_y: float = bone_map.get("offset_y", 0.0)
+		var offset := Vector2(off_x, off_y)
+
+		var bone_node := _bone_nodes.get(bone_name) as Node2D
+
+		if bone_node == null:
+			bone_node = Node2D.new()
+			bone_node.name = bone_name
+			_body_bone.add_child(bone_node)
+			bone_node.position = sprite_pos + offset
+			_bone_nodes[bone_name] = bone_node
+
+
+func _create_bones_from_framelink(link_cfg: Dictionary) -> void:
+	"""解析 FrameLink 引用的目标帧中的 Sprite，创建骨骼"""
+	var link_id: String = link_cfg.get("id", "")
+	var link_anim: String = link_cfg.get("animName", "")
+	var link_frame: int = link_cfg.get("frameIndex", 0)
+
+	var target_config: Dictionary = _part_configs.get(link_id)
+	if target_config == null:
+		return
+
+	# 查找目标动画
+	var target_anim_cfg: Dictionary = {}
+	for anim_cfg in target_config.get("animCfg", []):
+		if anim_cfg.get("name") == link_anim:
+			target_anim_cfg = anim_cfg
+			break
+	if target_anim_cfg.is_empty():
+		return
+
+	var target_frames: Array = target_anim_cfg.get("frames", [])
+	if link_frame >= target_frames.size():
+		return
+
+	var target_frame: Dictionary = target_frames[link_frame]
+	for sprite_cfg in target_frame.get("spritecfg", []):
+		if sprite_cfg.get("$type", "").ends_with(".Sprite"):
+			_create_bones_from_sprite_cfg(sprite_cfg)
 
 
 ## 获取所有已注册的部件配置

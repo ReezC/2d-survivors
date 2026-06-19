@@ -2,6 +2,15 @@
 	"$type":"animconfig.animconfig",
 	"id":"00012000",
 	"name":"奶油皮肤",
+	"info":{
+		"$type":"animconfig.info",
+		"icon":{
+			"$type":"animconfig.spriteWithOrigin"
+		},
+		"iconRaw":{
+			"$type":"animconfig.spriteWithOrigin"
+		}
+	},
 	"islot":"Hd",
 	"vslot":[
 		"Hd"
@@ -86,7 +95,8 @@
 							"z":"hairShade"
 						}
 					],
-					"face":1
+					"face":1,
+					"delay":-1
 				}
 			]
 		},

@@ -84,7 +84,7 @@
 					"spritecfg":[
 						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"mail",
+							"name":"pants",
 							"spriteDir":"res://assets/MapleStory/Character/Pants/01060002/stand1/2.pants._outlink.png",
 							"origin_x":9.0,
 							"origin_y":6.0,
@@ -96,7 +96,7 @@
 									"offset_y":-6.0
 								}
 							],
-							"z":"mailChestBelowPants"
+							"z":"pants"
 						}
 					],
 					"face":1,

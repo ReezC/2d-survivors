@@ -86,7 +86,6 @@
 		},
 		{
 			"$type":"animconfig.AnimConfigData",
-			"$fold":true,
 			"name":"walk1",
 			"frames":[
 				{
@@ -103,7 +102,7 @@
 							"map":[
 								{
 									"$type":"animconfig.SkelectonMap",
-									"bone":"navel",
+									"bone":"hand",
 									"offset_x":8.0,
 									"offset_y":-2.0
 								}
@@ -128,7 +127,7 @@
 							"map":[
 								{
 									"$type":"animconfig.SkelectonMap",
-									"bone":"navel",
+									"bone":"hand",
 									"offset_x":6.0,
 									"offset_y":6.0
 								}
@@ -169,7 +168,7 @@
 							"map":[
 								{
 									"$type":"animconfig.SkelectonMap",
-									"bone":"navel",
+									"bone":"hand",
 									"offset_x":8.0,
 									"offset_y":-1.0
 								}

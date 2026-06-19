@@ -191,14 +191,14 @@
 							"$type":"animconfig.SpriteConfigData.Sprite",
 							"name":"shoes",
 							"spriteDir":"res://assets/MapleStory/Character/Shoes/01072005/walk1/3.shoes._outlink.png",
-							"origin_x":10.0,
+							"origin_x":11.0,
 							"origin_y":5.0,
 							"map":[
 								{
 									"$type":"animconfig.SkelectonMap",
 									"bone":"navel",
-									"offset_x":-1.0,
-									"offset_y":-19.0
+									"offset_x":-2.0,
+									"offset_y":-12.0
 								}
 							],
 							"z":"shoes"

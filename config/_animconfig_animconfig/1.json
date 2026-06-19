@@ -1,0 +1,18 @@
+{
+	"$type":"animconfig.animconfig",
+	"id":"1",
+	"name":"测试",
+	"info":{
+		"$type":"animconfig.info",
+		"icon":{
+			"$type":"animconfig.spriteWithOrigin"
+		},
+		"iconRaw":{
+			"$type":"animconfig.spriteWithOrigin"
+		}
+	},
+	"islot":"Bd",
+	"vslot":[
+		"Bd"
+	]
+}
