@@ -6,12 +6,12 @@ class_name ExprCompiler
 ## 运行时只需传入 context Dictionary 即可直接求值，避免每次递归遍历 JSON。
 
 # context 中可用的 key：
-#   "buff_instance"   : BuffInstance   — 当前 buff 实例引用
-#   "skill_manager"   : SkillManager   — 技能管理器引用
-#   "caster"          : Node           — 施法者
-#   "current_target"  : Node2D         — 当前目标
-#   "blackboard"      : Dictionary     — 技能黑板
-#   "random"          : Callable       — func() -> int (0-99), 用于 Chance 条件
+#   "buff_instance"   : BuffComponentData — 当前 Buff 组件数据（ECS）
+#   "skill_manager"   : SkillSystem       — 技能系统引用（ECS）
+#   "caster"          : Node              — 施法者
+#   "current_target"  : Node2D            — 当前目标
+#   "blackboard"      : Dictionary        — 技能黑板
+#   "random"          : Callable          — func() -> int (0-99), 用于 Chance 条件
 
 
 ## 编译 FloatValue 表达式树 → Callable

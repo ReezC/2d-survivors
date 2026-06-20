@@ -15,13 +15,7 @@ enum AI类型枚举 {
 @export var skill_ai: AI类型枚举
 @export var 初始技能: Array[技能数据] = []
 
-# 预编译表达式已迁移至 ECS SkillSystem，保留声明以防旧代码引用
-@warning_ignore("unused_private_class_variable")
-static var _compiled_float_cache: Dictionary = {}
-@warning_ignore("unused_private_class_variable")
-static var _compiled_cond_cache: Dictionary = {}
-@warning_ignore("unused_private_class_variable")
-static var _compiler := ExprCompiler.new()
+# 预编译表达式已迁移至 ECS SkillSystem（SkillSystem._compiled_*_cache 管理）
 
 
 func _ready() -> void:
@@ -77,5 +71,4 @@ func get_target_in_circle_area(
 	)
 #endregion
 
-#region 表达式编译（保留兼容旧代码调用，委托给 SkillSystem 的静态缓存）
-# 静态缓存和编译器委托给 SkillSystem 管理
+# 表达式编译已委托给 SkillSystem._编译数值() / _编译条件()

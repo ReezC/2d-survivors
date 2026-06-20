@@ -3,13 +3,9 @@ extends Node2D
 class_name 子物体
 @onready var hitbox_component: HitboxComponent = $HitboxComponent
 
+## SubObjectSystem._configure_movement() 动态赋值的运动回调
+## SubObjectSystem.update() 中逐帧调用此回调驱动运动
+var obj_process: Callable
 
-## 子物体执行过程函数
-## 重写此函数以实现自定义行为
-var obj_process:Callable = func(delta: float) -> void:
-	pass
-
-func _physics_process(delta: float) -> void:
-	# 子物体的运动由 SubObjectSystem.update() 统一驱动
-	# 这里不再调用 obj_process，避免 call_deferred 导致 lambda 捕获已释放对象
+func _physics_process(_delta: float) -> void:
 	pass
