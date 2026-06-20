@@ -1,7 +1,5 @@
 extends Node2D
 
-const VisualItemPart := preload("res://scenes/game_object/visual_item/visual_item_part.gd")
-
 @export var zmap_file: zmap
 
 

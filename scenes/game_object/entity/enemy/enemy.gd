@@ -2,7 +2,7 @@ extends	Unit
 class_name	Enemy
 
 
-var animation2Play:String = "stand"
+# var animation2Play:String = "stand"
 
 
 

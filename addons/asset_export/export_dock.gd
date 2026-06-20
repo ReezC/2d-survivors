@@ -9,7 +9,7 @@ extends VBoxContainer
 			asset_path_edit.text = v
 
 ## 生成文件的路径
-@export_global_dir var output_path: String = "res://asset_list.csv":
+@export_global_dir var output_path: String = "E:/MyPrograms/mapleRogue/config/asset/asset_list.csv":
 	set(v):
 		output_path = v
 		if is_instance_valid(output_path_edit):

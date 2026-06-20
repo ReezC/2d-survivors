@@ -7,7 +7,10 @@ class_name CharacterBody
 
 @export_file("*.json") var 角色身体配置: String
 @export_file("*.json") var 角色头部配置: String
-@export_file("*.json") var 自定义视觉配置: Array[String] = [] 
+@export_file("*.json") var 自定义视觉配置: Array[String] = []
+
+## 测试开关：禁用纸娃娃渲染，回退到旧版精灵动画系统
+@export var 禁用纸娃娃渲染: bool = false
 
 var animator: PaperDollAnimator
 var builder: PaperDollBuilder
@@ -16,6 +19,9 @@ var builder: PaperDollBuilder
 func _ready() -> void:
 	if 角色身体配置.is_empty():
 		push_error("CharacterBody: 未指定角色身体配置")
+		return
+
+	if 禁用纸娃娃渲染:
 		return
 
 	# 创建纸娃娃动画控制器
@@ -41,8 +47,35 @@ func _ready() -> void:
 
 	animator.build_finish()
 
+	# # （纸娃娃系统已完全接管动画，旧节点仅保留作参考）
+	# _disable_legacy_animation_system()
+
 	# 初始动画
 	animator.set_animation_by_state(0)  # 待机
+
+
+# func _disable_legacy_animation_system() -> void:
+# 	"""禁用旧版动画系统，防止 AnimationTree 驱动已废弃的 AnimatedSprite2D"""
+# 	var player_root := get_parent()
+# 	if player_root == null:
+# 		return
+
+	# # 停止 AnimationTree（它会自动播放动画驱动 AnimatedSprite2D）
+	# var at := player_root.get_node_or_null("AnimationTree") as AnimationTree
+	# if at:
+	# 	at.active = false
+
+	# # 停止 AnimationPlayer
+	# var ap := player_root.get_node_or_null("AnimationPlayer") as AnimationPlayer
+	# if ap:
+	# 	ap.stop()
+
+	# # 隐藏旧的 AnimatedSprite2D（视觉 下的直接子节点中非纸娃娃创建的旧精灵）
+	# var visual := player_root.get_node_or_null("视觉") as Node2D
+	# if visual:
+	# 	for child in visual.get_children():
+	# 		if child is AnimatedSprite2D and not child.script:
+	# 			child.visible = false
 
 
 func set_animation_state(state: int) -> void:

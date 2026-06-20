@@ -1,0 +1,43 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dakpclo6otwv8"]
+
+[ext_resource type="Texture2D" uid="uid://6mm2pb4x3krd" path="res://assets/MapleStory/Character/00002000/stand1/0.arm._outlink.png" id="1_b4w1o"]
+[ext_resource type="Texture2D" uid="uid://bss0tuqlul3nw" path="res://assets/MapleStory/Character/00002000/stand1/1.arm._outlink.png" id="2_hh7ru"]
+[ext_resource type="Texture2D" uid="uid://orm8ye72r5yr" path="res://assets/MapleStory/Character/00002000/stand1/2.arm._outlink.png" id="3_www4w"]
+[ext_resource type="Texture2D" uid="uid://c5h1vesxligbm" path="res://assets/MapleStory/Character/00002000/walk1/0.arm._outlink.png" id="4_o3ykq"]
+[ext_resource type="Texture2D" uid="uid://d3vc1nfiorbce" path="res://assets/MapleStory/Character/00002000/walk1/1.arm._outlink.png" id="5_2tl2s"]
+[ext_resource type="Texture2D" uid="uid://d4hsvugc0hrlv" path="res://assets/MapleStory/Character/00002000/walk1/2.arm._outlink.png" id="6_dab6m"]
+[ext_resource type="Texture2D" uid="uid://ct14o3tgg4os6" path="res://assets/MapleStory/Character/00002000/walk1/3.arm._outlink.png" id="7_vtt7b"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b4w1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hh7ru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_www4w")
+}],
+"loop": 0,
+"name": &"stand1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_o3ykq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2tl2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dab6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vtt7b")
+}],
+"loop": 1,
+"name": &"walk1",
+"speed": 5.0
+}]

@@ -7,7 +7,7 @@ class_name PaperDollBuilder extends RefCounted
 ##   builder.add_part_config("res://config/_animconfig_animconfig/00002000.json")
 ##   builder.add_part_config("res://config/_animconfig_animconfig/00012000.json")
 
-const VISUAL_ITEM_PART_SCRIPT := preload("res://scenes/game_object/visual_item/visual_item_part.gd")
+const VISUAL_ITEM_PART_SCRIPT := preload("res://resources/visual_item/visual_item_part.gd")
 
 # ---- 内部状态 ----
 var _character: Node2D           # character_body 节点

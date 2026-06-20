@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_1ksrx")
 "技能ID" = 200001
-"技能名称" = "有毒外皮"
+"技能名称" = "接触伤害"
 "技能图标" = ExtResource("2_lyj65")
 "技能描述" = "接触时造成害"
 "技能类型" = 1

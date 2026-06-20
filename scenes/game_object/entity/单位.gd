@@ -59,12 +59,6 @@ func _on_角色状态退出(旧状态: 角色状态) -> void:
 func _ready() -> void:
 	attribute_component.初始化属性()
 	animation_tree.active = true
-	# 激活 AnimationTree 后，状态机可能没有进入任何状态，
-	# 导致没有 modulate track 的动画将 modulate 重置为 Color 默认值 #000000
-	# 这里显式 travel 到 stand 状态并保护 modulate 不被重置
-	# if state_machine and animated_sprite_2d:
-		# animated_sprite_2d.modulate = Color.WHITE
-		# state_machine.travel("stand")
 	出生.emit()
 	skill_manager.初始化()
 

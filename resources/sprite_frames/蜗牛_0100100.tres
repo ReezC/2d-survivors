@@ -1,0 +1,89 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bj32ak7qorx1o"]
+
+[ext_resource type="Texture2D" uid="uid://ehfof1126fl3" path="res://assets/MapleStory/Mob/0100100/die1/0._outlink.png" id="1_w0bgx"]
+[ext_resource type="Texture2D" uid="uid://bf3uykbnh2f7h" path="res://assets/MapleStory/Mob/0100100/die1/1._outlink.png" id="2_sqf7c"]
+[ext_resource type="Texture2D" uid="uid://vmh6eufofbsh" path="res://assets/MapleStory/Mob/0100100/die1/2._outlink.png" id="3_ohbwp"]
+[ext_resource type="Texture2D" uid="uid://d15g0o7eulbrb" path="res://assets/MapleStory/Mob/0100100/die1/3._outlink.png" id="4_r3i3g"]
+[ext_resource type="Texture2D" uid="uid://dcwso5edf3ov" path="res://assets/MapleStory/Mob/0100100/die1/4._outlink.png" id="5_mebuj"]
+[ext_resource type="Texture2D" uid="uid://bjt6l2pk6jhim" path="res://assets/MapleStory/Mob/0100100/die1/5._outlink.png" id="6_j6vqt"]
+[ext_resource type="Texture2D" uid="uid://bihtacdn8a8sw" path="res://assets/MapleStory/Mob/0100100/die1/6._outlink.png" id="7_5brw3"]
+[ext_resource type="Texture2D" uid="uid://ck0oxt5xcuifd" path="res://assets/MapleStory/Mob/0100100/die1/7._outlink.png" id="8_hss31"]
+[ext_resource type="Texture2D" uid="uid://d32hdphh3p53y" path="res://assets/MapleStory/Mob/0100100/die1/8._outlink.png" id="9_iqnga"]
+[ext_resource type="Texture2D" uid="uid://c7d87e0yldbcy" path="res://assets/MapleStory/Mob/0100100/hit1/0._outlink.png" id="10_d2ijv"]
+[ext_resource type="Texture2D" uid="uid://cjw5x1bogohn4" path="res://assets/MapleStory/Mob/0100100/move/0._outlink.png" id="11_x6kpt"]
+[ext_resource type="Texture2D" uid="uid://d3lxaen38mcwm" path="res://assets/MapleStory/Mob/0100100/move/1._outlink.png" id="12_t3jpq"]
+[ext_resource type="Texture2D" uid="uid://cnmtfwq2i82ol" path="res://assets/MapleStory/Mob/0100100/move/2._outlink.png" id="13_jrph1"]
+[ext_resource type="Texture2D" uid="uid://cgalsq245sl33" path="res://assets/MapleStory/Mob/0100100/move/3._outlink.png" id="14_1sjll"]
+[ext_resource type="Texture2D" uid="uid://cmi1yn53ashpj" path="res://assets/MapleStory/Mob/0100100/move/4._outlink.png" id="15_0x4ay"]
+[ext_resource type="Texture2D" uid="uid://d1ow70uyx3q6m" path="res://assets/MapleStory/Mob/0100100/stand/0._outlink.png" id="16_r43b7"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_w0bgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sqf7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ohbwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r3i3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mebuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j6vqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5brw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hss31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_iqnga")
+}],
+"loop": 0,
+"name": &"die1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_d2ijv")
+}],
+"loop": 0,
+"name": &"hit1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_x6kpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_t3jpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jrph1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1sjll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0x4ay")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_r43b7")
+}],
+"loop": 1,
+"name": &"stand",
+"speed": 5.0
+}]

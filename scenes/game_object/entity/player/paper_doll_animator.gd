@@ -3,7 +3,7 @@ class_name PaperDollAnimator extends Node
 ##
 ## 挂载在 character_body 节点下，由 player.gd 驱动
 
-const VisualItemPart := preload("res://scenes/game_object/visual_item/visual_item_part.gd")
+const VisualItemPart := preload("res://resources/visual_item/visual_item_part.gd")
 
 # ---- 运行时状态 ----
 var _builder: PaperDollBuilder
