@@ -4,22 +4,44 @@
 [ext_resource type="Script" uid="uid://do5hd8rrnom2q" path="res://scenes/game_object/entity/player/player.gd" id="2_ctfnk"]
 [ext_resource type="Texture2D" uid="uid://dtkeg5q6jrmpp" path="res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/Faceset.png" id="3_lnpja"]
 [ext_resource type="Script" uid="uid://dqnc61hq410i5" path="res://scenes/game_object/entity/player/character_body.gd" id="4_aaojh"]
+[ext_resource type="Script" uid="uid://btx1ximi6tqhc" path="res://resources/visual_item/equip_slot_config.gd" id="5_hdd6p"]
 [ext_resource type="SpriteFrames" uid="uid://bu7r2th5craou" path="res://resources/sprite_frames/默认身体_00002000_body.tres" id="7_uo5vx"]
+[ext_resource type="Resource" uid="uid://brurm0y04x4mt" path="res://resources/visual_item/00030000_黑色短中分.tres" id="8_aaojh"]
 [ext_resource type="Script" uid="uid://bjvqbui703u8x" path="res://resources/单位属性/单位属性集.gd" id="9_bdaga"]
+[ext_resource type="Resource" uid="uid://bs5oev1udn1s" path="res://resources/visual_item/00020000_最初冒险(萌)-男脸.tres" id="9_o6rgh"]
 [ext_resource type="SpriteFrames" uid="uid://dakpclo6otwv8" path="res://resources/sprite_frames/默认身体_00002000_arm.tres" id="10_5eaic"]
+[ext_resource type="Resource" uid="uid://5pw1o5tgw0rw" path="res://resources/visual_item/01040006_白色背心.tres" id="10_o6rgh"]
 [ext_resource type="Script" uid="uid://c218ra1pf7xxj" path="res://resources/单位属性/单位属性.gd" id="10_uo5vx"]
+[ext_resource type="Resource" uid="uid://2wgdsp3rvgh0" path="res://resources/visual_item/01060002_蓝牛仔短裤.tres" id="11_03xhi"]
 [ext_resource type="Script" uid="uid://bd83jqryqem3b" path="res://resources/单位属性/生命_单位属性.gd" id="11_5eaic"]
-[ext_resource type="Resource" uid="uid://nji0luow60q6" path="res://resources/visual_item/奶油皮肤_00012000.tres" id="11_c8o2f"]
+[ext_resource type="Resource" uid="uid://nji0luow60q6" path="res://resources/visual_item/00012000_奶油皮肤.tres" id="11_c8o2f"]
 [ext_resource type="SpriteFrames" uid="uid://grm0vwsleixt" path="res://resources/sprite_frames/奶油皮肤_00012000_head.tres" id="11_fpvc5"]
 [ext_resource type="Script" uid="uid://cocpxte7moiwt" path="res://resources/单位属性/最大生命值_单位属性.gd" id="12_c8o2f"]
+[ext_resource type="Resource" uid="uid://v1tgdremqmke" path="res://resources/visual_item/01072005_皮制凉鞋.tres" id="12_gh5no"]
+[ext_resource type="Script" uid="uid://cx56yjoedwvb6" path="res://resources/visual_item/visual_item.gd" id="12_jipc3"]
 [ext_resource type="Resource" uid="uid://y6jywnhexlo6" path="res://技能/技能数据/手里剑投掷.tres" id="13_00o66"]
 [ext_resource type="Script" uid="uid://cf5tsjb2i13c0" path="res://技能/技能数据.gd" id="13_bdaga"]
 [ext_resource type="Script" uid="uid://ptl7nckec2yg" path="res://resources/visual_item/visual_item_part.gd" id="13_e6s84"]
 [ext_resource type="Texture2D" uid="uid://blbd4dn0qfryy" path="res://assets/Ninja Adventure - Asset Pack/Items/Object/Dice 20.png" id="13_fpvc5"]
+[ext_resource type="Resource" uid="uid://w4gseek64t3r" path="res://resources/visual_item/01302000_剑.tres" id="13_gh5no"]
 [ext_resource type="SpriteFrames" uid="uid://cl8whncjmfs58" path="res://resources/sprite_frames/奶油皮肤_00012000_humanEar.tres" id="13_jipc3"]
-[ext_resource type="Resource" uid="uid://rhx7ncu57vqo" path="res://resources/visual_item/默认身体_00002000.tres" id="14_e6s84"]
+[ext_resource type="Resource" uid="uid://rhx7ncu57vqo" path="res://resources/visual_item/00002000_默认身体.tres" id="14_e6s84"]
 [ext_resource type="Script" uid="uid://bx2lepkdo0wic" path="res://scenes/game_object/entity/player/视觉.gd" id="25_if0ut"]
 [ext_resource type="Resource" uid="uid://brjkphtt8mjd2" path="res://resources/zmap.tres" id="26_4klt5"]
+
+[sub_resource type="Resource" id="Resource_aaojh"]
+script = ExtResource("5_hdd6p")
+islot = Dictionary[int, ExtResource("12_jipc3")]({
+0: ExtResource("14_e6s84"),
+1: ExtResource("11_c8o2f"),
+2: ExtResource("8_aaojh"),
+3: ExtResource("9_o6rgh"),
+10: ExtResource("13_gh5no"),
+12: ExtResource("12_gh5no"),
+13: ExtResource("11_03xhi"),
+14: ExtResource("10_o6rgh")
+})
+metadata/_custom_type_script = "uid://btx1ximi6tqhc"
 
 [sub_resource type="Animation" id="Animation_00o66"]
 length = 0.001
@@ -68,7 +90,8 @@ step = 0.01
 
 [sub_resource type="Animation" id="Animation_bdaga"]
 resource_name = "stand1"
-loop_mode = 2
+length = 2.0
+loop_mode = 1
 step = 0.016666668
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -89,10 +112,10 @@ tracks/1/path = NodePath("视觉/body:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 1, 2, 1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -101,10 +124,10 @@ tracks/2/path = NodePath("视觉/arm:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [&"stand1", &"stand1", &"stand1"]
+"values": [&"stand1", &"stand1", &"stand1", &"stand1"]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -113,10 +136,10 @@ tracks/3/path = NodePath("视觉/arm:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 1, 2, 1]
 }
 
 [sub_resource type="Animation" id="Animation_uo5vx"]
@@ -309,7 +332,7 @@ metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aaojh"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_jipc3"]
+[sub_resource type="Resource" id="Resource_hdd6p"]
 resource_local_to_scene = true
 resource_name = "移动速度"
 script = ExtResource("10_uo5vx")
@@ -336,10 +359,10 @@ script = ExtResource("10_uo5vx")
 "属性类型" = 8
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
-[sub_resource type="Resource" id="Resource_e6s84"]
+[sub_resource type="Resource" id="Resource_ill25"]
 resource_local_to_scene = true
 script = ExtResource("9_bdaga")
-"属性们" = Array[ExtResource("10_uo5vx")]([SubResource("Resource_sbb84"), SubResource("Resource_ye6iw"), SubResource("Resource_cll8x"), SubResource("Resource_7lulo"), SubResource("Resource_6u3n4"), SubResource("Resource_kjcqk"), SubResource("Resource_8u6q2"), SubResource("Resource_u0jmy"), SubResource("Resource_72gil"), SubResource("Resource_jipc3"), SubResource("Resource_vrs21"), SubResource("Resource_3rkqf")])
+"属性们" = Array[ExtResource("10_uo5vx")]([SubResource("Resource_sbb84"), SubResource("Resource_ye6iw"), SubResource("Resource_cll8x"), SubResource("Resource_7lulo"), SubResource("Resource_6u3n4"), SubResource("Resource_kjcqk"), SubResource("Resource_8u6q2"), SubResource("Resource_u0jmy"), SubResource("Resource_72gil"), SubResource("Resource_hdd6p"), SubResource("Resource_vrs21"), SubResource("Resource_3rkqf")])
 metadata/_custom_type_script = "uid://bjvqbui703u8x"
 
 [node name="树" unique_id=1265436225 groups=["player"] instance=ExtResource("1_0fi5m")]
@@ -349,12 +372,12 @@ script = ExtResource("2_ctfnk")
 "单位名称" = "树"
 icon = ExtResource("3_lnpja")
 
-[node name="body" parent="." index="0" unique_id=1321867716]
+[node name="body" parent="." index="0" unique_id=1321867716 node_paths=PackedStringArray("Bd_身体部件列表", "Hd_头部部件列表")]
+visible = false
 script = ExtResource("4_aaojh")
-"角色身体" = ExtResource("14_e6s84")
-"角色头部" = ExtResource("11_c8o2f")
-"自定义视觉配置" = Array[String](["res://config/_animconfig_animconfig/00020000.json", "res://config/_animconfig_animconfig/00030000.json", "res://config/_animconfig_animconfig/01040006.json", "res://config/_animconfig_animconfig/01060002.json", "res://config/_animconfig_animconfig/01072005.json", "res://config/_animconfig_animconfig/01302000.json"])
-"禁用纸娃娃渲染" = true
+"装备槽位" = SubResource("Resource_aaojh")
+"Bd_身体部件列表" = [NodePath("../视觉/body"), NodePath("../视觉/arm")]
+"Hd_头部部件列表" = [NodePath("../视觉/head"), NodePath("../视觉/ear")]
 
 [node name="视觉" parent="." index="1" unique_id=1456117193]
 script = ExtResource("25_if0ut")
@@ -363,8 +386,6 @@ zmap_file = ExtResource("26_4klt5")
 [node name="AnimatedSprite2D" parent="视觉" index="0" unique_id=516307281]
 visible = false
 animation = &""
-centered = false
-offset = Vector2(-18, -32)
 
 [node name="body" type="AnimatedSprite2D" parent="视觉" index="1" unique_id=773237417]
 sprite_frames = ExtResource("7_uo5vx")
@@ -433,7 +454,7 @@ position = Vector2(-5, -11.125)
 shape = SubResource("RectangleShape2D_wbw41")
 
 [node name="单位属性component" parent="." index="6" unique_id=176829961]
-"属性集" = SubResource("Resource_e6s84")
+"属性集" = SubResource("Resource_ill25")
 
 [node name="SkillManager" parent="." index="7" unique_id=845903834]
 skill_ai = 1
@@ -441,9 +462,9 @@ skill_ai = 1
 
 [node name="HealthBar" parent="." index="8" unique_id=517147532]
 offset_left = -20.0
-offset_top = -72.0
+offset_top = -80.0
 offset_right = 20.0
-offset_bottom = -68.0
+offset_bottom = -76.0
 "背景颜色" = Color(0.13725491, 0.019607844, 0.02745098, 1)
 "填充颜色" = Color(1, 0.2901961, 0.4509804, 1)
 

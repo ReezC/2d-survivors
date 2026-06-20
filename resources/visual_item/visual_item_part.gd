@@ -2,7 +2,7 @@ class_name VisualItemPart extends AnimatedSprite2D
 @export var part_name: String = "未命名部件"
 @export var z: zmap.Layer = zmap.Layer.body
 @export var source_item: VisualItem
-@export var 默认动画名称: String = "stand1"
+#@export var 默认动画名称: String = "stand1"
 
 ## 当为 true 时，PaperDollAnimator 不会覆盖此节点的 frame/animation 属性，
 ## 改为由场景中的 AnimationPlayer 控制帧切换。
@@ -14,6 +14,33 @@ var _config_data: Dictionary = {}
 var _config_path: String = ""
 ## FrameLink 解析缓存：{config_id: Dictionary(parsed json)}，避免每帧重复加载
 static var _framelink_cache: Dictionary = {}
+
+# ---- 骨骼绑定 ----
+
+## 父骨骼引用（bone_map 中第一个骨骼），用于监听位置变化
+var _parent_bone: CharacterBone = null
+## 父骨骼的偏移量（bone_map[0].offset），用于重新计算自身位置
+var _parent_bone_offset: Vector2 = Vector2.ZERO
+
+
+func _on_parent_bone_position_changed(new_pos: Vector2) -> void:
+	"""当父骨骼位置变化时，同步更新自身位置"""
+	self.position = new_pos - _parent_bone_offset - _get_visual_pos()
+
+
+func _bind_to_bone(bone: CharacterBone, offset: Vector2) -> void:
+	"""绑定到指定的 CharacterBone，当骨骼移动时自动同步位置"""
+	# 断开旧绑定
+	if _parent_bone and _parent_bone != bone:
+		if _parent_bone.bone_position_changed.is_connected(_on_parent_bone_position_changed):
+			_parent_bone.bone_position_changed.disconnect(_on_parent_bone_position_changed)
+
+	_parent_bone = bone
+	_parent_bone_offset = offset
+
+	if _parent_bone:
+		if not _parent_bone.bone_position_changed.is_connected(_on_parent_bone_position_changed):
+			_parent_bone.bone_position_changed.connect(_on_parent_bone_position_changed)
 
 
 func _ready() -> void:
@@ -40,8 +67,17 @@ func _ready() -> void:
 	# 外部动画控制时，用 frame_changed 信号驱动 set_origin / set_bone
 	# 替代 AnimationPlayer 的方法调用轨道，避免 loop 回第 0 帧时 call track 不触发的问题
 	if 外部动画控制:
-		frame_changed.connect(_on_frame_changed)
-		animation_changed.connect(_on_animation_changed)
+		if not frame_changed.is_connected(_on_frame_changed):
+			frame_changed.connect(_on_frame_changed)
+		if not animation_changed.is_connected(_on_animation_changed):
+			animation_changed.connect(_on_animation_changed)
+
+# ---- 动画属性设置（供 AnimationPlayer METHOD track 调用） ----
+
+func apply_animation(anim_name: StringName) -> void:
+	"""供 AnimationPlayer METHOD 轨道调用，设置当前动画名称"""
+	animation = anim_name
+
 
 # ---- 信号处理方法 ----
 
@@ -105,9 +141,9 @@ func set_bone(anim_name: String, frame_index: int) -> void:
 	本帧跨部件去重规则：
 	- 对于每个部件，默认父骨骼是 body（position = 0,0）
 	- 遍历 bone_map：
-	  1. 本帧任何部件未处理过该骨骼 → 创建骨骼，position = 父骨骼.position + offset
+	  1. 本帧任何部件未处理过该骨骼 → 创建 CharacterBone，通过 change_bone_position 设置位置
 	  2. 本帧已有部件处理过该骨骼 + 本次是本部件 bone_map 首次遍历
-	     → 设置父骨骼为该骨骼，self.position = 父骨骼.position - offset - visual_pos
+	     → 设置 self.position = 骨骼.position - offset - visual_pos，绑定骨骼信号
 	  3. 本帧已有部件处理过该骨骼 + 非首次遍历 → 忽略
 	"""
 	if _config_data.is_empty():
@@ -132,7 +168,6 @@ func set_bone(anim_name: String, frame_index: int) -> void:
 			if stype.ends_with(".Sprite") and sprite_cfg.get("name") == part_name:
 				sprite_data = sprite_cfg
 			elif stype.ends_with(".FrameLink") and sprite_cfg.get("name") == part_name:
-				# 解析 FrameLink 引用，取目标帧中匹配的 Sprite 配置
 				sprite_data = _resolve_framelink_sprite(sprite_cfg)
 			else:
 				continue
@@ -150,20 +185,25 @@ func set_bone(anim_name: String, frame_index: int) -> void:
 			var bone_maps: Array = sprite_data.get("map", [])
 			if bone_maps.is_empty():
 				self.position = Vector2.ZERO
+				_bind_to_bone(null, Vector2.ZERO)
 				return
 
 			var body_bone := _find_body_bone()
 			if body_bone == null:
 				self.position = Vector2.ZERO
+				_bind_to_bone(null, Vector2.ZERO)
 				return
 
 			# ---- 每帧跨部件骨骼去重 ----
-			# 在 body_bone 上用 meta 跟踪当前帧已处理过的骨骼
 			var current_frame := Engine.get_process_frames()
 			var track_meta: Dictionary = body_bone.get_meta(&"_bone_frame_track", {})
 			if track_meta.get("_frame", -1) != current_frame:
 				track_meta = {"_frame": current_frame}
 				body_bone.set_meta(&"_bone_frame_track", track_meta)
+
+			var is_body_part: bool = (part_name == "body")
+			var first_bone_node: CharacterBone = null
+			var first_bone_offset := Vector2.ZERO
 
 			for i in bone_maps.size():
 				var bone_map = bone_maps[i]
@@ -172,24 +212,48 @@ func set_bone(anim_name: String, frame_index: int) -> void:
 				var off_y: float = bone_map.get("offset_y", 0.0)
 				var bone_offset := Vector2(off_x, off_y)
 
-				var processed_bone: Node2D = track_meta.get(bone_name)
-				if processed_bone == null:
-					# 规则 1：本帧未处理过 → 创建/查找骨骼，position = (0,0) + offset
-					var bone_node := _find_bone_recursive(body_bone, bone_name)
-					if bone_node == null:
-						bone_node = Node2D.new()
-						bone_node.name = bone_name
-						body_bone.add_child(bone_node)
-					bone_node.position = bone_offset
-					bone_node.set_meta(&"_external_control", true)
-					track_meta[bone_name] = bone_node
-				else:
-					# 本帧已处理过
-					if i == 0:
-						# 规则 2：首次遍历 → 设置自身位置 = 骨骼position - offset - visual_pos
-						self.position = processed_bone.position - bone_offset - _get_visual_pos()
-					# else: 规则 3：非首次遍历 → 忽略
+				if i == 0:
+					first_bone_offset = bone_offset
 
+				var bone_node: Node2D
+
+				if bone_name == body_bone.name:
+					# body 是根骨骼（普通 Node2D），直接使用
+					bone_node = body_bone
+					# body_bone 的 position 始终由外部维护为 (0,0)，不在此修改
+				else:
+					var processed_bone: Node2D = track_meta.get(bone_name)
+					if processed_bone == null:
+						# 规则 1：本帧未处理过 → 查找已有骨骼，否则创建 CharacterBone
+						bone_node = _find_bone_recursive(body_bone, bone_name)
+						if bone_node == null:
+							bone_node = CharacterBone.new()
+							bone_node.name = bone_name
+							body_bone.add_child(bone_node)
+						if bone_node is CharacterBone:
+							bone_node.change_bone_position(bone_offset)
+						else:
+							bone_node.position = bone_offset
+						bone_node.set_meta(&"_external_control", true)
+						track_meta[bone_name] = bone_node
+					else:
+						# 已处理过
+						if i != 0:
+							continue  # 规则 3：非首次遍历 → 忽略
+						bone_node = processed_bone
+
+				if i == 0:
+					# 首个骨骼 → 计算自身位置
+					if is_body_part:
+						# body 是根视觉，位置恒为 body_bone.position - visual_pos（body_bone 始终 0,0）
+						self.position = body_bone.position - _get_visual_pos()
+					else:
+						self.position = bone_node.position - bone_offset - _get_visual_pos()
+						if bone_node is CharacterBone:
+							first_bone_node = bone_node
+
+			# 绑定到首个骨骼（body 部件不绑定父骨骼，offset 用 (0,0)）
+			_bind_to_bone(first_bone_node, first_bone_offset if first_bone_node else Vector2.ZERO)
 			return
 
 	push_warning("VisualItemPart '%s': 在动画 '%s' 帧 %d 中未找到精灵 '%s' 的骨骼映射" % [part_name, anim_name, frame_index, part_name])

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="VisualItem" format=3 uid="uid://brurm0y04x4mt"]
+
+[ext_resource type="Texture2D" uid="uid://mk57sk58p7h7" path="res://assets/MapleStory/Character/Hair/00030000/stand1/default.hair._outlink.png" id="1_afxta"]
+[ext_resource type="Script" uid="uid://cx56yjoedwvb6" path="res://resources/visual_item/visual_item.gd" id="2_3ptge"]
+
+[resource]
+script = ExtResource("2_3ptge")
+id = "00030000"
+item_name = "黑色短中分"
+icon = ExtResource("1_afxta")
+"动画帧配置文件" = "res://config/_animconfig_animconfig/00030000.json"
+"默认动画名称" = "default"
+metadata/_custom_type_script = "uid://cx56yjoedwvb6"

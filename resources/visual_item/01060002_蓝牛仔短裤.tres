@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="VisualItem" format=3 uid="uid://2wgdsp3rvgh0"]
+
+[ext_resource type="Texture2D" uid="uid://bs7j8cntydsap" path="res://assets/MapleStory/Character/Pants/01060002/info/icon._outlink.png" id="1_3ibug"]
+[ext_resource type="Script" uid="uid://cx56yjoedwvb6" path="res://resources/visual_item/visual_item.gd" id="2_ygokg"]
+
+[resource]
+script = ExtResource("2_ygokg")
+id = "01060002"
+item_name = "蓝牛仔短裤"
+icon = ExtResource("1_3ibug")
+"动画帧配置文件" = "res://config/_animconfig_animconfig/01060002.json"
+"默认动画名称" = "stand1"
+metadata/_custom_type_script = "uid://cx56yjoedwvb6"
