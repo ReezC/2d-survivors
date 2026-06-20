@@ -37,7 +37,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_vtt7b")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"walk1",
 "speed": 5.0
 }]

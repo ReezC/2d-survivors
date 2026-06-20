@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cl8whncjmfs58"]
+
+[ext_resource type="Texture2D" uid="uid://bvchrdstqumh0" path="res://assets/MapleStory/Character/00012000/front/humanEar/humanEar._outlink.png" id="1_6jsdy"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6jsdy")
+}],
+"loop": 0,
+"name": &"front",
+"speed": 5.0
+}]

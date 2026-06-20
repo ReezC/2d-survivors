@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="VisualItem" format=3 uid="uid://nji0luow60q6"]
+
+[ext_resource type="Texture2D" uid="uid://b00iq2od34td1" path="res://assets/MapleStory/Character/00012000/front/head/front.head._outlink.png" id="1_21ji5"]
+[ext_resource type="Script" uid="uid://cx56yjoedwvb6" path="res://resources/visual_item/visual_item.gd" id="2_yrwrn"]
+
+[resource]
+script = ExtResource("2_yrwrn")
+id = "00012000"
+item_name = "奶油皮肤"
+icon = ExtResource("1_21ji5")
+"动画帧配置文件" = "res://config/_animconfig_animconfig/00012000.json"
+metadata/_custom_type_script = "uid://cx56yjoedwvb6"

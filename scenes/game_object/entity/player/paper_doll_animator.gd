@@ -3,8 +3,6 @@ class_name PaperDollAnimator extends Node
 ##
 ## 挂载在 character_body 节点下，由 player.gd 驱动
 
-const VisualItemPart := preload("res://resources/visual_item/visual_item_part.gd")
-
 # ---- 运行时状态 ----
 var _builder: PaperDollBuilder
 var _current_anim: String = ""
@@ -75,7 +73,6 @@ func _apply_flip() -> void:
 
 
 func _change_animation(anim_name: String) -> void:
-	# print("[Animator] 切换动画: %s → %s" % [_current_anim, anim_name])
 	_current_anim = anim_name
 	_current_frame = 0
 	_frame_timer_ms = 0.0

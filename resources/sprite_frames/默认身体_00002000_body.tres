@@ -54,7 +54,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_dhsg2")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"walk1",
 "speed": 5.0
 }]

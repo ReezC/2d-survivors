@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://grm0vwsleixt"]
+
+[ext_resource type="Texture2D" uid="uid://b00iq2od34td1" path="res://assets/MapleStory/Character/00012000/front/head/front.head._outlink.png" id="1_t2n20"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t2n20")
+}],
+"loop": 0,
+"name": &"front",
+"speed": 5.0
+}]

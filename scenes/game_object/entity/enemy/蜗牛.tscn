@@ -245,7 +245,7 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id="Animation_384uj"]
 resource_name = "move"
-length = 0.9
+length = 0.72
 loop_mode = 2
 step = 0.18
 tracks/0/type = "value"
@@ -528,7 +528,7 @@ graph_offset = Vector2(56.757965, 34)
 radius = 14.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3xd07"]
-size = Vector2(43, 33)
+size = Vector2(37, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dlhfe"]
 size = Vector2(14, 12)
@@ -634,7 +634,7 @@ metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aaojh"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_0i857"]
+[sub_resource type="Resource" id="Resource_r5kov"]
 resource_local_to_scene = true
 resource_name = "移动速度"
 script = ExtResource("6_1gl80")
@@ -661,10 +661,10 @@ script = ExtResource("6_1gl80")
 "属性类型" = 8
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
-[sub_resource type="Resource" id="Resource_vh31p"]
+[sub_resource type="Resource" id="Resource_util0"]
 resource_local_to_scene = true
 script = ExtResource("5_gudbt")
-"属性们" = Array[ExtResource("6_1gl80")]([SubResource("Resource_px4vd"), SubResource("Resource_ao34u"), SubResource("Resource_icuh5"), SubResource("Resource_t1qiv"), SubResource("Resource_fwjf5"), SubResource("Resource_k7f8g"), SubResource("Resource_km1hd"), SubResource("Resource_rx7p4"), SubResource("Resource_4i822"), SubResource("Resource_0i857"), SubResource("Resource_055q7"), SubResource("Resource_uuiht")])
+"属性们" = Array[ExtResource("6_1gl80")]([SubResource("Resource_px4vd"), SubResource("Resource_ao34u"), SubResource("Resource_icuh5"), SubResource("Resource_t1qiv"), SubResource("Resource_fwjf5"), SubResource("Resource_k7f8g"), SubResource("Resource_km1hd"), SubResource("Resource_rx7p4"), SubResource("Resource_4i822"), SubResource("Resource_r5kov"), SubResource("Resource_055q7"), SubResource("Resource_uuiht")])
 metadata/_custom_type_script = "uid://bjvqbui703u8x"
 
 [node name="蜗牛" unique_id=192549199 groups=["enemy"] instance=ExtResource("1_au3mk")]
@@ -676,16 +676,17 @@ script = ExtResource("2_2vcqf")
 icon = ExtResource("19_kke0s")
 
 [node name="head" type="Node2D" parent="." index="1" unique_id=719836701]
-position = Vector2(-13, -24)
+position = Vector2(-9, -24)
 
 [node name="视觉" parent="." index="2" unique_id=1456117193]
 position = Vector2(0, -1)
 
 [node name="AnimatedSprite2D" parent="视觉" index="0" unique_id=516307281]
 sprite_frames = ExtResource("4_r5kov")
-animation = &"die1"
+animation = &"move"
+frame = 4
 centered = false
-offset = Vector2(-21, -33)
+offset = Vector2(-18, -24)
 
 [node name="AnimationPlayer" parent="." index="3" unique_id=1786467140]
 libraries/ = SubResource("AnimationLibrary_kntx2")
@@ -718,7 +719,7 @@ collision_mask = 16
 collide_reset_interval = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TouchHitbox" index="0" unique_id=1829707185]
-position = Vector2(0.5, -16.5)
+position = Vector2(0.5, -12)
 shape = SubResource("RectangleShape2D_3xd07")
 debug_color = Color(1.2032688e-06, 0.329946, 0.3898688, 0.41960785)
 
@@ -731,7 +732,7 @@ position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_dlhfe")
 
 [node name="单位属性component" parent="." index="9" unique_id=176829961]
-"属性集" = SubResource("Resource_vh31p")
+"属性集" = SubResource("Resource_util0")
 
 [node name="SkillManager" parent="." index="10" unique_id=845903834]
 "初始技能" = Array[ExtResource("25_mjmsu")]([ExtResource("26_r8v5t")])
