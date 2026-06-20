@@ -18,8 +18,9 @@ var 禁止移动 :bool= false
 func _process(delta: float) -> void:
 	var move_direction = get_move_direction()
 	facingDirection = move_direction if move_direction != Vector2.ZERO else facingDirection
-	# 根据移动方向水平翻转精灵
-	animated_sprite_2d.flip_h = facingDirection.x > 0
+	# 根据移动方向水平翻转精灵（纸娃娃模式下 animated_sprite_2d 可能为 null）
+	if animated_sprite_2d:
+		animated_sprite_2d.flip_h = facingDirection.x > 0
 	var player = get_tree().get_first_node_in_group("player") as CharacterBody2D
 	if player == null:
 		return
@@ -47,6 +48,8 @@ func _process(delta: float) -> void:
 
 
 func set_anim() -> void:
+	if state_machine == null:
+		return
 	match 当前状态:
 		角色状态.死亡:
 			state_machine.travel("die1")

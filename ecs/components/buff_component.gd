@@ -28,9 +28,13 @@ var parent_buff_id: int = -1             ## 父 Buff ID
 var child_buff_ids: Array[int] = []
 
 ## 预编译表达式
+@warning_ignore("unused_private_class_variable")
 var _compiled_duration: Callable
+@warning_ignore("unused_private_class_variable")
 var _compiled_max_stack: Callable
+@warning_ignore("unused_private_class_variable")
 var _compiled_conditions: Dictionary = {}  ## hash → Callable
+@warning_ignore("unused_private_class_variable")
 var _compiled_values: Dictionary = {}      ## hash → Callable
 
 ## 生命周期标记
@@ -38,17 +42,24 @@ var is_active: bool = true
 
 ## 内部计时器（替代 Godot Timer 节点）
 ## ActionOverTime 的间隔计时
+@warning_ignore("unused_private_class_variable")
 var _action_over_time_interval: float = 0.0
+@warning_ignore("unused_private_class_variable")
 var _action_over_time_elapsed: float = 0.0
+@warning_ignore("unused_private_class_variable")
 var _action_over_time_action: Dictionary = {}
 
 ## ActionTimeline 的计时
+@warning_ignore("unused_private_class_variable")
 var _action_timeline_entries: Array[Dictionary] = []  ## [{time_sec, action, triggered}]
+@warning_ignore("unused_private_class_variable")
 var _action_timeline_time_multiplier: float = 0.0
 
 ## PlayAnimation 状态标记
+@warning_ignore("unused_private_class_variable")
 var _is_play_animation: bool = false
 
 ## ActivePreHitbox 激活的预置 Hitbox 列表，buff 结束时需要禁用
 ## 每项为 { "node": HitboxComponent, "name": String }
+@warning_ignore("unused_private_class_variable")
 var _active_pre_hitbox_nodes: Array[Dictionary] = []

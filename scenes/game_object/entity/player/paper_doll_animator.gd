@@ -359,8 +359,8 @@ func _process_skeleton_maps(sprite_cfg: Dictionary) -> void:
 		var bone_name: String = bone_map.get("bone", "")
 		var offset_x: float = bone_map.get("offset_x", 0.0)
 		var offset_y: float = bone_map.get("offset_y", 0.0)
-		var offset := Vector2(offset_x, offset_y)
-		var new_pos := sprite_pos + offset
+		var bone_offset := Vector2(offset_x, offset_y)
+		var new_pos := sprite_pos + bone_offset
 
 		var bone_node := bone_nodes.get(bone_name) as Node2D
 

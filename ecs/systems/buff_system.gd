@@ -388,14 +388,14 @@ func _target_selector_result(buff: BuffComponentData, config: Dictionary) -> Arr
 	match type_name:
 		"expression":
 			var expr = config.get("expression", "")
-			var exp = Expression.new()
-			var err = exp.parse(expr)
+			var expression = Expression.new()
+			var err = expression.parse(expr)
 			if err != OK:
-				push_error("[BuffSystem] 目标选择器 expression 解析失败: %s" % exp.get_error_text())
+				push_error("[BuffSystem] 目标选择器 expression 解析失败: %s" % expression.get_error_text())
 				return []
-			var result = exp.execute([])
-			if exp.has_execute_failed():
-				push_error("[BuffSystem] 目标选择器 expression 执行失败: %s" % exp.get_error_text())
+			var result = expression.execute([])
+			if expression.has_execute_failed():
+				push_error("[BuffSystem] 目标选择器 expression 执行失败: %s" % expression.get_error_text())
 				return []
 			return result if typeof(result) == TYPE_ARRAY else [result]
 		"caster":

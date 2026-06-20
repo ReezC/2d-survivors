@@ -15,9 +15,12 @@ enum AI类型枚举 {
 @export var skill_ai: AI类型枚举
 @export var 初始技能: Array[技能数据] = []
 
-## 预编译表达式缓存（保留兼容旧代码）
+# 预编译表达式已迁移至 ECS SkillSystem，保留声明以防旧代码引用
+@warning_ignore("unused_private_class_variable")
 static var _compiled_float_cache: Dictionary = {}
+@warning_ignore("unused_private_class_variable")
 static var _compiled_cond_cache: Dictionary = {}
+@warning_ignore("unused_private_class_variable")
 static var _compiler := ExprCompiler.new()
 
 

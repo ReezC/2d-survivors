@@ -3,7 +3,7 @@ class_name Unit
 
 
 @onready var 视觉 = %视觉
-@onready var animated_sprite_2d: AnimatedSprite2D = $视觉/AnimatedSprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = null
 @onready var attribute_component: 单位属性Component = $单位属性component
 @onready var health_bar: HealthBar = $HealthBar
 @onready var 受击闪白效果timer: Timer = $受击闪白效果Timer
@@ -11,8 +11,8 @@ class_name Unit
 
 @onready var skill_manager: SkillManager = $SkillManager
 
-@onready var animation_tree: AnimationTree = $AnimationTree
-@onready var state_machine = $AnimationTree.get("parameters/playback")
+@onready var animation_tree: AnimationTree = null
+@onready var state_machine = null
 
 signal 出生	
 signal 死亡
@@ -57,8 +57,14 @@ func _on_角色状态进入(新状态: 角色状态) -> void:
 func _on_角色状态退出(旧状态: 角色状态) -> void:
 	pass
 func _ready() -> void:
+	# 子类场景可能不包含 AnimatedSprite2D（如纸娃娃模式），按需查找
+	animated_sprite_2d = $视觉.get_node_or_null("AnimatedSprite2D") as AnimatedSprite2D
+	# AnimationTree 在纸娃娃模式或单位.tscn 移除后可能不存在
+	animation_tree = get_node_or_null("AnimationTree") as AnimationTree
+	if animation_tree:
+		state_machine = animation_tree.get("parameters/playback")
+		animation_tree.active = true
 	attribute_component.初始化属性()
-	animation_tree.active = true
 	出生.emit()
 	skill_manager.初始化()
 

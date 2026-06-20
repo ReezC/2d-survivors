@@ -315,7 +315,6 @@ func _rebuild_animation_player(player_root: Node, parts: Array[VisualItemPart]) 
 		# 为每个参与部件添加轨道
 		for part in anim_to_parts[anim_name]:
 			var node_path_str: String = "视觉/" + part.name
-			var node_path: NodePath = NodePath(node_path_str)
 
 			# animation 属性轨道（用 METHOD 轨道调用 apply_animation，避免字符串 blend 警告）
 			var anim_track: int = anim.add_track(Animation.TYPE_METHOD)

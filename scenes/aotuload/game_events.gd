@@ -6,6 +6,7 @@ const 受击闪红material = preload("res://effects/受击闪红.tres")
 
 signal experience_vial_collected(exp_amount: int)
 signal ability_upgrade_added(upgrade:AbilityUpgrade, current_upgrades:Dictionary)
+@warning_ignore("unused_signal")
 signal 创建跳字(位置: Vector2, 内容: String, 类型:跳字对象池.跳字类型枚举)
 
 

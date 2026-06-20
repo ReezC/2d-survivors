@@ -43,187 +43,6 @@ islot = Dictionary[int, ExtResource("12_jipc3")]({
 })
 metadata/_custom_type_script = "uid://btx1ximi6tqhc"
 
-[sub_resource type="Animation" id="Animation_00o66"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("视觉/body:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("视觉/arm:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&""]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("视觉/arm:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_jipc3"]
-resource_name = "ghoststand"
-length = 1.5
-loop_mode = 1
-step = 0.01
-
-[sub_resource type="Animation" id="Animation_bdaga"]
-resource_name = "stand1"
-length = 2.0
-loop_mode = 1
-step = 0.016666668
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("视觉/body:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"stand1"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("视觉/body:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5000001),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 1]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("视觉/arm:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5000001),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [&"stand1", &"stand1", &"stand1", &"stand1"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("视觉/arm:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5000001),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 1]
-}
-
-[sub_resource type="Animation" id="Animation_uo5vx"]
-resource_name = "walk1"
-length = 0.72
-loop_mode = 1
-step = 0.18
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("视觉/body:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"walk1"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("视觉/body:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.18, 0.36, 0.54),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("视觉/arm:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"walk1"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("视觉/arm:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.18, 0.36, 0.54),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_uo5vx"]
-_data = {
-&"RESET": SubResource("Animation_00o66"),
-&"ghoststand": SubResource("Animation_jipc3"),
-&"stand1": SubResource("Animation_bdaga"),
-&"walk1": SubResource("Animation_uo5vx")
-}
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5eaic"]
-animation = &"ghoststand"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_00o66"]
-animation = &"stand1"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uo5vx"]
-animation = &"walk1"
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_wbw41"]
-states/End/position = Vector2(523, 128)
-states/Start/position = Vector2(179, 128)
-states/ghoststand/node = SubResource("AnimationNodeAnimation_5eaic")
-states/ghoststand/position = Vector2(366, 253)
-states/stand1/node = SubResource("AnimationNodeAnimation_00o66")
-states/stand1/position = Vector2(334, 97)
-states/walk1/node = SubResource("AnimationNodeAnimation_uo5vx")
-states/walk1/position = Vector2(543, 213)
-graph_offset = Vector2(55, -10)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_qmmqe"]
 radius = 8.0
 
@@ -332,7 +151,7 @@ metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aaojh"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_hdd6p"]
+[sub_resource type="Resource" id="Resource_gh5no"]
 resource_local_to_scene = true
 resource_name = "移动速度"
 script = ExtResource("10_uo5vx")
@@ -359,10 +178,10 @@ script = ExtResource("10_uo5vx")
 "属性类型" = 8
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
-[sub_resource type="Resource" id="Resource_ill25"]
+[sub_resource type="Resource" id="Resource_ru67c"]
 resource_local_to_scene = true
 script = ExtResource("9_bdaga")
-"属性们" = Array[ExtResource("10_uo5vx")]([SubResource("Resource_sbb84"), SubResource("Resource_ye6iw"), SubResource("Resource_cll8x"), SubResource("Resource_7lulo"), SubResource("Resource_6u3n4"), SubResource("Resource_kjcqk"), SubResource("Resource_8u6q2"), SubResource("Resource_u0jmy"), SubResource("Resource_72gil"), SubResource("Resource_hdd6p"), SubResource("Resource_vrs21"), SubResource("Resource_3rkqf")])
+"属性们" = Array[ExtResource("10_uo5vx")]([SubResource("Resource_sbb84"), SubResource("Resource_ye6iw"), SubResource("Resource_cll8x"), SubResource("Resource_7lulo"), SubResource("Resource_6u3n4"), SubResource("Resource_kjcqk"), SubResource("Resource_8u6q2"), SubResource("Resource_u0jmy"), SubResource("Resource_72gil"), SubResource("Resource_gh5no"), SubResource("Resource_vrs21"), SubResource("Resource_3rkqf")])
 metadata/_custom_type_script = "uid://bjvqbui703u8x"
 
 [node name="树" unique_id=1265436225 groups=["player"] instance=ExtResource("1_0fi5m")]
@@ -383,11 +202,7 @@ script = ExtResource("4_aaojh")
 script = ExtResource("25_if0ut")
 zmap_file = ExtResource("26_4klt5")
 
-[node name="AnimatedSprite2D" parent="视觉" index="0" unique_id=516307281]
-visible = false
-animation = &""
-
-[node name="body" type="AnimatedSprite2D" parent="视觉" index="1" unique_id=773237417]
+[node name="body" type="AnimatedSprite2D" parent="视觉" index="0" unique_id=773237417]
 sprite_frames = ExtResource("7_uo5vx")
 animation = &"stand1"
 centered = false
@@ -396,7 +211,7 @@ script = ExtResource("13_e6s84")
 part_name = "body"
 source_item = ExtResource("14_e6s84")
 
-[node name="arm" type="AnimatedSprite2D" parent="视觉" index="2" unique_id=1218402680]
+[node name="arm" type="AnimatedSprite2D" parent="视觉" index="1" unique_id=1218402680]
 position = Vector2(5, -20)
 sprite_frames = ExtResource("10_5eaic")
 animation = &""
@@ -407,7 +222,7 @@ part_name = "arm"
 z = 65
 source_item = ExtResource("14_e6s84")
 
-[node name="head" type="AnimatedSprite2D" parent="视觉" index="3" unique_id=508247643]
+[node name="head" type="AnimatedSprite2D" parent="视觉" index="2" unique_id=508247643]
 position = Vector2(-4, -47)
 sprite_frames = ExtResource("11_fpvc5")
 animation = &"front"
@@ -419,7 +234,7 @@ z = 59
 source_item = ExtResource("11_c8o2f")
 metadata/_custom_type_script = "uid://ptl7nckec2yg"
 
-[node name="ear" type="AnimatedSprite2D" parent="视觉" index="4" unique_id=2003434649]
+[node name="ear" type="AnimatedSprite2D" parent="视觉" index="3" unique_id=2003434649]
 position = Vector2(-4, -47)
 sprite_frames = ExtResource("13_jipc3")
 animation = &"front"
@@ -432,13 +247,9 @@ source_item = ExtResource("11_c8o2f")
 metadata/_custom_type_script = "uid://ptl7nckec2yg"
 
 [node name="AnimationPlayer" parent="." index="2" unique_id=1786467140]
-libraries/ = SubResource("AnimationLibrary_uo5vx")
-
-[node name="AnimationTree" parent="." index="3" unique_id=1100281063]
 active = false
-tree_root = SubResource("AnimationNodeStateMachine_wbw41")
-advance_expression_base_node = NodePath("..")
-anim_player = NodePath("../AnimationPlayer")
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="3" unique_id=1100281063]
 
 [node name="移动碰撞" parent="." index="4" unique_id=288392247]
 position = Vector2(-5, -5)
@@ -454,7 +265,7 @@ position = Vector2(-5, -11.125)
 shape = SubResource("RectangleShape2D_wbw41")
 
 [node name="单位属性component" parent="." index="6" unique_id=176829961]
-"属性集" = SubResource("Resource_ill25")
+"属性集" = SubResource("Resource_ru67c")
 
 [node name="SkillManager" parent="." index="7" unique_id=845903834]
 skill_ai = 1

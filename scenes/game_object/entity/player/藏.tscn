@@ -182,10 +182,6 @@ autoplay = ""
 [node name="arm" parent="视觉/body/navel" parent_id_path=PackedInt32Array(50764788) index="0" unique_id=1594210150]
 sprite_frames = SubResource("SpriteFrames_kgteh")
 
-[node name="AnimationTree" parent="." index="2" unique_id=1100281063]
-parameters/Idle/blend_position = Vector2(-0.61295545, 0.27049184)
-parameters/Run/blend_position = Vector2(-0.15303642, 0.55044246)
-
 [node name="单位属性component" parent="." index="5" unique_id=176829961]
 "属性集" = SubResource("Resource_ryxxg")
 

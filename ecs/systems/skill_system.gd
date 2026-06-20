@@ -45,6 +45,7 @@ func _owner_name(entity_id: int) -> String:
 func _init(em: EntityManager) -> void:
 	super._init(em)
 
+@warning_ignore("unused_private_class_variable")
 var _skill_ai_warned: bool = false
 
 func update(delta: float) -> void:

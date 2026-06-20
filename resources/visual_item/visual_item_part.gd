@@ -28,7 +28,7 @@ func _on_parent_bone_position_changed(new_pos: Vector2) -> void:
 	self.position = new_pos - _parent_bone_offset - _get_visual_pos()
 
 
-func _bind_to_bone(bone: CharacterBone, offset: Vector2) -> void:
+func _bind_to_bone(bone: CharacterBone, bone_offset: Vector2) -> void:
 	"""绑定到指定的 CharacterBone，当骨骼移动时自动同步位置"""
 	# 断开旧绑定
 	if _parent_bone and _parent_bone != bone:
@@ -36,7 +36,7 @@ func _bind_to_bone(bone: CharacterBone, offset: Vector2) -> void:
 			_parent_bone.bone_position_changed.disconnect(_on_parent_bone_position_changed)
 
 	_parent_bone = bone
-	_parent_bone_offset = offset
+	_parent_bone_offset = bone_offset
 
 	if _parent_bone:
 		if not _parent_bone.bone_position_changed.is_connected(_on_parent_bone_position_changed):

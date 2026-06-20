@@ -15,11 +15,7 @@ script = ExtResource("1_flcbh")
 [node name="视觉" type="Node2D" parent="." unique_id=1456117193]
 unique_name_in_owner = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="视觉" unique_id=516307281]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1786467140]
-
-[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1100281063]
 
 [node name="移动碰撞" type="CollisionShape2D" parent="." unique_id=288392247]
 position = Vector2(0, -4)

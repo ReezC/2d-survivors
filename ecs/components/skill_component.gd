@@ -21,7 +21,9 @@ var 当前状态: 技能状态 = 技能状态.准备就绪
 var skill_logic_data: Dictionary = {}      ## JSON 配置数据
 
 ## 预编译的表达式
+@warning_ignore("unused_private_class_variable")
 var _compiled_cd: Callable
+@warning_ignore("unused_private_class_variable")
 var _compiled_trigger_range: Callable
 
 ## 技能本体数据引用（保留，用于初始化）

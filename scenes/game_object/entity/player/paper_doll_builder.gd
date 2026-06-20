@@ -70,7 +70,7 @@ func add_part_config(json_path: String, source_visual_item: VisualItem = null) -
 		return
 
 	var config_id: String = data["id"]
-	var config_name: String = data.get("name", "")
+	var _config_name: String = data.get("name", "")
 	_part_configs[config_id] = data
 	if source_visual_item:
 		_visual_items[config_id] = source_visual_item
@@ -159,7 +159,7 @@ func _build_sprite_frames_for_config(data: Dictionary) -> void:
 	- .Sprite：直接从 spriteDir 加载纹理
 	- .FrameLink：解析链接，从目标配置的 Sprite 中获取纹理
 	"""
-	var config_id: String = data.get("id", "?")
+	var _config_id: String = data.get("id", "?")
 	for anim_cfg in data.get("animCfg", []):
 		var anim_name: String = anim_cfg.get("name", "")
 		var frames_array: Array = anim_cfg.get("frames", [])
@@ -233,12 +233,12 @@ func _build_initial_skeleton(data: Dictionary, default_anim_name: String = "") -
 
 	# 根据默认动画名称查找目标动画在 anim_cfgs 中的索引
 	var target_anim_index := 0
-	var target_anim_name: String = anim_cfgs[0].get("name", "")
+	var _target_anim_name: String = anim_cfgs[0].get("name", "")
 	if not default_anim_name.is_empty():
 		for i in anim_cfgs.size():
 			if anim_cfgs[i].get("name", "") == default_anim_name:
 				target_anim_index = i
-				target_anim_name = default_anim_name
+				_target_anim_name = default_anim_name
 				break
 
 	var frames: Array = anim_cfgs[target_anim_index].get("frames", [])
@@ -264,7 +264,7 @@ func _create_bones_from_sprite_cfg(sprite_cfg: Dictionary) -> void:
 		var bone_name: String = bone_map.get("bone", "")
 		var off_x: float = bone_map.get("offset_x", 0.0)
 		var off_y: float = bone_map.get("offset_y", 0.0)
-		var offset := Vector2(off_x, off_y)
+		var bone_offset := Vector2(off_x, off_y)
 
 		var bone_node := _bone_nodes.get(bone_name) as Node2D
 
@@ -272,7 +272,7 @@ func _create_bones_from_sprite_cfg(sprite_cfg: Dictionary) -> void:
 			bone_node = Node2D.new()
 			bone_node.name = bone_name
 			_body_bone.add_child(bone_node)
-			bone_node.position = sprite_pos + offset
+			bone_node.position = sprite_pos + bone_offset
 			_bone_nodes[bone_name] = bone_node
 
 
@@ -413,12 +413,12 @@ func compute_sprite_position(sprite_cfg: Dictionary) -> Vector2:
 		var bone_name: String = bone_map.get("bone", "")
 		var off_x: float = bone_map.get("offset_x", 0.0)
 		var off_y: float = bone_map.get("offset_y", 0.0)
-		var offset := Vector2(off_x, off_y)
+		var bone_offset := Vector2(off_x, off_y)
 		
 		var bone_node := _bone_nodes.get(bone_name) as Node2D
 		if bone_node != null:
 			last_exist_bone = bone_node
-			last_exist_offset = offset
+			last_exist_offset = bone_offset
 	
 	var result: Vector2
 	if last_exist_bone == null:
