@@ -1,90 +1,97 @@
 {
-	"$type": "skillconfig.skill",
-	"id": 1.0,
-	"name": "手里剑投掷",
-	"blackBoard": {
-		"$type": "skillconfig.BlackBoard"
+	"$type":"skillconfig.skill",
+	"id":1,
+	"name":"手里剑投掷",
+	"blackBoard":{
+		"$type":"skillconfig.BlackBoard"
 	},
-	"buff": {
-		"$type": "skillconfig.OneBuff",
-		"name": "手里剑投掷释放中",
-		"duration": {
-			"$type": "skillconfig.FloatValue.Const",
-			"value": 800.0
+	"buff":{
+		"$type":"skillconfig.OneBuff",
+		"name":"手里剑投掷释放中",
+		"duration":{
+			"$type":"skillconfig.FloatValue.Const",
+			"value":800.0
 		},
-		"maxStack": {
-			"$type": "skillconfig.FloatValue.Const"
+		"maxStack":{
+			"$type":"skillconfig.FloatValue.Const"
 		},
-		"stackType": "none",
-		"buffLogic": {
-			"$type": "skillconfig.BuffLogic.ActionOverTime",
-			"interval": {
-				"$type": "skillconfig.FloatValue.Const",
-				"value": 250.0
+		"stackType":"none",
+		"buffLogic":{
+			"$type":"skillconfig.BuffLogic.ActionOverTime",
+			"interval":{
+				"$type":"skillconfig.FloatValue.Const",
+				"value":250.0
 			},
-			"action": {
-				"$type": "skillconfig.SkillAction.ActionOnTarget",
-				"targetSelector": {
-					"$type": "skillconfig.TargetSelector.circleArea",
-					"radius": {
-						"$type": "skillconfig.FloatValue.Const",
-						"value": 100.0
-					},
-					"fowardAngle": {
-						"$type": "skillconfig.FloatValue.Const",
-						"value": 360.0
-					}
-				},
-				"action": {
-					"$type": "skillconfig.SkillAction.CreateObj",
-					"sceneName": "1",
-					"duration": {
-						"$type": "skillconfig.FloatValue.Const",
-						"value": 500.0
-					},
-					"movement": {
-						"$type": "skillconfig.SubObjMovement.Line",
-						"toTarget": true,
-						"directX": {
-							"$type": "skillconfig.FloatValue.Const"
+			"action":{
+				"$type":"skillconfig.SkillAction.ActionOnTarget",
+				"targetSelector":{
+					"$type":"skillconfig.TargetSelector.LimitCount",
+					"targetSelector":{
+						"$type":"skillconfig.TargetSelector.circleArea",
+						"radius":{
+							"$type":"skillconfig.FloatValue.Const",
+							"value":100.0
 						},
-						"directY": {
-							"$type": "skillconfig.FloatValue.Const"
-						},
-						"speed": {
-							"$type": "skillconfig.FloatValue.Const",
-							"value": 200.0
+						"fowardAngle":{
+							"$type":"skillconfig.FloatValue.Const",
+							"value":360.0
 						}
 					},
-					"hitboxCollision": {
-						"$type": "skillconfig.HitboxCollision",
-						"collisionLayer": [
-							32.0
-						],
-						"collisionMask": [
-							64.0
-						],
-						"collideResetInterval": {
-							"$type": "skillconfig.FloatValue.Const"
+					"count":{
+						"$type":"skillconfig.FloatValue.Const",
+						"value":3.0
+					}
+				},
+				"action":{
+					"$type":"skillconfig.SkillAction.CreateObj",
+					"sceneName":"1",
+					"duration":{
+						"$type":"skillconfig.FloatValue.Const",
+						"value":500.0
+					},
+					"movement":{
+						"$type":"skillconfig.SubObjMovement.Line",
+						"toTarget":true,
+						"directX":{
+							"$type":"skillconfig.FloatValue.Const"
 						},
-						"collideAction": {
-							"$type": "skillconfig.SkillAction.Damage"
+						"directY":{
+							"$type":"skillconfig.FloatValue.Const"
+						},
+						"speed":{
+							"$type":"skillconfig.FloatValue.Const",
+							"value":200.0
+						}
+					},
+					"hitboxCollision":{
+						"$type":"skillconfig.HitboxCollision",
+						"collisionLayer":[
+							32
+						],
+						"collisionMask":[
+							64
+						],
+						"collideResetInterval":{
+							"$type":"skillconfig.FloatValue.Const"
+						},
+						"collideAction":{
+							"$type":"skillconfig.SkillAction.Damage"
 						}
 					}
 				}
 			}
 		},
-		"animation": {
-			"$type": "skillconfig.BuffAnimation.Single",
-			"animationName": "swingO1"
+		"animation":{
+			"$type":"skillconfig.BuffAnimation.Single",
+			"animationName":"swingO1"
 		}
 	},
-	"CD": {
-		"$type": "skillconfig.FloatValue.Const",
-		"value": 3000.0
+	"CD":{
+		"$type":"skillconfig.FloatValue.Const",
+		"value":3000.0
 	},
-	"skillTriggerRange": {
-		"$type": "skillconfig.FloatValue.Const",
-		"value": 100.0
+	"skillTriggerRange":{
+		"$type":"skillconfig.FloatValue.Const",
+		"value":100.0
 	}
 }

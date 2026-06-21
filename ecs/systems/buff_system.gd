@@ -415,6 +415,13 @@ func _target_selector_result(buff: BuffComponentData, config: Dictionary) -> Arr
 				fowardAngle,
 				64,
 			)
+		"LimitCount":
+			var inner_selector = config.get("targetSelector", {})
+			var results = _target_selector_result(buff, inner_selector)
+			var max_count = int(_快速求值(buff, skill_system._编译数值(config.get("count", {}))))
+			if max_count > 0 and results.size() > max_count:
+				results.resize(max_count)
+			return results
 		_:
 			push_error("[color=red]未知的目标选择器类型: %s[/color]" % type_name)
 			return []
