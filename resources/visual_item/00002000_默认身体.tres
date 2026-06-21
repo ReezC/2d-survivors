@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="VisualItem" format=3 uid="uid://rhx7ncu57vqo"]
 
-[ext_resource type="Texture2D" uid="uid://nxbqh43g82t8" path="res://assets/MapleStory/Character/00002000/stand1/0.body._outlink.png" id="1_msnvd"]
+[ext_resource type="Texture2D" uid="uid://cv1w4n4cpf2cb" path="res://assets/MapleStory/Character/00002000/groom.0.body.png" id="1_5lqs1"]
 [ext_resource type="Script" uid="uid://cx56yjoedwvb6" path="res://resources/visual_item/visual_item.gd" id="2_4s0hi"]
 
 [resource]
 script = ExtResource("2_4s0hi")
 id = "00002000"
 item_name = "默认身体"
-icon = ExtResource("1_msnvd")
+icon = ExtResource("1_5lqs1")
 "动画帧配置文件" = "res://config/_animconfig_animconfig/00002000.json"
 "默认动画名称" = "stan1"
 metadata/_custom_type_script = "uid://cx56yjoedwvb6"

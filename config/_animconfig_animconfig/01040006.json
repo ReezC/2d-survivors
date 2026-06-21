@@ -8,13 +8,13 @@
 			"$fold":true,
 			"icon":{
 				"$type":"animconfig.spriteWithOrigin",
-				"sprite":"res://assets/MapleStory/Character/Coat/01040006/info/icon._outlink.png",
+				"sprite":"res://assets/MapleStory/Character/Coat/01040006/info.icon.png",
 				"origin_x":-4.0,
 				"origin_y":28.0
 			},
 			"iconRaw":{
 				"$type":"animconfig.spriteWithOrigin",
-				"sprite":"res://assets/MapleStory/Character/Coat/01040006/info/iconRaw._outlink.png",
+				"sprite":"res://assets/MapleStory/Character/Coat/01040006/info.iconRaw.png",
 				"origin_x":-4.0,
 				"origin_y":28.0
 			},
@@ -27,7 +27,6 @@
 	"animCfg":[
 		{
 			"$type":"animconfig.AnimConfigData",
-			"$fold":true,
 			"name":"stand1",
 			"frames":[
 				{
@@ -38,7 +37,7 @@
 						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
 							"name":"mail",
-							"spriteDir":"res://assets/MapleStory/Character/Coat/01040006/stand1/0.mail._outlink.png",
+							"spriteDir":"res://assets/MapleStory/Character/Coat/01040006/stand1.0.mail.png",
 							"origin_x":11.0,
 							"origin_y":9.0,
 							"map":[
@@ -62,7 +61,7 @@
 						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
 							"name":"mail",
-							"spriteDir":"res://assets/MapleStory/Character/Coat/01040006/stand1/1.mail._outlink.png",
+							"spriteDir":"res://assets/MapleStory/Character/Coat/01040006/walk2.0.mail.png",
 							"origin_x":10.0,
 							"origin_y":9.0,
 							"map":[
@@ -81,11 +80,12 @@
 				{
 					"$type":"animconfig.AnimFrame",
 					"$note":"note：2",
+					"$fold":true,
 					"spritecfg":[
 						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
 							"name":"mail",
-							"spriteDir":"res://assets/MapleStory/Character/Coat/01040006/stand1/2.mail._outlink.png",
+							"spriteDir":"res://assets/MapleStory/Character/Coat/01040006/walk2.3.mail.png",
 							"origin_x":10.0,
 							"origin_y":9.0,
 							"map":[
@@ -116,7 +116,7 @@
 						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
 							"name":"mail",
-							"spriteDir":"res://assets/MapleStory/Character/Coat/01040006/stand1/0.mail._outlink.png",
+							"spriteDir":"res://assets/MapleStory/Character/Coat/01040006/walk1.0.mail.png",
 							"origin_x":11.0,
 							"origin_y":9.0,
 							"map":[
@@ -141,7 +141,7 @@
 						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
 							"name":"mail",
-							"spriteDir":"res://assets/MapleStory/Character/Coat/01040006/stand1/0.mail._outlink.png",
+							"spriteDir":"res://assets/MapleStory/Character/Coat/01040006/walk1.0.mail.png",
 							"origin_x":11.0,
 							"origin_y":9.0,
 							"map":[
@@ -181,7 +181,7 @@
 						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
 							"name":"mail",
-							"spriteDir":"res://assets/MapleStory/Character/Coat/01040006/stand1/0.mail._outlink.png",
+							"spriteDir":"res://assets/MapleStory/Character/Coat/01040006/walk1.0.mail.png",
 							"origin_x":11.0,
 							"origin_y":9.0,
 							"map":[
@@ -197,6 +197,87 @@
 					],
 					"face":1,
 					"delay":180
+				}
+			]
+		},
+		{
+			"$type":"animconfig.AnimConfigData",
+			"name":"swingO1",
+			"frames":[
+				{
+					"$type":"animconfig.AnimFrame",
+					"$note":"note：0",
+					"$fold":true,
+					"spritecfg":[
+						{
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"mail",
+							"spriteDir":"res://assets/MapleStory/Character/Coat/01040006/swingO1.0.mail.png",
+							"origin_x":11.0,
+							"origin_y":9.0,
+							"map":[
+								{
+									"$type":"animconfig.SkelectonMap",
+									"bone":"navel",
+									"offset_x":-5.0,
+									"offset_y":2.0
+								}
+							],
+							"z":"mailChestBelowPants"
+						}
+					],
+					"face":1,
+					"delay":300
+				},
+				{
+					"$type":"animconfig.AnimFrame",
+					"$note":"note：1",
+					"$fold":true,
+					"spritecfg":[
+						{
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"mail",
+							"spriteDir":"res://assets/MapleStory/Character/Coat/01040006/swingO1.1.mail.png",
+							"origin_x":10.0,
+							"origin_y":10.0,
+							"map":[
+								{
+									"$type":"animconfig.SkelectonMap",
+									"bone":"navel",
+									"offset_x":-7.0,
+									"offset_y":1.0
+								}
+							],
+							"z":"mailChestBelowPants"
+						}
+					],
+					"face":1,
+					"delay":150
+				},
+				{
+					"$type":"animconfig.AnimFrame",
+					"$note":"note：1",
+					"$fold":true,
+					"spritecfg":[
+						{
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"mail",
+							"spriteDir":"res://assets/MapleStory/Character/Coat/01040006/swingO1.2.mail.png",
+							"origin_x":11.0,
+							"origin_y":9.0,
+							"map":[
+								{
+									"$type":"animconfig.SkelectonMap",
+									"bone":"navel",
+									"offset_x":-6.0,
+									"offset_y":1.0
+								}
+							],
+							"z":"mailChestBelowPants"
+						}
+					],
+					"face":1,
+					"delay":350
 				}
 			]
 		}

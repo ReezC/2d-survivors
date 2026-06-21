@@ -1,280 +1,379 @@
 {
-	"$type":"animconfig.animconfig",
-	"id":"00012000",
-	"name":"奶油皮肤",
-	"addinfos":[
+	"$type": "animconfig.animconfig",
+	"id": "00012000",
+	"name": "奶油皮肤",
+	"addinfos": [
 		{
-			"$type":"animconfig.Info.ItemInfo",
-			"$fold":true,
-			"icon":{
-				"$type":"animconfig.spriteWithOrigin"
+			"$type": "animconfig.Info.ItemInfo",
+			"$fold": true,
+			"icon": {
+				"$type": "animconfig.spriteWithOrigin"
 			},
-			"iconRaw":{
-				"$type":"animconfig.spriteWithOrigin"
+			"iconRaw": {
+				"$type": "animconfig.spriteWithOrigin"
 			},
-			"islot":"Hd",
-			"vslot":[
+			"islot": "Hd",
+			"vslot": [
 				"Hd"
 			]
 		}
 	],
-	"animCfg":[
+	"animCfg": [
 		{
-			"$type":"animconfig.AnimConfigData",
-			"name":"front",
-			"frames":[
+			"$type": "animconfig.AnimConfigData",
+			"name": "front",
+			"frames": [
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"spritecfg":[
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"$note":"note：头",
-							"$fold":true,
-							"name":"head",
-							"spriteDir":"res://assets/MapleStory/Character/00012000/front/head/front.head._outlink.png",
-							"origin_x":18.0,
-							"origin_y":17.0,
-							"map":[
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"$note": "note：头",
+							"$fold": true,
+							"name": "head",
+							"spriteDir": "res://assets/MapleStory/Character/00012000/front.head.png",
+							"origin_x": 18.0,
+							"origin_y": 17.0,
+							"map": [
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"neck",
-									"offset_y":15.0
+									"$type": "animconfig.SkelectonMap",
+									"bone": "neck",
+									"offset_y": 15.0
 								},
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"earOverHead",
-									"offset_x":15.0,
-									"offset_y":10.0
+									"$type": "animconfig.SkelectonMap",
+									"bone": "earOverHead",
+									"offset_x": 15.0,
+									"offset_y": 10.0
 								},
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"earBelowHead",
-									"offset_x":-17.0,
-									"offset_y":9.0
+									"$type": "animconfig.SkelectonMap",
+									"bone": "earBelowHead",
+									"offset_x": -17.0,
+									"offset_y": 9.0
 								},
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"brow",
-									"offset_x":-4.0,
-									"offset_y":-5.0
+									"$type": "animconfig.SkelectonMap",
+									"bone": "brow",
+									"offset_x": -4.0,
+									"offset_y": -5.0
 								}
 							],
-							"z":"head"
+							"z": "head"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"$note":"note：耳朵",
-							"$fold":true,
-							"name":"humanEar",
-							"spriteDir":"res://assets/MapleStory/Character/00012000/front/humanEar/humanEar._outlink.png",
-							"origin_x":19.0,
-							"origin_y":-2.0,
-							"map":[
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"$note": "note：耳朵",
+							"$fold": true,
+							"name": "humanEar",
+							"spriteDir": "res://assets/MapleStory/Character/00012000/front.humanEar.png",
+							"origin_x": 19.0,
+							"origin_y": -2.0,
+							"map": [
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"neck",
-									"offset_y":15.0
+									"$type": "animconfig.SkelectonMap",
+									"bone": "neck",
+									"offset_y": 15.0
 								},
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"earOverHead",
-									"offset_x":15.0,
-									"offset_y":10.0
+									"$type": "animconfig.SkelectonMap",
+									"bone": "earOverHead",
+									"offset_x": 15.0,
+									"offset_y": 10.0
 								},
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"earBelowHead",
-									"offset_x":-17.0,
-									"offset_y":9.0
+									"$type": "animconfig.SkelectonMap",
+									"bone": "earBelowHead",
+									"offset_x": -17.0,
+									"offset_y": 9.0
 								},
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"brow",
-									"offset_x":-4.0,
-									"offset_y":-5.0
+									"$type": "animconfig.SkelectonMap",
+									"bone": "brow",
+									"offset_x": -4.0,
+									"offset_y": -5.0
 								}
 							],
-							"z":"hairShade"
+							"z": "hairShade"
 						}
 					],
-					"face":1,
-					"delay":-1
+					"face": 1,
+					"delay": -1
 				}
 			]
 		},
 		{
-			"$type":"animconfig.AnimConfigData",
-			"$fold":true,
-			"name":"stand1",
-			"frames":[
+			"$type": "animconfig.AnimConfigData",
+			"$fold": true,
+			"name": "stand1",
+			"frames": [
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"$fold":true,
-					"spritecfg":[
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"head",
-							"id":"00012000",
-							"animName":"front",
-							"spriteName":"head"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "head",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "head"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"humanEar",
-							"id":"00012000",
-							"animName":"front",
-							"spriteName":"humanEar"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "humanEar",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "humanEar"
 						}
 					],
-					"face":1,
-					"delay":500
+					"face": 1,
+					"delay": 500
 				},
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"$fold":true,
-					"spritecfg":[
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"head",
-							"id":"00012000",
-							"animName":"front",
-							"spriteName":"head"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "head",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "head"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"humanEar",
-							"id":"00012000",
-							"animName":"front",
-							"spriteName":"humanEar"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "humanEar",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "humanEar"
 						}
 					],
-					"face":1,
-					"delay":500
+					"face": 1,
+					"delay": 500
 				},
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"$fold":true,
-					"spritecfg":[
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"head",
-							"id":"00012000",
-							"animName":"front",
-							"spriteName":"head"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "head",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "head"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"humanEar",
-							"id":"00012000",
-							"animName":"front",
-							"spriteName":"humanEar"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "humanEar",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "humanEar"
 						}
 					],
-					"face":1,
-					"delay":500
+					"face": 1,
+					"delay": 500
 				}
 			]
 		},
 		{
-			"$type":"animconfig.AnimConfigData",
-			"$fold":true,
-			"name":"walk1",
-			"frames":[
+			"$type": "animconfig.AnimConfigData",
+			"$fold": true,
+			"name": "walk1",
+			"frames": [
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"$fold":true,
-					"spritecfg":[
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"head",
-							"id":"00012000",
-							"animName":"front",
-							"spriteName":"head"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "head",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "head"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"humanEar",
-							"id":"00012000",
-							"animName":"front",
-							"spriteName":"humanEar"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "humanEar",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "humanEar"
 						}
 					],
-					"face":1,
-					"delay":500
+					"face": 1,
+					"delay": 500
 				},
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"$fold":true,
-					"spritecfg":[
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"head",
-							"id":"00012000",
-							"animName":"front",
-							"spriteName":"head"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "head",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "head"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"humanEar",
-							"id":"00012000",
-							"animName":"front",
-							"spriteName":"humanEar"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "humanEar",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "humanEar"
 						}
 					],
-					"face":1,
-					"delay":500
+					"face": 1,
+					"delay": 500
 				},
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"$fold":true,
-					"spritecfg":[
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"head",
-							"id":"00012000",
-							"animName":"front",
-							"spriteName":"head"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "head",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "head"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"humanEar",
-							"id":"00012000",
-							"animName":"front",
-							"spriteName":"humanEar"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "humanEar",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "humanEar"
 						}
 					],
-					"face":1,
-					"delay":500
+					"face": 1,
+					"delay": 500
 				},
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"$fold":true,
-					"spritecfg":[
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"head",
-							"id":"00012000",
-							"animName":"front",
-							"spriteName":"head"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "head",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "head"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"humanEar",
-							"id":"00012000",
-							"animName":"front",
-							"spriteName":"humanEar"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "humanEar",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "humanEar"
 						}
 					],
-					"face":1,
-					"delay":500
+					"face": 1,
+					"delay": 500
+				}
+			]
+		},
+		{
+			"$type": "animconfig.AnimConfigData",
+			"$fold": true,
+			"name": "swingO1",
+			"frames": [
+				{
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "head",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "head"
+						},
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "humanEar",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "humanEar"
+						}
+					],
+					"face": 1,
+					"delay": 500
+				},
+				{
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "head",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "head"
+						},
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "humanEar",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "humanEar"
+						}
+					],
+					"face": 1,
+					"delay": 500
+				},
+				{
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "head",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "head"
+						},
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "humanEar",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "humanEar"
+						}
+					],
+					"face": 1,
+					"delay": 500
+				},
+				{
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "head",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "head"
+						},
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "humanEar",
+							"id": "00012000",
+							"animName": "front",
+							"spriteName": "humanEar"
+						}
+					],
+					"face": 1,
+					"delay": 500
 				}
 			]
 		}

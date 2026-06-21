@@ -1,19 +1,19 @@
 {
-	"$type":"animconfig.animconfig",
-	"id":"00030000",
-	"name":"黑色短中分",
-	"addinfos":[
+	"$type": "animconfig.animconfig",
+	"id": "00030000",
+	"name": "黑色短中分",
+	"addinfos": [
 		{
-			"$type":"animconfig.Info.ItemInfo",
-			"$fold":true,
-			"icon":{
-				"$type":"animconfig.spriteWithOrigin"
+			"$type": "animconfig.Info.ItemInfo",
+			"$fold": true,
+			"icon": {
+				"$type": "animconfig.spriteWithOrigin"
 			},
-			"iconRaw":{
-				"$type":"animconfig.spriteWithOrigin"
+			"iconRaw": {
+				"$type": "animconfig.spriteWithOrigin"
 			},
-			"islot":"Hr",
-			"vslot":[
+			"islot": "Hr",
+			"vslot": [
 				"H1",
 				"H2",
 				"H3",
@@ -26,284 +26,411 @@
 			]
 		}
 	],
-	"animCfg":[
+	"animCfg": [
 		{
-			"$type":"animconfig.AnimConfigData",
-			"name":"default",
-			"frames":[
+			"$type": "animconfig.AnimConfigData",
+			"name": "default",
+			"frames": [
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"spritecfg":[
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"hairOverHead",
-							"spriteDir":"res://assets/MapleStory/Character/Hair/00030000/stand1/default.hairOverHead._outlink.png",
-							"origin_x":15.0,
-							"origin_y":14.0,
-							"map":[
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"name": "hairOverHead",
+							"spriteDir": "res://assets/MapleStory/Character/Hair/00030000/default.hairOverHead.png",
+							"origin_x": 15.0,
+							"origin_y": 14.0,
+							"map": [
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"brow"
+									"$type": "animconfig.SkelectonMap",
+									"bone": "brow"
 								}
 							],
-							"z":"hairOverHead"
+							"z": "hairOverHead"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"hair",
-							"spriteDir":"res://assets/MapleStory/Character/Hair/00030000/stand1/default.hair._outlink.png",
-							"origin_x":14.0,
-							"origin_y":12.0,
-							"map":[
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"name": "hair",
+							"spriteDir": "res://assets/MapleStory/Character/Hair/00030000/default.hair.png",
+							"origin_x": 14.0,
+							"origin_y": 12.0,
+							"map": [
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"brow"
+									"$type": "animconfig.SkelectonMap",
+									"bone": "brow"
 								}
 							],
-							"z":"hair"
+							"z": "hair"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"hairShade",
-							"spriteDir":"res://assets/MapleStory/Character/Hair/00030000/stand1/default.hairShade.0._outlink.png",
-							"origin_x":13.0,
-							"origin_y":8.0,
-							"map":[
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"name": "hairShade",
+							"spriteDir": "res://assets/MapleStory/Character/Hair/00030000/default.hairShade.0.png",
+							"origin_x": 13.0,
+							"origin_y": 8.0,
+							"map": [
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"brow"
+									"$type": "animconfig.SkelectonMap",
+									"bone": "brow"
 								}
 							],
-							"z":"hairShade"
+							"z": "hairShade"
 						}
 					],
-					"face":1,
-					"delay":-1
+					"face": 1,
+					"delay": -1
 				}
 			]
 		},
 		{
-			"$type":"animconfig.AnimConfigData",
-			"$fold":true,
-			"name":"stand1",
-			"frames":[
+			"$type": "animconfig.AnimConfigData",
+			"$fold": true,
+			"name": "stand1",
+			"frames": [
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"$fold":true,
-					"spritecfg":[
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hairOverHead",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hairOverHead"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairOverHead",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairOverHead"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hair",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hair"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hair",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hair"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hairShade",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hairShade"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairShade",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairShade"
 						}
 					],
-					"face":1,
-					"delay":500
+					"face": 1,
+					"delay": 500
 				},
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"$fold":true,
-					"spritecfg":[
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hairOverHead",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hairOverHead"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairOverHead",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairOverHead"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hair",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hair"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hair",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hair"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hairShade",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hairShade"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairShade",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairShade"
 						}
 					],
-					"face":1,
-					"delay":500
+					"face": 1,
+					"delay": 500
 				},
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"$fold":true,
-					"spritecfg":[
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hairOverHead",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hairOverHead"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairOverHead",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairOverHead"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hair",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hair"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hair",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hair"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hairShade",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hairShade"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairShade",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairShade"
 						}
 					],
-					"face":1,
-					"delay":500
+					"face": 1,
+					"delay": 500
 				}
 			]
 		},
 		{
-			"$type":"animconfig.AnimConfigData",
-			"$fold":true,
-			"name":"walk1",
-			"frames":[
+			"$type": "animconfig.AnimConfigData",
+			"$fold": true,
+			"name": "walk1",
+			"frames": [
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"$fold":true,
-					"spritecfg":[
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hairOverHead",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hairOverHead"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairOverHead",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairOverHead"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hair",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hair"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hair",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hair"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hairShade",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hairShade"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairShade",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairShade"
 						}
 					],
-					"face":1,
-					"delay":500
+					"face": 1,
+					"delay": 500
 				},
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"$fold":true,
-					"spritecfg":[
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hairOverHead",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hairOverHead"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairOverHead",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairOverHead"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hair",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hair"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hair",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hair"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hairShade",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hairShade"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairShade",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairShade"
 						}
 					],
-					"face":1,
-					"delay":500
+					"face": 1,
+					"delay": 500
 				},
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"$fold":true,
-					"spritecfg":[
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hairOverHead",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hairOverHead"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairOverHead",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairOverHead"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hair",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hair"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hair",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hair"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hairShade",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hairShade"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairShade",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairShade"
 						}
 					],
-					"face":1,
-					"delay":500
+					"face": 1,
+					"delay": 500
 				},
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"$fold":true,
-					"spritecfg":[
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hairOverHead",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hairOverHead"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairOverHead",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairOverHead"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hair",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hair"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hair",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hair"
 						},
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"hairShade",
-							"id":"00030000",
-							"animName":"default",
-							"spriteName":"hairShade"
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairShade",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairShade"
 						}
 					],
-					"face":1,
-					"delay":500
+					"face": 1,
+					"delay": 500
+				}
+			]
+		},
+		{
+			"$type": "animconfig.AnimConfigData",
+			"$fold": true,
+			"name": "swingO1",
+			"frames": [
+				{
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairOverHead",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairOverHead"
+						},
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hair",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hair"
+						},
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairShade",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairShade"
+						}
+					],
+					"face": 1,
+					"delay": 500
+				},
+				{
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairOverHead",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairOverHead"
+						},
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hair",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hair"
+						},
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairShade",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairShade"
+						}
+					],
+					"face": 1,
+					"delay": 500
+				},
+				{
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairOverHead",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairOverHead"
+						},
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hair",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hair"
+						},
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairShade",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairShade"
+						}
+					],
+					"face": 1,
+					"delay": 500
+				},
+				{
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0",
+					"$fold": true,
+					"spritecfg": [
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairOverHead",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairOverHead"
+						},
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hair",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hair"
+						},
+						{
+							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"name": "hairShade",
+							"id": "00030000",
+							"animName": "default",
+							"spriteName": "hairShade"
+						}
+					],
+					"face": 1,
+					"delay": 500
 				}
 			]
 		}

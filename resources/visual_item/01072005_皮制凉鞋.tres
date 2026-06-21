@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="VisualItem" format=3 uid="uid://v1tgdremqmke"]
 
-[ext_resource type="Texture2D" uid="uid://c5f3e0qqk2tb4" path="res://assets/MapleStory/Character/Shoes/01072005/info/icon._outlink.png" id="1_qd5hk"]
+[ext_resource type="Texture2D" uid="uid://obnxiiftyceo" path="res://assets/MapleStory/Character/Shoes/01072005/info.icon.png" id="1_qd5hk"]
 [ext_resource type="Script" uid="uid://cx56yjoedwvb6" path="res://resources/visual_item/visual_item.gd" id="2_4dco2"]
 
 [resource]

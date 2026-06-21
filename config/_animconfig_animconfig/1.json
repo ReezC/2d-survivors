@@ -10,11 +10,7 @@
 			},
 			"iconRaw":{
 				"$type":"animconfig.spriteWithOrigin"
-			},
-			"islot":"Bd",
-			"vslot":[
-				"Bd"
-			]
+			}
 		}
 	]
 }

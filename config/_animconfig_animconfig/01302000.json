@@ -8,12 +8,12 @@
 			"$fold":true,
 			"icon":{
 				"$type":"animconfig.spriteWithOrigin",
-				"sprite":"res://assets/MapleStory/Character/Weapon/01302000/info/icon._outlink.png",
+				"sprite":"res://assets/MapleStory/Character/Weapon/01302000/info.icon.png",
 				"origin_y":30.0
 			},
 			"iconRaw":{
 				"$type":"animconfig.spriteWithOrigin",
-				"sprite":"res://assets/MapleStory/Character/Weapon/01302000/info/iconRaw._outlink.png",
+				"sprite":"res://assets/MapleStory/Character/Weapon/01302000/info.iconRaw.png",
 				"origin_y":30.0
 			},
 			"islot":"Wp",
@@ -25,7 +25,6 @@
 	"animCfg":[
 		{
 			"$type":"animconfig.AnimConfigData",
-			"$fold":true,
 			"name":"stand1",
 			"frames":[
 				{
@@ -36,7 +35,7 @@
 						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
 							"name":"weapon",
-							"spriteDir":"res://assets/MapleStory/Character/Weapon/01302000/stand1/0.weapon._outlink.png",
+							"spriteDir":"res://assets/MapleStory/Character/Weapon/01302000/walk1.3.weapon.png",
 							"origin_x":25.0,
 							"origin_y":7.0,
 							"map":[
@@ -89,7 +88,7 @@
 		},
 		{
 			"$type":"animconfig.AnimConfigData",
-			"name":"walk1",
+			"name":"swingO1",
 			"frames":[
 				{
 					"$type":"animconfig.AnimFrame",
@@ -99,22 +98,22 @@
 						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
 							"name":"weapon",
-							"spriteDir":"res://assets/MapleStory/Character/Weapon/01302000/walk1/0.weapon._outlink.png",
-							"origin_x":25.0,
-							"origin_y":7.0,
+							"spriteDir":"res://assets/MapleStory/Character/Weapon/01302000/swingO1.0.weapon.png",
+							"origin_x":11.0,
+							"origin_y":5.0,
 							"map":[
 								{
 									"$type":"animconfig.SkelectonMap",
-									"bone":"hand",
-									"offset_x":8.0,
-									"offset_y":-2.0
+									"bone":"navel",
+									"offset_x":-4.0,
+									"offset_y":-1.0
 								}
 							],
-							"z":"weapon"
+							"z":"weaponBelowBody"
 						}
 					],
 					"face":1,
-					"delay":180
+					"delay":300
 				},
 				{
 					"$type":"animconfig.AnimFrame",
@@ -124,22 +123,22 @@
 						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
 							"name":"weapon",
-							"spriteDir":"res://assets/MapleStory/Character/Weapon/01302000/walk1/1.weapon._outlink.png",
-							"origin_x":25.0,
-							"origin_y":7.0,
+							"spriteDir":"res://assets/MapleStory/Character/Weapon/01302000/swingO1.1.weapon.png",
+							"origin_x":11.0,
+							"origin_y":5.0,
 							"map":[
 								{
 									"$type":"animconfig.SkelectonMap",
-									"bone":"hand",
-									"offset_x":6.0,
-									"offset_y":6.0
+									"bone":"navel",
+									"offset_x":4.0,
+									"offset_y":-2.0
 								}
 							],
-							"z":"weapon"
+							"z":"weaponBelowBody"
 						}
 					],
 					"face":1,
-					"delay":180
+					"delay":150
 				},
 				{
 					"$type":"animconfig.AnimFrame",
@@ -147,40 +146,24 @@
 					"$fold":true,
 					"spritecfg":[
 						{
-							"$type":"animconfig.SpriteConfigData.FrameLink",
-							"name":"weapon",
-							"id":"01302000",
-							"animName":"walk1",
-							"spriteName":"weapon"
-						}
-					],
-					"face":1,
-					"delay":180
-				},
-				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：3",
-					"$fold":true,
-					"spritecfg":[
-						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
 							"name":"weapon",
-							"spriteDir":"res://assets/MapleStory/Character/Weapon/01302000/walk1/3.weapon._outlink.png",
-							"origin_x":25.0,
-							"origin_y":7.0,
+							"spriteDir":"res://assets/MapleStory/Character/Weapon/01302000/swingO1.2.weapon.png",
+							"origin_x":11.0,
+							"origin_y":5.0,
 							"map":[
 								{
 									"$type":"animconfig.SkelectonMap",
-									"bone":"hand",
-									"offset_x":8.0,
-									"offset_y":-1.0
+									"bone":"navel",
+									"offset_x":-23.0,
+									"offset_y":41.0
 								}
 							],
 							"z":"weapon"
 						}
 					],
 					"face":1,
-					"delay":180
+					"delay":350
 				}
 			]
 		}

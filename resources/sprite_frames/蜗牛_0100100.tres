@@ -1,21 +1,20 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://bj32ak7qorx1o"]
 
-[ext_resource type="Texture2D" uid="uid://ehfof1126fl3" path="res://assets/MapleStory/Mob/0100100/die1/0._outlink.png" id="1_w0bgx"]
-[ext_resource type="Texture2D" uid="uid://bf3uykbnh2f7h" path="res://assets/MapleStory/Mob/0100100/die1/1._outlink.png" id="2_sqf7c"]
-[ext_resource type="Texture2D" uid="uid://vmh6eufofbsh" path="res://assets/MapleStory/Mob/0100100/die1/2._outlink.png" id="3_ohbwp"]
-[ext_resource type="Texture2D" uid="uid://d15g0o7eulbrb" path="res://assets/MapleStory/Mob/0100100/die1/3._outlink.png" id="4_r3i3g"]
-[ext_resource type="Texture2D" uid="uid://dcwso5edf3ov" path="res://assets/MapleStory/Mob/0100100/die1/4._outlink.png" id="5_mebuj"]
-[ext_resource type="Texture2D" uid="uid://bjt6l2pk6jhim" path="res://assets/MapleStory/Mob/0100100/die1/5._outlink.png" id="6_j6vqt"]
-[ext_resource type="Texture2D" uid="uid://bihtacdn8a8sw" path="res://assets/MapleStory/Mob/0100100/die1/6._outlink.png" id="7_5brw3"]
-[ext_resource type="Texture2D" uid="uid://ck0oxt5xcuifd" path="res://assets/MapleStory/Mob/0100100/die1/7._outlink.png" id="8_hss31"]
-[ext_resource type="Texture2D" uid="uid://d32hdphh3p53y" path="res://assets/MapleStory/Mob/0100100/die1/8._outlink.png" id="9_iqnga"]
-[ext_resource type="Texture2D" uid="uid://c7d87e0yldbcy" path="res://assets/MapleStory/Mob/0100100/hit1/0._outlink.png" id="10_d2ijv"]
-[ext_resource type="Texture2D" uid="uid://cjw5x1bogohn4" path="res://assets/MapleStory/Mob/0100100/move/0._outlink.png" id="11_x6kpt"]
-[ext_resource type="Texture2D" uid="uid://d3lxaen38mcwm" path="res://assets/MapleStory/Mob/0100100/move/1._outlink.png" id="12_t3jpq"]
-[ext_resource type="Texture2D" uid="uid://cnmtfwq2i82ol" path="res://assets/MapleStory/Mob/0100100/move/2._outlink.png" id="13_jrph1"]
-[ext_resource type="Texture2D" uid="uid://cgalsq245sl33" path="res://assets/MapleStory/Mob/0100100/move/3._outlink.png" id="14_1sjll"]
-[ext_resource type="Texture2D" uid="uid://cmi1yn53ashpj" path="res://assets/MapleStory/Mob/0100100/move/4._outlink.png" id="15_0x4ay"]
-[ext_resource type="Texture2D" uid="uid://d1ow70uyx3q6m" path="res://assets/MapleStory/Mob/0100100/stand/0._outlink.png" id="16_r43b7"]
+[ext_resource type="Texture2D" uid="uid://13ctjqpgg7uc" path="res://assets/MapleStory/Mob/0100100/hit1.0.png" id="1_w0bgx"]
+[ext_resource type="Texture2D" uid="uid://duqdhgp5eig2" path="res://assets/MapleStory/Mob/0100100/die1.1.png" id="2_sqf7c"]
+[ext_resource type="Texture2D" uid="uid://cc38dpapjmsj3" path="res://assets/MapleStory/Mob/0100100/die1.2.png" id="3_ohbwp"]
+[ext_resource type="Texture2D" uid="uid://wx70a4xtg10" path="res://assets/MapleStory/Mob/0100100/die1.3.png" id="4_r3i3g"]
+[ext_resource type="Texture2D" uid="uid://c7yxekw0fmlj2" path="res://assets/MapleStory/Mob/0100100/die1.4.png" id="5_mebuj"]
+[ext_resource type="Texture2D" uid="uid://e654r2hb6ptv" path="res://assets/MapleStory/Mob/0100100/die1.5.png" id="6_j6vqt"]
+[ext_resource type="Texture2D" uid="uid://bfcjb0kmj1gkl" path="res://assets/MapleStory/Mob/0100100/die1.6.png" id="7_5brw3"]
+[ext_resource type="Texture2D" uid="uid://bpakt60vumf0j" path="res://assets/MapleStory/Mob/0100100/die1.7.png" id="8_hss31"]
+[ext_resource type="Texture2D" uid="uid://dalbyc3cn2mmv" path="res://assets/MapleStory/Mob/0100100/die1.8.png" id="9_iqnga"]
+[ext_resource type="Texture2D" uid="uid://dy1f8qd0j0x1k" path="res://assets/MapleStory/Mob/0100100/move.0.png" id="10_t8rdv"]
+[ext_resource type="Texture2D" uid="uid://v6vcfwvdghrl" path="res://assets/MapleStory/Mob/0100100/move.1.png" id="11_w0bgx"]
+[ext_resource type="Texture2D" uid="uid://bnkebvgvoshob" path="res://assets/MapleStory/Mob/0100100/move.2.png" id="12_sqf7c"]
+[ext_resource type="Texture2D" uid="uid://6lhx4mv78asg" path="res://assets/MapleStory/Mob/0100100/move.3.png" id="13_ohbwp"]
+[ext_resource type="Texture2D" uid="uid://ccd6qqah5q82a" path="res://assets/MapleStory/Mob/0100100/move.4.png" id="14_r3i3g"]
+[ext_resource type="Texture2D" uid="uid://d3hfpvueu5386" path="res://assets/MapleStory/Mob/0100100/stand.0.png" id="15_mebuj"]
 
 [resource]
 animations = [{
@@ -53,7 +52,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_d2ijv")
+"texture": ExtResource("1_w0bgx")
 }],
 "loop": 0,
 "name": &"hit1",
@@ -61,19 +60,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_x6kpt")
+"texture": ExtResource("10_t8rdv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_t3jpq")
+"texture": ExtResource("11_w0bgx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_jrph1")
+"texture": ExtResource("12_sqf7c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_1sjll")
+"texture": ExtResource("13_ohbwp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_0x4ay")
+"texture": ExtResource("14_r3i3g")
 }],
 "loop": 1,
 "name": &"move",
@@ -81,7 +80,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_r43b7")
+"texture": ExtResource("15_mebuj")
 }],
 "loop": 1,
 "name": &"stand",

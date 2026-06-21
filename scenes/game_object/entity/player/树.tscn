@@ -151,7 +151,7 @@ metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aaojh"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_gh5no"]
+[sub_resource type="Resource" id="Resource_03xhi"]
 resource_local_to_scene = true
 resource_name = "移动速度"
 script = ExtResource("10_uo5vx")
@@ -178,10 +178,10 @@ script = ExtResource("10_uo5vx")
 "属性类型" = 8
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
-[sub_resource type="Resource" id="Resource_ru67c"]
+[sub_resource type="Resource" id="Resource_gh5no"]
 resource_local_to_scene = true
 script = ExtResource("9_bdaga")
-"属性们" = Array[ExtResource("10_uo5vx")]([SubResource("Resource_sbb84"), SubResource("Resource_ye6iw"), SubResource("Resource_cll8x"), SubResource("Resource_7lulo"), SubResource("Resource_6u3n4"), SubResource("Resource_kjcqk"), SubResource("Resource_8u6q2"), SubResource("Resource_u0jmy"), SubResource("Resource_72gil"), SubResource("Resource_gh5no"), SubResource("Resource_vrs21"), SubResource("Resource_3rkqf")])
+"属性们" = Array[ExtResource("10_uo5vx")]([SubResource("Resource_sbb84"), SubResource("Resource_ye6iw"), SubResource("Resource_cll8x"), SubResource("Resource_7lulo"), SubResource("Resource_6u3n4"), SubResource("Resource_kjcqk"), SubResource("Resource_8u6q2"), SubResource("Resource_u0jmy"), SubResource("Resource_72gil"), SubResource("Resource_03xhi"), SubResource("Resource_vrs21"), SubResource("Resource_3rkqf")])
 metadata/_custom_type_script = "uid://bjvqbui703u8x"
 
 [node name="树" unique_id=1265436225 groups=["player"] instance=ExtResource("1_0fi5m")]
@@ -214,7 +214,7 @@ source_item = ExtResource("14_e6s84")
 [node name="arm" type="AnimatedSprite2D" parent="视觉" index="1" unique_id=1218402680]
 position = Vector2(5, -20)
 sprite_frames = ExtResource("10_5eaic")
-animation = &""
+animation = &"stand1"
 centered = false
 offset = Vector2(-5, -9)
 script = ExtResource("13_e6s84")
@@ -249,14 +249,12 @@ metadata/_custom_type_script = "uid://ptl7nckec2yg"
 [node name="AnimationPlayer" parent="." index="2" unique_id=1786467140]
 active = false
 
-[node name="AnimationTree" type="AnimationTree" parent="." index="3" unique_id=1100281063]
-
-[node name="移动碰撞" parent="." index="4" unique_id=288392247]
+[node name="移动碰撞" parent="." index="3" unique_id=288392247]
 position = Vector2(-5, -5)
 shape = SubResource("CircleShape2D_qmmqe")
 debug_color = Color(0.690947, 0.49436867, 0.16542876, 0.41960785)
 
-[node name="HurtboxComponent" parent="." index="5" unique_id=581852039]
+[node name="HurtboxComponent" parent="." index="4" unique_id=581852039]
 collision_layer = 16
 collision_mask = 128
 
@@ -264,14 +262,14 @@ collision_mask = 128
 position = Vector2(-5, -11.125)
 shape = SubResource("RectangleShape2D_wbw41")
 
-[node name="单位属性component" parent="." index="6" unique_id=176829961]
-"属性集" = SubResource("Resource_ru67c")
+[node name="单位属性component" parent="." index="5" unique_id=176829961]
+"属性集" = SubResource("Resource_gh5no")
 
-[node name="SkillManager" parent="." index="7" unique_id=845903834]
+[node name="SkillManager" parent="." index="6" unique_id=845903834]
 skill_ai = 1
 "初始技能" = Array[ExtResource("13_bdaga")]([ExtResource("13_00o66")])
 
-[node name="HealthBar" parent="." index="8" unique_id=517147532]
+[node name="HealthBar" parent="." index="7" unique_id=517147532]
 offset_left = -20.0
 offset_top = -80.0
 offset_right = 20.0

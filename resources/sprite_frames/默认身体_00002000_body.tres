@@ -1,60 +1,14 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://bu7r2th5craou"]
 
-[ext_resource type="Texture2D" uid="uid://bp4q00hkfg5c0" path="res://assets/MapleStory/Character/00002000/ghoststand/0.body._outlink.png" id="1_6vsjh"]
-[ext_resource type="Texture2D" uid="uid://dp27w4l8texol" path="res://assets/MapleStory/Character/00002000/ghoststand/1.body._outlink.png" id="2_i13cs"]
-[ext_resource type="Texture2D" uid="uid://bcl7c6qnv3q7l" path="res://assets/MapleStory/Character/00002000/ghoststand/2.body._outlink.png" id="3_jnucg"]
-[ext_resource type="Texture2D" uid="uid://nxbqh43g82t8" path="res://assets/MapleStory/Character/00002000/stand1/0.body._outlink.png" id="4_hk3lp"]
-[ext_resource type="Texture2D" uid="uid://bvl00h3aiw251" path="res://assets/MapleStory/Character/00002000/stand1/1.body._outlink.png" id="5_ea8e3"]
-[ext_resource type="Texture2D" uid="uid://g8uv6tg7l4bt" path="res://assets/MapleStory/Character/00002000/stand1/2.body._outlink.png" id="6_hr47g"]
-[ext_resource type="Texture2D" uid="uid://bd4p25idey2po" path="res://assets/MapleStory/Character/00002000/walk1/0.body._outlink.png" id="7_ea8e3"]
-[ext_resource type="Texture2D" uid="uid://lppknpiuhicr" path="res://assets/MapleStory/Character/00002000/walk1/1.body._outlink.png" id="8_hr47g"]
-[ext_resource type="Texture2D" uid="uid://bxi2dj034l5ut" path="res://assets/MapleStory/Character/00002000/walk1/2.body._outlink.png" id="9_jgo56"]
-[ext_resource type="Texture2D" uid="uid://b8wu3d02f25ua" path="res://assets/MapleStory/Character/00002000/walk1/3.body._outlink.png" id="10_dhsg2"]
+[ext_resource type="Texture2D" uid="uid://cv1w4n4cpf2cb" path="res://assets/MapleStory/Character/00002000/groom.0.body.png" id="4_6rubr"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_6vsjh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_i13cs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_jnucg")
-}],
-"loop": 0,
-"name": &"ghoststand",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_hk3lp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_ea8e3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_hr47g")
+"texture": ExtResource("4_6rubr")
 }],
 "loop": 0,
 "name": &"stand1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_ea8e3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_hr47g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_jgo56")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_dhsg2")
-}],
-"loop": 0,
-"name": &"walk1",
 "speed": 5.0
 }]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="VisualItem" format=3 uid="uid://w4gseek64t3r"]
 
-[ext_resource type="Texture2D" uid="uid://dq2s85vch7keu" path="res://assets/MapleStory/Character/Weapon/01302000/info/icon._outlink.png" id="1_mr0cy"]
+[ext_resource type="Texture2D" uid="uid://dr2dalhh7ca2v" path="res://assets/MapleStory/Character/Weapon/01302000/info.icon.png" id="1_mr0cy"]
 [ext_resource type="Script" uid="uid://cx56yjoedwvb6" path="res://resources/visual_item/visual_item.gd" id="2_ym01v"]
 
 [resource]

@@ -21,6 +21,7 @@
 	"animCfg":[
 		{
 			"$type":"animconfig.AnimConfigData",
+			"$fold":true,
 			"name":"default",
 			"frames":[
 				{
@@ -30,7 +31,7 @@
 						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
 							"name":"face",
-							"spriteDir":"res://assets/MapleStory/Character/Face/00020000/default/default.face._outlink.png",
+							"spriteDir":"res://assets/MapleStory/Character/Face/00020000/default.face.png",
 							"origin_x":13.0,
 							"origin_y":8.0,
 							"map":[
@@ -57,11 +58,12 @@
 				{
 					"$type":"animconfig.AnimFrame",
 					"$note":"note：0",
+					"$fold":true,
 					"spritecfg":[
 						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
 							"name":"face",
-							"spriteDir":"res://assets/MapleStory/Character/Face/00020000/blink/0.face._outlink.png",
+							"spriteDir":"res://assets/MapleStory/Character/Face/00020000/default.face.png",
 							"origin_x":13.0,
 							"origin_y":8.0,
 							"map":[
@@ -80,11 +82,12 @@
 				{
 					"$type":"animconfig.AnimFrame",
 					"$note":"note：1",
+					"$fold":true,
 					"spritecfg":[
 						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
 							"name":"face",
-							"spriteDir":"res://assets/MapleStory/Character/Face/00020000/blink/1.face._outlink.png",
+							"spriteDir":"res://assets/MapleStory/Character/Face/00020000/blink.1.face.png",
 							"origin_x":13.0,
 							"origin_y":8.0,
 							"map":[
@@ -103,11 +106,12 @@
 				{
 					"$type":"animconfig.AnimFrame",
 					"$note":"note：2",
+					"$fold":true,
 					"spritecfg":[
 						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
 							"name":"face",
-							"spriteDir":"res://assets/MapleStory/Character/Face/00020000/blink/2.face._outlink.png",
+							"spriteDir":"res://assets/MapleStory/Character/Face/00020000/blink.2.face.png",
 							"origin_x":13.0,
 							"origin_y":8.0,
 							"map":[
