@@ -19,11 +19,16 @@ run/main_scene="uid://eri283ptn101"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
+[audio]
+
+bus_layout="res://default_bus_layout.tres"
+
 [autoload]
 
 GameEvents="*res://scenes/aotuload/game_events.tscn"
 ECSWorld="*res://ecs/ecs_world.gd"
 GMLogger="*res://scenes/aotuload/gm_logger.gd"
+AudioManager="*res://scenes/aotuload/audio_manager.gd"
 
 [debug]
 
