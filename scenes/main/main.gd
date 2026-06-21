@@ -2,6 +2,20 @@ extends Node
 
 @export var end_screen_scene: PackedScene
 
+# ============================================
+# BGM 配置 — 由策划在 Inspector 中拖入 MusicRef .tres 文件
+# ============================================
+
+@export_group("BGM 配置")
+## 普通战斗 BGM
+@export var 战斗Bgm: MusicRef
+## Boss 战 BGM
+@export var BossBgm: MusicRef
+## 胜利 BGM
+@export var 胜利Bgm: MusicRef
+## 失败 BGM
+@export var 失败Bgm: MusicRef
+
 ## ============================================================================
 ## GM 日志开关 — 编辑器勾选即可启用对应分类的日志打印
 ## 
@@ -61,6 +75,10 @@ func _ready() -> void:
 	var player = get_tree().get_first_node_in_group("player") as Unit
 	player.死亡.connect(on_player_died)
 
+	# 开始播放战斗 BGM
+	if 战斗Bgm:
+		AudioManager.play_music_ref(战斗Bgm)
+
 
 func _sync_gm_logger() -> void:
 	GMLogger.set_enabled(GMLogger.LogCategory.战斗伤害,   gm_战斗伤害)
@@ -76,6 +94,10 @@ func _sync_gm_logger() -> void:
 
 
 func on_player_died() -> void:
+	# 切换到失败 BGM
+	if 失败Bgm:
+		AudioManager.play_music_ref(失败Bgm)
+
 	await get_tree().create_timer(3.0).timeout
 	var end_screen_instance = end_screen_scene.instantiate()
 	add_child(end_screen_instance)
@@ -83,4 +105,6 @@ func on_player_died() -> void:
 
 
 func on_arena_difficulty_changed(changed_value: int) -> void:
-	pass
+	# 难度阶段变化时切换 BGM（例如进入 Boss 阶段）
+	if BossBgm and changed_value > 1:  # 难度 > 1 视为 Boss 阶段
+		AudioManager.play_music_ref(BossBgm)

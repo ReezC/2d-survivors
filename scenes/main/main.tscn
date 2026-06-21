@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bej043vk8lguo" path="res://scenes/managers/arena_time_manager.tscn" id="2_hujxm"]
 [ext_resource type="PackedScene" uid="uid://dll05j3e38m3x" path="res://scenes/ui/end_screen.tscn" id="2_ouso4"]
 [ext_resource type="PackedScene" uid="uid://dlbecrpb8ke3a" path="res://scenes/game_object/game_camera/game_camera.tscn" id="3_l3cfh"]
+[ext_resource type="Resource" uid="uid://bpl5s4wyexvx0" path="res://resources/audio/music/music_battle_normal.tres" id="3_raeie"]
 [ext_resource type="PackedScene" uid="uid://byqnvyhrln281" path="res://scenes/managers/experience_manager.tscn" id="4_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://btaxpbar6nfon" path="res://scenes/managers/upgrade_manager.tscn" id="6_a8run"]
 [ext_resource type="PackedScene" uid="uid://dqqshtmt65vb2" path="res://scenes/managers/跳字对象池.tscn" id="9_th5th"]
@@ -17,6 +18,7 @@
 [node name="Main" type="Node" unique_id=1048921097]
 script = ExtResource("1_a8run")
 end_screen_scene = ExtResource("2_ouso4")
+"战斗Bgm" = ExtResource("3_raeie")
 
 [node name="ArenaTimeUI" parent="." unique_id=1797388071 node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("1_ow5a4")]
 arena_time_manager = NodePath("../ArenaTimeManager")

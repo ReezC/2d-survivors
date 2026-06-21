@@ -2,9 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://dcslmpa4nca4m" path="res://scenes/game_object/entity/单位.tscn" id="1_au3mk"]
 [ext_resource type="Script" uid="uid://ehv06eqk1cx7" path="res://scenes/game_object/entity/enemy/enemy.gd" id="2_2vcqf"]
+[ext_resource type="Resource" uid="uid://c0ad44rkewssa" path="res://resources/audio/sfx/蜗牛_0100100.Die.tres" id="4_1fh45"]
 [ext_resource type="SpriteFrames" uid="uid://bj32ak7qorx1o" path="res://resources/sprite_frames/蜗牛_0100100.tres" id="4_r5kov"]
 [ext_resource type="Script" uid="uid://bjvqbui703u8x" path="res://resources/单位属性/单位属性集.gd" id="5_gudbt"]
 [ext_resource type="Script" uid="uid://c218ra1pf7xxj" path="res://resources/单位属性/单位属性.gd" id="6_1gl80"]
+[ext_resource type="Resource" uid="uid://bb8ieafnmuger" path="res://resources/audio/sfx/蜗牛_0100100.Damage.tres" id="7_tm3wa"]
 [ext_resource type="Script" uid="uid://bd83jqryqem3b" path="res://resources/单位属性/生命_单位属性.gd" id="7_y4r7x"]
 [ext_resource type="Script" uid="uid://cocpxte7moiwt" path="res://resources/单位属性/最大生命值_单位属性.gd" id="8_cxwhy"]
 [ext_resource type="Texture2D" uid="uid://blbd4dn0qfryy" path="res://assets/Ninja Adventure - Asset Pack/Items/Object/Dice 20.png" id="9_iwx7t"]
@@ -525,7 +527,7 @@ states/stand/position = Vector2(342, 166)
 graph_offset = Vector2(56.757965, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3xd07"]
-size = Vector2(36, 25)
+size = Vector2(37, 26)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_au3mk"]
 radius = 14.0
@@ -634,7 +636,7 @@ metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aaojh"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_r5kov"]
+[sub_resource type="Resource" id="Resource_1fh45"]
 resource_local_to_scene = true
 resource_name = "移动速度"
 script = ExtResource("6_1gl80")
@@ -661,10 +663,10 @@ script = ExtResource("6_1gl80")
 "属性类型" = 8
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
-[sub_resource type="Resource" id="Resource_util0"]
+[sub_resource type="Resource" id="Resource_tm3wa"]
 resource_local_to_scene = true
 script = ExtResource("5_gudbt")
-"属性们" = Array[ExtResource("6_1gl80")]([SubResource("Resource_px4vd"), SubResource("Resource_ao34u"), SubResource("Resource_icuh5"), SubResource("Resource_t1qiv"), SubResource("Resource_fwjf5"), SubResource("Resource_k7f8g"), SubResource("Resource_km1hd"), SubResource("Resource_rx7p4"), SubResource("Resource_4i822"), SubResource("Resource_r5kov"), SubResource("Resource_055q7"), SubResource("Resource_uuiht")])
+"属性们" = Array[ExtResource("6_1gl80")]([SubResource("Resource_px4vd"), SubResource("Resource_ao34u"), SubResource("Resource_icuh5"), SubResource("Resource_t1qiv"), SubResource("Resource_fwjf5"), SubResource("Resource_k7f8g"), SubResource("Resource_km1hd"), SubResource("Resource_rx7p4"), SubResource("Resource_4i822"), SubResource("Resource_1fh45"), SubResource("Resource_055q7"), SubResource("Resource_uuiht")])
 metadata/_custom_type_script = "uid://bjvqbui703u8x"
 
 [node name="蜗牛" unique_id=192549199 groups=["enemy"] instance=ExtResource("1_au3mk")]
@@ -674,9 +676,10 @@ script = ExtResource("2_2vcqf")
 "群体运动推动力" = 5.0
 "单位名称" = "蜗牛"
 icon = ExtResource("19_kke0s")
+"死亡音效" = ExtResource("4_1fh45")
 
 [node name="head" type="Node2D" parent="." index="1" unique_id=719836701]
-position = Vector2(-12, -24)
+position = Vector2(-13, -24)
 
 [node name="视觉" parent="." index="2" unique_id=1456117193]
 position = Vector2(0, -1)
@@ -684,9 +687,8 @@ position = Vector2(0, -1)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="视觉" index="0" unique_id=8522652]
 sprite_frames = ExtResource("4_r5kov")
 animation = &"move"
-frame = 1
 centered = false
-offset = Vector2(-17, -25)
+offset = Vector2(-18, -26)
 
 [node name="AnimationPlayer" parent="." index="3" unique_id=1786467140]
 libraries/ = SubResource("AnimationLibrary_kntx2")
@@ -714,7 +716,7 @@ collision_mask = 16
 collide_reset_interval = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TouchHitbox" index="0" unique_id=1829707185]
-position = Vector2(1, -12.5)
+position = Vector2(0.5, -13)
 shape = SubResource("RectangleShape2D_3xd07")
 debug_color = Color(1.2032688e-06, 0.329946, 0.3898688, 0.41960785)
 
@@ -726,13 +728,14 @@ debug_color = Color(0.7024835, 0.4852388, 0.16611946, 0.41960785)
 [node name="HurtboxComponent" parent="." index="8" unique_id=581852039]
 collision_layer = 64
 collision_mask = 32
+"受击音效" = ExtResource("7_tm3wa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0" unique_id=1757577476]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_dlhfe")
 
 [node name="单位属性component" parent="." index="9" unique_id=176829961]
-"属性集" = SubResource("Resource_util0")
+"属性集" = SubResource("Resource_tm3wa")
 
 [node name="SkillManager" parent="." index="10" unique_id=845903834]
 "初始技能" = Array[ExtResource("25_mjmsu")]([ExtResource("26_r8v5t")])

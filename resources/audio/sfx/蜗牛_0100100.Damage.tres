@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SfxRef" format=3 uid="uid://bb8ieafnmuger"]
+
+[ext_resource type="Script" uid="uid://caqttslf8x051" path="res://resources/audio/sfx_ref.gd" id="1_pybxu"]
+[ext_resource type="AudioStream" uid="uid://276187ssudqe" path="res://assets/MapleStory/Sound/Mob/0100100.Damage.mp3" id="2_6isgd"]
+
+[resource]
+script = ExtResource("1_pybxu")
+"最大传播距离" = 1200.0
+"显示名称" = "蜗牛_受击"
+"音频流" = ExtResource("2_6isgd")

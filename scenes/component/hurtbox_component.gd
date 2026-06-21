@@ -3,6 +3,10 @@ class_name HurtboxComponent
 
 signal 被击中(hitbox:HitboxComponent)
 
+## 音效配置
+@export_group("音效")
+@export var 受击音效: SfxRef    # 受击时播放的音效资源（直接拖入 .tres）
+
 ## 当前Area2D触发时调用
 func _on_area_entered(area: Area2D) -> void:
 	if area is HitboxComponent:

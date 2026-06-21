@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MusicRef" format=3]
+
+[ext_resource type="Script" uid="uid://bcibxf4eikmfu" path="res://resources/audio/music_ref.gd" id="1_script"]
+
+
+[resource]
+script = ExtResource("1_script")
+显示名称 = "失败"
+音频流 = null
+总线 = "Music"
+音量 = 0.8
+淡入时间 = 1.0
+淡出时间 = 2.0
+循环播放 = false

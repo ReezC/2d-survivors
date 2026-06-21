@@ -33,6 +33,10 @@ var 上一个状态: 角色状态 = 角色状态.待机
 @export var 单位名称: String = "单位" :set = 设置_单位名称
 @export var icon: Texture2D
 
+## 音效配置
+@export_group("音效")
+@export var 死亡音效: SfxRef    # 死亡时播放的音效资源（直接拖入 .tres）
+
 func 设置_单位名称(新名称: String) -> void:
 	单位名称 = 新名称
 	name = 新名称
@@ -166,11 +170,16 @@ func _执行伤害判定(hitbox: HitboxComponent) -> void:
 		elif "enemy" in self.get_groups():
 			GameEvents.创建跳字.emit(计算碰撞相交位置(hitbox, hurtbox_component), "%d" % hitbox.命中伤害, 跳字对象池.跳字类型枚举.怪物受到的普通伤害, 0)
 			设置受击闪白material(GameEvents.受击闪白material)
+	
+	# 播放受击音效（传入世界坐标以启用位置衰减）
+	AudioManager.play_sfx_ref(hurtbox_component.受击音效, global_position)
 
 
 func die() -> void:
 	当前状态 = 角色状态.死亡
 	死亡.emit()
+	# 播放死亡音效（传入世界坐标以启用位置衰减）
+	AudioManager.play_sfx_ref(死亡音效, global_position)
 	GMLogger.log_attr("%s 死亡" % name)
 	# 添加死亡倒计时，3秒后删除节点
 	await get_tree().create_timer(3.0).timeout

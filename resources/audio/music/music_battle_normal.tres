@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MusicRef" format=3 uid="uid://bpl5s4wyexvx0"]
+
+[ext_resource type="Script" uid="uid://bcibxf4eikmfu" path="res://resources/audio/music_ref.gd" id="1_y87nc"]
+[ext_resource type="AudioStream" uid="uid://c7napxbir8eso" path="res://assets/MapleStory/Sound/Bgm00.img/RestNPeace.mp3" id="2_y87nc"]
+
+[resource]
+script = ExtResource("1_y87nc")
+"音频流" = ExtResource("2_y87nc")
+"总线" = "Music"
