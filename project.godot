@@ -22,8 +22,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameEvents="*res://scenes/aotuload/game_events.tscn"
-VFX="*uid://ecyiymmaj3jv"
-EnvVFX="*uid://qomyut16hnoi"
 ECSWorld="*res://ecs/ecs_world.gd"
 GMLogger="*res://scenes/aotuload/gm_logger.gd"
 
@@ -39,7 +37,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/CodeEditorSwitch/plugin.cfg", "res://addons/asset_export/plugin.cfg", "res://addons/vfx_library/plugin.cfg")
+enabled=PackedStringArray("res://addons/CodeEditorSwitch/plugin.cfg", "res://addons/asset_export/plugin.cfg")
 
 [file_customization]
 
