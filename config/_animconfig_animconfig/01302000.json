@@ -20,11 +20,18 @@
 			"vslot":[
 				"Wp"
 			]
+		},
+		{
+			"$type":"animconfig.Info.WeaponInfo",
+			"walk":1,
+			"stand":1,
+			"attack":1
 		}
 	],
 	"animCfg":[
 		{
 			"$type":"animconfig.AnimConfigData",
+			"$fold":true,
 			"name":"stand1",
 			"frames":[
 				{
@@ -88,6 +95,103 @@
 		},
 		{
 			"$type":"animconfig.AnimConfigData",
+			"name":"walk1",
+			"frames":[
+				{
+					"$type":"animconfig.AnimFrame",
+					"$note":"note：0",
+					"spritecfg":[
+						{
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"weapon",
+							"spriteDir":"res://assets/MapleStory/Character/Weapon/01302000/walk1.0.weapon.png",
+							"origin_x":25.0,
+							"origin_y":7.0,
+							"map":[
+								{
+									"$type":"animconfig.SkelectonMap",
+									"bone":"hand",
+									"offset_x":8.0,
+									"offset_y":-2.0
+								}
+							],
+							"z":"weapon"
+						}
+					],
+					"face":1,
+					"delay":180
+				},
+				{
+					"$type":"animconfig.AnimFrame",
+					"$note":"note：1",
+					"$fold":true,
+					"spritecfg":[
+						{
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"weapon",
+							"spriteDir":"res://assets/MapleStory/Character/Weapon/01302000/walk1.1.weapon.png",
+							"origin_x":25.0,
+							"origin_y":7.0,
+							"map":[
+								{
+									"$type":"animconfig.SkelectonMap",
+									"bone":"hand",
+									"offset_x":6.0,
+									"offset_y":6.0
+								}
+							],
+							"z":"weapon"
+						}
+					],
+					"face":1,
+					"delay":180
+				},
+				{
+					"$type":"animconfig.AnimFrame",
+					"$note":"note：2",
+					"$fold":true,
+					"spritecfg":[
+						{
+							"$type":"animconfig.SpriteConfigData.FrameLink",
+							"name":"weapon",
+							"id":"01302000",
+							"animName":"walk1",
+							"spriteName":"weapon"
+						}
+					],
+					"face":1,
+					"delay":180
+				},
+				{
+					"$type":"animconfig.AnimFrame",
+					"$note":"note：3",
+					"$fold":true,
+					"spritecfg":[
+						{
+							"$type":"animconfig.SpriteConfigData.Sprite",
+							"name":"weapon",
+							"spriteDir":"res://assets/MapleStory/Character/Weapon/01302000/walk1.3.weapon.png",
+							"origin_x":25.0,
+							"origin_y":7.0,
+							"map":[
+								{
+									"$type":"animconfig.SkelectonMap",
+									"bone":"hand",
+									"offset_x":8.0,
+									"offset_y":-1.0
+								}
+							],
+							"z":"weapon"
+						}
+					],
+					"face":1,
+					"delay":180
+				}
+			]
+		},
+		{
+			"$type":"animconfig.AnimConfigData",
+			"$fold":true,
 			"name":"swingO1",
 			"frames":[
 				{

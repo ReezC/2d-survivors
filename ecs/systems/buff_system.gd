@@ -246,8 +246,11 @@ func _skillAction_execute(entity_id: int, buff: BuffComponentData, action: Dicti
 			var caster = entity_manager.get_unit(entity_id)
 			if caster == null:
 				return
-			var obj_id = int(action.get("id"))
-			var obj_scene_path = skill_system.子物体场景路径 + "/" + str(obj_id) + ".tscn"
+			var scene_name = action.get("sceneName", "")
+			if scene_name == "":
+				push_error("[BuffSystem] CreateObj 缺少 sceneName 字段")
+				return
+			var obj_scene_path = skill_system.子物体场景路径 + "/" + scene_name + ".tscn"
 			var obj_duration_compiled = skill_system._编译数值(action.get("duration", {}))
 			var obj_duration = _快速求值(buff, obj_duration_compiled) / 1000.0
 			if obj_duration == 0.0:

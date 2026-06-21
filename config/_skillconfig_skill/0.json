@@ -1,0 +1,25 @@
+{
+	"$type":"skillconfig.skill",
+	"blackBoard":{
+		"$type":"skillconfig.BlackBoard"
+	},
+	"buff":{
+		"$type":"skillconfig.OneBuff",
+		"duration":{
+			"$type":"skillconfig.FloatValue.Const"
+		},
+		"maxStack":{
+			"$type":"skillconfig.FloatValue.Const"
+		},
+		"stackType":"refresh",
+		"buffLogic":{
+			"$type":"skillconfig.BuffLogic.BuffList"
+		}
+	},
+	"CD":{
+		"$type":"skillconfig.FloatValue.Const"
+	},
+	"skillTriggerRange":{
+		"$type":"skillconfig.FloatValue.Const"
+	}
+}
