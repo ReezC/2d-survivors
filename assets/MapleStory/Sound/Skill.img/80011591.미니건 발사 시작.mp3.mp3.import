@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://12r14woowycb"
+path="res://.godot/imported/80011591.미니건 발사 시작.mp3.mp3-729c30ac987ead265d89770d571cd3d1.mp3str"
+
+[deps]
+
+source_file="res://assets/MapleStory/Sound/Skill.img/80011591.미니건 발사 시작.mp3.mp3"
+dest_files=["res://.godot/imported/80011591.미니건 발사 시작.mp3.mp3-729c30ac987ead265d89770d571cd3d1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

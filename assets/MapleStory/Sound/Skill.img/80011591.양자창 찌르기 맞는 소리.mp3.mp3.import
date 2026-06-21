@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://r3mnb6jya7we"
+path="res://.godot/imported/80011591.양자창 찌르기 맞는 소리.mp3.mp3-1a2e81cec173022c0d51741638b707d6.mp3str"
+
+[deps]
+
+source_file="res://assets/MapleStory/Sound/Skill.img/80011591.양자창 찌르기 맞는 소리.mp3.mp3"
+dest_files=["res://.godot/imported/80011591.양자창 찌르기 맞는 소리.mp3.mp3-1a2e81cec173022c0d51741638b707d6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
