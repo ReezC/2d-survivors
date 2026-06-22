@@ -23,8 +23,17 @@ var _active_objects: Array[TrackedObject] = []
 ## SkillSystem 引用（用于编译表达式）
 var skill_system: SkillSystem = null
 
+## 事件总线
+var event_bus: Node = null
+
 func _init(em: EntityManager) -> void:
 	super._init(em)
+
+func set_dependencies(deps: Dictionary) -> void:
+	if deps.has("skill_system"):
+		skill_system = deps["skill_system"]
+	if deps.has("event_bus"):
+		event_bus = deps["event_bus"]
 
 func update(delta: float) -> void:
 	for i in range(_active_objects.size() - 1, -1, -1):

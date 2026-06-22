@@ -20,12 +20,16 @@ func _ready() -> void:
 	buff_system = BuffSystem.new(entity_manager)
 	subobject_system = SubObjectSystem.new(entity_manager)
 	
-	# 建立 System 之间的引用
-	skill_system.buff_system = buff_system
-	skill_system.subobject_system = subobject_system
-	buff_system.skill_system = skill_system
-	buff_system.subobject_system = subobject_system
-	subobject_system.skill_system = skill_system
+	# 注入依赖（避免构造时循环依赖）
+	var deps = {
+		"skill_system": skill_system,
+		"buff_system": buff_system,
+		"subobject_system": subobject_system,
+		"event_bus": GameEvents,
+	}
+	skill_system.set_dependencies(deps)
+	buff_system.set_dependencies(deps)
+	subobject_system.set_dependencies(deps)
 
 func _process(delta: float) -> void:
 	if skill_system:

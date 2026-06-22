@@ -33,6 +33,17 @@ var buff_system: BuffSystem = null
 ## SubObjectSystem 引用（用于创建子物体）
 var subobject_system: SubObjectSystem = null
 
+## 事件总线
+var event_bus: Node = null
+
+func set_dependencies(deps: Dictionary) -> void:
+	if deps.has("buff_system"):
+		buff_system = deps["buff_system"]
+	if deps.has("subobject_system"):
+		subobject_system = deps["subobject_system"]
+	if deps.has("event_bus"):
+		event_bus = deps["event_bus"]
+
 ## 获取技能拥有者的可读名称
 func _owner_name(entity_id: int) -> String:
 	var unit = entity_manager.get_unit(entity_id)

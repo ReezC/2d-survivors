@@ -13,8 +13,23 @@ var skill_system: SkillSystem = null
 ## SubObjectSystem 引用
 var subobject_system: SubObjectSystem = null
 
+## 事件总线（用于事件驱动替代直接调用）
+var event_bus: Node = null
+
 func _init(em: EntityManager) -> void:
 	super._init(em)
+
+func set_dependencies(deps: Dictionary) -> void:
+	# 支持部分注入
+	if deps.has("skill_system"):
+		skill_system = deps["skill_system"]
+	if deps.has("subobject_system"):
+		subobject_system = deps["subobject_system"]
+	if deps.has("event_bus"):
+		event_bus = deps["event_bus"]
+		# 订阅常用事件（示例）
+		if event_bus and event_bus.has_signal("unit_died") and not event_bus.is_connected("unit_died", Callable(self, "_on_unit_died")):
+			event_bus.connect("unit_died", Callable(self, "_on_unit_died"))
 
 func update(delta: float) -> void:
 	var entities = entity_manager.query_entities([ECSComponentTypes.ComponentType.BUFF])
