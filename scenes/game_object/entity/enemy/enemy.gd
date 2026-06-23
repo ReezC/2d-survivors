@@ -53,7 +53,7 @@ func set_anim() -> void:
 	match 当前状态:
 		角色状态.死亡:
 			state_machine.travel("die1")
-		角色状态.释放技能:
+		角色状态.施法:
 			state_machine.travel("skill")
 		角色状态.待机:
 			state_machine.travel("stand")

@@ -7,16 +7,35 @@ var 平滑移速:Vector2 = Vector2.ZERO
 var _last_horizontal_sign: int = -1  # 默认朝左（与精灵默认方向一致）
 
 @onready var character_body: CharacterBody = $body
+@onready var paper_doll: PaperDollAnimator = get_node_or_null("PaperDollAnimator") as PaperDollAnimator
+
+# ---- Face 独立状态机 ----
+## 脸部动画与角色身体动画完全解耦，后续可扩展 HAPPY / SAD 等表情状态。
+enum FaceState { IDLE }
+var _face_state: int = FaceState.IDLE
+
+# IDLE 状态下的眨眼子行为
+var _face_is_blinking: bool = false
+var _face_blink_remaining: int = 0         # 本次剩余 blink 次数（1 或 2）
+var _face_blink_gap_ms: float = 0.0        # 两次 blink 之间的间隔计时器
+var _face_blink_interval_ms: float = 3000.0
+var _face_blink_timer_ms: float = 0.0
+var _face_blink_frame: int = 0
+var _face_blink_frame_timer_ms: float = 0.0
+const FACE_BLINK_FRAME_DELAY_MS := 60.0
+const FACE_BLINK_SEQUENCE_GAP_MS := 150.0  # 连眨两次时，第一次和第二次的间隔
+const FACE_BLINK_INTERVAL_MIN_MS := 2000.0
+const FACE_BLINK_INTERVAL_MAX_MS := 6000.0
+const FACE_BLINK_DOUBLE_CHANCE := 0.3       # 30% 几率连眨两次
 
 
 func _ready() -> void:
 	super._ready()
-	#animated_sprite_2d.visible = false
 
 func _process(delta: float) -> void:
-	# 输入映射到移动
 	player_move(delta)
 	set_anim()
+	_update_face_state(delta)
 	move_and_slide()
 
 
@@ -35,35 +54,37 @@ func player_move(delta: float) -> void:
 	var h_sign := _get_horizontal_sign()
 	if h_sign != 0 and h_sign != _last_horizontal_sign:
 		_last_horizontal_sign = h_sign
+		if paper_doll:
+			paper_doll.set_face_direction(h_sign)
 		if character_body:
 			character_body.set_face_direction(h_sign)
 
 
 func set_anim() -> void:
 	# ---- 纸娃娃动画驱动 ----
-	if character_body and character_body.animator:
+	if paper_doll:
 		match 当前状态:
 			角色状态.待机:
-				character_body.set_animation_state(0)
+				paper_doll.set_animation_by_state(0)
 			角色状态.移动:
-				character_body.set_animation_state(1)
+				paper_doll.set_animation_by_state(1)
 	
 	# ---- AnimationTree 动画驱动（仅非纸娃娃模式时使用） ----
 	if state_machine == null:
 		return
-	var tree_active: bool = animation_tree and animation_tree.active
-	if not tree_active:
-		return
-	match 当前状态:
-		角色状态.死亡:
-			state_machine.travel("ghoststand")
-		# 角色状态.释放技能:
-		# 	state_machine.travel("skill")
-		角色状态.待机:
-			state_machine.travel("stand1")
-		角色状态.移动:
-			state_machine.travel("walk1")
-			animation_tree.set("parameters/move/blend_position", facingDirection)
+	# var tree_active: bool = animation_tree and animation_tree.active
+	# if not tree_active:
+		# return
+	# match 当前状态:
+	# 	角色状态.死亡:
+	# 		state_machine.travel("ghoststand")
+	# 	# 角色状态.施法:
+	# 	# 	state_machine.travel("skill")
+	# 	角色状态.待机:
+	# 		state_machine.travel("stand1")
+	# 	角色状态.移动:
+	# 		state_machine.travel("walk1")
+	# 		animation_tree.set("parameters/move/blend_position", facingDirection)
 		
 
 
@@ -96,4 +117,68 @@ func get_facing_direction() -> Vector2:
 			facingDirection = Vector2.LEFT
 	
 	return facingDirection
-	
+
+
+# ============================================================
+# Face 独立状态机
+# ============================================================
+
+func _update_face_state(delta: float) -> void:
+	"""每帧驱动 face 状态机（仅纸娃娃模式下有效）"""
+	if paper_doll == null:
+		return
+	if not paper_doll.get_face_node():
+		return
+
+	match _face_state:
+		FaceState.IDLE:
+			_face_idle_update(delta)
+
+
+func _face_idle_update(delta: float) -> void:
+	"""IDLE 状态：跟随身体动画帧 + 随机眨眼"""
+	if not _face_is_blinking:
+		# 同步 face 到身体动画
+		paper_doll.apply_face_to_current_frame()
+
+		# 眨眼倒计时
+		if paper_doll.face_has_animation("blink"):
+			_face_blink_timer_ms += delta * 1000.0
+			if _face_blink_timer_ms >= _face_blink_interval_ms:
+				_face_blink_timer_ms = 0.0
+				_face_blink_remaining = 2 if randf() < FACE_BLINK_DOUBLE_CHANCE else 1
+				_face_is_blinking = true
+				_face_blink_frame = 0
+				_face_blink_frame_timer_ms = 0.0
+				paper_doll.set_face_frame("blink", 0)
+		return
+
+	# 正在播放 blink 动画
+	if _face_blink_gap_ms > 0.0:
+		# 两次 blink 之间的间隔期，face 跟随身体动画
+		paper_doll.apply_face_to_current_frame()
+		_face_blink_gap_ms -= delta * 1000.0
+		if _face_blink_gap_ms <= 0.0:
+			_face_blink_gap_ms = 0.0
+			_face_blink_frame = 0
+			_face_blink_frame_timer_ms = 0.0
+			paper_doll.set_face_frame("blink", 0)
+		return
+
+	_face_blink_frame_timer_ms += delta * 1000.0
+	if _face_blink_frame_timer_ms >= FACE_BLINK_FRAME_DELAY_MS:
+		_face_blink_frame_timer_ms = 0.0
+		_face_blink_frame += 1
+
+		var blink_max := paper_doll.face_get_frame_count("blink")
+		if _face_blink_frame >= blink_max:
+			_face_blink_remaining -= 1
+			if _face_blink_remaining > 0:
+				# 先回到 default 动画，间隔后再眨下一次
+				paper_doll.apply_face_to_current_frame()
+				_face_blink_gap_ms = FACE_BLINK_SEQUENCE_GAP_MS
+			else:
+				_face_is_blinking = false
+				_face_blink_interval_ms = randf_range(FACE_BLINK_INTERVAL_MIN_MS, FACE_BLINK_INTERVAL_MAX_MS)
+		else:
+			paper_doll.set_face_frame("blink", _face_blink_frame)

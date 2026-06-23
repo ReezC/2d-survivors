@@ -34,22 +34,20 @@ var _children_dirty: bool = false
 func build(character: Node2D) -> void:
 	_character = character
 
-	# 1. 确保 "视觉" 容器存在
+	# 1. 查找预制的 "视觉" 容器节点
 	_visual_parent = _character.get_node_or_null("视觉") as Node2D
 	if _visual_parent == null:
-		_visual_parent = Node2D.new()
-		_visual_parent.name = "视觉"
-		_character.add_child(_visual_parent)
+		push_error("PaperDollBuilder: 未找到预制的 视觉 节点")
+		return
 
-	# zmap 引用从 视觉 节点获取（必须在 _visual_parent 就绪之后）
+	# zmap 引用从 视觉 节点获取
 	_acquire_zmap_from_visual()
 
-	# 2. 创建 body 骨骼根节点
+	# 2. 查找预制的 body 骨骼根节点
 	_body_bone = _character.get_node_or_null("body") as Node2D
 	if _body_bone == null:
-		_body_bone = Node2D.new()
-		_body_bone.name = "body"
-		_character.add_child(_body_bone)
+		push_error("PaperDollBuilder: 未找到预制的 body 骨骼根节点")
+		return
 	_bone_nodes["body"] = _body_bone
 
 

@@ -362,7 +362,7 @@ static func _播放技能动画(who: Node2D, 动画名称: String, 技能动画�
 	if who.has_method("get") and "当前状态" in who and "角色状态" in who:
 		if who.当前状态 == who.角色状态.死亡:
 			return
-		who.当前状态 = who.角色状态.释放技能
+		who.当前状态 = who.角色状态.施法
 	
 	var anim_timer = Timer.new()
 	anim_timer.wait_time = 技能动画持续时间 / 1000.0

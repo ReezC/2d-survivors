@@ -1,10 +1,15 @@
 class_name PaperDollAnimator extends Node
-## 纸娃娃动画控制器 —— 驱动帧切换和骨骼位置更新
+## 纸娃娃动画控制器 —— 自主读取 CharacterBody 数据并驱动帧切换、骨骼更新
 ##
-## 挂载在 character_body 节点下，由 player.gd 驱动
+## 挂载在角色根节点下（与 body/CharacterBody 同级）。
+## 无需外部初始化，_ready() 自动从 CharacterBody 读取 VisualItem 数据并构建。
+
+# ---- 数据源 ----
+var _character_body: CharacterBody
+var _visual_node: Node2D
 
 # ---- 运行时状态 ----
-var _builder: PaperDollBuilder
+var _builder: PaperDollBuilder = PaperDollBuilder.new()
 var _current_anim: String = ""
 var _current_frame: int = 0
 var _frame_timer_ms: float = 0.0
@@ -15,17 +20,8 @@ var _pingpong_forward: bool = true # 乒乓方向：true=正向, false=反向
 # ---- 每帧缓存：避免 _process 中重复 _find_anim_data 遍历 ----
 var _cached_anim_data: Dictionary = {}  # {config_id: anim_data_dict}
 
-# ---- face blink 状态机 ----
-var _blink_timer_ms: float = 0.0       # 距离下次眨眼的倒计时
-var _blink_interval_ms: float = 3000.0 # 下次眨眼的随机间隔
-var _blink_active: bool = false         # 是否正在播放 blink 动画
-var _blink_frame: int = 0               # 当前 blink 帧
-var _blink_frame_timer_ms: float = 0.0  # blink 帧内计时器
-var _blink_saved_anim: String = ""      # blink 前保存的动画名，用于恢复
-var _blink_saved_frame: int = 0         # blink 前保存的帧号，用于恢复
-const BLINK_FRAME_DELAY_MS := 60        # 每帧 60ms
-const BLINK_MIN_INTERVAL_MS := 2000.0   # 最小间隔 2 秒
-const BLINK_MAX_INTERVAL_MS := 6000.0   # 最大间隔 6 秒
+# ---- 槽位配置变更检测 ----
+var _slot_config_paths: Dictionary = {}  # islot_enum → String
 
 # 角色状态到动画名的映射
 const STATE_ANIM_MAP := {
@@ -35,17 +31,49 @@ const STATE_ANIM_MAP := {
 
 
 func _ready() -> void:
-	_builder = PaperDollBuilder.new()
+	"""自主从 CharacterBody 读取数据并构建纸娃娃系统"""
+	var player_root := get_parent()
+	if player_root == null:
+		return
 
+	_character_body = player_root.get_node_or_null("body") as CharacterBody
+	if _character_body == null:
+		return
 
-func add_part_config(json_path: String) -> void:
-	"""添加一个部件配置"""
-	_builder.add_part_config(json_path)
+	_visual_node = player_root.get_node_or_null("视觉") as Node2D
 
+	# 1. 禁用并清除 AnimationPlayer
+	_disable_animation_player(player_root)
 
-func build_finish() -> void:
-	"""完成构建后调用：一次性排序子节点 + 初始化 anim_data 缓存"""
+	# 2. 清空视觉下的旧部件
+	if _visual_node:
+		for child in _visual_node.get_children():
+			child.queue_free()
+
+	# 3. 委托 Builder 构建纸娃娃系统
+	_builder.build(player_root)
+
+	# 4. 从 CharacterBody 读取 VisualItem 数据
+	if _character_body.装备槽位:
+		for visual_item in _character_body.装备槽位.islot.values():
+			if visual_item == null:
+				continue
+			_builder.add_part_config(visual_item.动画帧配置文件, visual_item)
+
 	_builder.finish_children_sort()
+
+	# 5. 按槽位应用首次渲染配置
+	_apply_all_slot_rendering()
+
+	# 6. 禁用 AnimationTree（纸娃娃自行驱动帧切换）
+	_disable_animation_tree(player_root)
+
+	set_animation_by_state(0)
+
+
+func add_part_config(json_path: String, source_visual_item: VisualItem = null) -> void:
+	"""添加一个部件配置（可附带 VisualItem 用于获取默认动画等属性）"""
+	_builder.add_part_config(json_path, source_visual_item)
 
 
 func set_animation_by_state(state: int) -> void:
@@ -111,9 +139,6 @@ func _process(delta: float) -> void:
 	if has_force_refresh:
 		_update_skeleton_positions()
 		_apply_current_frame()
-
-	# 5. face blink 独立逻辑（与主循环并行，不干扰主帧推进）
-	_update_blink(delta)
 
 
 func _advance_frame() -> void:
@@ -223,6 +248,8 @@ func _apply_frame_for_config(config_id: String) -> void:
 
 	for sprite_cfg in frame.get("spritecfg", []):
 		var stype = sprite_cfg.get("$type", "")
+		if sprite_cfg.get("name", "") == "face":
+			continue  # face 由 player.gd 状态机独立管理
 		if stype.ends_with(".Sprite"):
 			_apply_sprite(sprite_cfg, anim_name, frame_idx)
 		elif stype.ends_with(".FrameLink"):
@@ -379,58 +406,168 @@ func _process_skeleton_maps(sprite_cfg: Dictionary) -> void:
 
 
 # ============================================================
-# Face Blink 眨眼系统
+# Face 渲染接口（供 player.gd 的 face 状态机调用）
 # ============================================================
 
-func _update_blink(delta: float) -> void:
-	"""驱动 face 部件的眨眼动画，独立于主循环
+## 返回 face 精灵节点，不存在时返回 null
+func get_face_node() -> VisualItemPart:
+	return _builder.get_sprite_nodes().get("face") as VisualItemPart
 
-	规则：
-	- 随机间隔 2-6 秒触发一次眨眼
-	- 眨眼时播放 blink 动画（3 帧，每帧 60ms）
-	- 播放完后回到主循环当前动画（default）
-	- 不干扰 _process 中的主帧推进逻辑
-	"""
-	var face_node := _builder.get_sprite_nodes().get("face") as VisualItemPart
+
+## 将 face 精灵的动画和帧同步到当前主循环动画的对应帧
+func apply_face_to_current_frame() -> void:
+	var face_node := get_face_node()
 	if face_node == null:
 		return
-	var sf := face_node.sprite_frames
-	if sf == null or not sf.has_animation("blink"):
+
+	for config_id in _cached_anim_data:
+		var anim_data: Dictionary = _cached_anim_data[config_id]
+		if anim_data.is_empty():
+			continue
+		var frames: Array = anim_data.get("frames", [])
+		if frames.is_empty():
+			continue
+		var frame_idx: int = _current_frame % frames.size()
+		var frame: Dictionary = frames[frame_idx]
+		var anim_name: String = anim_data.get("name", "")
+
+		for sprite_cfg in frame.get("spritecfg", []):
+			if sprite_cfg.get("name", "") != "face":
+				continue
+			var stype = sprite_cfg.get("$type", "")
+			if stype.ends_with(".Sprite"):
+				_apply_sprite(sprite_cfg, anim_name, frame_idx)
+			elif stype.ends_with(".FrameLink"):
+				_apply_framelink(sprite_cfg, anim_name, frame_idx)
+			return  # face 只处理一次
+
+
+## 直接设置 face 精灵的动画名和帧号（用于 blink 等独立表情）
+func set_face_frame(anim_name: String, frame_idx: int) -> void:
+	var face_node := get_face_node()
+	if face_node == null:
+		return
+	if face_node.sprite_frames and face_node.sprite_frames.has_animation(anim_name):
+		face_node.animation = anim_name
+	face_node.frame = frame_idx
+
+
+## 检查 face 精灵是否拥有指定动画
+func face_has_animation(anim_name: String) -> bool:
+	var face_node := get_face_node()
+	if face_node == null or face_node.sprite_frames == null:
+		return false
+	return face_node.sprite_frames.has_animation(anim_name)
+
+
+## 获取 face 指定动画的帧数
+func face_get_frame_count(anim_name: String) -> int:
+	var face_node := get_face_node()
+	if face_node == null or face_node.sprite_frames == null:
+		return 0
+	return face_node.sprite_frames.get_frame_count(anim_name)
+
+
+# ============================================================
+#  初始化辅助
+# ============================================================
+
+func _disable_animation_player(player_root: Node) -> void:
+	var ap := player_root.get_node_or_null("AnimationPlayer") as AnimationPlayer
+	if ap == null:
+		return
+	ap.active = false
+	ap.stop()
+	if ap.has_animation_library(&""):
+		var lib := ap.get_animation_library(&"")
+		for old_anim in lib.get_animation_list():
+			lib.remove_animation(old_anim)
+
+
+func _disable_animation_tree(player_root: Node) -> void:
+	var at := player_root.get_node_or_null("AnimationTree") as AnimationTree
+	if at:
+		at.active = false
+
+
+# ============================================================
+#  槽位渲染应用（从 CharacterBody 移入）
+# ============================================================
+
+func _apply_all_slot_rendering() -> void:
+	"""对所有有数据（部件非空且 VisualItem 存在）的槽位，调用 视觉 进行渲染配置"""
+	if _visual_node == null:
+		return
+	if not _visual_node.has_method(&"configure_part"):
+		return
+	for slot_name in EquipSlotConfig.islot_enum:
+		_apply_slot_rendering(EquipSlotConfig.islot_enum[slot_name])
+
+
+func _apply_slot_rendering(slot_key: int) -> void:
+	"""将某个槽位的 VisualItem 应用到其绑定的预制部件"""
+	if _character_body == null:
+		return
+	var visual_item: VisualItem = _character_body.装备槽位.islot.get(slot_key)
+	if visual_item == null:
+		return
+	var parts: Array = _character_body.get_slot_parts(slot_key)
+	if parts.is_empty():
+		return
+	for part in parts:
+		if part != null and part is VisualItemPart:
+			_visual_node.configure_part(part as VisualItemPart, visual_item)
+
+	_slot_config_paths[slot_key] = visual_item.动画帧配置文件
+
+
+# ============================================================
+#  运行时装备更换 API（从 CharacterBody 移入）
+# ============================================================
+
+## 运行时更换装备：更新 islot 字典，检测部件是否匹配，不匹配则按配置重构
+func set_slot_item(slot_key: EquipSlotConfig.islot_enum, new_item: VisualItem) -> void:
+	if _character_body == null or _character_body.装备槽位 == null:
 		return
 
-	if _blink_active:
-		# 正在播放 blink 动画
-		_blink_frame_timer_ms += delta * 1000.0
-		if _blink_frame_timer_ms >= BLINK_FRAME_DELAY_MS:
-			_blink_frame_timer_ms = 0.0
-			_blink_frame += 1
-			var blink_max := sf.get_frame_count("blink")
-			if _blink_frame >= blink_max:
-				# blink 播放完毕，恢复到之前保存的动画和帧
-				_blink_active = false
-				_blink_frame = 0
-				_reset_blink_interval()
-				face_node.animation = _blink_saved_anim
-				face_node.frame = _blink_saved_frame
-			else:
-				# 下一帧
-				face_node.animation = "blink"
-				face_node.frame = _blink_frame
-	else:
-		# 等待下次眨眼
-		_blink_timer_ms += delta * 1000.0
-		if _blink_timer_ms >= _blink_interval_ms:
-			_blink_timer_ms = 0.0
-			# 保存当前 face 状态，用于 blink 结束后恢复
-			_blink_saved_anim = face_node.animation
-			_blink_saved_frame = face_node.frame
-			_blink_active = true
-			_blink_frame = 0
-			_blink_frame_timer_ms = 0.0
-			face_node.animation = "blink"
-			face_node.frame = 0
+	var old_item: VisualItem = _character_body.装备槽位.islot.get(slot_key)
+	if old_item == new_item:
+		return
+
+	_character_body.装备槽位.islot[slot_key] = new_item
+
+	if new_item == null:
+		_slot_config_paths.erase(slot_key)
+		return
+
+	_refresh_slot(slot_key)
 
 
-func _reset_blink_interval() -> void:
-	"""随机生成下次眨眼间隔（2-6 秒）"""
-	_blink_interval_ms = randf_range(BLINK_MIN_INTERVAL_MS, BLINK_MAX_INTERVAL_MS)
+func _refresh_slot(slot_key) -> void:
+	"""检测槽位配置是否变化，变化时重构渲染"""
+	if _character_body == null:
+		return
+	var visual_item: VisualItem = _character_body.装备槽位.islot.get(slot_key)
+	if visual_item == null or _visual_node == null:
+		return
+
+	var parts: Array = _character_body.get_slot_parts(slot_key)
+	if parts.is_empty():
+		return
+
+	var last_path: String = _slot_config_paths.get(slot_key, "")
+	var config_path: String = visual_item.动画帧配置文件
+
+	if config_path != last_path:
+		_slot_config_paths[slot_key] = config_path
+		if _visual_node.has_method(&"configure_part"):
+			for part in parts:
+				if part != null and part is VisualItemPart:
+					_visual_node.configure_part(part as VisualItemPart, visual_item)
+
+
+## 根据 islot_enum 获取对应槽位的 VisualItem
+func get_slot(slot_key: EquipSlotConfig.islot_enum) -> VisualItem:
+	if _character_body == null or _character_body.装备槽位 == null:
+		return null
+	return _character_body.装备槽位.islot.get(slot_key, null)

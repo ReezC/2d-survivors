@@ -37,15 +37,21 @@ extends Node
 ## 来源：经验系统、升级界面
 @export var gm_经验升级:   bool = false
 
-## 技能系统 — 技能释放成功/失败、冷却开始/就绪、被动技能生效、拥有者死亡
-## 来源：SkillSystem（skill_system.gd）、SkillManager（skill_manager.gd）、AbilityController
-## 包含玩家和怪物双方的技能 AI 行为
-@export var gm_技能系统:   bool = false
+## 角色状态 — 玩家状态变化（待机/移动/施法/死亡）
+## 来源：状态机、单位.gd
+@export var gm_角色状态:   bool = false
 
-## Buff与子物体 — 底层 Buff 创建/执行/销毁、子物体生成（hitbox/弹幕）、技能时间线
-## 来源：BuffSystem（buff_system.gd）、SubObjectSystem（subobject_system.gd）
-## 与"技能系统"互补：技能系统关注技能层面，Buff与子物体关注具体执行细节
-@export var gm_Buff与子物体: bool = false
+## 技能信息 — 技能释放成功/失败、冷却开始/就绪、被动技能生效
+## 来源：SkillSystem（skill_system.gd）、SkillManager（skill_manager.gd）、AbilityController
+@export var gm_技能信息:   bool = false
+
+## Buff信息 — Buff 创建/执行/销毁、SkillAction 执行细节
+## 来源：BuffSystem（buff_system.gd）
+@export var gm_Buff信息:   bool = false
+
+## 子物体 — 子物体生成（hitbox/弹幕）、运动、销毁
+## 来源：SubObjectSystem（subobject_system.gd）
+@export var gm_子物体:     bool = false
 
 ## 对象池 — 对象池回收/扩展/重用
 ## 来源：对象池管理器
@@ -84,8 +90,10 @@ func _sync_gm_logger() -> void:
 	GMLogger.set_enabled(GMLogger.LogCategory.战斗伤害,   gm_战斗伤害)
 	GMLogger.set_enabled(GMLogger.LogCategory.敌人生成,   gm_敌人生成)
 	GMLogger.set_enabled(GMLogger.LogCategory.经验升级,   gm_经验升级)
-	GMLogger.set_enabled(GMLogger.LogCategory.技能系统,   gm_技能系统)
-	GMLogger.set_enabled(GMLogger.LogCategory.Buff与子物体, gm_Buff与子物体)
+	GMLogger.set_enabled(GMLogger.LogCategory.角色状态,   gm_角色状态)
+	GMLogger.set_enabled(GMLogger.LogCategory.技能信息,   gm_技能信息)
+	GMLogger.set_enabled(GMLogger.LogCategory.Buff信息,   gm_Buff信息)
+	GMLogger.set_enabled(GMLogger.LogCategory.子物体,     gm_子物体)
 	GMLogger.set_enabled(GMLogger.LogCategory.对象池,     gm_对象池)
 	GMLogger.set_enabled(GMLogger.LogCategory.ECS,        gm_ECS)
 	GMLogger.set_enabled(GMLogger.LogCategory.属性变化,   gm_属性变化)

@@ -124,7 +124,7 @@ func _on_buff_end(entity_id: int, buff: BuffComponentData) -> void:
 	if buff._is_play_animation:
 		var caster = entity_manager.get_unit(entity_id)
 		if is_instance_valid(caster) and "当前状态" in caster and "角色状态" in caster:
-			if caster.当前状态 == caster.角色状态.释放技能:
+			if caster.当前状态 == caster.角色状态.施法:
 				caster.当前状态 = caster.角色状态.待机
 	
 func _update_buff(entity_id: int, buff: BuffComponentData, delta: float) -> void:
@@ -166,7 +166,7 @@ func _buff_execute(entity_id: int, buff: BuffComponentData, logic_data: Dictiona
 			if "当前状态" in caster and "角色状态" in caster:
 				if caster.当前状态 == caster.角色状态.死亡:
 					return
-				caster.当前状态 = caster.角色状态.释放技能
+				caster.当前状态 = caster.角色状态.施法
 			buff._is_play_animation = true
 			
 		"BuffList":
