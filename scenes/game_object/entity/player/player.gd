@@ -49,7 +49,10 @@ func player_move(delta: float) -> void:
 		velocity = velocity.lerp(Vector2.ZERO, acccelerate * delta)
 	elif 当前状态 == 角色状态.施法:
 		# 施法中不改变状态，速度受系数控制（从待机进入=0，从移动进入=0.5）
-		var target_velocity = inputDirection * attribute_component.获取属性值("移动速度") * 施法移动速度系数
+		var effective_coef := 施法移动速度系数
+		if _last_horizontal_sign != 0 and _last_horizontal_sign * inputDirection.x < 0:
+			effective_coef = 0.0  # 移动输入与朝向相反，禁止移动
+		var target_velocity = inputDirection * attribute_component.获取属性值("移动速度") * effective_coef
 		velocity = velocity.lerp(target_velocity, acccelerate * delta)
 	else:
 		# 待机/移动：根据输入切换状态
@@ -59,14 +62,15 @@ func player_move(delta: float) -> void:
 			当前状态 = 角色状态.待机
 		velocity = velocity.lerp(inputDirection * attribute_component.获取属性值("移动速度"), acccelerate * delta)
 	
-	# 检测水平方向变化，驱动纸娃娃翻转
-	var h_sign := _get_horizontal_sign()
-	if h_sign != 0 and h_sign != _last_horizontal_sign:
-		_last_horizontal_sign = h_sign
-		if paper_doll:
-			paper_doll.set_face_direction(h_sign)
-		if character_body:
-			character_body.set_face_direction(h_sign)
+	# 检测水平方向变化，驱动纸娃娃翻转（施法状态下默认禁用朝向修改）
+	if 当前状态 != 角色状态.施法 or 施法允许改朝向:
+		var h_sign := _get_horizontal_sign()
+		if h_sign != 0 and h_sign != _last_horizontal_sign:
+			_last_horizontal_sign = h_sign
+			if paper_doll:
+				paper_doll.set_face_direction(h_sign)
+			if character_body:
+				character_body.set_face_direction(h_sign)
 
 
 ## PaperDoll 的 Sequence 类型 buff 动画自然播完时回调
