@@ -4,7 +4,7 @@ extends Node
 # 日志分类枚举
 enum LogCategory {
 	战斗伤害,     # 伤害计算、命中检测
-	敌人生成,     # 怪物生成、波次
+	敌人信息,     # 怪物信息、波次
 	经验升级,     # 经验获取、升级选择
 	角色状态,     # 玩家状态变化（待机/移动/施法/死亡）
 	技能信息,     # 技能冷却、释放流程
@@ -67,7 +67,7 @@ func log_damage(msg: String) -> void:
 	_log(LogCategory.战斗伤害, msg, "RED")
 
 func log_enemy(msg: String) -> void:
-	_log(LogCategory.敌人生成, msg, "ORANGE")
+	_log(LogCategory.敌人信息, msg, "ORANGE")
 
 func log_exp(msg: String) -> void:
 	_log(LogCategory.经验升级, msg, "GREEN")

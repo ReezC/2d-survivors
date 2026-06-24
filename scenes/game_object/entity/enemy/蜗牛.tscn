@@ -518,8 +518,8 @@ blend_point_3/name = &"3"
 animation = &"stand"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4re02"]
-states/die1/node = SubResource("AnimationNodeAnimation_cxwhy")
-states/die1/position = Vector2(459, 166)
+states/die/node = SubResource("AnimationNodeAnimation_cxwhy")
+states/die/position = Vector2(459, 166)
 states/move/node = SubResource("AnimationNodeBlendSpace2D_cxwhy")
 states/move/position = Vector2(459, 93)
 states/stand/node = SubResource("AnimationNodeAnimation_4re02")

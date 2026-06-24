@@ -105,6 +105,19 @@ func _on_buff_start(entity_id: int, buff: BuffComponentData) -> void:
 	else:
 		GMLogger.log_buff("buff '%s' 没有 buffLogic!" % buff.buff_name)
 	
+	# 处理顶层 OneBuff.animation 字段（BuffAnimation 类型，独立于 buffLogic.PlayAnimation）
+	var animation_data: Dictionary = buff.buff_data.get("animation", {})
+	if not animation_data.is_empty():
+		var anim_type: String = animation_data.get("$type", "").split(".")[-1]
+		if anim_type != "None":
+			var caster = entity_manager.get_unit(entity_id)
+			if is_instance_valid(caster) and "当前状态" in caster:
+				if caster.当前状态 != caster.角色状态.死亡:
+					GMLogger.log_buff("buff '%s' 触发动画: %s" % [buff.buff_name, anim_type])
+					caster.施法动画参数 = animation_data
+					caster.当前状态 = caster.角色状态.施法
+					buff._is_play_animation = true
+	
 	if buff.duration == 0.0:
 		_on_buff_end(entity_id, buff)
 		return
@@ -123,7 +136,7 @@ func _on_buff_end(entity_id: int, buff: BuffComponentData) -> void:
 	# 处理 PlayAnimation 状态恢复
 	if buff._is_play_animation:
 		var caster = entity_manager.get_unit(entity_id)
-		if is_instance_valid(caster) and "当前状态" in caster and "角色状态" in caster:
+		if is_instance_valid(caster) and "当前状态" in caster:
 			if caster.当前状态 == caster.角色状态.施法:
 				caster.当前状态 = caster.角色状态.待机
 	
@@ -163,9 +176,11 @@ func _buff_execute(entity_id: int, buff: BuffComponentData, logic_data: Dictiona
 			var caster = entity_manager.get_unit(entity_id)
 			if not is_instance_valid(caster):
 				return
-			if "当前状态" in caster and "角色状态" in caster:
+			if "当前状态" in caster:
 				if caster.当前状态 == caster.角色状态.死亡:
 					return
+				var anim_config: Dictionary = buff.buff_data.get("animation", {})
+				caster.施法动画参数 = anim_config
 				caster.当前状态 = caster.角色状态.施法
 			buff._is_play_animation = true
 			

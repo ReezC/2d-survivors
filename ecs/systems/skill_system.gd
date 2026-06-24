@@ -160,7 +160,7 @@ func _update_enemy_ai(delta: float) -> void:
 		if not "enemy" in caster.get_groups():
 			continue
 		# 检查死亡
-		if caster.has_method("get") and "当前状态" in caster and "角色状态" in caster:
+		if caster.has_method("get") and "当前状态" in caster:
 			if caster.当前状态 == caster.角色状态.死亡:
 				continue
 		
@@ -264,7 +264,7 @@ func _try_cast_skills_for_group(target: Node2D, caster_group: String) -> void:
 		if caster_group not in caster.get_groups():
 			continue
 		# 检查施法者是否处于可释放技能的状态
-		if caster.has_method("get") and "当前状态" in caster and "角色状态" in caster:
+		if caster.has_method("get") and "当前状态" in caster:
 			if caster.当前状态 == caster.角色状态.死亡:
 				continue
 		var skills = entity_manager.get_component(eid, ECSComponentTypes.ComponentType.SKILL)
@@ -359,9 +359,14 @@ func _cast_skill_internal(entity_id: int, scd: SkillComponentData) -> void:
 static func _播放技能动画(who: Node2D, 动画名称: String, 技能动画持续时间: float) -> void:
 	if not is_instance_valid(who):
 		return
-	if who.has_method("get") and "当前状态" in who and "角色状态" in who:
+	if who.has_method("get") and "当前状态" in who:
 		if who.当前状态 == who.角色状态.死亡:
 			return
+		var anim_config: Dictionary = {
+			"$type": "skillconfig.BuffAnimation.Single",
+			"animationName": 动画名称,
+		}
+		who.施法动画参数 = anim_config
 		who.当前状态 = who.角色状态.施法
 	
 	var anim_timer = Timer.new()
@@ -371,7 +376,7 @@ static func _播放技能动画(who: Node2D, 动画名称: String, 技能动画�
 	var who_ref = weakref(who)
 	anim_timer.timeout.connect(func():
 		var w = who_ref.get_ref()
-		if w and "当前状态" in w and "角色状态" in w:
+		if w and "当前状态" in w:
 			w.当前状态 = w.角色状态.待机
 	)
 	who.add_child(anim_timer)

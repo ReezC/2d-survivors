@@ -275,8 +275,7 @@ func _compile_actor_condition(config: Dictionary) -> Callable:
 			return func(actor: Node) -> bool:
 				if actor == null or not actor.has_method("get") or not "当前状态" in actor:
 					return false
-				if not "角色状态" in actor:
-					return false
+
 				return actor.当前状态 == actor.角色状态[state_name]
 
 		"expression":

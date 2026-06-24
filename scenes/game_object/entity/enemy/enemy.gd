@@ -32,15 +32,17 @@ func _process(delta: float) -> void:
 	# velocity = move_direction * attribute_component.获取属性值("移动速度")
 
 
-	if 当前状态 != 角色状态.死亡:
+	if 当前状态 == 角色状态.死亡:
+		velocity = velocity.lerp(Vector2.ZERO,acccelerate * delta)
+	elif 当前状态 == 角色状态.施法:
+		# 施法中不改变状态，但可以移动
+		velocity = velocity.lerp(move_direction * attribute_component.获取属性值("移动速度"),acccelerate * delta)
+	else:
 		if move_direction != Vector2.ZERO:
 			当前状态 = 角色状态.移动
 		else:
 			当前状态 = 角色状态.待机
 		velocity = velocity.lerp(move_direction * attribute_component.获取属性值("移动速度"),acccelerate * delta)
-		
-	else:
-		velocity = velocity.lerp(Vector2.ZERO,acccelerate * delta)
 	move_and_slide()
 
 
@@ -52,7 +54,7 @@ func set_anim() -> void:
 		return
 	match 当前状态:
 		角色状态.死亡:
-			state_machine.travel("die1")
+			state_machine.travel("die")
 		角色状态.施法:
 			state_machine.travel("skill")
 		角色状态.待机:

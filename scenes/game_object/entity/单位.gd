@@ -30,6 +30,11 @@ var facingDirection:Vector2 = Vector2.DOWN
 
 var 当前状态: 角色状态 = 角色状态.待机 :set = 修改角色状态
 var 上一个状态: 角色状态 = 角色状态.待机
+## 施法状态附带的动画参数（与 cfg 中 BuffAnimation 接口结构一致）
+var 施法动画参数: Dictionary = {}
+## 施法状态下的移动速度系数（0=完全静止, 0.5=半速, 1.0=全速）
+## 由修改角色状态根据转入来源自动设置：待机→施法=0, 移动→施法=0.5
+var 施法移动速度系数: float = 1.0
 @export var 单位名称: String = "单位" :set = 设置_单位名称
 @export var icon: Texture2D
 
@@ -50,8 +55,24 @@ var _角色状态名: Dictionary = {
 
 
 func 修改角色状态(新状态: 角色状态) -> void:
-	if 当前状态 != 新状态 and is_in_group("player"):
+	"""修改角色状态。进入施法状态前，请先设置 施法动画参数。"""
+	if 当前状态 == 新状态:
+		return
+	if is_in_group("player"):
 		GMLogger.log_player_state("[%s] %s → %s" % [单位名称, _角色状态名[当前状态], _角色状态名[新状态]])
+	if 新状态 != 角色状态.施法:
+		施法动画参数.clear()
+	
+	# 进入施法状态时，根据来源状态设置移动速度系数
+	if 新状态 == 角色状态.施法:
+		match 当前状态:
+			角色状态.待机:
+				施法移动速度系数 = 0.0
+			角色状态.移动:
+				施法移动速度系数 = 0.5
+			_:
+				施法移动速度系数 = 0.0
+	
 	_on_角色状态退出(当前状态)
 	_on_角色状态进入(新状态)
 	上一个状态 = 当前状态
@@ -190,6 +211,11 @@ func die() -> void:
 	死亡.emit()
 	# 播放死亡音效（传入世界坐标以启用位置衰减）
 	AudioManager.play_sfx_ref(死亡音效, global_position)
+	if is_in_group("player"):
+		GMLogger.log_player_state("%s 死亡" % name)
+	elif is_in_group("enemy"):
+		GMLogger.log_enemy("%s 死亡" % name)
+
 	GMLogger.log_attr("%s 死亡" % name)
 	# 添加死亡倒计时，3秒后删除节点
 	await get_tree().create_timer(3.0).timeout

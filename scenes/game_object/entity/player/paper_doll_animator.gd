@@ -29,6 +29,12 @@ const STATE_ANIM_MAP := {
 	1: "walk1",   # 移动
 }
 
+# ---- Buff 动画系统 ----
+var _buff_anim_active: bool = false
+var _buff_anim_list: Array[String] = []   # 展开后的动画名列表
+var _buff_anim_index: int = 0             # 当前播放到的索引
+var _buff_anim_loop: bool = false         # 是否循环播放列表
+
 
 func _ready() -> void:
 	"""自主从 CharacterBody 读取数据并构建纸娃娃系统"""
@@ -159,7 +165,10 @@ func _advance_frame() -> void:
 				_current_frame = 1
 				_pingpong_forward = true
 	else:
+		var was_at_end := _current_frame >= max_frames - 1
 		_current_frame = (_current_frame + 1) % max_frames
+		if _buff_anim_active and was_at_end:
+			_advance_buff_animation()
 
 
 func _get_lead_delay() -> int:
@@ -403,6 +412,124 @@ func _process_skeleton_maps(sprite_cfg: Dictionary) -> void:
 		else:
 			# 骨骼已存在 → 只更新位置
 			bone_node.position = new_pos
+
+
+# ============================================================
+# Buff 动画系统（施法状态专用）
+# ============================================================
+
+## 播放 Buff 动画（结构对应 cfg 中 BuffAnimation 接口）
+## @param config: BuffAnimation 配置字典
+func play_buff_animation(config: Dictionary) -> void:
+	if config.is_empty():
+		_buff_anim_active = false
+		return
+
+	var type_name: String = _buff_anim_type(config)
+
+	if type_name == "None":
+		_buff_anim_active = false
+		return
+
+	# 将 BuffAnimation 树展开为平铺动画名列表
+	_resolve_buff_anim_list(config)
+
+	if _buff_anim_list.is_empty():
+		_buff_anim_active = false
+		return
+
+	_buff_anim_index = 0
+	_buff_anim_active = true
+	_change_animation(_buff_anim_list[0])
+
+
+## 停止 Buff 动画模式，恢复正常动画
+func stop_buff_animation() -> void:
+	_buff_anim_active = false
+	_buff_anim_list.clear()
+	_buff_anim_index = 0
+
+
+## 检查 Buff 动画是否已播放完毕（仅非循环 Sequence 可完成）
+func is_buff_animation_finished() -> bool:
+	return _buff_anim_active and not _buff_anim_loop and _buff_anim_index >= _buff_anim_list.size()
+
+
+## 展开 BuffAnimation 配置为平铺动画名列表并设置循环模式
+func _resolve_buff_anim_list(config: Dictionary) -> void:
+	_buff_anim_list.clear()
+	var type_name: String = _buff_anim_type(config)
+
+	match type_name:
+		"Single":
+			_buff_anim_list.append(config.get("animationName", ""))
+			_buff_anim_loop = true
+		"Random":
+			var names: Array = config.get("animationNames", [])
+			var picked := _pick_weighted_random(names)
+			if picked:
+				_buff_anim_list.append(picked)
+			_buff_anim_loop = true
+		"Loop":
+			_resolve_anim_list_items(config.get("animList", []))
+			_buff_anim_loop = true
+		"Sequence":
+			_resolve_anim_list_items(config.get("animList", []))
+			_buff_anim_loop = false
+
+
+## 递归展开 animList 中的每个 BuffAnimation 节点
+func _resolve_anim_list_items(anim_list: Array) -> void:
+	for item in anim_list:
+		var type_name: String = _buff_anim_type(item)
+		match type_name:
+			"Single":
+				_buff_anim_list.append(item.get("animationName", ""))
+			"Random":
+				var names: Array = item.get("animationNames", [])
+				var picked := _pick_weighted_random(names)
+				if picked:
+					_buff_anim_list.append(picked)
+			"Loop", "Sequence":
+				_resolve_anim_list_items(item.get("animList", []))
+
+
+## 从加权列表中随机选取一个 name
+func _pick_weighted_random(name_list: Array) -> String:
+	if name_list.is_empty():
+		return ""
+	# 计算总权重
+	var total: float = 0.0
+	for entry in name_list:
+		total += float(entry.get("value", 1))
+	if total <= 0.0:
+		return name_list[0].get("name", "")
+	# 按权重随机
+	var roll := randf() * total
+	var acc: float = 0.0
+	for entry in name_list:
+		acc += float(entry.get("value", 1))
+		if roll < acc:
+			return entry.get("name", "")
+	return name_list[-1].get("name", "")
+
+
+## 推进到列表中的下一段动画
+func _advance_buff_animation() -> void:
+	_buff_anim_index += 1
+	if _buff_anim_index >= _buff_anim_list.size():
+		if _buff_anim_loop:
+			_buff_anim_index = 0
+		else:
+			# Sequence 播完停在最后一段，不继续推进
+			return
+	_change_animation(_buff_anim_list[_buff_anim_index])
+
+
+## 提取 $type 的短类型名（如 "Single", "Random"）
+func _buff_anim_type(config: Dictionary) -> String:
+	var full: String = config.get("$type", "")
+	return full.split(".")[-1]
 
 
 # ============================================================

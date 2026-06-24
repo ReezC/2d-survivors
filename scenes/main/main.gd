@@ -88,7 +88,7 @@ func _ready() -> void:
 
 func _sync_gm_logger() -> void:
 	GMLogger.set_enabled(GMLogger.LogCategory.战斗伤害,   gm_战斗伤害)
-	GMLogger.set_enabled(GMLogger.LogCategory.敌人生成,   gm_敌人生成)
+	GMLogger.set_enabled(GMLogger.LogCategory.敌人信息,   gm_敌人生成)
 	GMLogger.set_enabled(GMLogger.LogCategory.经验升级,   gm_经验升级)
 	GMLogger.set_enabled(GMLogger.LogCategory.角色状态,   gm_角色状态)
 	GMLogger.set_enabled(GMLogger.LogCategory.技能信息,   gm_技能信息)

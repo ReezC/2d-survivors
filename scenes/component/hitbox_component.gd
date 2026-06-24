@@ -51,7 +51,7 @@ func 检查可用性() -> bool:
 		if src == null:
 			disable()
 			return false
-		if src.has_method("get") and "当前状态" in src and "角色状态" in src:
+		if src.has_method("get") and "当前状态" in src:
 			if src.当前状态 == src.角色状态.死亡:
 				disable()
 				return false

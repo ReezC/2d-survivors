@@ -19,6 +19,7 @@
 script = ExtResource("1_a8run")
 end_screen_scene = ExtResource("2_ouso4")
 "战斗Bgm" = ExtResource("3_raeie")
+"gm_敌人生成" = true
 "gm_角色状态" = true
 
 [node name="ArenaTimeUI" parent="." unique_id=1797388071 node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("1_ow5a4")]
