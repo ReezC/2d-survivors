@@ -24,6 +24,18 @@ func _ready() -> void:
 		push_error("[SkillManager] ECSWorld 未注册为 Autoload！")
 		return
 
+
+func _unhandled_input(event: InputEvent) -> void:
+	# 仅在 AI 类型为"无"时响应手动按键输入
+	if skill_ai != AI类型枚举.无:
+		return
+	if 初始技能.size() == 0:
+		return
+	if event.is_action_pressed("skill0"):
+		var skill_res: 技能数据 = 初始技能[0]
+		if skill_res.技能类型 == 技能数据.技能类型枚举.主动技能:
+			释放技能(skill_res.技能ID)
+
 func 初始化() -> void:
 	# 配置 ECS 的 AI 类型（只有非零时才设置，避免被后续的敌人 SkillManager 覆盖）
 	if skill_ai != 0:
@@ -34,6 +46,11 @@ func 初始化() -> void:
 	# 读取初始技能数据并注册到 ECS
 	if 初始技能.size() > 0:
 		ECSWorld.register_unit_skills(owner, 初始技能)
+	
+	# 按实体注册 AI 类型（用于禁用特定实体的自动释放）
+	var eid = ECSWorld.entity_manager.get_entity_id(owner)
+	if eid != -1:
+		ECSWorld.skill_system.set_entity_skill_ai(eid, skill_ai)
 	
 	# 激活已注册的被动技能
 	ECSWorld.skill_system.初始化技能()

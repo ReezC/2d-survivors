@@ -23,13 +23,17 @@ var _pingpong_forward: bool = true # 乒乓方向：true=正向, false=反向
 # ---- 每帧缓存：避免 _process 中重复 _find_anim_data 遍历 ----
 var _cached_anim_data: Dictionary = {}  # {config_id: anim_data_dict}
 
+# ---- 动画切换时的部件管理 ----
+var _removed_sprites: Dictionary = {}  # {sprite_name: true} 已从场景树移除的部件
+
 # ---- 槽位配置变更检测 ----
 var _slot_config_paths: Dictionary = {}  # islot_enum → String
 
 # 角色状态到动画名的映射
 const STATE_ANIM_MAP := {
-	0: "stand1",  # 待机
-	1: "walk1",   # 移动
+	0: "stand1",     # 待机
+	1: "walk1",      # 移动
+	2: "dead",       # 死亡
 }
 
 # ---- Buff 动画系统 ----
@@ -118,6 +122,8 @@ func _change_animation(anim_name: String) -> void:
 	_pingpong_forward = true
 	# 预缓存所有配置的 anim_data，避免 _process 中重复 _find_anim_data 遍历
 	_refresh_anim_data_cache()
+	# 同步部件在场景树中的存在性：当前动画中没有帧数据的部件应移除（如 dead 无 arm）
+	_sync_parts_in_scene()
 	# 立即应用第 0 帧，避免等待 delay 才显示
 	_update_skeleton_positions()
 	_apply_current_frame()
@@ -237,6 +243,83 @@ func _refresh_anim_data_cache() -> void:
 		_cached_anim_data[config_id] = anim_data
 
 
+func _get_active_sprite_names() -> Array:
+	"""收集当前动画所有帧中实际使用的 sprite 名称集合。
+	
+	遍历所有已缓存 anim_data 的每一帧 spritecfg，
+	同时处理 .Sprite 和 .FrameLink 两种类型。
+	"""
+	var active: Dictionary = {}
+	for config_id in _cached_anim_data:
+		var anim_data: Dictionary = _cached_anim_data[config_id]
+		if anim_data.is_empty():
+			continue
+		var frames: Array = anim_data.get("frames", [])
+		for frame in frames:
+			for sprite_cfg in frame.get("spritecfg", []):
+				var sname: String = sprite_cfg.get("name", "")
+				if not sname.is_empty():
+					active[sname] = true
+	return active.keys()
+
+
+func _sync_parts_in_scene() -> void:
+	"""动画切换后同步部件在场景树中的存在性。
+	
+	判定规则：
+	- 所属配置「有」当前动画 & sprite 在帧数据中 → 保留在场景
+	- 所属配置「有」当前动画 & sprite 不在帧数据中 → 从场景树移除
+	  （例如 body/arm 共享 00002000，dead 只有 body 的帧 → arm 移除）
+	- 所属配置「没有」当前动画 → 保持原样，不处理
+	  （例如 head 属于 00012000，该配置没有 dead → head 保持在场景中）
+	"""
+	var sprite_nodes: Dictionary = _builder.get_sprite_nodes()
+	if sprite_nodes.is_empty():
+		return
+	
+	var active_names := _get_active_sprite_names()
+	var active_set: Dictionary = {}
+	for n in active_names:
+		active_set[n] = true
+	
+	# 收集没有当前动画的配置 ID（其 sprites 不应被移除）
+	var unmanaged_configs: Dictionary = {}
+	for config_id in _cached_anim_data:
+		if _cached_anim_data[config_id].is_empty():
+			unmanaged_configs[config_id] = true
+	
+	var needs_sort := false
+	
+	for sname in sprite_nodes:
+		var sprite_node: Node = sprite_nodes[sname]
+		var part := sprite_node as VisualItemPart
+		var config_id: String = part.source_item.id if (part and part.source_item) else ""
+		
+		if active_set.has(sname):
+			# 所属配置有此动画且 sprite 出现在帧数据中 → 应在场景中
+			if _removed_sprites.has(sname):
+				_visual_node.add_child(sprite_node)
+				@warning_ignore("confusable_identifier")
+				_removed_sprites.erase(sname)
+				needs_sort = true
+		elif unmanaged_configs.has(config_id):
+			# 所属配置没有此动画 → 保持原样，不操作
+			if _removed_sprites.has(sname):
+				_visual_node.add_child(sprite_node)
+				@warning_ignore("confusable_identifier")
+				_removed_sprites.erase(sname)
+				needs_sort = true
+		else:
+			# 所属配置有此动画但 sprite 不在帧数据中 → 移除
+			if not _removed_sprites.has(sname):
+				_visual_node.remove_child(sprite_node)
+				_removed_sprites[sname] = true
+	
+	# 如果有部件重新加入，需要重新排序子节点
+	if needs_sort and _visual_node and _visual_node.has_method("reorder_children_by_zmap"):
+		_visual_node.reorder_children_by_zmap()
+
+
 func _apply_current_frame() -> void:
 	"""将当前帧应用到所有部件"""
 	for config_id in _cached_anim_data:
@@ -327,7 +410,10 @@ func _apply_framelink(link_cfg: Dictionary, _current_anim_name: String, _frame_i
 
 
 func _update_skeleton_positions() -> void:
-	"""更新骨骼位置：重置本帧骨骼运算状态，重新遍历当前帧所有 Sprite 更新位置"""
+	"""更新骨骼位置：重置本帧骨骼运算状态，重新遍历当前帧所有 Sprite 更新位置
+	对于没有当前动画数据的配置，使用 "front" 动画的帧 0 作为骨骼结构 fallback，
+	确保 brow 等骨骼在任意动画下都能跟随 body 的 neck/navel 等骨骼链更新位置。
+	"""
 	var body_bone := _builder.get_body_bone()
 	if body_bone == null:
 		return
@@ -339,10 +425,12 @@ func _update_skeleton_positions() -> void:
 	for config_id in _cached_anim_data:
 		var anim_data: Dictionary = _cached_anim_data[config_id]
 		if anim_data.is_empty():
+			_update_skeleton_from_fallback(config_id)
 			continue
 
 		var frames: Array = anim_data.get("frames", [])
 		if frames.is_empty():
+			_update_skeleton_from_fallback(config_id)
 			continue
 
 		var frame_idx: int = _current_frame % frames.size()
@@ -354,6 +442,59 @@ func _update_skeleton_positions() -> void:
 				_process_skeleton_maps(sprite_cfg)
 			elif stype.ends_with(".FrameLink"):
 				_process_framelink_skeleton(sprite_cfg)
+
+
+func _update_skeleton_from_fallback(config_id: String) -> void:
+	"""当前动画无数据时，使用 "front" 动画的帧 0 更新骨骼位置和精灵 position/offset。
+	确保 brow、hand 等辅助骨骼在新动画下仍能跟随 body 骨骼链更新位置，
+	同时精灵节点也基于最新的骨骼位置重新计算自身坐标。
+	"""
+	var all_configs := _builder.get_all_configs()
+	var config_data: Dictionary = all_configs.get(config_id, {})
+	if config_data.is_empty():
+		return
+
+	# 优先查找 "front" 动画，找不到则用第一个动画
+	var fallback_anim: Dictionary = {}
+	for anim_cfg in config_data.get("animCfg", []):
+		if anim_cfg.get("name") == "front":
+			fallback_anim = anim_cfg
+			break
+	if fallback_anim.is_empty():
+		var anim_cfgs: Array = config_data.get("animCfg", [])
+		if anim_cfgs.size() > 0:
+			fallback_anim = anim_cfgs[0]
+
+	if fallback_anim.is_empty():
+		return
+
+	var frames: Array = fallback_anim.get("frames", [])
+	if frames.is_empty():
+		return
+
+	var frame: Dictionary = frames[0]
+	for sprite_cfg in frame.get("spritecfg", []):
+		var stype = sprite_cfg.get("$type", "")
+		if stype.ends_with(".Sprite"):
+			_process_skeleton_maps(sprite_cfg)
+			_apply_sprite_position(sprite_cfg)
+		elif stype.ends_with(".FrameLink"):
+			_process_framelink_skeleton(sprite_cfg)
+			var resolved: Dictionary = _builder._resolve_framelink_to_sprite_cfg(sprite_cfg)
+			if not resolved.is_empty():
+				_apply_sprite_position(resolved)
+
+
+## 仅更新精灵节点的 position 和 offset（不切换动画/帧）
+func _apply_sprite_position(sprite_cfg: Dictionary) -> void:
+	var sname: String = sprite_cfg.get("name", "")
+	var origin_x: float = sprite_cfg.get("origin_x", 0.0)
+	var origin_y: float = sprite_cfg.get("origin_y", 0.0)
+	var sprite_node := _builder.get_sprite_nodes().get(sname) as VisualItemPart
+	if sprite_node == null:
+		return
+	sprite_node.offset = Vector2(-origin_x, -origin_y)
+	sprite_node.position = _builder.compute_sprite_position(sprite_cfg)
 
 
 func _process_framelink_skeleton(link_cfg: Dictionary) -> void:
@@ -575,6 +716,8 @@ func set_face_frame(anim_name: String, frame_idx: int) -> void:
 	var face_node := get_face_node()
 	if face_node == null:
 		return
+	# 先同步 position/offset，防止身体动画挂点移动导致 face 脱离
+	apply_face_to_current_frame()
 	if face_node.sprite_frames and face_node.sprite_frames.has_animation(anim_name):
 		face_node.animation = anim_name
 	face_node.frame = frame_idx
@@ -647,6 +790,48 @@ func _apply_slot_rendering(slot_key: int) -> void:
 			_visual_node.configure_part(part as VisualItemPart, visual_item)
 
 	_slot_config_paths[slot_key] = visual_item.动画帧配置文件
+
+
+# ============================================================
+#  死亡重建
+# ============================================================
+
+## 死亡时按基础槽位（Bd, Hd, Hr, Fc）重建纸娃娃
+func rebuild_for_death() -> void:
+	"""清空当前纸娃娃，只使用 Bd/Hd/Hr/Fc 槽位的 VisualItem 重新构建"""
+	if _character_body == null:
+		return
+
+	# 停止 Buff 动画
+	stop_buff_animation()
+
+	# 清空内部缓存
+	_cached_anim_data.clear()
+	_removed_sprites.clear()
+	_slot_config_paths.clear()
+
+	# 委托 Builder 清空所有节点
+	_builder.clear_all()
+
+	# 死亡时仅保留四个基础外观槽位
+	var death_slots := [
+		EquipSlotConfig.islot_enum.Bd,
+		EquipSlotConfig.islot_enum.Hd,
+		EquipSlotConfig.islot_enum.Hr,
+		EquipSlotConfig.islot_enum.Fc,
+	]
+
+	for slot_key in death_slots:
+		var visual_item: VisualItem = _character_body.装备槽位.islot.get(slot_key)
+		if visual_item == null:
+			continue
+		_builder.add_part_config(visual_item.动画帧配置文件, visual_item)
+
+	_builder.finish_children_sort()
+
+	# 强制切换到 dead 动画
+	_current_anim = ""
+	set_animation_by_state(2)
 
 
 # ============================================================

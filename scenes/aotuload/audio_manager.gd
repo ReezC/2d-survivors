@@ -215,6 +215,8 @@ func play_music_ref(ref: MusicRef) -> void:
 	var loop_stream := target_channel.stream
 	if loop_stream is AudioStreamWAV:
 		loop_stream.loop_mode = AudioStreamWAV.LOOP_FORWARD if ref.循环播放 else AudioStreamWAV.LOOP_DISABLED
+	elif loop_stream is AudioStreamMP3:
+		loop_stream.loop = ref.循环播放
 	elif loop_stream is AudioStreamOggVorbis:
 		loop_stream.loop = ref.循环播放
 

@@ -15,6 +15,9 @@
 [ext_resource type="Script" uid="uid://cf5tsjb2i13c0" path="res://技能/技能数据.gd" id="25_mjmsu"]
 [ext_resource type="Resource" uid="uid://cjn15na4ncwr2" path="res://技能/技能数据/接触伤害.tres" id="26_r8v5t"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_au3mk"]
+radius = 14.0
+
 [sub_resource type="Animation" id="Animation_8i7s1"]
 length = 0.001
 tracks/0/type = "value"
@@ -527,10 +530,7 @@ states/stand/position = Vector2(342, 166)
 graph_offset = Vector2(56.757965, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3xd07"]
-size = Vector2(37, 26)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_au3mk"]
-radius = 14.0
+size = Vector2(36, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dlhfe"]
 size = Vector2(14, 12)
@@ -679,22 +679,28 @@ icon = ExtResource("3_1fh45")
 "死亡音效" = ExtResource("4_1fh45")
 
 [node name="head" type="Node2D" parent="." index="1" unique_id=719836701]
-position = Vector2(-13, -24)
+position = Vector2(-10, -24)
 
 [node name="视觉" parent="." index="2" unique_id=1456117193]
 position = Vector2(0, -1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="视觉" index="0" unique_id=8522652]
 sprite_frames = ExtResource("4_r5kov")
-animation = &"stand"
+animation = &"move"
+frame = 3
 centered = false
-offset = Vector2(-18, -26)
+offset = Vector2(-17, -24)
 
-[node name="AnimationPlayer" parent="." index="3" unique_id=1786467140]
+[node name="移动碰撞" parent="." index="3" unique_id=288392247]
+position = Vector2(5, -5)
+shape = SubResource("CircleShape2D_au3mk")
+debug_color = Color(0.7024835, 0.4852388, 0.16611946, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4" unique_id=834406603]
 libraries/ = SubResource("AnimationLibrary_kntx2")
 autoplay = &"stand"
 
-[node name="视野区域" type="Area2D" parent="." index="4" unique_id=1928895033]
+[node name="视野区域" type="Area2D" parent="." index="5" unique_id=1928895033]
 collision_layer = 0
 collision_mask = 4
 
@@ -703,27 +709,22 @@ position = Vector2(0.5, -13)
 shape = SubResource("CircleShape2D_2vcqf")
 debug_color = Color(0, 0.5764706, 0.6745098, 0.16862746)
 
-[node name="AnimationTree" type="AnimationTree" parent="." index="5" unique_id=727004088]
+[node name="AnimationTree" type="AnimationTree" parent="." index="6" unique_id=727004088]
 active = false
 tree_root = SubResource("AnimationNodeStateMachine_4re02")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 parameters/move/blend_position = Vector2(0.9969766, 0.002070427)
 
-[node name="TouchHitbox" parent="." index="6" unique_id=147013256 instance=ExtResource("20_384uj")]
+[node name="TouchHitbox" parent="." index="7" unique_id=147013256 instance=ExtResource("20_384uj")]
 collision_layer = 128
 collision_mask = 16
 collide_reset_interval = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TouchHitbox" index="0" unique_id=1829707185]
-position = Vector2(0.5, -13)
+position = Vector2(1, -12)
 shape = SubResource("RectangleShape2D_3xd07")
 debug_color = Color(1.2032688e-06, 0.329946, 0.3898688, 0.41960785)
-
-[node name="移动碰撞" parent="." index="7" unique_id=288392247]
-position = Vector2(5, -5)
-shape = SubResource("CircleShape2D_au3mk")
-debug_color = Color(0.7024835, 0.4852388, 0.16611946, 0.41960785)
 
 [node name="HurtboxComponent" parent="." index="8" unique_id=581852039]
 collision_layer = 64

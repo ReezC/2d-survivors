@@ -4,23 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://cprxnr331ni8r" path="res://assets/MapleStory/Character/Afterimage/swordOL.img/0.swingO1.2.0.png" id="2_3yqe6"]
 [ext_resource type="Script" uid="uid://caqttslf8x051" path="res://resources/audio/sfx_ref.gd" id="2_qalxb"]
 [ext_resource type="AudioStream" uid="uid://cjk0ybuhwv5x2" path="res://assets/MapleStory/Sound/Weapon.img/swordL.Attack.mp3" id="3_ydkfg"]
+[ext_resource type="PackedScene" uid="uid://cqkh2idk0bmgo" path="res://scenes/component/hitbox_component.tscn" id="4_ao0yd"]
 
 [sub_resource type="Resource" id="Resource_3xd07"]
 script = ExtResource("2_qalxb")
 "显示名称" = "swordL.Attack"
 "音频流" = ExtResource("3_ydkfg")
 metadata/_custom_type_script = "uid://caqttslf8x051"
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_dk0mn"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_3yqe6")
-}],
-"loop": 0,
-"name": &"swingO1",
-"speed": 10.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8gdh"]
 size = Vector2(70, 56)
@@ -66,7 +56,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_qalxb"]
 resource_name = "swingO1"
-length = 0.19999999999999998
+length = 0.2
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -111,24 +101,39 @@ _data = {
 &"swingO1": SubResource("Animation_qalxb")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_dk0mn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3yqe6")
+}],
+"loop": 0,
+"name": &"swingO1",
+"speed": 10.0
+}]
+
 [node name="子物体" unique_id=635526881 instance=ExtResource("1_3yqe6")]
 "生成音效" = SubResource("Resource_3xd07")
 
-[node name="AnimatedSprite2D" parent="." index="0" unique_id=247134606]
-sprite_frames = SubResource("SpriteFrames_dk0mn")
-centered = false
-offset = Vector2(-97, -69)
+[node name="HitboxComponent" parent="." index="0" unique_id=147013256 instance=ExtResource("4_ao0yd")]
+collision_layer = 32
+collision_mask = 64
 
-[node name="lt" type="Marker2D" parent="HitboxComponent" parent_id_path=PackedInt32Array(195429740) index="0" unique_id=1708120639]
+[node name="lt" type="Marker2D" parent="HitboxComponent" index="0" unique_id=1409993858]
 position = Vector2(-88, -62)
 
-[node name="rb" type="Marker2D" parent="HitboxComponent" parent_id_path=PackedInt32Array(195429740) index="1" unique_id=250602550]
+[node name="rb" type="Marker2D" parent="HitboxComponent" index="1" unique_id=1373006461]
 position = Vector2(-18, -6)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" parent_id_path=PackedInt32Array(195429740) index="2" unique_id=1666793010]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="2" unique_id=1217494008]
 position = Vector2(-53, -34)
 shape = SubResource("RectangleShape2D_i8gdh")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2" unique_id=414268703]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=414268703]
 libraries/ = SubResource("AnimationLibrary_ydkfg")
 autoplay = &"swingO1"
+
+[node name="AnimatedSprite2D" parent="." index="2" unique_id=247134606]
+sprite_frames = SubResource("SpriteFrames_dk0mn")
+centered = false
+offset = Vector2(-97, -69)

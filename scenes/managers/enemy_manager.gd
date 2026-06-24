@@ -38,7 +38,9 @@ func on_timer_timeout():
 	if player == null:
 		return
 	
-	
+	if basic_enemy_scene == null:
+		GMLogger.log_enemy("basic_enemy_scene is null")
+		return
 	var enemy_instance = basic_enemy_scene.instantiate()
 	# enemy_instance.name = "Monster_%d" % enemy_instance.get_instance_id()
 	var entities_layer = get_tree().get_first_node_in_group("entities_layer")

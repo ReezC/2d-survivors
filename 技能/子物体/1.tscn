@@ -5,11 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://ba0k3181f07jp" path="res://assets/MapleStory/Item/Consume/0207.img/02070000.bullet.0.png" id="2_8mmiq"]
 [ext_resource type="AudioStream" uid="uid://b4m0qxq5lppx" path="res://assets/MapleStory/Sound/Weapon.img/tGlove.Attack2.mp3" id="3_dhuc0"]
 [ext_resource type="Texture2D" uid="uid://ril8oqxplprt" path="res://assets/MapleStory/Item/Consume/0207.img/02070000.bullet.1.png" id="3_wt37k"]
+[ext_resource type="PackedScene" uid="uid://cqkh2idk0bmgo" path="res://scenes/component/hitbox_component.tscn" id="6_dhuc0"]
 
 [sub_resource type="Resource" id="Resource_8mmiq"]
 script = ExtResource("2_6r3fe")
 "音频流" = ExtResource("3_dhuc0")
 metadata/_custom_type_script = "uid://caqttslf8x051"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8gdh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dk0mn"]
 animations = [{
@@ -66,7 +69,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_wt37k"]
 resource_name = "bullet"
-length = 0.060000000000000005
+length = 0.06
 loop_mode = 1
 step = 0.03
 tracks/0/type = "value"
@@ -112,20 +115,25 @@ _data = {
 &"bullet": SubResource("Animation_wt37k")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8gdh"]
-
 [node name="子物体" unique_id=635526881 instance=ExtResource("1_6igds")]
 "生成音效" = SubResource("Resource_8mmiq")
 
-[node name="AnimatedSprite2D" parent="." index="0" unique_id=247134606]
+[node name="HitboxComponent#CollisionShape2D" type="CollisionShape2D" parent="." index="0" unique_id=1666793010]
+shape = SubResource("RectangleShape2D_i8gdh")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=247134606]
 sprite_frames = SubResource("SpriteFrames_dk0mn")
 animation = &"bullet"
 centered = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=400689543]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2" unique_id=400689543]
 root_node = NodePath("../AnimatedSprite2D")
 libraries/ = SubResource("AnimationLibrary_6r3fe")
 autoplay = &"bullet"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" parent_id_path=PackedInt32Array(195429740) index="0" unique_id=1666793010]
+[node name="HitboxComponent" parent="." index="3" unique_id=147013256 instance=ExtResource("6_dhuc0")]
+collision_layer = 32
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0" unique_id=1721936780]
 shape = SubResource("RectangleShape2D_i8gdh")

@@ -393,6 +393,31 @@ func get_body_bone() -> Node2D:
 	return _body_bone
 
 
+## 清空所有内部状态，用于死亡时按指定槽位重建纸娃娃
+func clear_all() -> void:
+	# 移除所有精灵节点
+	for sname in _sprite_nodes:
+		var node = _sprite_nodes[sname]
+		if node and is_instance_valid(node):
+			_visual_parent.remove_child(node)
+			node.queue_free()
+	_sprite_nodes.clear()
+
+	# 移除所有骨骼节点（保留 body 根）
+	for bname in _bone_nodes:
+		if bname != "body":
+			var node = _bone_nodes[bname]
+			if node and is_instance_valid(node):
+				_body_bone.remove_child(node)
+				node.queue_free()
+	_bone_nodes.clear()
+	_bone_nodes["body"] = _body_bone
+
+	_part_configs.clear()
+	_visual_items.clear()
+	_children_dirty = false
+
+
 func compute_sprite_position(sprite_cfg: Dictionary) -> Vector2:
 	"""计算精灵节点在 视觉 容器下的 position（公开方法，供 Animator 调用）
 	
