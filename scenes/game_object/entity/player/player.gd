@@ -32,6 +32,9 @@ var _has_setup_buff_anim: bool = false      # 当前施法周期是否已设置 
 
 func _ready() -> void:
 	super._ready()
+	# 连接 PaperDoll 的 buff 动画结束信号（仅在 Sequence 类型自然播完时触发）
+	if paper_doll:
+		paper_doll.buff_animation_finished.connect(_on_buff_animation_finished)
 
 func _process(delta: float) -> void:
 	player_move(delta)
@@ -66,6 +69,13 @@ func player_move(delta: float) -> void:
 			character_body.set_face_direction(h_sign)
 
 
+## PaperDoll 的 Sequence 类型 buff 动画自然播完时回调
+func _on_buff_animation_finished() -> void:
+	if 当前状态 == 角色状态.施法:
+		当前状态 = 角色状态.待机
+		GMLogger.log_player_state("[%s] 施法动画结束 → 待机" % 单位名称)
+
+
 func set_anim() -> void:
 	# ---- 纸娃娃动画驱动 ----
 	if paper_doll:
@@ -81,14 +91,7 @@ func set_anim() -> void:
 					_has_setup_buff_anim = false
 				paper_doll.set_animation_by_state(1)
 			角色状态.施法:
-				if _has_setup_buff_anim:
-					# 动画已在播放，检查是否结束（Sequence 类型播完列表自动停止）
-					if paper_doll.is_buff_animation_finished():
-						paper_doll.stop_buff_animation()
-						_has_setup_buff_anim = false
-						当前状态 = 角色状态.待机
-						GMLogger.log_player_state("[%s] 施法动画结束 → 待机" % 单位名称)
-				elif not 施法动画参数.is_empty():
+				if not _has_setup_buff_anim and not 施法动画参数.is_empty():
 					paper_doll.play_buff_animation(施法动画参数)
 					_has_setup_buff_anim = true
 	

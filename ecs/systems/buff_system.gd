@@ -114,7 +114,7 @@ func _on_buff_start(entity_id: int, buff: BuffComponentData) -> void:
 			if is_instance_valid(caster) and "当前状态" in caster:
 				if caster.当前状态 != caster.角色状态.死亡:
 					GMLogger.log_buff("buff '%s' 触发动画: %s" % [buff.buff_name, anim_type])
-					caster.施法动画参数 = animation_data
+					caster.施法动画参数 = animation_data.duplicate()
 					caster.当前状态 = caster.角色状态.施法
 					buff._is_play_animation = true
 	
@@ -180,7 +180,7 @@ func _buff_execute(entity_id: int, buff: BuffComponentData, logic_data: Dictiona
 				if caster.当前状态 == caster.角色状态.死亡:
 					return
 				var anim_config: Dictionary = buff.buff_data.get("animation", {})
-				caster.施法动画参数 = anim_config
+				caster.施法动画参数 = anim_config.duplicate()
 				caster.当前状态 = caster.角色状态.施法
 			buff._is_play_animation = true
 			

@@ -505,13 +505,11 @@
 		},
 		{
 			"$type":"animconfig.AnimConfigData",
-			"$fold":true,
 			"name":"swingO1",
 			"frames":[
 				{
 					"$type":"animconfig.AnimFrame",
 					"$note":"note：0",
-					"$fold":true,
 					"spritecfg":[
 						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
@@ -563,7 +561,6 @@
 				{
 					"$type":"animconfig.AnimFrame",
 					"$note":"note：1",
-					"$fold":true,
 					"spritecfg":[
 						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
@@ -616,7 +613,6 @@
 				{
 					"$type":"animconfig.AnimFrame",
 					"$note":"note：1",
-					"$fold":true,
 					"spritecfg":[
 						{
 							"$type":"animconfig.SpriteConfigData.Sprite",
@@ -634,7 +630,7 @@
 								{
 									"$type":"animconfig.SkelectonMap",
 									"bone":"navel",
-									"offset_x":-19.0,
+									"offset_x":-29.0,
 									"offset_y":-17.0
 								}
 							],
@@ -651,7 +647,7 @@
 									"$type":"animconfig.SkelectonMap",
 									"bone":"navel",
 									"offset_x":-8.0,
-									"offset_y":-18.0
+									"offset_y":18.0
 								},
 								{
 									"$type":"animconfig.SkelectonMap",

@@ -4,6 +4,9 @@ class_name PaperDollAnimator extends Node
 ## 挂载在角色根节点下（与 body/CharacterBody 同级）。
 ## 无需外部初始化，_ready() 自动从 CharacterBody 读取 VisualItem 数据并构建。
 
+## Sequence 类型的 buff 动画播放完整个列表时发出（非循环类型专用）
+signal buff_animation_finished()
+
 # ---- 数据源 ----
 var _character_body: CharacterBody
 var _visual_node: Node2D
@@ -444,15 +447,12 @@ func play_buff_animation(config: Dictionary) -> void:
 
 
 ## 停止 Buff 动画模式，恢复正常动画
+## 注意：stop_buff_animation 不会发出 buff_animation_finished 信号
+## 该信号仅在 Sequence 类型动画自然播完时由 _advance_buff_animation 发出
 func stop_buff_animation() -> void:
 	_buff_anim_active = false
 	_buff_anim_list.clear()
 	_buff_anim_index = 0
-
-
-## 检查 Buff 动画是否已播放完毕（仅非循环 Sequence 可完成）
-func is_buff_animation_finished() -> bool:
-	return _buff_anim_active and not _buff_anim_loop and _buff_anim_index >= _buff_anim_list.size()
 
 
 ## 展开 BuffAnimation 配置为平铺动画名列表并设置循环模式
@@ -521,7 +521,8 @@ func _advance_buff_animation() -> void:
 		if _buff_anim_loop:
 			_buff_anim_index = 0
 		else:
-			# Sequence 播完停在最后一段，不继续推进
+			# Sequence 播完，发出信号通知外部
+			buff_animation_finished.emit()
 			return
 	_change_animation(_buff_anim_list[_buff_anim_index])
 
