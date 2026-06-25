@@ -748,11 +748,13 @@ func _disable_animation_player(player_root: Node) -> void:
 	if ap == null:
 		return
 	ap.active = false
-	ap.stop()
+	if ap.is_playing():
+		ap.stop()
 	if ap.has_animation_library(&""):
 		var lib := ap.get_animation_library(&"")
 		for old_anim in lib.get_animation_list():
-			lib.remove_animation(old_anim)
+			if old_anim != &"dead":  # 保留死亡动画供 die() 中播放
+				lib.remove_animation(old_anim)
 
 
 func _disable_animation_tree(player_root: Node) -> void:

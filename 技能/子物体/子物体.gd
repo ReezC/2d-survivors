@@ -2,7 +2,7 @@ extends Node2D
 
 class_name 子物体
 
-@onready var hitbox_component: HitboxComponent = $HitboxComponent
+@onready var hitbox_component: HitboxComponent = get_node_or_null("HitboxComponent")
 
 ## SubObjectSystem._configure_movement() 动态赋值的运动回调
 ## SubObjectSystem.update() 中逐帧调用此回调驱动运动
@@ -20,27 +20,6 @@ var obj_process: Callable
 
 func _ready() -> void:
 	_播放延迟音效(生成音效, 生成音效延迟)
-
-	# if 命中音效:
-	# 	hitbox_component.击中目标.connect(_on_hit)
-
-	# tree_exiting.connect(_on_即将销毁)
-
-
-# func _on_hit(_target: HurtboxComponent) -> void:
-# 	_播放延迟音效(命中音效, 命中音效延迟)
-
-
-# func _on_即将销毁() -> void:
-# 	if 销毁音效 == null:
-# 		return
-# 	# 提前捕获位置，因为延迟回调触发时节点可能已被移除
-# 	var pos := global_position
-# 	if 销毁音效延迟 <= 0.0:
-# 		AudioManager.play_sfx_ref(销毁音效, pos)
-# 	else:
-# 		get_tree().create_timer(销毁音效延迟 / 1000.0).timeout.connect(
-# 			func(): AudioManager.play_sfx_ref(销毁音效, pos), CONNECT_ONE_SHOT)
 
 
 func _播放延迟音效(sfx: SfxRef, delay_ms: float) -> void:

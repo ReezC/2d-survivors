@@ -1,0 +1,246 @@
+[gd_scene format=3 uid="uid://cbjgw4jovtg2l"]
+
+[ext_resource type="PackedScene" uid="uid://cw26e1msf5gxn" path="res://技能/子物体/子物体.tscn" id="1_1uyjb"]
+[ext_resource type="Texture2D" uid="uid://ca8edoc0jfbxy" path="res://assets/MapleStory/Effect/Tomb.img/fall.0.png" id="2_2p2hp"]
+[ext_resource type="Script" uid="uid://caqttslf8x051" path="res://resources/audio/sfx_ref.gd" id="2_heer5"]
+[ext_resource type="Texture2D" uid="uid://b0dgfjmehsg1d" path="res://assets/MapleStory/Effect/Tomb.img/fall.1.png" id="3_hdpwq"]
+[ext_resource type="AudioStream" uid="uid://bd7wwar1bqd6k" path="res://assets/MapleStory/Sound/Game.img/Tombstone.mp3" id="3_s6ce7"]
+[ext_resource type="Texture2D" uid="uid://y08c08oieyc5" path="res://assets/MapleStory/Effect/Tomb.img/fall.2.png" id="4_heer5"]
+[ext_resource type="Texture2D" uid="uid://bj2u5his7ldkv" path="res://assets/MapleStory/Effect/Tomb.img/fall.3.png" id="5_s6ce7"]
+[ext_resource type="Texture2D" uid="uid://durumugt0q5ut" path="res://assets/MapleStory/Effect/Tomb.img/fall.4.png" id="6_vegms"]
+[ext_resource type="Texture2D" uid="uid://dl8gtinp2n3mf" path="res://assets/MapleStory/Effect/Tomb.img/fall.5.png" id="7_81drg"]
+[ext_resource type="Texture2D" uid="uid://bmlkhk8006n3q" path="res://assets/MapleStory/Effect/Tomb.img/fall.6.png" id="8_0vg61"]
+[ext_resource type="Texture2D" uid="uid://628uou5po1ud" path="res://assets/MapleStory/Effect/Tomb.img/fall.7.png" id="9_2vssj"]
+[ext_resource type="Texture2D" uid="uid://fn1masie32mc" path="res://assets/MapleStory/Effect/Tomb.img/fall.8.png" id="10_fvdru"]
+[ext_resource type="Texture2D" uid="uid://7qa0ne2b00u6" path="res://assets/MapleStory/Effect/Tomb.img/fall.9.png" id="11_erk62"]
+[ext_resource type="Texture2D" uid="uid://dr8luqupwjaau" path="res://assets/MapleStory/Effect/Tomb.img/fall.10.png" id="12_vxd6c"]
+[ext_resource type="Texture2D" uid="uid://dwey71u6sfegy" path="res://assets/MapleStory/Effect/Tomb.img/fall.11.png" id="13_gipa1"]
+[ext_resource type="Texture2D" uid="uid://bj6ppkqviy1vr" path="res://assets/MapleStory/Effect/Tomb.img/fall.12.png" id="14_0xrig"]
+[ext_resource type="Texture2D" uid="uid://brhwnlod1juo2" path="res://assets/MapleStory/Effect/Tomb.img/fall.13.png" id="15_vdm75"]
+[ext_resource type="Texture2D" uid="uid://cw84381led5ft" path="res://assets/MapleStory/Effect/Tomb.img/fall.14.png" id="16_37dfm"]
+[ext_resource type="Texture2D" uid="uid://bnwgmmw65mnt1" path="res://assets/MapleStory/Effect/Tomb.img/fall.15.png" id="17_o1mat"]
+[ext_resource type="Texture2D" uid="uid://qtqnngc48na0" path="res://assets/MapleStory/Effect/Tomb.img/fall.17.png" id="18_0r752"]
+[ext_resource type="Texture2D" uid="uid://b1otj4vem5huv" path="res://assets/MapleStory/Effect/Tomb.img/fall.18.png" id="19_ig0or"]
+
+[sub_resource type="Resource" id="Resource_5b0vr"]
+script = ExtResource("2_heer5")
+"音频流" = ExtResource("3_s6ce7")
+metadata/_custom_type_script = "uid://caqttslf8x051"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_desfm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2p2hp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hdpwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_heer5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s6ce7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vegms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_81drg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0vg61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2vssj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fvdru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_erk62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vxd6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gipa1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0xrig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vdm75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_37dfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_o1mat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0r752")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ig0or")
+}],
+"loop": 0,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hdpwq")
+}],
+"loop": 0,
+"name": &"land",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_heer5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"land"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-19, -43)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_028ta"]
+resource_name = "fall"
+length = 1.86
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"fall"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.24, 0.32, 0.4, 0.48, 0.56, 0.64, 0.72, 0.8, 0.88, 0.96, 1.06, 1.16, 1.26, 1.41, 1.5600001, 1.71),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.24, 0.32, 0.4, 0.48, 0.56, 0.64, 0.72, 0.8, 0.88, 0.96, 1.06, 1.16, 1.26, 1.41, 1.5600001, 1.71),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-19, -43), Vector2(-20, -43), Vector2(-18, -43), Vector2(-13, -43), Vector2(-18, -43), Vector2(-20, -43), Vector2(-19, -43), Vector2(-20, -43), Vector2(-18, -43), Vector2(-13, -43), Vector2(-18, -43), Vector2(-20, -43), Vector2(-41, -43), Vector2(-41, -45), Vector2(-45, -43), Vector2(-45, -43), Vector2(-52, -43), Vector2(-48, -43), Vector2(-20, -43)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.96),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(0, -300), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.55),
+"transitions": PackedFloat32Array(0.39229217, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ikyum"]
+_data = {
+&"RESET": SubResource("Animation_heer5"),
+&"fall": SubResource("Animation_028ta")
+}
+
+[node name="墓碑" unique_id=635526881 instance=ExtResource("1_1uyjb")]
+"生成音效" = SubResource("Resource_5b0vr")
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=247134606]
+sprite_frames = SubResource("SpriteFrames_desfm")
+animation = &"land"
+centered = false
+offset = Vector2(-19, -43)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=1619179297]
+root_node = NodePath("../AnimatedSprite2D")
+libraries/ = SubResource("AnimationLibrary_ikyum")
+autoplay = &"fall"

@@ -73,6 +73,9 @@ func spawn_existing_obj(
 	
 	obj_instance.global_position = position
 	
+	# 根据施法者水平朝向翻转子物体
+	_apply_facing_flip(obj_instance, caster_entity)
+	
 	# 配置碰撞层
 	_configure_hitbox(obj_instance, hitbox_collision_config, buff)
 	
@@ -116,6 +119,9 @@ func spawn_hitbox(
 	
 	obj_instance.global_position = position
 	
+	# 根据施法者水平朝向翻转子物体
+	_apply_facing_flip(obj_instance, caster_entity)
+	
 	# 配置碰撞层
 	_configure_hitbox(obj_instance, hitbox_collision_config, buff)
 	
@@ -151,6 +157,21 @@ func spawn_hitbox(
 	GMLogger.log_buff("spawn_hitbox 完成: pos=(%.1f,%.1f), dur=%.3f, size=(%.1f,%.1f), total=%d" % [position.x, position.y, duration, half_extents.x, half_extents.y, _active_objects.size()])
 	
 	return obj_instance
+
+## 根据施法者水平朝向翻转子物体
+## 精灵默认朝左，朝右时 scale.x = -1 实现镜像翻转
+func _apply_facing_flip(obj: 子物体, caster_entity: int) -> void:
+	var caster = entity_manager.get_unit(caster_entity)
+	if caster == null:
+		return
+	if not "facingDirection" in caster:
+		return
+	var facing_x: float = caster.facingDirection.x
+	if facing_x > 0.0:
+		obj.scale.x = -abs(obj.scale.x)
+	elif facing_x < 0.0:
+		obj.scale.x = abs(obj.scale.x)
+
 
 ## 配置 Hitbox 碰撞
 func _configure_hitbox(obj: 子物体, collision_config: Dictionary, buff: BuffComponentData) -> void:

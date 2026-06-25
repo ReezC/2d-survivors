@@ -41,8 +41,9 @@ var 施法允许改朝向: bool = false
 @export var icon: Texture2D
 
 ## 音效配置
-@export_group("音效")
+@export_group("死亡状态配置")
 @export var 死亡音效: SfxRef    # 死亡时播放的音效资源（直接拖入 .tres）
+@export var 死亡特效: PackedScene  # 死亡时播放的特效资源（直接拖入 .tscn）
 
 func 设置_单位名称(新名称: String) -> void:
 	单位名称 = 新名称
@@ -219,6 +220,16 @@ func die() -> void:
 		GMLogger.log_enemy("%s 死亡" % name)
 
 	GMLogger.log_attr("%s 死亡" % name)
+	# 实例化死亡特效并添加到视觉节点上方（视觉的兄弟节点），避免跟随死亡漂浮动画
+	if 死亡特效 != null and 视觉 != null:
+		var tombstone = 死亡特效.instantiate()
+		self.add_child(tombstone)
+		self.move_child(tombstone, 视觉.get_index())
+		tombstone.global_position = 视觉.global_position
+		if facingDirection.x > 0.0:
+			tombstone.scale.x = -abs(tombstone.scale.x)
+		elif facingDirection.x < 0.0:
+			tombstone.scale.x = abs(tombstone.scale.x)
 	# 添加死亡倒计时，3秒后删除节点
 	await get_tree().create_timer(3.0).timeout
 	self.queue_free()

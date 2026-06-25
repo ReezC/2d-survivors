@@ -3,10 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://dcslmpa4nca4m" path="res://scenes/game_object/entity/单位.tscn" id="1_0fi5m"]
 [ext_resource type="Script" uid="uid://do5hd8rrnom2q" path="res://scenes/game_object/entity/player/player.gd" id="2_ctfnk"]
 [ext_resource type="Texture2D" uid="uid://dtkeg5q6jrmpp" path="res://assets/Ninja Adventure - Asset Pack/Actor/Characters/NinjaGreen/Faceset.png" id="3_lnpja"]
-[ext_resource type="Script" uid="uid://caqttslf8x051" path="res://resources/audio/sfx_ref.gd" id="4_58jef"]
+[ext_resource type="PackedScene" uid="uid://cbjgw4jovtg2l" path="res://技能/子物体/墓碑.tscn" id="4_6lnlc"]
 [ext_resource type="Script" uid="uid://dqnc61hq410i5" path="res://scenes/game_object/entity/player/character_body.gd" id="4_aaojh"]
 [ext_resource type="Script" uid="uid://ccenvwxu8xbue" path="res://scenes/game_object/entity/player/paper_doll_animator.gd" id="4_ru67c"]
-[ext_resource type="AudioStream" uid="uid://bd7wwar1bqd6k" path="res://assets/MapleStory/Sound/Game.img/Tombstone.mp3" id="5_70y8a"]
 [ext_resource type="Script" uid="uid://btx1ximi6tqhc" path="res://resources/visual_item/equip_slot_config.gd" id="5_hdd6p"]
 [ext_resource type="SpriteFrames" uid="uid://bu7r2th5craou" path="res://resources/sprite_frames/默认身体_00002000_body.tres" id="7_uo5vx"]
 [ext_resource type="Resource" uid="uid://brurm0y04x4mt" path="res://resources/visual_item/00030000_黑色短中分.tres" id="8_aaojh"]
@@ -32,12 +31,6 @@
 [ext_resource type="Script" uid="uid://cocpxte7moiwt" path="res://resources/单位属性/最大生命值_单位属性.gd" id="26_70y8a"]
 [ext_resource type="Texture2D" uid="uid://blbd4dn0qfryy" path="res://assets/Ninja Adventure - Asset Pack/Items/Object/Dice 20.png" id="27_3dole"]
 
-[sub_resource type="Resource" id="Resource_b4jmw"]
-script = ExtResource("4_58jef")
-"显示名称" = "死亡"
-"音频流" = ExtResource("5_70y8a")
-metadata/_custom_type_script = "uid://caqttslf8x051"
-
 [sub_resource type="Resource" id="Resource_aaojh"]
 script = ExtResource("5_hdd6p")
 islot = Dictionary[int, ExtResource("12_jipc3")]({
@@ -57,6 +50,44 @@ radius = 8.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbw41"]
 size = Vector2(14.25, 3.4375)
+
+[sub_resource type="Animation" id="Animation_6lnlc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_58jef"]
+resource_name = "dead"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(12, -8), Vector2(8.5, 0.5), Vector2(0, 4), Vector2(-8.5, 0.5), Vector2(-12, -8), Vector2(-8.5, -16.5), Vector2(0, -20), Vector2(8.5, -16.5), Vector2(12, -8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_70y8a"]
+_data = {
+&"RESET": SubResource("Animation_6lnlc"),
+&"dead": SubResource("Animation_58jef")
+}
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hdd6p"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
@@ -160,7 +191,7 @@ metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aaojh"]
 load_path = "res://.godot/imported/Dice 20.png-663fb3ee95907d03b2025ee058bed92e.ctex"
 
-[sub_resource type="Resource" id="Resource_58jef"]
+[sub_resource type="Resource" id="Resource_6lnlc"]
 resource_local_to_scene = true
 resource_name = "移动速度"
 script = ExtResource("24_6lnlc")
@@ -187,10 +218,10 @@ script = ExtResource("24_6lnlc")
 "属性类型" = 8
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
-[sub_resource type="Resource" id="Resource_70y8a"]
+[sub_resource type="Resource" id="Resource_58jef"]
 resource_local_to_scene = true
 script = ExtResource("23_ru67c")
-"属性们" = Array[ExtResource("24_6lnlc")]([SubResource("Resource_sbb84"), SubResource("Resource_ye6iw"), SubResource("Resource_cll8x"), SubResource("Resource_7lulo"), SubResource("Resource_6u3n4"), SubResource("Resource_kjcqk"), SubResource("Resource_8u6q2"), SubResource("Resource_u0jmy"), SubResource("Resource_72gil"), SubResource("Resource_58jef"), SubResource("Resource_vrs21"), SubResource("Resource_3rkqf")])
+"属性们" = Array[ExtResource("24_6lnlc")]([SubResource("Resource_sbb84"), SubResource("Resource_ye6iw"), SubResource("Resource_cll8x"), SubResource("Resource_7lulo"), SubResource("Resource_6u3n4"), SubResource("Resource_kjcqk"), SubResource("Resource_8u6q2"), SubResource("Resource_u0jmy"), SubResource("Resource_72gil"), SubResource("Resource_6lnlc"), SubResource("Resource_vrs21"), SubResource("Resource_3rkqf")])
 metadata/_custom_type_script = "uid://bjvqbui703u8x"
 
 [node name="树" unique_id=1265436225 groups=["player"] instance=ExtResource("1_0fi5m")]
@@ -199,7 +230,7 @@ collision_mask = 3
 script = ExtResource("2_ctfnk")
 "单位名称" = "树"
 icon = ExtResource("3_lnpja")
-"死亡音效" = SubResource("Resource_b4jmw")
+"死亡特效" = ExtResource("4_6lnlc")
 
 [node name="PaperDollAnimator" type="Node" parent="." index="0" unique_id=620512093]
 script = ExtResource("4_ru67c")
@@ -272,13 +303,16 @@ collision_mask = 128
 position = Vector2(-4.125, -15.28125)
 shape = SubResource("RectangleShape2D_wbw41")
 
-[node name="单位属性component" parent="." index="5" unique_id=176829961]
-"属性集" = SubResource("Resource_70y8a")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5" unique_id=1254737998]
+libraries/ = SubResource("AnimationLibrary_70y8a")
 
-[node name="SkillManager" parent="." index="6" unique_id=845903834]
+[node name="单位属性component" parent="." index="6" unique_id=176829961]
+"属性集" = SubResource("Resource_58jef")
+
+[node name="SkillManager" parent="." index="7" unique_id=845903834]
 "初始技能" = Array[ExtResource("13_bdaga")]([ExtResource("13_00o66")])
 
-[node name="HealthBar" parent="." index="7" unique_id=517147532]
+[node name="HealthBar" parent="." index="8" unique_id=517147532]
 offset_left = -20.0
 offset_top = -80.0
 offset_right = 20.0

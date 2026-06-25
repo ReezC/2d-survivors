@@ -426,7 +426,7 @@ func compute_sprite_position(sprite_cfg: Dictionary) -> Vector2:
 	"""
 	var bone_maps: Array = sprite_cfg.get("map", [])
 	if bone_maps.is_empty():
-		return Vector2.ZERO
+		return _body_bone.position - _visual_parent.position if _visual_parent else _body_bone.position
 	
 	# 找最后一个已存在的骨骼及其 offset
 	var last_exist_bone: Node2D = null
@@ -445,10 +445,10 @@ func compute_sprite_position(sprite_cfg: Dictionary) -> Vector2:
 	
 	var result: Vector2
 	if last_exist_bone == null:
-		# 全部骨骼都不存在 → 绑定到 body
-		result = Vector2.ZERO
+		# 全部骨骼都不存在 → 绑定到 body，跟随 body 骨骼位置
+		result = _body_bone.position
 	else:
-		# 最后一个已存在骨骼的全局位置 - 该骨骼在当前 sprite map 中的 offset
+		# 最后一个已存在骨骼的局部位置 - 该骨骼在当前 sprite map 中的 offset
 		result = last_exist_bone.position - last_exist_offset
 	
 	# 换算到 视觉 容器的局部坐标
