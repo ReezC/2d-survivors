@@ -643,7 +643,7 @@ script = ExtResource("6_1gl80")
 "属性类型" = 11
 "图标" = SubResource("CompressedTexture2D_aaojh")
 "属性描述" = "移动速度就是移动的速度"
-"初始值" = 30.0
+"初始值" = 10.0
 metadata/_custom_type_script = "uid://c218ra1pf7xxj"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ye6iw"]
