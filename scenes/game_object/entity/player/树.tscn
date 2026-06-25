@@ -17,7 +17,6 @@
 [ext_resource type="SpriteFrames" uid="uid://grm0vwsleixt" path="res://resources/sprite_frames/奶油皮肤_00012000_head.tres" id="11_fpvc5"]
 [ext_resource type="Resource" uid="uid://v1tgdremqmke" path="res://resources/visual_item/01072005_皮制凉鞋.tres" id="12_gh5no"]
 [ext_resource type="Script" uid="uid://cx56yjoedwvb6" path="res://resources/visual_item/visual_item.gd" id="12_jipc3"]
-[ext_resource type="Resource" uid="uid://y6jywnhexlo6" path="res://技能/技能数据/手里剑投掷.tres" id="13_00o66"]
 [ext_resource type="Script" uid="uid://cf5tsjb2i13c0" path="res://技能/技能数据.gd" id="13_bdaga"]
 [ext_resource type="Script" uid="uid://ptl7nckec2yg" path="res://resources/visual_item/visual_item_part.gd" id="13_e6s84"]
 [ext_resource type="Resource" uid="uid://w4gseek64t3r" path="res://resources/visual_item/01302000_剑.tres" id="13_gh5no"]
@@ -30,6 +29,7 @@
 [ext_resource type="Resource" uid="uid://brjkphtt8mjd2" path="res://resources/zmap.tres" id="26_4klt5"]
 [ext_resource type="Script" uid="uid://cocpxte7moiwt" path="res://resources/单位属性/最大生命值_单位属性.gd" id="26_70y8a"]
 [ext_resource type="Texture2D" uid="uid://blbd4dn0qfryy" path="res://assets/Ninja Adventure - Asset Pack/Items/Object/Dice 20.png" id="27_3dole"]
+[ext_resource type="Resource" uid="uid://c87iwfoprq4b8" path="res://技能/技能数据/砍.tres" id="30_6lnlc"]
 
 [sub_resource type="Resource" id="Resource_aaojh"]
 script = ExtResource("5_hdd6p")
@@ -108,7 +108,7 @@ script = ExtResource("26_70y8a")
 "属性类型" = 1
 "图标" = SubResource("CompressedTexture2D_uo5vx")
 "属性描述" = "多多益善~"
-"初始值" = 5.0
+"初始值" = 100.0
 metadata/_custom_type_script = "uid://cocpxte7moiwt"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c8o2f"]
@@ -310,7 +310,7 @@ libraries/ = SubResource("AnimationLibrary_70y8a")
 "属性集" = SubResource("Resource_58jef")
 
 [node name="SkillManager" parent="." index="7" unique_id=845903834]
-"初始技能" = Array[ExtResource("13_bdaga")]([ExtResource("13_00o66")])
+"初始技能" = Array[ExtResource("13_bdaga")]([ExtResource("30_6lnlc")])
 
 [node name="HealthBar" parent="." index="8" unique_id=517147532]
 offset_left = -20.0

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="技能数据" format=3 uid="uid://c87iwfoprq4b8"]
+
+[ext_resource type="Script" uid="uid://cf5tsjb2i13c0" path="res://技能/技能数据.gd" id="1_ibj32"]
+[ext_resource type="Texture2D" uid="uid://cprxnr331ni8r" path="res://assets/MapleStory/Character/Afterimage/swordOL.img/0.swingO1.2.0.png" id="2_ibj32"]
+
+[resource]
+script = ExtResource("1_ibj32")
+"技能ID" = 2
+"技能名称" = "砍"
+"技能图标" = ExtResource("2_ibj32")
+"技能逻辑配置文件" = "res://config/_skillconfig_skill/2.json"
+"触发范围" = 300.0
+metadata/_custom_type_script = "uid://cf5tsjb2i13c0"

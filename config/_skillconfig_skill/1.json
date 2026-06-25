@@ -2,9 +2,6 @@
 	"$type":"skillconfig.skill",
 	"id":1,
 	"name":"手里剑投掷",
-	"blackBoard":{
-		"$type":"skillconfig.BlackBoard"
-	},
 	"buff":{
 		"$type":"skillconfig.OneBuff",
 		"name":"手里剑投掷释放中",

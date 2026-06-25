@@ -264,6 +264,31 @@ func _configure_movement(obj: 子物体, movement_config: Dictionary, caster_ent
 						o.queue_free()
 				)
 		
+		"Static":
+			# 编译配置中的偏移量，并根据施法者朝向旋转（默认朝向基准为 Vector2.DOWN）
+			var offset_config = movement_config.get("offset", {})
+			var off_x = _快速求值(buff, skill_system._编译数值(offset_config.get("x", {}))) if skill_system else 0.0
+			var off_y = _快速求值(buff, skill_system._编译数值(offset_config.get("y", {}))) if skill_system else 0.0
+			var static_offset := Vector2(off_x, off_y)
+			if caster.has_method("get") and "facingDirection" in caster:
+				static_offset = static_offset.rotated(Vector2.DOWN.angle()).rotated(caster.facingDirection.angle())
+			
+			# 跟随施法者，保持相对偏移
+			var static_caster_ref = weakref(caster)
+			var obj_ref_static = weakref(obj)
+			obj.obj_process = func(delta: float) -> void:
+				var c = static_caster_ref.get_ref()
+				var o = obj_ref_static.get_ref()
+				if c and o:
+					o.global_position = c.global_position + static_offset
+			# 施法者销毁时清理子物体
+			var obj_ref_static_conn = weakref(obj)
+			caster.tree_exited.connect(func():
+				var o = obj_ref_static_conn.get_ref()
+				if o:
+					o.queue_free()
+			)
+		
 		_:
 			push_error("[color=red]未知的子物体运动类型: %s[/color]" % movement_type)
 

@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_umqiv")
 "技能ID" = 1
-"技能名称" = "手里剑掷"
+"技能名称" = "手里剑投掷"
 "技能图标" = ExtResource("2_q3e1i")
 "技能描述" = "投掷一把手里剑"
 "技能逻辑配置文件" = "res://config/_skillconfig_skill/1.json"
