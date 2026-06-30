@@ -87,6 +87,7 @@ func _back(r: Node2D):
 		var btype = it.get("type", 0)
 		var cx = it.get("cx", 0)
 		var cy = it.get("cy", 0)
+		var ani = it.get("ani", 0)
 		var tex = null
 		var imf = it.get("imageFile", "")
 		if imf != null and imf != "":
@@ -106,10 +107,39 @@ func _back(r: Node2D):
 		# 判断是否需要平铺
 		var tiled = btype >= 1 and btype <= 7
 		
+		# 检测帧动画（ani=1 表示帧动画，ani=2 表示 spine 暂不支持）
+		var frames: Array = []
+		var is_anim = false
+		if ani == 1:
+			frames = _detect_frames(imf)
+			is_anim = frames.size() > 1
+		
 		# 创建节点（直接放地图根节点下，用世界坐标）
 		var s: Node2D
 		if tiled:
 			s = _create_tiled_back(tex, btype, chip_w, chip_h, it)
+		elif is_anim:
+			# 帧动画 back
+			var anim = AnimatedSprite2D.new()
+			anim.centered = false
+			var sf = SpriteFrames.new()
+			sf.set_animation_speed("default", 6.0)
+			for ftex in frames:
+				sf.add_frame("default", ftex)
+			anim.sprite_frames = sf
+			anim.play("default")
+			# offset
+			var org = it.get("origin", { "x": 0, "y": 0 })
+			var ox = org.get("x", 0)
+			var oy = org.get("y", 0)
+			var flip = it.get("flip", false)
+			if flip and frames.size() > 0:
+				ox = -ox + int(frames[0].get_size().x)
+			anim.offset = Vector2(-ox, -oy)
+			anim.flip_h = flip
+			var alpha = it.get("alpha", 255) / 255.0
+			anim.modulate.a = alpha
+			s = anim
 		else:
 			var spr = Sprite2D.new()
 			spr.centered = false
@@ -214,9 +244,11 @@ func _process(_delta: float) -> void:
 		var base_x = bd.base_x
 		var base_y = bd.base_y
 		
-		# 世界坐标视差公式
-		var pos_x = base_x + (-rx / 100.0) * cx
-		var pos_y = base_y + (-ry / 100.0) * cy
+		# 世界坐标视差公式（MapleNecrocer）:
+		# Back.X = -PosX - (100+RX)/100 * (Camera.X + DisplaySize.X/2) + Camera.X
+		# 在Godot世界坐标中简化为: base_x + (-rx/100) * (camera.x + screen_w/2)
+		var pos_x = base_x + (-rx / 100.0) * (cx + vw / 2.0)
+		var pos_y = base_y + (-ry / 100.0) * (cy + vh / 2.0)
 		
 		# 特殊类型自动移动
 		if btype == 4 or btype == 6:
@@ -323,7 +355,7 @@ func _tile(r: Node2D):
 	for ld in _current_map_data.get("layers", []):
 		var li = ld.get("level", 0)
 		for it in ld.get("tile", []):
-			var s = _spr(it, false)
+			var s = _spr(it, false, false)  # tile 永远不播动画
 			s.z_index = clampi(li * 500 + 100, -4096, 4096)
 			s.name = "t_l" + str(li) + "_" + str(it.get("index", 0))
 			ct.add_child(s)
@@ -341,26 +373,52 @@ func _obj(r: Node2D):
 			it["_l"] = li; all.append(it)
 	all.sort_custom(func(a, b): return (a["_l"] * 100000 + a.get("z", 0)) < (b["_l"] * 100000 + b.get("z", 0)))
 	for it in all:
-		var s = _spr(it, false)
+		# obj 默认不检测动画（需 frameCount > 1 才播放）
+		var frame_count = it.get("frameCount", 1)
+		var s = _spr(it, false, frame_count > 1)
 		s.z_index = clampi(it["_l"] * 500 + it.get("z", 0), -4096, 4096)
 		s.name = "o_l" + str(it["_l"]) + "_" + str(it.get("index", 0))
 		ct.add_child(s)
 
 # ================================================================
-# 统一 Sprite 创建（核心：origin → offset = -origin）
+# 统一 Sprite 创建（支持静态图和帧动画）
 # ================================================================
-func _spr(item: Dictionary, _is_back: bool) -> Sprite2D:
-	var s = Sprite2D.new()
-	s.centered = false  # 左上角对齐，与 WZ 坐标一致
-	var tex = null
+func _spr(item: Dictionary, _is_back: bool, _allow_anim: bool = false) -> Node2D:
 	var imf = item.get("imageFile", "")
+	var tex = null
 	if imf != null and imf != "":
 		tex = _tex(imf)
-	if not tex:
-		tex = _ph(Vector2(16, 16), default_tile_color)
-	s.texture = tex
 	
-	# 关键：offset = -origin（在 Godot 中实现 MonoGame origin 效果）
+	# 只有允许动画检测时才扫描多帧
+	var frames: Array = []
+	if _allow_anim:
+		frames = _detect_frames(imf)
+	
+	var s: Node2D
+	if frames.size() > 1:
+		# 创建 AnimatedSprite2D 帧动画
+		var anim = AnimatedSprite2D.new()
+		anim.centered = false
+		var sf = SpriteFrames.new()
+		sf.set_animation_speed("default", 6.0)  # 默认 6fps (~167ms/frame)
+		for ftex in frames:
+			sf.add_frame("default", ftex)
+		anim.sprite_frames = sf
+		anim.play("default")
+		s = anim
+		# 用第一帧计算 offset
+		if tex == null and frames.size() > 0:
+			tex = frames[0]
+	else:
+		# 静态 Sprite2D
+		var spr = Sprite2D.new()
+		spr.centered = false
+		if not tex:
+			tex = _ph(Vector2(16, 16), default_tile_color)
+		spr.texture = tex
+		s = spr
+	
+	# offset = -origin
 	var org = item.get("origin", { "x": 0, "y": 0 })
 	var ox = org.get("x", 0)
 	var oy = org.get("y", 0)
@@ -370,12 +428,52 @@ func _spr(item: Dictionary, _is_back: bool) -> Sprite2D:
 	s.offset = Vector2(-ox, -oy)
 	
 	s.position = Vector2(item.get("x", 0), item.get("y", 0))
-	s.flip_h = flip
+	
+	# flip_h 对 Sprite2D 和 AnimatedSprite2D 都有效
+	if s is Sprite2D:
+		s.flip_h = flip
+	elif s is AnimatedSprite2D:
+		s.flip_h = flip
 	
 	var alpha = item.get("alpha", 255) / 255.0
 	s.modulate.a = alpha
 	
 	return s
+
+# 检测多帧动画：imageFile 如 "images/obj_acc1_mapleIsland_maple_0.png"
+# 检测是否存在 _0, _1, _2... 连续帧
+func _detect_frames(imf: String) -> Array:
+	if imf == null or imf == "":
+		return []
+	
+	# 提取基础名：去掉最后的 _数字.png 部分
+	var regex = RegEx.new()
+	regex.compile("(.*/)([^/]+)_(\\d+)\\.png$")
+	var result = regex.search(imf)
+	if not result:
+		return []
+	
+	var dir_part = result.get_string(1)  # "images/"
+	var base_name = result.get_string(2)  # "obj_acc1_mapleIsland_maple"
+	
+	# 搜索连续帧
+	var frames: Array = []
+	var frame_idx = 0
+	var base_path = maps_root_dir + "/" + _fmt(_current_map_id) + "/"
+	
+	while true:
+		var frame_path = dir_part + base_name + "_" + str(frame_idx) + ".png"
+		var full_path = base_path + frame_path
+		if not ResourceLoader.exists(full_path):
+			break
+		var ftex = _tex(frame_path)
+		if ftex:
+			frames.append(ftex)
+		else:
+			break
+		frame_idx += 1
+	
+	return frames
 
 # ================================================================
 # Foothold 碰撞
