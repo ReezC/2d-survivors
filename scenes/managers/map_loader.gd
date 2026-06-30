@@ -14,6 +14,10 @@ var _current_map_data: Dictionary = {}
 var _current_map_id: int = 0
 var _map_root_node: Node2D = null
 var _image_cache: Dictionary = {}
+var _init_cam_x: float = 0.0  # type 4/6 初始相机X
+var _init_cam_y: float = 0.0  # type 5/7 初始相机Y
+var _init_half_w: float = 400.0  # 初始半屏宽
+var _init_half_h: float = 300.0  # 初始半屏高
 
 func load_map(map_id: int) -> Node2D:
 	unload_map()
@@ -39,6 +43,7 @@ func load_map(map_id: int) -> Node2D:
 func unload_map():
 	if _map_root_node: _map_root_node.queue_free(); _map_root_node = null
 	_back_sprites.clear()
+	_obj_movers.clear()
 	_current_map_data = {}; _current_map_id = 0; _image_cache.clear()
 
 
@@ -74,12 +79,23 @@ func _bg(r: Node2D):
 #
 # 这里用手动计算，在 _process 中根据相机位置更新 back sprite 位置
 # ================================================================
-var _back_sprites: Array = []  # [{sprite, base_x, base_y, rx, ry, btype, front, flow_x, flow_y, chip_w, chip_h, is_tiled}]
+var _back_sprites: Array = []
+var _obj_movers: Array = []  # [{sprite, base_x, base_y, rx, ry, btype, front, flow_x, flow_y, chip_w, chip_h, is_tiled}]
 
 
 func _back(r: Node2D):
 	var data = _current_map_data.get("back", [])
 	if data.is_empty(): return
+	
+	# 记录初始相机位置和屏幕尺寸（type 4-7 需要）
+	var cam = get_viewport().get_camera_2d()
+	if cam:
+		_init_cam_x = cam.global_position.x
+		_init_cam_y = cam.global_position.y
+	var vp = get_viewport().get_visible_rect().size
+	if cam:
+		_init_half_w = (vp.x / cam.zoom.x) / 2.0
+		_init_half_h = (vp.y / cam.zoom.y) / 2.0
 	
 	_back_sprites.clear()
 	
@@ -123,7 +139,9 @@ func _back(r: Node2D):
 			var anim = AnimatedSprite2D.new()
 			anim.centered = false
 			var sf = SpriteFrames.new()
-			sf.set_animation_speed("default", 6.0)
+			var back_delay = it.get("frameDelay", 100)
+			var back_fps = 1000.0 / max(back_delay, 1)
+			sf.set_animation_speed("default", back_fps)
 			for ftex in frames:
 				sf.add_frame("default", ftex)
 			anim.sprite_frames = sf
@@ -177,6 +195,9 @@ func _back(r: Node2D):
 			img_w = img_w,
 			img_h = img_h,
 			is_tiled = tiled,
+			is_anim = is_anim,  # 动画 back 不参与视差
+			drift_x = 0.0,  # type 4/6 累积自动漂移
+			drift_y = 0.0,  # type 5/7 累积自动漂移
 		})
 	
 	print("Back layers: " + str(data.size()) + " items (world-space parallax)")
@@ -244,17 +265,31 @@ func _process(_delta: float) -> void:
 		var base_x = bd.base_x
 		var base_y = bd.base_y
 		
-		# 世界坐标视差公式（MapleNecrocer）:
-		# Back.X = -PosX - (100+RX)/100 * (Camera.X + DisplaySize.X/2) + Camera.X
-		# 在Godot世界坐标中简化为: base_x + (-rx/100) * (camera.x + screen_w/2)
-		var pos_x = base_x + (-rx / 100.0) * (cx + vw / 2.0)
-		var pos_y = base_y + (-ry / 100.0) * (cy + vh / 2.0)
+		# MapleNecrocer 视差公式:
+		# 初始: X = -PosX - (100+RX)/100 * (Camera.X + DisplaySize.X/2) + Camera.X
+		# 每帧增量移动见 DoMove()
+		var pos_x: float
+		var pos_y: float
 		
-		# 特殊类型自动移动
-		if btype == 4 or btype == 6:
-			pos_x -= rx * 5.0 * _delta
-		if btype == 5 or btype == 7:
-			pos_y -= ry * 5.0 * _delta
+		# 动画 back 不参与视差，固定在世界位置
+		if bd.is_anim:
+			pos_x = base_x
+			pos_y = base_y
+		elif btype == 4 or btype == 6:
+			# MapleNecrocer: X += CameraSpeed.X (1:1跟随相机, 屏幕固定), X -= RX*5/60 (自动漂移)
+			# 展开: X(t) = X0 + (CamCurrent-CamInit) - RX*5/60*t = -PosX - (100+RX)/100*(CamInit+W/2) + CamCurrent + drift
+			bd.drift_x -= rx * 5.0 * _delta
+			pos_x = -base_x - (100.0 + rx) / 100.0 * (_init_cam_x + _init_half_w) + cx + bd.drift_x
+			pos_y = base_y + (-ry / 100.0) * (cy + vh / 2.0)
+		elif btype == 5 or btype == 7:
+			# MapleNecrocer: Y += CameraSpeed.Y (1:1跟随相机, 屏幕固定), Y -= RY*5/60 (自动漂移)
+			pos_x = base_x + (-rx / 100.0) * (cx + vw / 2.0)
+			bd.drift_y -= ry * 5.0 * _delta
+			pos_y = -base_y - (100.0 + ry) / 100.0 * (_init_cam_y + _init_half_h) + cy + bd.drift_y
+		else:
+			# 类型 0-3: 纯视差滚动
+			pos_x = base_x + (-rx / 100.0) * (cx + vw / 2.0)
+			pos_y = base_y + (-ry / 100.0) * (cy + vh / 2.0)
 		
 		# FlowX/FlowY 流动效果
 		if bd.flow_x != 0:
@@ -266,6 +301,32 @@ func _process(_delta: float) -> void:
 			_update_tiled_back(bd, pos_x, pos_y, vw, vh)
 		else:
 			s.position = Vector2(pos_x, pos_y)
+	
+	# Obj 运动更新（moveType / moveR）
+	for om in _obj_movers:
+		var om_s = om.sprite
+		if not is_instance_valid(om_s): continue
+		om.elapsed += _delta
+		var mt = om.move_type
+		var mr = om.move_r
+		# 余弦振荡移动
+		if mt == 1 or mt == 3:
+			var angle: float
+			if om.move_p > 0:
+				angle = om.elapsed * 2000.0 * PI / om.move_p
+			else:
+				angle = om.elapsed
+			om_s.position.x = om.base_x + om.move_w * cos(angle)
+		if mt == 2 or mt == 3:
+			var angle: float
+			if om.move_p > 0:
+				angle = om.elapsed * 2000.0 * PI / om.move_p
+			else:
+				angle = om.elapsed
+			om_s.position.y = om.base_y + om.move_h * cos(angle)
+		# 持续旋转
+		if mr > 0:
+			om_s.rotation += (1020.0 / mr) * 2.0 * PI * _delta
 
 # 更新平铺背景的子节点
 # 容器位置跟随视差，子节点在容器内平铺
@@ -379,6 +440,22 @@ func _obj(r: Node2D):
 		s.z_index = clampi(it["_l"] * 500 + it.get("z", 0), -4096, 4096)
 		s.name = "o_l" + str(it["_l"]) + "_" + str(it.get("index", 0))
 		ct.add_child(s)
+		
+		# 运动 Obj（moveType 或 moveR）
+		var mt = it.get("moveType", 0)
+		var mr = it.get("moveR", 0)
+		if mt > 0 or mr > 0:
+			_obj_movers.append({
+				sprite = s,
+				base_x = it.get("x", 0),
+				base_y = it.get("y", 0),
+				move_type = mt,
+				move_w = it.get("moveW", 0),
+				move_h = it.get("moveH", 0),
+				move_p = it.get("moveP", 0),
+				move_r = mr,
+				elapsed = 0.0,
+			})
 
 # ================================================================
 # 统一 Sprite 创建（支持静态图和帧动画）
@@ -400,7 +477,10 @@ func _spr(item: Dictionary, _is_back: bool, _allow_anim: bool = false) -> Node2D
 		var anim = AnimatedSprite2D.new()
 		anim.centered = false
 		var sf = SpriteFrames.new()
-		sf.set_animation_speed("default", 6.0)  # 默认 6fps (~167ms/frame)
+		# 从 JSON 读取帧 delay（默认100ms），转为 fps
+		var frame_delay = item.get("frameDelay", 100)
+		var fps = 1000.0 / max(frame_delay, 1)
+		sf.set_animation_speed("default", fps)
 		for ftex in frames:
 			sf.add_frame("default", ftex)
 		anim.sprite_frames = sf
