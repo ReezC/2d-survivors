@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmap_test_001"]
+
+[ext_resource type="Script" path="res://scenes/main/map_test.gd" id="1_script"]
+
+[node name="MapTest" type="Node"]
+script = ExtResource("1_script")
+test_map_id = 10000
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 0)
+zoom = Vector2(0.5, 0.5)
