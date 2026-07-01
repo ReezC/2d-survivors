@@ -1,297 +1,2534 @@
 {
-	"$type":"animconfig.animconfig",
-	"id":"01072005",
-	"name":"皮制凉鞋",
-	"addinfos":[
+	"id": "01072005",
+	"name": "皮制凉鞋",
+	"addinfos": [
 		{
-			"$type":"animconfig.Info.ItemInfo",
-			"$fold":true,
-			"icon":{
-				"$type":"animconfig.spriteWithOrigin",
-				"sprite":"res://assets/MapleStory/Character/Shoes/01072005/info.icon.png",
-				"origin_x":-3.0,
-				"origin_y":27.0
+			"icon": {
+				"$type": "animconfig.spriteWithOrigin"
 			},
-			"iconRaw":{
-				"$type":"animconfig.spriteWithOrigin",
-				"sprite":"res://assets/MapleStory/Character/Shoes/01072005/info.iconRaw.png",
-				"origin_x":-4.0,
-				"origin_y":27.0
-			},
-			"islot":"So",
-			"vslot":[
+			"islot": "So",
+			"$fold": true,
+			"vslot": [
 				"So"
-			]
+			],
+			"$type": "animconfig.Info.ItemInfo",
+			"iconRaw": {
+				"$type": "animconfig.spriteWithOrigin"
+			}
 		}
 	],
-	"animCfg":[
+	"$type": "animconfig.animconfig",
+	"animCfg": [
 		{
-			"$type":"animconfig.AnimConfigData",
-			"$fold":true,
-			"name":"stand1",
-			"frames":[
+			"$fold": true,
+			"frames": [
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"$fold":true,
-					"spritecfg":[
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"shoes",
-							"spriteDir":"res://assets/MapleStory/Character/Shoes/01072005/stand1.0.shoes.png",
-							"origin_x":10.0,
-							"origin_y":5.0,
-							"map":[
+							"map": [
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"navel",
-									"offset_x":-3.0,
-									"offset_y":-19.0
+									"bone": "navel",
+									"offset_x": -9,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -14
 								}
 							],
-							"z":"shoes"
+							"origin_x": 5,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/walk1.0.shoes.png"
 						}
 					],
-					"face":1,
-					"delay":500
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
 				},
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：1",
-					"$fold":true,
-					"spritecfg":[
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"shoes",
-							"spriteDir":"res://assets/MapleStory/Character/Shoes/01072005/stand1.0.shoes.png",
-							"origin_x":10.0,
-							"origin_y":5.0,
-							"map":[
+							"map": [
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"navel",
-									"offset_x":-2.0,
-									"offset_y":-18.0
+									"bone": "navel",
+									"offset_x": -3,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
 								}
 							],
-							"z":"shoes"
+							"origin_x": 13,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/walk1.1.shoes.png"
 						}
 					],
-					"face":1,
-					"delay":500
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
 				},
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：2",
-					"$fold":true,
-					"spritecfg":[
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"shoes",
-							"spriteDir":"res://assets/MapleStory/Character/Shoes/01072005/stand1.0.shoes.png",
-							"origin_x":10.0,
-							"origin_y":5.0,
-							"map":[
+							"map": [
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"navel",
-									"offset_x":-1.0,
-									"offset_y":-19.0
+									"bone": "navel",
+									"offset_x": -4,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -16
 								}
 							],
-							"z":"shoes"
+							"origin_x": 6,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/walk1.2.shoes.png"
 						}
 					],
-					"face":1,
-					"delay":500
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/walk1.3.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：3"
 				}
-			]
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "walk1"
 		},
 		{
-			"$type":"animconfig.AnimConfigData",
-			"$fold":true,
-			"name":"walk1",
-			"frames":[
+			"$fold": true,
+			"frames": [
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"$fold":true,
-					"spritecfg":[
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"shoes",
-							"spriteDir":"res://assets/MapleStory/Character/Shoes/01072005/walk1.0.shoes.png",
-							"origin_x":5.0,
-							"origin_y":5.0,
-							"map":[
+							"map": [
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"navel",
-									"offset_x":-9.0,
-									"offset_y":-14.0
+									"bone": "navel",
+									"offset_x": -9,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -14
 								}
 							],
-							"z":"shoes"
+							"origin_x": 5,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/walk2.0.shoes.png"
 						}
 					],
-					"face":1,
-					"delay":180
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
 				},
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：1",
-					"$fold":true,
-					"spritecfg":[
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"shoes",
-							"spriteDir":"res://assets/MapleStory/Character/Shoes/01072005/walk1.1.shoes.png",
-							"origin_x":13.0,
-							"origin_y":5.0,
-							"map":[
+							"map": [
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"navel",
-									"offset_x":-3.0,
-									"offset_y":-15.0
+									"bone": "navel",
+									"offset_x": -3,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
 								}
 							],
-							"z":"shoes"
+							"origin_x": 13,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/walk2.1.shoes.png"
 						}
 					],
-					"face":1,
-					"delay":180
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
 				},
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：2",
-					"$fold":true,
-					"spritecfg":[
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"shoes",
-							"spriteDir":"res://assets/MapleStory/Character/Shoes/01072005/walk1.2.shoes.png",
-							"origin_x":6.0,
-							"origin_y":5.0,
-							"map":[
+							"map": [
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"navel",
-									"offset_x":-4.0,
-									"offset_y":-16.0
+									"bone": "navel",
+									"offset_x": -4,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -16
 								}
 							],
-							"z":"shoes"
+							"origin_x": 6,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/walk2.2.shoes.png"
 						}
 					],
-					"face":1,
-					"delay":180
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
 				},
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：3",
-					"$fold":true,
-					"spritecfg":[
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"shoes",
-							"spriteDir":"res://assets/MapleStory/Character/Shoes/01072005/walk1.3.shoes.png",
-							"origin_x":11.0,
-							"origin_y":5.0,
-							"map":[
+							"map": [
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"navel",
-									"offset_x":-2.0,
-									"offset_y":-12.0
+									"bone": "navel",
+									"offset_x": -2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
 								}
 							],
-							"z":"shoes"
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/walk2.3.shoes.png"
 						}
 					],
-					"face":1,
-					"delay":180
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：3"
 				}
-			]
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "walk2"
 		},
 		{
-			"$type":"animconfig.AnimConfigData",
-			"$fold":true,
-			"name":"swingO1",
-			"frames":[
+			"$fold": true,
+			"frames": [
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"spritecfg":[
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"shoes",
-							"spriteDir":"res://assets/MapleStory/Character/Shoes/01072005/swingO1.0.shoes.png",
-							"origin_x":11.0,
-							"origin_y":5.0,
-							"map":[
+							"map": [
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"navel",
-									"offset_x":-1.0,
-									"offset_y":-12.0
+									"bone": "navel",
+									"offset_x": -3,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -19
 								}
 							],
-							"z":"shoes"
+							"origin_x": 10,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stand1.0.shoes.png"
 						}
 					],
-					"face":1,
-					"delay":300
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
 				},
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"spritecfg":[
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"shoes",
-							"spriteDir":"res://assets/MapleStory/Character/Shoes/01072005/swingO1.1.shoes.png",
-							"origin_x":14.0,
-							"origin_y":5.0,
-							"map":[
+							"map": [
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"navel",
-									"offset_x":-11.0,
-									"offset_y":-17.0
+									"bone": "navel",
+									"offset_x": -2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -18
 								}
 							],
-							"z":"shoes"
+							"origin_x": 10,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stand1.1.shoes.png"
 						}
 					],
-					"face":1,
-					"delay":150
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
 				},
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"spritecfg":[
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"shoes",
-							"spriteDir":"res://assets/MapleStory/Character/Shoes/01072005/swingO1.2.shoes.png",
-							"origin_x":14.0,
-							"origin_y":5.0,
-							"map":[
+							"map": [
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"navel",
-									"offset_x":-6.0,
-									"offset_y":-14.0
+									"bone": "navel",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -19
 								}
 							],
-							"z":"shoes"
+							"origin_x": 10,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stand1.2.shoes.png"
 						}
 					],
-					"face":1,
-					"delay":350
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
 				}
-			]
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "stand1"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -3,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -19
+								}
+							],
+							"origin_x": 10,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stand2.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -18
+								}
+							],
+							"origin_x": 10,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stand2.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -19
+								}
+							],
+							"origin_x": 10,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stand2.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "stand2"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -16
+								}
+							],
+							"origin_x": 12,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/alert.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -17
+								}
+							],
+							"origin_x": 12,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/alert.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -18
+								}
+							],
+							"origin_x": 12,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/alert.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "alert"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingO1.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -11,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -17
+								}
+							],
+							"origin_x": 14,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingO1.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -6,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -14
+								}
+							],
+							"origin_x": 14,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingO1.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingO1"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -17
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingO2.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingO2.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -14
+								}
+							],
+							"origin_x": 14,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingO2.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingO2"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -3,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -13
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingO3.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -9,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -14
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingO3.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -8,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
+								}
+							],
+							"origin_x": 14,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingO3.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingO3"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 3,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingOF.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -16
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "backShoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingOF.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -19,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -8
+								}
+							],
+							"origin_x": 14,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingOF.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -8
+								}
+							],
+							"origin_x": 14,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingOF.3.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：3"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingOF"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -18
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingT1.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingT1.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingT1.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingT1"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 4,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -11
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingT2.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingT2.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -14
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingT2.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingT2"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -16
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingT3.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -7,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -13
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingT3.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingT3.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingT3"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -9,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "backShoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingTF.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -3,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -14
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingTF.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -7,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -13
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingTF.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -13
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingTF.3.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：3"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingTF"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -18
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingP1.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingP1.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -14
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingP1.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingP1"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -16
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingP2.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -16
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingP2.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -14
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingP2.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingP2"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -10
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingPF.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -10
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingPF.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -16
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingPF.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -13
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/swingPF.3.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：3"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingPF"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 9,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stabO1.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stabO1.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "stabO1"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -16
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stabO2.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -14
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stabO2.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "stabO2"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -11
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stabOF.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 9,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -14
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stabOF.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -13
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stabOF.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "stabOF"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 5,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -17
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stabT1.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -4,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stabT1.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stabT1.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "stabT1"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stabT2.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stabT2.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 4,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stabT2.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "stabT2"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -10
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stabTF.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -10
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stabTF.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -16
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stabTF.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/stabTF.3.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：3"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "stabTF"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -18
+								}
+							],
+							"origin_x": 13,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/shoot1.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -18
+								}
+							],
+							"origin_x": 13,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/shoot1.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -18
+								}
+							],
+							"origin_x": 13,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/shoot1.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "shoot1"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -17
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/shoot2.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -17
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/shoot2.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -17
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/shoot2.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -17
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/shoot2.3.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：3"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -17
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/shoot2.4.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：4"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "shoot2"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 4,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -18
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/shootF.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 5,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/shootF.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 5,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/shootF.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "shootF"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -16,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 5,
+							"name": "shoes",
+							"origin_y": 3,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/proneStab.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -16,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 5,
+							"name": "shoes",
+							"origin_y": 3,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/proneStab.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "proneStab"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -16,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 5,
+							"name": "shoes",
+							"origin_y": 3,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/prone.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "prone"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -17
+								}
+							],
+							"origin_x": 12,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/heal.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/heal.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -17
+								}
+							],
+							"origin_x": 11,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/heal.2.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "heal"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -16,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -10
+								}
+							],
+							"origin_x": 13,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/fly.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -19,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -16
+								}
+							],
+							"origin_x": 13,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/fly.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "fly"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -13
+								}
+							],
+							"origin_x": 17,
+							"name": "shoes",
+							"origin_y": 6,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/jump.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "jump"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -14
+								}
+							],
+							"origin_x": 17,
+							"name": "shoes",
+							"origin_y": 6,
+							"z": "shoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/sit.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "sit"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
+								}
+							],
+							"origin_x": 8,
+							"name": "shoes",
+							"origin_y": 6,
+							"z": "backShoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/ladder.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -15
+								}
+							],
+							"origin_x": 8,
+							"name": "shoes",
+							"origin_y": 6,
+							"z": "backShoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/ladder.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "ladder"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -19
+								}
+							],
+							"origin_x": 7,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "backShoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/rope.0.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "navel",
+									"offset_x": -3,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -14
+								}
+							],
+							"origin_x": 9,
+							"name": "shoes",
+							"origin_y": 5,
+							"z": "backShoes",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/01072005/rope.1.shoes.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "rope"
 		}
 	]
 }

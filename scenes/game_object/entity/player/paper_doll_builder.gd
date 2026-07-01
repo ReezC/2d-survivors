@@ -8,6 +8,12 @@ class_name PaperDollBuilder extends RefCounted
 ##   builder.add_part_config("res://config/_animconfig_animconfig/00012000.json")
 
 const VISUAL_ITEM_PART_SCRIPT := preload("res://resources/visual_item/visual_item_part.gd")
+## 辅助：将 sprite_cfg["map"] 统一转为 Array（JSON 中可能是单对象 {} 或数组 [{}]）
+static func get_bone_maps(sprite_cfg: Dictionary) -> Array:
+	var raw = sprite_cfg.get("map", [])
+	if raw is Dictionary:
+		return [raw]
+	return raw as Array
 
 # ---- 内部状态 ----
 var _character: Node2D           # character_body 节点
@@ -72,11 +78,9 @@ func add_part_config(json_path: String, source_visual_item: VisualItem = null) -
 	_part_configs[config_id] = data
 	if source_visual_item:
 		_visual_items[config_id] = source_visual_item
-	# print("[Builder] 加载配置: id=%s, name=%s" % [config_id, config_name])
 
 	# 3. 收集所有帧中出现的 sprite 名称和 z 层级，为每个创建 VisualItemPart
 	var sprite_info := _collect_sprite_info(data)  # {sprite_name: z_layer}
-	# print("[Builder]   收集到 sprite: %s" % str(sprite_info.keys()))
 	for sname in sprite_info:
 		if _sprite_nodes.has(sname):
 			# print("[Builder]   sprite '%s' 已存在，跳过创建" % sname)
@@ -92,22 +96,27 @@ func add_part_config(json_path: String, source_visual_item: VisualItem = null) -
 		sprite_node.z = sprite_info[sname]
 		# 创建 VisualItem 数据资源
 		var vi := VisualItem.new()
-		vi.id = data["id"]
+		vi.id = config_id
 		vi.item_name = data.get("name", "")
-		vi.动画帧配置文件 = json_path
 		sprite_node.source_item = vi
 		_visual_parent.add_child(sprite_node)
 		_sprite_nodes[sname] = sprite_node
-		# print("[Builder]   创建 sprite 节点: %s (name=%s)" % [sname, node_name])
 
-	# 4. 构建此部件的 SpriteFrames（收集所有动画的所有帧的纹理，含 FrameLink 解析）
+	# 4. 耳朵过滤：MapleNecrocer 只显示 head 和 humanEar，隐藏其他耳朵变体
+	if config_id == "00012000":
+		for sname in ["ear", "lefEar", "highlefEar"]:
+			var node = _sprite_nodes.get(sname)
+			if node:
+				node.visible = false
+
+	# 5. 构建此部件的 SpriteFrames（收集所有动画的所有帧的纹理，含 FrameLink 解析）
 	_build_sprite_frames_for_config(data)
 
-	# 5. 从默认动画的第一帧构建初始骨骼树并应用首帧视觉效果
-	var default_anim: String = source_visual_item.默认动画名称 if source_visual_item else ""
+	# 6. 从默认动画的第一帧构建初始骨骼树并应用首帧视觉效果
+	var default_anim: String = source_visual_item.default_action if source_visual_item else ""
 	_build_initial_skeleton(data, default_anim)
 
-	# 6. 标记需要重新排序（延迟到 build_finish 一次性执行）
+	# 7. 标记需要重新排序（延迟到 build_finish 一次性执行）
 	_children_dirty = true
 
 
@@ -258,8 +267,10 @@ func _create_bones_from_sprite_cfg(sprite_cfg: Dictionary) -> void:
 	"""从单个 Sprite 配置创建其 map 中不存在的骨骼"""
 	var sprite_pos := compute_sprite_position(sprite_cfg)
 
-	for bone_map in sprite_cfg.get("map", []):
+	for bone_map in PaperDollBuilder.get_bone_maps(sprite_cfg):
 		var bone_name: String = bone_map.get("bone", "")
+		if bone_name.is_empty():
+			continue
 		var off_x: float = bone_map.get("offset_x", 0.0)
 		var off_y: float = bone_map.get("offset_y", 0.0)
 		var bone_offset := Vector2(off_x, off_y)
@@ -424,7 +435,7 @@ func compute_sprite_position(sprite_cfg: Dictionary) -> Vector2:
 	规则：精灵 position = 最后一个已存在骨骼的全局位置 - 该骨骼在当前 sprite map 中的 offset
 	如果 map 中所有骨骼都不存在 → position = (0,0)（绑定到 body）
 	"""
-	var bone_maps: Array = sprite_cfg.get("map", [])
+	var bone_maps: Array = PaperDollBuilder.get_bone_maps(sprite_cfg)
 	if bone_maps.is_empty():
 		return _body_bone.position - _visual_parent.position if _visual_parent else _body_bone.position
 	
@@ -458,13 +469,13 @@ func compute_sprite_position(sprite_cfg: Dictionary) -> Vector2:
 
 
 ## 重写指定 VisualItem 对应部件的首帧视觉效果
-## 使用 VisualItem.默认动画名称 查找对应动画的首帧，应用到其下的所有 VisualItemPart
+## 使用 VisualItem.default_action 查找对应动画的首帧，应用到其下的所有 VisualItemPart
 func rewrite_initial_frame(visual_item: VisualItem) -> void:
 	if visual_item == null:
 		return
 
 	var config_id: String = visual_item.id
-	var default_anim: String = visual_item.默认动画名称
+	var default_anim: String = visual_item.default_action
 	if config_id.is_empty() or default_anim.is_empty():
 		return
 

@@ -7,6 +7,9 @@ class_name PaperDollAnimator extends Node
 ## Sequence 类型的 buff 动画播放完整个列表时发出（非循环类型专用）
 signal buff_animation_finished()
 
+## 非循环动画（如攻击）播放完毕时发出
+signal animation_finished()
+
 # ---- 数据源 ----
 var _character_body: CharacterBody
 var _visual_node: Node2D
@@ -29,12 +32,8 @@ var _removed_sprites: Dictionary = {}  # {sprite_name: true} 已从场景树移�
 # ---- 槽位配置变更检测 ----
 var _slot_config_paths: Dictionary = {}  # islot_enum → String
 
-# 角色状态到动画名的映射
-const STATE_ANIM_MAP := {
-	0: "stand1",     # 待机
-	1: "walk1",      # 移动
-	2: "dead",       # 死亡
-}
+# 状态机（MSW 风格：状态→动作映射）
+var _state_machine = AvatarStateMachine.new()
 
 # ---- Buff 动画系统 ----
 var _buff_anim_active: bool = false
@@ -71,7 +70,10 @@ func _ready() -> void:
 		for visual_item in _character_body.装备槽位.islot.values():
 			if visual_item == null:
 				continue
-			_builder.add_part_config(visual_item.动画帧配置文件, visual_item)
+			var cfg_path: String = visual_item.get_anim_config_path()
+			if not FileAccess.file_exists(cfg_path):
+				continue  # 跳过未导出 JSON 的部件（如发型）
+			_builder.add_part_config(cfg_path, visual_item)
 
 	_builder.finish_children_sort()
 
@@ -81,7 +83,11 @@ func _ready() -> void:
 	# 6. 禁用 AnimationTree（纸娃娃自行驱动帧切换）
 	_disable_animation_tree(player_root)
 
-	set_animation_by_state(0)
+	set_animation_by_state(AvatarState.State.IDLE)
+
+	# 设置脸部默认表情（blink frame 0 = 正常表情，即 _Canvas 的 default/face）
+	if face_has_animation("blink"):
+		set_face_frame("blink", 0)
 
 
 func add_part_config(json_path: String, source_visual_item: VisualItem = null) -> void:
@@ -90,8 +96,14 @@ func add_part_config(json_path: String, source_visual_item: VisualItem = null) -
 
 
 func set_animation_by_state(state: int) -> void:
-	"""根据角色状态设置动画"""
-	var anim_name: String = STATE_ANIM_MAP.get(state, "stand1")
+	"""根据角色状态设置动画（MSW 风格：状态枚举 → 动画名）"""
+	_state_machine.change_state(state as AvatarState.State)
+	var candidates = _state_machine.get_candidates()
+	var anim_name := "stand1"
+	for cand in candidates:
+		if _has_anim_in_any_config(cand):
+			anim_name = cand
+			break
 	if anim_name != _current_anim:
 		_change_animation(anim_name)
 
@@ -117,17 +129,13 @@ func _change_animation(anim_name: String) -> void:
 	_current_anim = anim_name
 	_current_frame = 0
 	_frame_timer_ms = 0.0
-	# 待机动画（stand1）使用乒乓循环，其他使用单向循环
-	_pingpong = anim_name.begins_with("stand")
+	# stand/alert 是乒乓循环（MapleNecrocer: AnimZigzag for stand1/stand2/alert）
+	_pingpong = anim_name.begins_with("stand") or anim_name == "alert"
 	_pingpong_forward = true
-	# 预缓存所有配置的 anim_data，避免 _process 中重复 _find_anim_data 遍历
 	_refresh_anim_data_cache()
-	# 同步部件在场景树中的存在性：当前动画中没有帧数据的部件应移除（如 dead 无 arm）
 	_sync_parts_in_scene()
-	# 立即应用第 0 帧，避免等待 delay 才显示
 	_update_skeleton_positions()
 	_apply_current_frame()
-	# print("[Animator] 切换动画完成, sprite_nodes: %d, bone_nodes: %d" % [_builder.get_sprite_nodes().size(), _builder.get_bone_nodes().size()])
 
 
 func _process(delta: float) -> void:
@@ -136,19 +144,20 @@ func _process(delta: float) -> void:
 	if _builder == null:
 		return
 
-	# 1. 找到主导帧的 delay（取所有部件当前动画的最小 delay，排除负数）
-	var lead_delay := _get_lead_delay()
+	# 1. 获取 body 的当前帧 delay 作为主导节奏（MapleNecrocer: 动画速度由 body delay 决定，无额外倍率）
+	var lead_delay := _get_body_lead_delay()
 
 	# 2. 检查是否有任何部件当前帧 delay < 0（每帧强制刷新）
 	var has_force_refresh := _has_force_refresh_frame()
 
-	# 3. 帧计时器推进（delay <= 0 时不依赖计时器，每帧都触发）
+	# 3. 帧计时器推进。类似 MapleNecrocer 的 Time += 17 累加模式
+	#    超时后重置为0（不用fmod，避免丢帧）
 	if lead_delay > 0:
 		_frame_timer_ms += delta * 1000.0
 		if _frame_timer_ms >= lead_delay:
-			_frame_timer_ms = fmod(_frame_timer_ms, lead_delay)
+			_frame_timer_ms = 0
 			_advance_frame()
-			has_force_refresh = true  # 帧切换时必然需要渲染
+		has_force_refresh = true  # 每帧都渲染以保证动画流畅
 
 	# 4. 需要渲染时：更新骨骼 + 应用帧
 	if has_force_refresh:
@@ -175,24 +184,48 @@ func _advance_frame() -> void:
 				_pingpong_forward = true
 	else:
 		var was_at_end := _current_frame >= max_frames - 1
+		if was_at_end:
+			if _buff_anim_active:
+				_advance_buff_animation()
+			elif _is_attack_animation(_current_anim):
+				# 攻击动画不循环，停在最后一帧
+				_on_non_loop_animation_finished()
+				return
+			# walk/jump/fly 等正常循环
 		_current_frame = (_current_frame + 1) % max_frames
-		if _buff_anim_active and was_at_end:
-			_advance_buff_animation()
 
 
-func _get_lead_delay() -> int:
-	"""获取主导延迟（取所有部件当前动画帧的最小 delay，排除 <=0 的值）"""
-	var min_delay := 999999
-	for config_id in _cached_anim_data:
-		var anim_data: Dictionary = _cached_anim_data[config_id]
-		if anim_data.is_empty():
-			continue
+## 非循环动画播放完最后一帧后回调
+func _on_non_loop_animation_finished() -> void:
+	# 停留在最后一帧，发出信号让外部切回 IDLE
+	animation_finished.emit()
+
+## 判断是否为攻击动画（不循环，播完停止）
+## MapleNecrocer: stab/swing/shoot 开头的都是攻击动作
+func _is_attack_animation(anim_name: String) -> bool:
+	return anim_name.begins_with("stab") or anim_name.begins_with("swing") or anim_name.begins_with("shoot") or anim_name == "proneStab"
+
+
+## 获取身体部件的当前帧 delay 作为动画节奏基准
+## MapleNecrocer: BodyDelay = body/{State}/{Frame}/delay, 身体定义全局动画速度
+func _get_body_lead_delay() -> int:
+	var body_config_id := "00002000"
+	var anim_data: Dictionary = _cached_anim_data.get(body_config_id, {})
+	if not anim_data.is_empty():
 		var frames: Array = anim_data.get("frames", [])
 		if _current_frame < frames.size():
-			var delay: int = frames[_current_frame].get("delay", 500)
-			if delay > 0 and delay < min_delay:
-				min_delay = delay
-	return min_delay if min_delay < 999999 else 500
+			var delay: int = frames[_current_frame].get("delay", 100)
+			if delay > 0:
+				return delay
+	# fallback: 取第一个 config 的当前帧 delay
+	for config_id in _cached_anim_data:
+		var ad: Dictionary = _cached_anim_data[config_id]
+		if ad.is_empty():
+			continue
+		var f: Array = ad.get("frames", [])
+		if _current_frame < f.size():
+			return f[_current_frame].get("delay", 100)
+	return 100
 
 
 func _has_force_refresh_frame() -> bool:
@@ -232,6 +265,16 @@ func _find_anim_data(config_data: Dictionary, anim_name: String) -> Dictionary:
 			if anim_cfg.get("name") == "default":
 				return anim_cfg
 	return {}
+
+
+func _has_anim_in_any_config(anim_name: String) -> bool:
+	for config_id in _builder.get_all_configs():
+		var config_data: Dictionary = _builder.get_all_configs()[config_id]
+		for anim_cfg in config_data.get("animCfg", []):
+			if anim_cfg.get("name") == anim_name:
+				return true
+	return false
+
 
 
 func _refresh_anim_data_cache() -> void:
@@ -358,7 +401,7 @@ func _apply_sprite(sprite_cfg: Dictionary, anim_name: String, frame_idx: int) ->
 
 	var sprite_node := _builder.get_sprite_nodes().get(sname) as VisualItemPart
 	if sprite_node == null:
-		# print("[Animator] _apply_sprite: sprite '%s' 不在 _sprite_nodes 中!" % sname)
+		print("[Animator] _apply_sprite: sprite '%s' 不在 _sprite_nodes 中!" % sname)
 		return
 
 	# offset = -(origin_x, origin_y)：纹理绘制锚点
@@ -370,14 +413,6 @@ func _apply_sprite(sprite_cfg: Dictionary, anim_name: String, frame_idx: int) ->
 	# 切换动画和帧
 	if sprite_node.sprite_frames and sprite_node.sprite_frames.has_animation(anim_name):
 		sprite_node.animation = anim_name
-	else:
-		if sprite_node.sprite_frames == null:
-			pass  # print("[Animator] _apply_sprite: sprite '%s' 没有 sprite_frames!" % sname)
-		else:
-			var avail := []
-			for a in sprite_node.sprite_frames.get_animation_names():
-				avail.append(a)
-			# print("[Animator] _apply_sprite: sprite '%s' 没有动画 '%s', 可用: %s" % [sname, anim_name, str(avail)])
 	sprite_node.frame = frame_idx
 
 
@@ -535,8 +570,10 @@ func _process_skeleton_maps(sprite_cfg: Dictionary) -> void:
 	# 计算精灵 position（基于当前 bone_nodes 字典中本帧已处理的骨骼链）
 	var sprite_pos := _builder.compute_sprite_position(sprite_cfg)
 
-	for bone_map in sprite_cfg.get("map", []):
+	for bone_map in PaperDollBuilder.get_bone_maps(sprite_cfg):
 		var bone_name: String = bone_map.get("bone", "")
+		if bone_name.is_empty():
+			continue
 		var offset_x: float = bone_map.get("offset_x", 0.0)
 		var offset_y: float = bone_map.get("offset_y", 0.0)
 		var bone_offset := Vector2(offset_x, offset_y)
@@ -791,7 +828,7 @@ func _apply_slot_rendering(slot_key: int) -> void:
 		if part != null and part is VisualItemPart:
 			_visual_node.configure_part(part as VisualItemPart, visual_item)
 
-	_slot_config_paths[slot_key] = visual_item.动画帧配置文件
+	_slot_config_paths[slot_key] = visual_item.get_anim_config_path()
 
 
 # ============================================================
@@ -827,13 +864,13 @@ func rebuild_for_death() -> void:
 		var visual_item: VisualItem = _character_body.装备槽位.islot.get(slot_key)
 		if visual_item == null:
 			continue
-		_builder.add_part_config(visual_item.动画帧配置文件, visual_item)
+		_builder.add_part_config(visual_item.get_anim_config_path(), visual_item)
 
 	_builder.finish_children_sort()
 
 	# 强制切换到 dead 动画
 	_current_anim = ""
-	set_animation_by_state(2)
+	set_animation_by_state(AvatarState.State.DEAD)
 
 
 # ============================================================
@@ -871,7 +908,7 @@ func _refresh_slot(slot_key) -> void:
 		return
 
 	var last_path: String = _slot_config_paths.get(slot_key, "")
-	var config_path: String = visual_item.动画帧配置文件
+	var config_path: String = visual_item.get_anim_config_path()
 
 	if config_path != last_path:
 		_slot_config_paths[slot_key] = config_path

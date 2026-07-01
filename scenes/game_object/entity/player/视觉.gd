@@ -79,7 +79,7 @@ func build_part_sprite_frames(part: VisualItemPart) -> void:
 		part.animation_changed.connect(part._on_animation_changed)
 	part.外部动画控制 = true
 
-	var config_path: String = part.source_item.动画帧配置文件
+	var config_path: String = part.source_item.get_anim_config_path()
 	if config_path.is_empty():
 		return
 
@@ -134,7 +134,7 @@ func _setup_part(part: VisualItemPart, config_data_override: Dictionary = {}) ->
 	if part.source_item == null:
 		return
 
-	var config_path: String = part.source_item.动画帧配置文件
+	var config_path: String = part.source_item.get_anim_config_path()
 	if config_path.is_empty():
 		return
 
@@ -153,7 +153,7 @@ func _setup_part(part: VisualItemPart, config_data_override: Dictionary = {}) ->
 	_build_sprite_frames(part, data, part_name)
 
 	# 2. 应用默认动画的首帧视觉效果
-	var default_anim: String = part.source_item.默认动画名称
+	var default_anim: String = part.source_item.default_action
 	if not default_anim.is_empty():
 		_apply_default_first_frame(part, data, part_name, default_anim)
 
@@ -206,7 +206,7 @@ func _build_sprite_frames(part: VisualItemPart, data: Dictionary, part_name: Str
 	"""
 	var sf := SpriteFrames.new()
 	sf.remove_animation(&"default")  # Godot 4 的 SpriteFrames.new() 自带 "default" 动画，先移除
-	var config_path: String = part.source_item.动画帧配置文件
+	var config_path: String = part.source_item.get_anim_config_path()
 
 	for anim_cfg in data.get("animCfg", []):
 		var anim_name: String = anim_cfg.get("name", "")

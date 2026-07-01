@@ -1,133 +1,1031 @@
 {
-	"$type":"animconfig.animconfig",
-	"id":"00020000",
-	"name":"最初冒险(萌)-男脸",
-	"addinfos":[
+	"id": "00020000",
+	"name": "最初冒险(萌)-男脸",
+	"addinfos": [
 		{
-			"$type":"animconfig.Info.ItemInfo",
-			"$fold":true,
-			"icon":{
-				"$type":"animconfig.spriteWithOrigin"
+			"icon": {
+				"$type": "animconfig.spriteWithOrigin"
 			},
-			"iconRaw":{
-				"$type":"animconfig.spriteWithOrigin"
-			},
-			"islot":"Fc",
-			"vslot":[
+			"islot": "Fc",
+			"$fold": true,
+			"vslot": [
 				"Fc"
-			]
+			],
+			"$type": "animconfig.Info.ItemInfo",
+			"iconRaw": {
+				"$type": "animconfig.spriteWithOrigin"
+			}
 		}
 	],
-	"animCfg":[
+	"$type": "animconfig.animconfig",
+	"animCfg": [
 		{
-			"$type":"animconfig.AnimConfigData",
-			"$fold":true,
-			"name":"default",
-			"frames":[
+			"$fold": true,
+			"frames": [
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"spritecfg":[
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"face",
-							"spriteDir":"res://assets/MapleStory/Character/Face/00020000/default.face.png",
-							"origin_x":13.0,
-							"origin_y":8.0,
-							"map":[
+							"map": [
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"brow",
-									"offset_x":-1.0,
-									"offset_y":-12.0
+									"bone": "brow",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
 								}
 							],
-							"z":"face"
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/blink.0.face.png"
 						}
 					],
-					"face":1,
-					"delay":-1
+					"delay": 60,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/blink.1.face.png"
+						}
+					],
+					"delay": 60,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/blink.2.face.png"
+						}
+					],
+					"delay": 60,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
 				}
-			]
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "blink"
 		},
 		{
-			"$type":"animconfig.AnimConfigData",
-			"$fold":true,
-			"name":"blink",
-			"frames":[
+			"$fold": true,
+			"frames": [
 				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：0",
-					"$fold":true,
-					"spritecfg":[
+					"spritecfg": [
 						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"face",
-							"spriteDir":"res://assets/MapleStory/Character/Face/00020000/default.face.png",
-							"origin_x":13.0,
-							"origin_y":8.0,
-							"map":[
+							"map": [
 								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"brow",
-									"offset_x":-1.0,
-									"offset_y":-12.0
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -11
 								}
 							],
-							"z":"face"
+							"origin_x": 12,
+							"name": "face",
+							"origin_y": 7,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/hit.0.face.png"
 						}
 					],
-					"delay":60
-				},
-				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：1",
-					"$fold":true,
-					"spritecfg":[
-						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"face",
-							"spriteDir":"res://assets/MapleStory/Character/Face/00020000/blink.1.face.png",
-							"origin_x":13.0,
-							"origin_y":8.0,
-							"map":[
-								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"brow",
-									"offset_x":-1.0,
-									"offset_y":-12.0
-								}
-							],
-							"z":"face"
-						}
-					],
-					"delay":60
-				},
-				{
-					"$type":"animconfig.AnimFrame",
-					"$note":"note：2",
-					"$fold":true,
-					"spritecfg":[
-						{
-							"$type":"animconfig.SpriteConfigData.Sprite",
-							"name":"face",
-							"spriteDir":"res://assets/MapleStory/Character/Face/00020000/blink.2.face.png",
-							"origin_x":13.0,
-							"origin_y":8.0,
-							"map":[
-								{
-									"$type":"animconfig.SkelectonMap",
-									"bone":"brow",
-									"offset_x":-1.0,
-									"offset_y":-12.0
-								}
-							],
-							"z":"face"
-						}
-					],
-					"delay":60
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
 				}
-			]
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "hit"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/smile.0.face.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "smile"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/troubled.0.face.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "troubled"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -10
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 6,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/cry.0.face.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "cry"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -13
+								}
+							],
+							"origin_x": 12,
+							"name": "face",
+							"origin_y": 11,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/angry.0.face.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "angry"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -11
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 10,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/bewildered.0.face.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "bewildered"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/stunned.0.face.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "stunned"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -28
+								}
+							],
+							"origin_x": 14,
+							"name": "face",
+							"origin_y": 24,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/vomit.0.face.png"
+						}
+					],
+					"delay": 120,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -28
+								}
+							],
+							"origin_x": 14,
+							"name": "face",
+							"origin_y": 24,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/vomit.1.face.png"
+						}
+					],
+					"delay": 120,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "vomit"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -11
+								}
+							],
+							"origin_x": 12,
+							"name": "face",
+							"origin_y": 7,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/oops.0.face.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "oops"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -11
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/cheers.0.face.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "cheers"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/chu.0.face.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "chu"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": -1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/wink.0.face.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "wink"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 1,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -8
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/pain.0.face.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "pain"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -9
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/glitter.0.face.png"
+						}
+					],
+					"delay": 150,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -9
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/glitter.1.face.png"
+						}
+					],
+					"delay": 150,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "glitter"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 14,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/despair.0.face.png"
+						}
+					],
+					"delay": 150,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 16,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -12
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/despair.1.face.png"
+						}
+					],
+					"delay": 150,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "despair"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -9
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/love.0.face.png"
+						}
+					],
+					"delay": 150,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -9
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/love.1.face.png"
+						}
+					],
+					"delay": 150,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "love"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -8
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 6,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/shine.0.face.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "shine"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -10
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/blaze.0.face.png"
+						}
+					],
+					"delay": 110,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -8
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/blaze.1.face.png"
+						}
+					],
+					"delay": 110,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "blaze"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": -2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -9
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/hum.0.face.png"
+						}
+					],
+					"delay": 110,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": -2,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -9
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/hum.1.face.png"
+						}
+					],
+					"delay": 110,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "hum"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 11,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -11
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/bowing.0.face.png"
+						}
+					],
+					"delay": 110,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 12,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -11
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/bowing.1.face.png"
+						}
+					],
+					"delay": 110,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "bowing"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 16,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -10
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/hot.0.face.png"
+						}
+					],
+					"delay": 110,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 21,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": -9
+								}
+							],
+							"origin_x": 13,
+							"name": "face",
+							"origin_y": 8,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/hot.1.face.png"
+						}
+					],
+					"delay": 110,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "hot"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 11,
+							"name": "face",
+							"origin_y": -2,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/dam.0.face.png"
+						}
+					],
+					"delay": 240,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 11,
+							"name": "face",
+							"origin_y": -1,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/dam.1.face.png"
+						}
+					],
+					"delay": 240,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "dam"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "face",
+							"origin_y": 11,
+							"z": "face",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00020000/qBlue.0.face.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "qBlue"
 		}
 	]
 }

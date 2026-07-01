@@ -1,438 +1,4054 @@
 {
-	"$type": "animconfig.animconfig",
 	"id": "00030000",
 	"name": "黑色短中分",
 	"addinfos": [
 		{
-			"$type": "animconfig.Info.ItemInfo",
-			"$fold": true,
 			"icon": {
 				"$type": "animconfig.spriteWithOrigin"
 			},
+			"islot": "Hr",
+			"$fold": true,
+			"vslot": [
+				"Hr"
+			],
+			"$type": "animconfig.Info.ItemInfo",
 			"iconRaw": {
 				"$type": "animconfig.spriteWithOrigin"
-			},
-			"islot": "Hr",
-			"vslot": [
-				"H1",
-				"H2",
-				"H3",
-				"H4",
-				"H5",
-				"H6",
-				"Hf",
-				"Hs",
-				"Hb"
-			]
+			}
 		}
 	],
+	"$type": "animconfig.animconfig",
 	"animCfg": [
 		{
-			"$type": "animconfig.AnimConfigData",
-			"name": "default",
+			"$fold": true,
 			"frames": [
 				{
-					"$type": "animconfig.AnimFrame",
-					"$note": "note：0",
 					"spritecfg": [
 						{
-							"$type": "animconfig.SpriteConfigData.Sprite",
-							"name": "hairOverHead",
-							"spriteDir": "res://assets/MapleStory/Character/Hair/00030000/default.hairOverHead.png",
-							"origin_x": 15.0,
-							"origin_y": 14.0,
 							"map": [
 								{
+									"bone": "brow",
+									"offset_x": 0,
 									"$type": "animconfig.SkelectonMap",
-									"bone": "brow"
+									"offset_y": 0
 								}
 							],
-							"z": "hairOverHead"
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/walk1.0.hairOverHead.png"
 						},
 						{
-							"$type": "animconfig.SpriteConfigData.Sprite",
-							"name": "hair",
-							"spriteDir": "res://assets/MapleStory/Character/Hair/00030000/default.hair.png",
-							"origin_x": 14.0,
-							"origin_y": 12.0,
 							"map": [
 								{
+									"bone": "brow",
+									"offset_x": 0,
 									"$type": "animconfig.SkelectonMap",
-									"bone": "brow"
+									"offset_y": 0
 								}
 							],
-							"z": "hair"
-						},
-						{
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
 							"$type": "animconfig.SpriteConfigData.Sprite",
-							"name": "hairShade",
-							"spriteDir": "res://assets/MapleStory/Character/Hair/00030000/default.hairShade.0.png",
-							"origin_x": 13.0,
-							"origin_y": 8.0,
+							"spriteDir": "res://assets/MapleStory/Character/00030000/walk1.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
 							"map": [
 								{
+									"bone": "brow",
+									"offset_x": 0,
 									"$type": "animconfig.SkelectonMap",
-									"bone": "brow"
+									"offset_y": 0
 								}
 							],
-							"z": "hairShade"
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/walk1.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/walk1.1.hair.png"
 						}
 					],
+					"delay": 100,
 					"face": 1,
-					"delay": -1
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/walk1.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/walk1.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/walk1.3.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/walk1.3.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：3"
 				}
-			]
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "walk1"
 		},
 		{
-			"$type": "animconfig.AnimConfigData",
 			"$fold": true,
-			"name": "stand1",
 			"frames": [
 				{
-					"$type": "animconfig.AnimFrame",
-					"$note": "note：0",
-					"$fold": true,
 					"spritecfg": [
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
 							"name": "hairOverHead",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairOverHead"
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/walk2.0.hairOverHead.png"
 						},
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
 							"name": "hair",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hair"
-						},
-						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
-							"name": "hairShade",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairShade"
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/walk2.0.hair.png"
 						}
 					],
+					"delay": 100,
 					"face": 1,
-					"delay": 500
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
 				},
 				{
-					"$type": "animconfig.AnimFrame",
-					"$note": "note：0",
-					"$fold": true,
 					"spritecfg": [
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
 							"name": "hairOverHead",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairOverHead"
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/walk2.1.hairOverHead.png"
 						},
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
 							"name": "hair",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hair"
-						},
-						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
-							"name": "hairShade",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairShade"
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/walk2.1.hair.png"
 						}
 					],
+					"delay": 100,
 					"face": 1,
-					"delay": 500
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
 				},
 				{
-					"$type": "animconfig.AnimFrame",
-					"$note": "note：0",
-					"$fold": true,
 					"spritecfg": [
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
 							"name": "hairOverHead",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairOverHead"
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/walk2.2.hairOverHead.png"
 						},
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
 							"name": "hair",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hair"
-						},
-						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
-							"name": "hairShade",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairShade"
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/walk2.2.hair.png"
 						}
 					],
+					"delay": 100,
 					"face": 1,
-					"delay": 500
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/walk2.3.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/walk2.3.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：3"
 				}
-			]
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "walk2"
 		},
 		{
-			"$type": "animconfig.AnimConfigData",
 			"$fold": true,
-			"name": "walk1",
 			"frames": [
 				{
-					"$type": "animconfig.AnimFrame",
-					"$note": "note：0",
-					"$fold": true,
 					"spritecfg": [
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
 							"name": "hairOverHead",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairOverHead"
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stand1.0.hairOverHead.png"
 						},
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
 							"name": "hair",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hair"
-						},
-						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
-							"name": "hairShade",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairShade"
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stand1.0.hair.png"
 						}
 					],
+					"delay": 100,
 					"face": 1,
-					"delay": 500
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
 				},
 				{
-					"$type": "animconfig.AnimFrame",
-					"$note": "note：0",
-					"$fold": true,
 					"spritecfg": [
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
 							"name": "hairOverHead",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairOverHead"
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stand1.1.hairOverHead.png"
 						},
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
 							"name": "hair",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hair"
-						},
-						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
-							"name": "hairShade",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairShade"
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stand1.1.hair.png"
 						}
 					],
+					"delay": 100,
 					"face": 1,
-					"delay": 500
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
 				},
 				{
-					"$type": "animconfig.AnimFrame",
-					"$note": "note：0",
-					"$fold": true,
 					"spritecfg": [
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
 							"name": "hairOverHead",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairOverHead"
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stand1.2.hairOverHead.png"
 						},
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
 							"name": "hair",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hair"
-						},
-						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
-							"name": "hairShade",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairShade"
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stand1.2.hair.png"
 						}
 					],
+					"delay": 100,
 					"face": 1,
-					"delay": 500
-				},
-				{
 					"$type": "animconfig.AnimFrame",
-					"$note": "note：0",
-					"$fold": true,
-					"spritecfg": [
-						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
-							"name": "hairOverHead",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairOverHead"
-						},
-						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
-							"name": "hair",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hair"
-						},
-						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
-							"name": "hairShade",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairShade"
-						}
-					],
-					"face": 1,
-					"delay": 500
+					"$note": "note：2"
 				}
-			]
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "stand1"
 		},
 		{
-			"$type": "animconfig.AnimConfigData",
 			"$fold": true,
-			"name": "swingO1",
 			"frames": [
 				{
-					"$type": "animconfig.AnimFrame",
-					"$note": "note：0",
-					"$fold": true,
 					"spritecfg": [
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
 							"name": "hairOverHead",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairOverHead"
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stand2.0.hairOverHead.png"
 						},
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
 							"name": "hair",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hair"
-						},
-						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
-							"name": "hairShade",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairShade"
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stand2.0.hair.png"
 						}
 					],
+					"delay": 100,
 					"face": 1,
-					"delay": 500
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
 				},
 				{
-					"$type": "animconfig.AnimFrame",
-					"$note": "note：0",
-					"$fold": true,
 					"spritecfg": [
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
 							"name": "hairOverHead",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairOverHead"
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stand2.1.hairOverHead.png"
 						},
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
 							"name": "hair",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hair"
-						},
-						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
-							"name": "hairShade",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairShade"
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stand2.1.hair.png"
 						}
 					],
+					"delay": 100,
 					"face": 1,
-					"delay": 500
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
 				},
 				{
-					"$type": "animconfig.AnimFrame",
-					"$note": "note：0",
-					"$fold": true,
 					"spritecfg": [
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
 							"name": "hairOverHead",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairOverHead"
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stand2.2.hairOverHead.png"
 						},
 						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
 							"name": "hair",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hair"
-						},
-						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
-							"name": "hairShade",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairShade"
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stand2.2.hair.png"
 						}
 					],
+					"delay": 100,
 					"face": 1,
-					"delay": 500
-				},
-				{
 					"$type": "animconfig.AnimFrame",
-					"$note": "note：0",
-					"$fold": true,
-					"spritecfg": [
-						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
-							"name": "hairOverHead",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairOverHead"
-						},
-						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
-							"name": "hair",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hair"
-						},
-						{
-							"$type": "animconfig.SpriteConfigData.FrameLink",
-							"name": "hairShade",
-							"id": "00030000",
-							"animName": "default",
-							"spriteName": "hairShade"
-						}
-					],
-					"face": 1,
-					"delay": 500
+					"$note": "note：2"
 				}
-			]
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "stand2"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/alert.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/alert.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/alert.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/alert.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/alert.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/alert.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "alert"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO1.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO1.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO1.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO1.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO1.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO1.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingO1"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO2.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO2.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO2.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO2.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO2.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO2.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingO2"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO3.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO3.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO3.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO3.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO3.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingO3.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingO3"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingOF.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingOF.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "backHair",
+							"origin_y": 13,
+							"z": "backHair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingOF.1.backHair.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 13,
+							"name": "backHairBelowCap",
+							"origin_y": 12,
+							"z": "backHairBelowCap",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingOF.1.backHairBelowCap.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingOF.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingOF.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingOF.3.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingOF.3.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：3"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingOF"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT1.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT1.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT1.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT1.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT1.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT1.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingT1"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT2.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT2.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT2.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT2.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT2.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT2.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingT2"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT3.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT3.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT3.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT3.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT3.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingT3.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingT3"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "backHair",
+							"origin_y": 13,
+							"z": "backHair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingTF.0.backHair.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 13,
+							"name": "backHairBelowCap",
+							"origin_y": 12,
+							"z": "backHairBelowCap",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingTF.0.backHairBelowCap.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingTF.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingTF.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingTF.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingTF.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingTF.3.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingTF.3.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：3"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingTF"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingP1.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingP1.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingP1.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingP1.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingP1.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingP1.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingP1"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingP2.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingP2.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingP2.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingP2.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingP2.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingP2.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingP2"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingPF.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingPF.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingPF.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingPF.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingPF.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingPF.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingPF.3.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/swingPF.3.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：3"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "swingPF"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabO1.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabO1.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabO1.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabO1.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "stabO1"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabO2.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabO2.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabO2.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabO2.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "stabO2"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabOF.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabOF.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabOF.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabOF.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabOF.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabOF.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "stabOF"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabT1.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabT1.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabT1.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabT1.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabT1.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabT1.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "stabT1"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabT2.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabT2.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabT2.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabT2.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabT2.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabT2.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "stabT2"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabTF.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabTF.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabTF.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabTF.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabTF.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabTF.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabTF.3.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/stabTF.3.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：3"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "stabTF"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shoot1.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shoot1.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shoot1.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shoot1.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shoot1.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shoot1.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "shoot1"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shoot2.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shoot2.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shoot2.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shoot2.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shoot2.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shoot2.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shoot2.3.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shoot2.3.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：3"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shoot2.4.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shoot2.4.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：4"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "shoot2"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shootF.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shootF.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shootF.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shootF.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shootF.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/shootF.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "shootF"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/proneStab.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/proneStab.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/proneStab.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/proneStab.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "proneStab"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/prone.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/prone.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "prone"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/heal.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/heal.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/heal.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/heal.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/heal.2.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/heal.2.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：2"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "heal"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/fly.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/fly.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/fly.1.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/fly.1.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "fly"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/jump.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/jump.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "jump"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 15,
+							"name": "hairOverHead",
+							"origin_y": 14,
+							"z": "hairOverHead",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/sit.0.hairOverHead.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "hair",
+							"origin_y": 12,
+							"z": "hair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/sit.0.hair.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "sit"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "backHair",
+							"origin_y": 13,
+							"z": "backHair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/ladder.0.backHair.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 13,
+							"name": "backHairBelowCap",
+							"origin_y": 12,
+							"z": "backHairBelowCap",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/ladder.0.backHairBelowCap.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "backHair",
+							"origin_y": 13,
+							"z": "backHair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/ladder.1.backHair.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 13,
+							"name": "backHairBelowCap",
+							"origin_y": 12,
+							"z": "backHairBelowCap",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/ladder.1.backHairBelowCap.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "ladder"
+		},
+		{
+			"$fold": true,
+			"frames": [
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "backHair",
+							"origin_y": 13,
+							"z": "backHair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/rope.0.backHair.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 13,
+							"name": "backHairBelowCap",
+							"origin_y": 12,
+							"z": "backHairBelowCap",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/rope.0.backHairBelowCap.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：0"
+				},
+				{
+					"spritecfg": [
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 14,
+							"name": "backHair",
+							"origin_y": 13,
+							"z": "backHair",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/rope.1.backHair.png"
+						},
+						{
+							"map": [
+								{
+									"bone": "brow",
+									"offset_x": 0,
+									"$type": "animconfig.SkelectonMap",
+									"offset_y": 0
+								}
+							],
+							"origin_x": 13,
+							"name": "backHairBelowCap",
+							"origin_y": 12,
+							"z": "backHairBelowCap",
+							"$type": "animconfig.SpriteConfigData.Sprite",
+							"spriteDir": "res://assets/MapleStory/Character/00030000/rope.1.backHairBelowCap.png"
+						}
+					],
+					"delay": 100,
+					"face": 1,
+					"$type": "animconfig.AnimFrame",
+					"$note": "note：1"
+				}
+			],
+			"$type": "animconfig.AnimConfigData",
+			"name": "rope"
 		}
 	]
 }

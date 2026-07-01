@@ -8,6 +8,4 @@ script = ExtResource("2_4s0hi")
 id = "00002000"
 item_name = "默认身体"
 icon = ExtResource("1_5lqs1")
-"动画帧配置文件" = "res://config/_animconfig_animconfig/00002000.json"
-"默认动画名称" = "stan1"
 metadata/_custom_type_script = "uid://cx56yjoedwvb6"

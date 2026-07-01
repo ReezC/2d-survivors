@@ -48,9 +48,9 @@ func _ready() -> void:
 		push_warning("VisualItemPart '%s' 未指定 source_item" % part_name)
 		return
 
-	_config_path = source_item.动画帧配置文件
+	_config_path = source_item.get_anim_config_path()
 	if _config_path.is_empty():
-		push_warning("VisualItemPart '%s' 动画帧配置文件路径为空" % part_name)
+		push_warning("VisualItemPart '%s' anim config 路径为空" % part_name)
 		return
 
 	# 加载 JSON 配置
@@ -182,7 +182,12 @@ func set_bone(anim_name: String, frame_index: int) -> void:
 			var origin_y: float = sprite_data.get("origin_y", 0.0)
 			self.offset = Vector2(-origin_x, -origin_y)
 
-			var bone_maps: Array = sprite_data.get("map", [])
+			var bone_maps_raw = sprite_data.get("map", [])
+			var bone_maps: Array
+			if bone_maps_raw is Dictionary:
+				bone_maps = [bone_maps_raw]
+			else:
+				bone_maps = bone_maps_raw as Array
 			if bone_maps.is_empty():
 				self.position = Vector2.ZERO
 				_bind_to_bone(null, Vector2.ZERO)
@@ -208,6 +213,8 @@ func set_bone(anim_name: String, frame_index: int) -> void:
 			for i in bone_maps.size():
 				var bone_map = bone_maps[i]
 				var bone_name: String = bone_map.get("bone", "")
+				if bone_name.is_empty():
+					continue
 				var off_x: float = bone_map.get("offset_x", 0.0)
 				var off_y: float = bone_map.get("offset_y", 0.0)
 				var bone_offset := Vector2(off_x, off_y)

@@ -41,6 +41,7 @@ func _ready() -> void:
 	# 连接 PaperDoll 的 buff 动画结束信号（仅在 Sequence 类型自然播完时触发）
 	if paper_doll:
 		paper_doll.buff_animation_finished.connect(_on_buff_animation_finished)
+		paper_doll.animation_finished.connect(_on_animation_finished)
 
 func _process(delta: float) -> void:
 	player_move(delta)
@@ -99,26 +100,32 @@ func _on_buff_animation_finished() -> void:
 		当前状态 = 角色状态.待机
 		GMLogger.log_player_state("[%s] 施法动画结束 → 待机" % 单位名称)
 
+## 非循环动画（攻击等）播完时回调，自动切回 IDLE
+func _on_animation_finished() -> void:
+	if 当前状态 != 角色状态.施法 and 当前状态 != 角色状态.死亡:
+		当前状态 = 角色状态.待机
+		GMLogger.log_player_state("[%s] 攻击动画结束 → 待机" % 单位名称)
+
 
 func set_anim() -> void:
-	# ---- 纸娃娃动画驱动 ----
+	# ---- 纸娃娃动画驱动（MSW 风格：状态枚举驱动）----
 	if paper_doll:
 		match 当前状态:
 			角色状态.死亡:
 				if _has_setup_buff_anim:
 					paper_doll.stop_buff_animation()
 					_has_setup_buff_anim = false
-				paper_doll.set_animation_by_state(2)
+				paper_doll.set_animation_by_state(AvatarState.State.DEAD)
 			角色状态.待机:
 				if _has_setup_buff_anim:
 					paper_doll.stop_buff_animation()
 					_has_setup_buff_anim = false
-				paper_doll.set_animation_by_state(0)
+				paper_doll.set_animation_by_state(AvatarState.State.IDLE)
 			角色状态.移动:
 				if _has_setup_buff_anim:
 					paper_doll.stop_buff_animation()
 					_has_setup_buff_anim = false
-				paper_doll.set_animation_by_state(1)
+				paper_doll.set_animation_by_state(AvatarState.State.MOVE)
 			角色状态.施法:
 				if not _has_setup_buff_anim and not 施法动画参数.is_empty():
 					paper_doll.play_buff_animation(施法动画参数)
@@ -235,5 +242,7 @@ func _face_idle_update(delta: float) -> void:
 			else:
 				_face_is_blinking = false
 				_face_blink_interval_ms = randf_range(FACE_BLINK_INTERVAL_MIN_MS, FACE_BLINK_INTERVAL_MAX_MS)
+				# blink 结束，恢复默认表情（blink frame 0 = 中性表情）
+				paper_doll.set_face_frame("blink", 0)
 		else:
 			paper_doll.set_face_frame("blink", _face_blink_frame)
